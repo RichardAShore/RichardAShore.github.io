@@ -1,0 +1,1262 @@
+%% This document created by Scientific Word (R) Version 3.0
+
+
+\documentclass[12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{amsopn}
+\usepackage{amsthm}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.00.0.2606}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Wednesday, June 11, 2008 12:02:54}
+%TCIDATA{LastRevised=Sunday, March 13, 2011 13:41:49}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Standard LaTeX Article(mine)">}
+%TCIDATA{Language=American English}
+%TCIDATA{CSTFile=LaTexArt(mine).cst}
+
+\setlength{\evensidemargin}{0in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{6.25in}
+\setlength{\textheight}{8.5in}
+\setlength{\topmargin}{0in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\itemsep}{0pt}
+\renewcommand{\topfraction}{.9}
+\renewcommand{\textfraction}{.1}
+\setlength{\parskip}{\smallskipamount}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{remark}[theorem]{Remark}
+\input{tcilatex}
+
+\begin{document}
+
+\title{Domination, forcing, array nonrecursiveness and relative recursive
+enumerability\addtocounter{footnote}{1}}
+\author{Mingzhong Cai\thanks{%
+Partially supported by NSF Grants DMS-0554855 and DMS-0852811.} \\
+%EndAName
+Department of Mathematics\\
+Cornell University\\
+Ithaca NY 14853\addtocounter{footnote}{-2} \and Richard A. Shore\thanks{%
+Partially supported by NSF Grants DMS-0554855 and DMS-0852811 and John
+Templeton Foundation Grant 13408.} \\
+%EndAName
+Department of Mathematics\\
+Cornell University\\
+Ithaca NY 14853}
+\maketitle
+
+\begin{abstract}
+We present some abstract theorems showing how domination properties
+equivalent to being $\overline{\mathbf{GL}}_{2}$ or array nonrecursive can
+be used to construct sets generic for different notions of forcing. These
+theorems are then applied to give simple proofs of some known results. We
+also give a direct uniform proof of a recent result of Ambos-Spies, Ding,
+Wang and Yu [2009] that every degree above any in $\overline{\mathbf{GL}}%
+_{2} $ is recursively enumerable in a 1-generic degree strictly below it.
+Our major new result is that every array nonrecursive degree is r.e.\ in
+some degree strictly below it. Our analysis of array nonrecursiveness and
+construction of generic sequences below $\mathbf{ANR}$ degrees also reveal a
+new level of uniformity in these types of results.
+\end{abstract}
+
+\section{Introduction}
+
+The motivations for the work presented here were twofold. The first was the
+similarity between certain constructions of degrees below a nonzero
+recursively enumerable one and the analogous ones for degrees that are $%
+\overline{\mathbf{GL}_{2}}$ or $\mathbf{ANR}$ (array nonrecursive). (A
+Turing degree $\mathbf{a}$ is in $\mathbf{GL}_{2}$ if $\mathbf{a}^{\prime
+\prime }=(\mathbf{a\vee 0}^{\prime })^{\prime }$. If $\mathbf{a}\notin 
+\mathbf{GL}_{2}$ we say $\mathbf{a}\in $ $\overline{\mathbf{GL}_{2}}$. An
+equivalent condition is that for every function $g\leq _{T}\mathbf{a\vee 0}%
+^{\prime }$, there is an $f\leq _{T}\mathbf{a}$ which is not dominated by $g$%
+, i.e. $\exists ^{\infty }x(g(x)<f(x))$ (see Lerman [1983, IV.3.4]).) A
+degree $\mathbf{a}$ is \emph{array nonrecursive} ($\mathbf{ANR}$) if, for
+every function $g\leq _{wtt}0^{\prime }$, there is an $f\leq _{T}\mathbf{a}$
+which is not dominated by $g$ (Downey, Jockusch and Stob [1996], hereafter
+[DJS]). In particular, there are theorems from Shore [1981, Lemma 4.2] and
+Shore [2007, Theorem 4.1] about coding sets which are $\Sigma _{3}^{A}$
+below $\mathbf{a}$ for $A\in \mathbf{a}$ when $\mathbf{a}$ is either r.e.\
+and nonrecursive or $\mathbf{ANR}$. These results played crucial roles in
+the proofs, respectively, that the theory of $\mathcal{D}(\leq \mathbf{0}%
+^{\prime })$, the degrees below $\mathbf{0}^{\prime }$, is recursively
+isomorphic to that of true (first order) arithmetic and that the Turing jump
+operator is directly definable in any jump ideal containing $\mathbf{0}%
+^{(\omega )}$, the degree of the truth set of (first order) arithmetic. Both
+theorems were proved by fairly complicated but in some ways similar
+constructions. The first used what is called r.e.\ permitting and the second 
+$\mathbf{ANR}$ permitting. Both, like many constructions below r.e.,\ $%
+\mathbf{ANR}$ or $\overline{\mathbf{GL}_{2}}$ degrees, depend on domination
+properties of the given degree to carry out a type of forcing argument
+(meeting various dense sets) in a type of priority construction.
+
+Thus it seemed that these and other results could be simplified by proving
+that $\mathbf{ANR}$ (and so \emph{a fortiori }$\overline{\mathbf{GL}_{2}}$)
+degrees are \emph{relatively recursively enumerable}, $\mathbf{RRE}$, i.e.
+recursively enumerable in some degree strictly below them. The point here is
+that, if this were true, then the need for some of the separate proofs for $%
+\mathbf{ANR}$ or $\overline{\mathbf{GL}_{2}}$ degrees could be eliminated by
+simply citing the corresponding ones for r.e. degrees. Moreover, it seemed
+desirable to formulate a general theorem about meeting classes of dense sets
+for specified notions of forcing based on the relevant domination properties
+characterizing the $\mathbf{ANR}$ and $\overline{\mathbf{GL}_{2}}$ degrees
+that would unify the various constructions exploiting these properties.
+
+The second motivation for this work was the paper of Ambos-Spies, Ding, Wang
+and Yu [2009], hereafter [ASDWY]. They proved the following:
+
+\begin{theorem}
+\label{asdwy}\emph{([ASDWY, Theorem 1.5]) }Every $\mathbf{a\in \overline{%
+\mathbf{GL}_{2}}}$ is $\mathbf{RRE}$ and, in fact,every $\mathbf{b}$ above
+any $\mathbf{a\in \overline{\mathbf{GL}_{2}}}$ is r.e.\ in some 1-generic
+degree $\mathbf{c<b}$.
+\end{theorem}
+
+[ASDWY] then raised a number of interesting questions asking for
+characterizations of the degrees $\mathbf{a}$ such that every $\mathbf{b\geq
+a}$ is $\mathbf{RRE}$ and the relation between being $\mathbf{RRE}$ and (the
+apparently stronger) property of being r.e.\ in a strictly smaller 1-generic
+degree. (A set $G$ is 1-generic if, for every r.e.\ set of binary strings $S$%
+, there is a binary string $\sigma \subset G$ such that either $\sigma \in S$
+or $(\forall \tau \supseteq \sigma )(\tau \notin S)$. A degree is 1-generic
+if it contains a 1-generic set.)
+
+We present in \S \ref{domsec} an analysis of the domination properties
+characterizing array nonrecursiveness that provide an appropriate definition
+for a relativized version of the notion. The analysis also proves that $%
+\mathbf{ANR}$ degrees satisfy a stronger domination property with greater
+uniformity than previously established. This property is closer to that
+characterizing $\overline{\mathbf{GL}_{2}}$ and allows us to give a
+framework for a general theorem about meeting dense sets recursively in
+either $\overline{\mathbf{GL}_{2}}$ or $\mathbf{ANR}$ degrees. Even in the $%
+\overline{\mathbf{GL}_{2}}$ case, our Theorem \ref{dom} is more general than
+the ones in the literature that typically deal only with Cohen forcing. In
+particular, it allows for notions of forcing that are recursive in the given 
+$\overline{\mathbf{GL}_{2}}$ or $\mathbf{ANR}$ degree and so are directly
+applicable to results that, for example, involve statements about coding the
+given set. It thus applies directly to results about cupping (join)
+properties and jump inversion and can be used to simplify the proofs of such
+theorems from Jockusch and Posner [1978]. It also includes notions of
+forcing whose conditions are objects such as finite trees which are more
+complicated than binary strings. The proof we provide is also simpler than
+the standard ones (even) for oracle constructions as in Jockusch and Posner
+[1978] or Lerman [1983 III.5] in that we eliminate the procedure of, given
+the current string $\sigma $ (an initial segment of our eventual generic $G$%
+), appointing a string $\tau \supset \sigma $ as a target (to satisfy some
+density requirement) and moving toward $\tau $ one step at a time while at
+every step checking to see if some target for a higher priority requirement
+has been located. While this procedure makes sense for binary strings, it is
+hard to see what to make of it in more general settings when the forcing
+conditions are more complicated. Instead, we provide a method that, at every
+step, attempts to satisfy the highest possible requirement not currently
+satisfied. While we cannot always immediately satisfy the next requirement
+as in the simpler Kleene-Post finite extension arguments, these attempts
+eventually succeed for each requirement. We then present a couple of
+illustrative applications for known results (at times extended from $%
+\overline{\mathbf{GL}_{2}}$ to $\mathbf{ANR}$) that are proven by ad hoc
+arguments in the literature. New results for $\mathbf{ANR}$ degrees
+including Theorem \ref{anr} that $\mathbf{ANR}$ degrees are $\mathbf{RRE}$
+are presented in \S \ref{anrsec} . This supplies the result needed to unify
+those of Shore [1981]\emph{\ } and [2007] as described above.
+
+In \S \ref{ngl2sec}, we provide direct proofs of weaker natural variants, as
+well as the full result, of Theorem \ref{asdwy} for $\overline{\mathbf{GL}%
+_{2}}$ degrees. To be more precise, we note that the proof of Theorem \ref%
+{asdwy} in [ASDWY, Theorem 1.5], while very ingenious and clever, is quite
+indirect and nonuniform. It proceeds by first establishing that any $\mathbf{%
+a}\leq \mathbf{0}^{\prime }$ which is not $\mathbf{L}_{2}$ (i.e. $\mathbf{a}%
+^{\prime \prime }>\mathbf{0}^{\prime \prime }$) is $\mathbf{RRE}$. This
+argument relies on results of Harizanov [1998] to convert the problem into
+one of finding an infinite ascending or descending chain in a linear order
+constructed from $\mathbf{a}$ and then on (a modification of) one of
+Hirschfeldt and Shore [2007] to (nonuniformly) produce such a chain that is
+low and even 1-generic. [ASDWY] then use a modification of a result of
+Jockusch and Posner [1978] for $\overline{\mathbf{GL}_{2}}$ degrees (proved
+below for $\mathbf{ANR}$ as Theorem \ref{jp}) and one of Yu [2006] as well
+as the Robinson Jump Interpolation Theorem [1971] and another result of
+Jockusch and Posner [1978] to reduce the general case to a relativization of
+the one for degrees below $\mathbf{0}^{\prime }$ not in $\mathbf{L}_{2}$. In
+contrast, our proof that even $\mathbf{ANR}$ degrees are $\mathbf{RRE}$ is
+uniform in a witness that the given degree is $\mathbf{ANR}$ as defined and
+explained in Definition \ref{anrreldef}, Proposition \ref{anrrelprop} and
+Theorem \ref{anr}. In Theorem \ref{ngl21gen} we extend a more elaborate
+coding strategy introduced in Definition \ref{wo} that provides a 1-generic $%
+\mathbf{c}$ in which the given $\overline{\mathbf{GL}_{2}}$ degree is $%
+\mathbf{RRE}$. We close our treatment of $\overline{\mathbf{GL}_{2}}$
+degrees by using a notion of forcing in which conditions are finite trees to
+give a direct proof (Theorem \ref{ngl2tree}) of the full version of Theorem %
+\ref{asdwy} that is uniform relative to the choice of a function witnessing
+the specific instance of the degree being in $\overline{\mathbf{GL}_{2}}$
+required by the construction.\footnote{%
+Anwering Question 4.2 of [ASDWY], Wang [2012] has now shown that every $%
+\mathbf{RRE}$ degree is r.e. in a 1-generic below it. In contrast to our
+proofs here, however, his are not uniform.}
+
+Quite surprisingly, Cai [2012] shows the property that every $\mathbf{b\geq a%
+}$ is $\mathbf{RRE}$ characterizes the $\mathbf{ANR}$ degrees and answers
+Questions 4.3 and 4.4 of [ASDWY]:
+
+\begin{theorem}
+\emph{(Cai [2012]) }A degree $\mathbf{a}$ is $\mathbf{ANR}$ if and only if
+every $\mathbf{b\geq a}$ is $\mathbf{RRE}$.
+\end{theorem}
+
+\section{Domination and Forcing $\mathbf{\label{domsec}}$}
+
+In this section we begin by analyzing the definition of array
+nonrecursiveness. We have in mind two goals. One (motivated in part by
+Theorem \ref{anrrrerel} and Question \ref{iter}) is to develop the correct
+relativized version. The other is to strengthen the known domination
+properties for these functions and degrees. The strengthenings will make the
+notion seem more similar to the domination characterization of $\overline{%
+\mathbf{GL}_{2}}$ degrees. They will also provide a stronger general theorem
+about meeting dense sets to construct generic sequences for a larger class
+of collections of dense sets than had been previously handled. Indeed, they
+will provide a common framework for the construction of generic sequences
+below both $\mathbf{ANR}$ and $\overline{\mathbf{GL}_{2}}$ degrees.
+
+Recall that the basic domination theoretic definition of array
+nonrecursiveness as given originally in [DJS] is for degrees:
+
+\begin{definition}
+\label{anrdeg}A degree $\mathbf{a}$ is $\mathbf{ANR}$ if for every function $%
+g\leq _{wtt}0^{\prime }$ there is an $f\leq _{T}\mathbf{a}$ such that $f$%
+\emph{\ is not dominated by} $g$, i.e. $\exists ^{\infty }x(f(x)>g(x))$.
+\end{definition}
+
+What then should be the correct relativized definition that $\mathbf{a}$ is
+array nonrecursive relative to $\mathbf{b}$? We should at least have $%
+\mathbf{b\leq a}$. One might first try also requiring that for some (or
+perhaps any) $B\in \mathbf{b}$ and any $g\leq _{wtt}B^{\prime }$ there is an 
+$f\leq _{T}\mathbf{a}$ not dominated by $g$. This, however, would not be
+sufficient to relativize the usual results about $\mathbf{ANR}$ degrees to
+the realm above $\mathbf{b}$. (In fact, it is not hard to see that there is
+a single function recursive in $0^{\prime }$ which dominates every $g$ wtt
+below any set $X$.) Another possibility might be to include all functions $f$
+computable from $B^{\prime }$ with use bounded by a function recursive in $A$%
+. This too is insufficient. One needs to allow unbounded access to $B$.
+Along these lines a stronger version would be that for any $g$ computable
+from $B\oplus B^{\prime }$ such that the use from $B^{\prime }$ is bounded
+by a function recursive in $B$ there is an $f\leq _{T}\mathbf{a}$ not
+dominated by $g$. Other variations also seem plausible. A simpler route is
+provided by an alternate characterization of $\mathbf{ANR}$ degrees from
+[DJS] that depends (in the unrelativized case) on only a single function $g$%
+, the modulus of $0^{\prime }$:
+
+\begin{notation}
+We let $m$ be the least modulus function of $0^{\prime }$, i.e. $m(x)$ is
+the least $s\geq x$ such that $0_{s}^{\prime }\upharpoonright x=0^{\prime
+}\upharpoonright x$ where $0_{s}^{\prime }$ is the standard enumeration of $%
+0^{\prime }$. Note that $m$ is nondecreasing. Similarly we let $m_{h}$ (or $%
+m_{A}$) be the least modulus function for the standard enumeration of $%
+h^{\prime }$ ($A^{\prime }$) relative to $h$ ($A$). (We view sets as
+represented by their characteristic functions.)
+\end{notation}
+
+\begin{proposition}
+([DJS]) \label{mod}A degree $\mathbf{a}$ is $\mathbf{ANR}$ if and only if
+there is a function $f\leq _{T}\mathbf{a}$ which is not dominated by $m$.
+\end{proposition}
+
+We propose to turn this Proposition into a definition which relativizes in
+an obvious way.
+
+\begin{definition}
+\label{anrreldef}A function $f$ is $ANR$ if it is not dominated by $m$. It
+is $ANR$ relative to $h$ if $h\leq _{T}f$ and $f$ is not dominated by $m_{h}$%
+. A degree $\mathbf{a}$ is $\mathbf{ANR}$ relative to $\mathbf{b}$, $\mathbf{%
+ANR(b)}$, if there are $f\in \mathbf{a}$ and $h\in \mathbf{b}$ such that $f$
+is $ANR$ relative to $h$, $ANR(h)$.
+\end{definition}
+
+Note that when $\mathbf{b=0}$ this definition agrees with the standard one
+for $\mathbf{a}$ being $\mathbf{ANR}$ by Proposition \ref{mod}. (One also
+needs to note that, in general, if there is a $g\leq _{T}X$ not dominated by 
+$h$ then there is an $f\equiv _{T}X$ which is also not dominated by $h$.
+Simply take $f(n)=2g(n)+X(n)$.)
+
+We now provide a domination property that characterizes being $\mathbf{ANR}(%
+\mathbf{h})$ but is stronger than the ones previously presented in the
+literature even in the unrelativized case. It also shows that our (seemingly
+weak) definition in the relativized case is stronger than all the other
+possible definitions mentioned after Definition \ref{anrdeg}. It also makes $%
+\mathbf{ANR}$ seem much more similar to $\overline{\mathbf{GL}_{2}}$ than
+did previous definitions. Recall that $\mathbf{a\in \overline{\mathbf{GL}_{2}%
+}}$ if for every function $g\leq _{T}\mathbf{a\vee 0}^{\prime }$, there is
+an $f\leq _{T}\mathbf{a}$ which is not dominated by $g$. Our proposition
+similarly says that if $f$ is $ANR$ and $g=\Theta (f\oplus 0^{\prime })$
+with $0^{\prime }$ use bounded by a function $r\leq _{T}f$ (not just a
+recursive function) then there is a $k\leq _{T}f$ which is not dominated by $%
+g$. We now state and prove the relativized version by substituting an
+arbitrary $h^{\prime }$ for $0^{\prime }$ and also make the uniformities
+explicit.
+
+\begin{proposition}
+\label{anrrelprop}If $f$ is $ANR(h)$ and $g=\Theta (f\oplus h^{\prime })$
+with the $h^{\prime }$ use bounded by a function $r\leq _{T}f$ then there is
+a $k\leq _{T}f$ which is not dominated by $g$. Moreover $k$ can be found
+uniformly in $f$ in the sense that there is a recursive function $s(e,i,j)$
+such that if $\Theta =\Phi _{e}$, $r=\Phi _{i}(f)$ and $h=\Phi _{j}(f)$ then 
+$\Phi _{s(e,i,j)}(f)$ will serve as the required $k$.
+\end{proposition}
+
+\begin{proof}
+Without loss of generality or uniformity we may assume that $f$, $g$ and $r$
+are increasing. We define the required $k\leq _{T}f$ as follows: To compute $%
+k(n)$ compute, for each $m>n$ in turn, $\Theta _{fr(m)}(f\oplus (h^{\prime
+})_{fr(m)};n)$ (i.e. compute $fr(m)$ many steps in the standard enumeration
+of $h^{\prime }$ from $h$ and then, using this set as the second component
+of the oracle (and $f$ for the first), compute $\Theta $ at $n$ for $fr(m)$
+many steps) until the computation converges and then add $1$ to get the
+value of $k(n)$. (This procedure must converge as $\Theta (f\oplus h^{\prime
+};n)$ converges.) Now as $m_{h}$ does not dominate $f$, there are infinitely
+many $n$ such that there is a $j\in \lbrack r(n),r(n+1))$ with $%
+f(j)>m_{h}(j) $. For such $n$ we have $fr(n+1)>f(j)>m_{h}(j)\geq m_{h}r(n)$.
+Thus $(h^{\prime })_{fr(m)}\upharpoonright r(n)=(h^{\prime })\upharpoonright
+r(n)$ for every $m>n$. So the computation of $\Theta (f\oplus h^{\prime };n)$
+is, step by step, the same as that of $\Theta (f\oplus (h^{\prime
+})_{fr(m)};n)$ for each $m>n$ as all the oracles agree on the actual use of
+the true computation. So eventually we get an $m>n$ such that $\Theta
+_{fr(m)}(f\oplus (h^{\prime })_{fr(m)};n)\downarrow $ and the output must be 
+$\Theta (f\oplus h^{\prime };n)$. Thus for these $n$, $k(n)=g(n)+1>g(n)$ as
+required. The uniformity of the definition of $k$ from $f$ and the functions
+of the hypotheses is clear. (Noting that we can uniformly, in $f$ and the
+reduction of $h$ to $f$, compute the standard enumeration of $h^{\prime }$
+from $h$.)
+\end{proof}
+
+\begin{corollary}
+A degree $\mathbf{a}$ is $\mathbf{ANR(b)}$ if and only if for every $h\in 
+\mathbf{b}$ there is a $k\in \mathbf{a}$ such that $k$ is $ANR(h)$.
+\end{corollary}
+
+\begin{proof}
+The only if direction is immediate from Definition \ref{anrreldef}. The
+other direction follows easily from the Proposition since given one $h\in 
+\mathbf{b}$ with $f\in \mathbf{a}$ which is $ANR(h)$, the modulus function
+of any $\hat{h}\equiv _{T}h$ is given by a function of the type specified in
+the hypotheses of the Proposition and so the function $k\leq _{T}f$ provided
+by the Proposition is not dominated by $m_{\hat{h}}$ and as noted above we
+may as well take $k\equiv _{T}f$. It is then the required $ANR(\hat{h})$
+function.
+\end{proof}
+
+Iterating the notion of relative array recursiveness also provides some
+interesting questions. (A degree $\mathbf{a}$ is array recursive relative to 
+$\mathbf{b}$ if it is not $\mathbf{ANR(b)}$.)
+
+\begin{question}
+\label{iter}If $\mathbf{0=a}_{0}\mathbf{<a}_{1}<\mathbf{a}_{2}<\cdots <%
+\mathbf{a}_{n}$ is a sequence of degrees such that $\mathbf{a}_{i+1}$ is
+array recursive relative to $\mathbf{a}_{i}$ for each $i$, what can be said
+about $\mathbf{a}_{n}$? If, for example, one could prove that $\mathbf{a}%
+_{n}\in \mathbf{GL}_{2}$ then one could show that no $\overline{\mathbf{GL}%
+_{2}}$ degree is the top of a finite maximal chain of degrees and so answer
+this question from Lerman [1983, p. 87] who shows that the top of any such
+maximal chain below $\mathbf{0}^{\prime }$ must be in $\mathbf{L}_{2}$%
+\footnote{%
+Lerman's question has now been answered by Cai [2011] who has shown that
+there can be such a sequence of length $2$ with $\mathbf{a}_{2}\in \mathbf{GH%
+}_{2}$.}. Showing that $\mathbf{a}_{n}\notin \mathbf{GH}_{1}$ would provide
+interesting information.
+\end{question}
+
+We want to consider notions of forcing $\mathcal{P}$ in which the underlying
+set $P$ of conditions (thought of as a subset of $\mathbb{N}$) and the
+extension relation $\leq _{\mathcal{P}}$ are both recursive in a specified
+set $A$. We call such notions of forcing $A$-recursive (or $\mathbf{a}$\emph{%
+-recursive }when $A\in \mathbf{a}$). Rather than using $\mathcal{C}$\emph{-}%
+generic filters (for a class $\mathcal{C}=\{D_{n}|n\in \mathbb{N\}}$) of
+dense sets) we work with $\mathcal{C}$\emph{-}generic sequences $%
+\left\langle p_{i}\right\rangle $ of conditions: $\forall i(p_{i}\leq _{%
+\mathcal{P}}p_{i+1})$ and $\forall n\exists i(p_{i}\in D_{n})$ and a \emph{%
+density function} $d(p,n)$ such that $\forall p\in P\forall n(d(p,n)\leq _{%
+\mathcal{P}}p~\&~d(p,n)\in D_{n})$. (We actually construct the generic
+sequences we need using such functions. Going from the sequence to the
+filter it generates is not always a recursive operation.)
+
+The basic fact about degrees $\mathbf{a\in \overline{\mathbf{GL}_{2}}}$
+being able to construct generic sequences (for Cohen forcing) is Lemma 6 of
+Jockusch and Posner [1978] stating that if $\mathcal{C}=\left\langle
+D_{n}\right\rangle $ is a sequence of dense sets (in $2^{<\omega }$)
+uniformly recursive in $A\oplus 0^{\prime }$ for any $A\in \mathbf{a}$ then
+there is a $\mathcal{C}$-generic sequence recursive in $\mathbf{a}$. (In
+fact, as [DJS] pointed out, it is easy to see that this condition also
+implies (and so is equivalent to) $\mathbf{a\in \overline{\mathbf{GL}_{2}}}$%
+.) We wish to generalize this result to arbitrary notions of forcing that
+are $\mathbf{a}$-recursive. We give a construction more direct than the
+original and usual one in that at each step we move (if at all) directly to
+the condition that seems to get into the first $D_{n}$ that our sequence
+does not yet seem to have met rather searching for a \textquotedblleft best
+possible\textquotedblright\ target then moving towards it step by step and
+perhaps changing our mind before reaching it. Also note that the idea of
+moving toward a condition $p$ step by step that makes natural sense when the
+conditions are binary sequences does not make any obvious sense when they
+are arbitrary numbers under an arbitrary order relation.
+
+We also give an argument that works (under the appropriate assumptions and
+with minor variations) for both $\overline{\mathbf{GL}_{2}}$ and $\mathbf{ANR%
+}$ degrees. For $\mathbf{a\in \overline{\mathbf{GL}_{2}}}$ the natural
+formulation of the necessary condition on the sequence $\left\langle
+D_{n}\right\rangle $ of dense sets that we want to meet is that it is
+uniformly recursive in $A\oplus 0^{\prime }$. What we actually use in the
+construction is a density function. In this setting, the existence of the
+desired function $d$ always follows from, and is usually equivalent to, the
+density of the $D_{n}$ and their being uniformly recursive in $A\oplus
+0^{\prime }$. This is no longer the case when we move from $\overline{%
+\mathbf{GL}_{2}}$ to $\mathbf{ANR}$ and so from Turing reducibility to wtt
+reducibility. (For example, one cannot get the required $d\leq _{wtt}A\oplus
+0^{\prime }$ from the assumption that the $D_{n}$ are dense and uniformly
+wtt reducible to $A\oplus 0^{\prime }$ as its definition requires an
+unbounded search.) Thus to handle $\mathbf{ANR}$ degrees we would naturally
+turn to density functions as is done for Cohen forcing in [DJS]. To make the
+proofs in the two cases as similar as possible, we use them for the $%
+\overline{\mathbf{GL}_{2}}$ case as well. Note that, by Proposition \ref%
+{anrrelprop},we can actually get by with a weaker hypothesis in the $\mathbf{%
+ANR}$ case than might be expected that is closer to that for $\overline{%
+\mathbf{GL}_{2}}$. For notational convenience we state and prove the
+unrelativized versions of the theorem but, given the definitions and results
+above, relativization (to $\overline{\mathbf{GL}_{2}}(\mathbf{b)}$ and $%
+\mathbf{ANR(b)}$) is routine.
+
+\begin{theorem}
+\label{dom}Suppose $\mathcal{P}$ is an $A$-recursive notion of forcing, $%
+\mathcal{C}=\left\langle D_{n}\right\rangle $ a sequence of sets dense in $%
+\mathcal{P}$ with a density function $d(x,y)=\Psi (A\oplus 0^{\prime };x,y)$.
+
+\begin{enumerate}
+\item[(i)] If $A\in \overline{\mathbf{GL}_{2}}$ then there is a $\mathcal{C}$%
+-generic sequence recursive in $A$.
+
+\item[(ii)] If $A\in \mathbf{ANR}$ and the use from $0^{\prime }$ in the
+computation of $\Psi (A\oplus 0^{\prime };x,y)$ is bounded by a function $%
+\hat{r}\leq _{T}A$, then there is also a $\mathcal{C}$-generic sequence
+recursive in $A$.
+\end{enumerate}
+
+In both cases the sequence $\left\langle p_{s}\right\rangle $ constructed is 
+$\mathcal{C}$-generic because $\forall n\exists s(p_{s+1}=d(p_{s},n))$.
+Moreover, in the $\mathbf{ANR}$ case the generic sequence is uniformly
+computable from any $ANR$ $f\in \mathbf{a}$ (as a function of the indices of 
+$\Psi $ and of $\hat{r}$ relative to $f$).
+\end{theorem}
+
+\begin{proof}
+Let $\hat{r}(x,y)$ be a function that bounds the $0^{\prime }$ use in the
+computation of $\Psi (A\oplus 0^{\prime };x,y)$. Without loss of generality
+we may assume that $\hat{r}(x,y)$ is increasing in both $x$ and $y$. In case
+(i) we may clearly take $\hat{r}\leq _{T}A\oplus 0^{\prime }$ and in case
+(ii) we may take $\hat{r}\leq _{T}A$ by hypothesis. Next note that the
+nondecreasing function $m\hat{r}(s,s)$ in case (i) is recursive in $A\oplus
+0^{\prime }$ and in case (ii) satisfies the hypotheses of Proposition \ref%
+{anrrelprop}, i.e. it is computable from $A\oplus 0^{\prime }$ and its $%
+0^{\prime }$ use is bounded by a function ($\hat{r}(s,s)$) recursive in $A$.
+Finally note that the maximum of the running times of $\Psi (A\oplus
+0^{\prime };x,y)$ for $x,y\leq s$ is also is such a function in each case.
+(We run $\Psi $ on each input and then output the sum of the number of steps
+needed to converge.) Finally, we let $r$ be the maximum of these three
+functions so it too is of the desired form. We now have, by the basic
+characterization of $\overline{\mathbf{GL}_{2}}$ degrees or Proposition \ref%
+{anrrelprop}, an increasing function $g\leq _{T}A$ not dominated by $r$. We
+use $g$ to construct the desired generic sequence $p_{s}$ by recursion.
+
+We begin with $p_{1}=\mathbf{1}$. At step $s+1$ we have (by induction) a
+nested sequence $\left\langle p_{i}|i\leq s\right\rangle $ with $p_{i}\leq s$%
+. We calculate $0_{g(s+1)}^{\prime }$ and see if there are any changes on
+the use from $0^{\prime }$ in a computation based on which some $D_{m}$ was
+previous declared satisfied. If so, we now declare it unsatisfied. Suppose $%
+n $ is the least $m<s+1$ such that $D_{m}$ is not now declared satisfied.
+(There must be one as we declare at most one $m$ to be satisfied at every
+stage and none at stage $1$.) We compute $\Psi _{g(s+1)}(A\oplus
+0_{g(s+1)}^{\prime };p_{s},n)$. If the computation does not converge or
+gives an output $q$ such that $q>s+1$ or $q\nleq _{\mathcal{P}}p_{s}$ we end
+the stage and set $p_{s+1}=p_{s}$. Otherwise, we end the stage, declare $%
+D_{n}$ to be satisfied on the basis of this computation of the output $q$
+and set $p_{s+1}=q$.
+
+We now verify that the sequence constructed is $\mathcal{C}$-generic and
+indeed $\forall n\exists s(p_{s+1}=d(p_{s},n))$. Clearly if we ever declare $%
+D_{n}$ to be satisfied (and define $p_{s+1}$ accordingly) and it never
+becomes unsatisfied again then $p_{s+1}=d(p_{s},n)$. Moreover, if we ever
+declare $D_{n}$ to be satisfied (and define $p_{s+1}$ accordingly) and it
+remains satisfied at a point of the construction at which we have enumerated 
+$0^{\prime }$ correctly up to $r(p_{s},n)$, then by definition $%
+p_{s+1}=d(p_{s},n)$ and $D_{n}$ is never declared unsatisfied again. We now
+show that this happens.
+
+Suppose all $D_{m}$ for $m<n$ have been declared satisfied by $s_{0}$ and
+are never declared unsatisfied again. Let $s+1\geq s_{0}$ be least such that 
+$g(s+1)\geq r(s+1)$. If $D_{n}$ was declared satisfied at some $t+1\leq s$
+on the basis of some computation of $\Psi _{g(t+1)}(A\oplus
+0_{g(t+1)}^{\prime };p_{t},n)$ and there is no change in $0^{\prime }$ on
+the use of this computation by stage $g(s+1)$ then the computation is
+correct, $p_{t+1}=\Psi (A\oplus 0^{\prime };p_{t},n)\in D_{n}$ and $D_{n}$
+is never declared unsatisfied again. (The point here is that by our choice
+of $s$, $g(s+1)>m\hat{r}(s+1,s+1)\geq m\hat{r}(p_{t},n)$ and so $%
+0_{g(s)}^{\prime }\upharpoonright \hat{r}(p_{t},n)=0^{\prime
+}\upharpoonright \hat{r}(p_{t},n)$.) Otherwise, $D_{n}$ is unsatisfied at $s$
+and the least such. By construction we compute $\Psi _{g(s+1)}(A\oplus
+0_{g(s+1)}^{\prime };p_{s},n)$. The definition of $r$ along with our choice
+of $g$ and $s$ guarantee that this computation converges and is correct and
+so unless $d(p_{s},n)>s+1$ we declare $D_{n}$ satisfied, set $%
+p_{s+1}=d(p_{s},n)$ and $D_{n}$ is never declared unsatisfied again. If $%
+d(p_{s},n)>s+1$, we set $p_{s+1}=p_{s}$ and, as $D_{n}$ remains unsatisfied
+and the computations already found do not change, we continue to do this
+until we reach a stage $v+1\geq d(p_{s},n)$ at which point $p_{v}=p_{s}$ and
+we set $p_{v+1}=d(p_{v},n)$ declare $D_{n}$ satisfied and it is never
+unsatisfied again.
+
+The uniformity required in the $\mathbf{ANR}$ case is immediate from
+Proposition \ref{anrrelprop} and our construction.
+\end{proof}
+
+The uniformity provided in the $\mathbf{ANR}$ case of this Theorem carries
+over to most constructions of degrees recursive in a given $\mathbf{ANR}$
+one. We describe them explicitly in a number of results below. One classic
+example is the result of DJS that every $\mathbf{ANR}$ degree bounds a
+1-generic degree. Our construction shows that there is a single $e$ such
+that, for every $ANR$ function $f$, $\Phi _{e}(f)$ is 1-generic (see also
+Proposition \ref{anr1gen}).
+
+\section{$\mathbf{ANR}$ degrees are $\mathbf{RRE\label{anrsec}}$}
+
+In this section we give a number of applications of the basic Theorem \ref%
+{dom} for $\mathbf{ANR}$ degrees including the result that they are $\mathbf{%
+RRE}$. We begin by extending a theorem of Jockusch and Posner [1978] from $%
+\overline{\mathbf{GL}_{2}}$ to $\mathbf{ANR}$. Even for the $\overline{%
+\mathbf{GL}_{2}}$ case, it does not fall under the usual paradigm since it
+makes demands on coding that require a notion of forcing that is $\mathbf{a}$%
+-recursive but not recursive.
+
+\begin{theorem}
+\label{jp}If $\mathbf{a}\in \mathbf{ANR}$ and $\mathbf{c}\geq \mathbf{a}\vee 
+\mathbf{0}^{\prime }$ and is r.e.\ in $\mathbf{a}$, then there is a $\mathbf{%
+g}\leq \mathbf{a}$ s.t. $\mathbf{g}^{\prime }=\mathbf{c}$.
+\end{theorem}
+
+\begin{proof}
+First fix an $A\in \mathbf{a}$ and an $A$-recursive enumeration $\langle
+C_{s}\rangle $ of $C$. The conditions in our notion of forcing $\mathcal{P}$
+are binary strings $\sigma $ but extension is defined to reflect the given
+enumeration of $C$. We let $F(\sigma )=\{e|\Phi _{e}^{\sigma}(e)\downarrow
+\} $. (We employ the usual conventions so that, for example, the computation
+of $\Phi _{e}^{\tau }(x)$ requires at least $x$ many steps to converge and
+runs only for $|\tau |$ many steps so $F$ is a recursive function and its
+values are finite sets.)
+
+If $\tau \supseteq \sigma $ (and so $F(\tau )\supseteq F(\sigma )$) and for
+any $e\leq \min (\{|\sigma |\}\cup (F(\tau )-F(\sigma )))$, and for any $%
+\langle e,s\rangle \in \lbrack |\sigma |,|\tau |)$, $\tau (\langle
+e,s\rangle )=C_{|\sigma |}(e)$ we say that $\tau \leq _{\mathcal{P}}\sigma $%
+. We make this into the required partial order by taking the transitive
+closure of this relation. The transitive closure is also recursive in $A$
+because we can lay out and check the finitely many possible one step paths
+between any $p$ and $q$ to see if any of them satisfy the original relation
+at each step. The intuition (as in the Shoenfield [1959] jump theorem) is
+that, whenever we try to extend a string, we want to make sure that some
+(eventually growing) initial segment of columns respects the enumeration of $%
+C$ in sense that $\tau (\langle e,s\rangle )=C_{|\sigma |}(e)$ and so $%
+\lim_{s\rightarrow \infty }G(\left\langle e,s\right\rangle =C(e)$. This
+makes $C\leq _{T}G^{\prime }$ by the Shoenfield limit lemma.
+
+Define our sequence $\mathcal{C}$ of sets as follows: 
+\begin{equation*}
+D_{n,j}=\{\sigma :|\sigma |>j~\&\ [\Phi _{n}^{\sigma }(n)\downarrow 
+\hbox{
+or }\forall \tau \supset \sigma \lbrack \Phi _{n}^{\tau }(n)\uparrow 
+\hbox{
+or }
+\end{equation*}%
+\begin{equation*}
+\exists s\exists e<\min (\{|\sigma |\}\cup (F(\tau )-F(\sigma )))(\langle
+e,s\rangle \in \lbrack |\sigma |,|\tau |)\ \&\ \tau (\langle e,s\rangle
+)\neq C_{|\sigma |}(e))]]\}\text{.}
+\end{equation*}%
+We calculate the required density function $d(\sigma ,\left\langle
+n,j\right\rangle )$ for the $D_{n,j}$ as follows: Given any $\sigma ,n$ and $%
+j$ we may as well assume (by, recursively in $A$, taking a long enough
+extension $\rho $ with $\rho (\left\langle e,s\right\rangle )=C_{|\sigma
+|}(e)$ for every $\left\langle e,s\right\rangle >|\sigma |,\left\langle
+e,s\right\rangle \leq j$ ) that $|\sigma |>j$. Now check whether $\Phi
+_{n}^{\sigma }(n)\downarrow $, if so, set $d(\sigma \left\langle
+n,j\right\rangle )=$ $\sigma \in D_{n,j}$ and we are done. If not, use $A$
+to get all the values of $C_{|\sigma |}(e)$ for $e\leq |\sigma |$. Ask ($%
+0^{\prime }$) whether we can find an extension $\tau $ of $\sigma $ with the
+property that for all $e\leq \min (\{|\sigma |\}\cup (F(\tau )-F(\sigma )))$
+and all $s$ such that $\langle e,s\rangle \in \lbrack |\sigma |,|\tau |)$,
+we have $\tau (\langle e,s\rangle )=C_{|\sigma |}(e)$, and $\Phi _{n}^{\tau
+}(n)\downarrow $. If so, we let $d(\sigma ,\left\langle n,j\right\rangle )$
+be the first such $\tau $ (found in a standard ordering of computations). It
+is immediate that $d(\sigma ,\left\langle n,j\right\rangle )\leq _{\mathcal{P%
+}}\sigma $ and $\tau \in D_{n,j}$. Otherwise, we let $d(\sigma ,\left\langle
+n,j\right\rangle )=\sigma \in D_{n,j}$.
+
+As we determined $C_{|\sigma |}$ recursively in $A$, the $0^{\prime }$ use
+for the question asked is clearly bounded by a function recursive in $A.$
+Thus, by Theorem \ref{dom}(ii), we have a $\mathcal{C}$-generic sequence $%
+\langle \sigma _{i}\rangle $ recursive in $A$. We let $G=\cup \{\sigma
+_{p_{i}}\}\leq _{T}A$.
+
+First, we claim that $C\leq _{T}G^{\prime }$ and, in particular, $C(n)=\lim
+G(n,s)$ for every $n$. Given $n$, there is obviously a $j$ such that for
+every $e\leq n$, $e\in G^{\prime }\Leftrightarrow \Phi _{e}^{\sigma
+_{j}}(e)\downarrow $ and $C_{|\sigma _{j}|}(e)=C(e)$. By the definition of
+our forcing notion, $G(n,t)=C_{|\sigma _{j}|}(n)=C(n)$ for $t\geq |\sigma
+_{j}|$.
+
+To see that $G^{\prime }\leq _{T}C$, assume we have determined $G^{\prime
+}\upharpoonright n$ and want to decide if $n\in G^{\prime }$. Recursively in 
+$C\geq _{T}A\vee 0^{\prime }$ find $j$ and $k$ large enough so that $%
+C\upharpoonright n=C_{j}\upharpoonright n$, $\sigma _{k+1}=d(\sigma
+_{k},\left\langle n,j\right\rangle )$ and $G^{\prime }\upharpoonright
+n=F(\sigma _{k+1})\upharpoonright n$. (It is clear, first, that there are
+such $j$ and $k$ and then that they can be recognized recursively in $C$
+which computes both the sequence $\sigma _{i}$ and $d$.) It is now clear
+from the definition of $D_{n,j}$ and our notion of forcing that $n\in
+G^{\prime }\Leftrightarrow \Phi _{n}^{\sigma _{k}}(n)\downarrow $.
+\end{proof}
+
+We now apply our general theorem to an $A$-recursive notion of forcing
+chosen to produce relative recursive enumerability.
+
+\begin{theorem}
+\label{anr} If $\mathbf{a}\in \mathbf{ANR}$ then $\mathbf{a}$ is $\mathbf{RRE%
+}$. Indeed, there are $e$ and $i$ such that, for every $ANR$ function $f$, $%
+\Phi _{e}(f)<_{T}f$ and $W_{i}^{\Phi _{e}(f)}\equiv _{T}f$.
+\end{theorem}
+
+\begin{proof}
+Suppose $f\in \mathbf{a}$ is $ANR$. Let $A$ be the graph of $f$ (and so $%
+A\equiv _{T}f$). We use an $A$-recursive notion of forcing $\mathcal{P}$
+with conditions $p=\langle p_{0},p_{1},p_{2}\rangle $, $p_{i}\in 2^{<\omega
+} $ such that
+
+\begin{enumerate}
+\item $|p_{0}|=|p_{1}|$, $p_{0}(d_{n})=A(n-1)$, $p_{1}(d_{n})=1-A(n-1)$
+where $d_{n}$ is $n^{th}$ place where $p_{0},p_{1}$ differ and
+
+\item $(\forall e<|p_{0}\oplus p_{1}|)(e\in p_{0}\oplus p_{1}\Leftrightarrow
+\exists x(\langle e,x\rangle \in p_{2}))$.
+\end{enumerate}
+
+\noindent Extension in this notion of forcing is defined simply by $q\leq _{%
+\mathcal{P}}p\Leftrightarrow q_{i}\supseteq p_{i}$ but note that this
+applies only to $p$ and $q$ in $P$. Membership in $P$ and $\leq _{\mathcal{P}%
+}$ are clearly recursive in $A$.
+
+Our plan is to define a class $\mathcal{C}$ of dense sets $D_{n}$ with a
+density function $d(p,n)$ recursive in $A\oplus 0^{\prime }$ with $0^{\prime
+}$ use recursively bounded. Theorem \ref{dom}(ii) then supplies a $\mathcal{C%
+}$-generic sequence $\left\langle p_{s}\right\rangle \leq _{T}A$ from which
+we can define the required $G\leq _{T}A$ in which $\mathbf{a}$ is r.e.\ If $%
+p_{s}=\left\langle p_{s,0},p_{s,1},p_{s,2}\right\rangle $ we let $G_{i}=\cup
+\{p_{s,i}|s\in \mathbb{N\}}$ for $i=0,1,2$ so $G_{i}\leq _{T}A$. {Then, if
+we can force $G_{0}$ and $G_{1}$ to differ at infinitely many places, $%
+G_{0}\oplus G_{1}\equiv _{T}A$.} On the other hand, the definition of the
+notion of forcing obviously makes {$G_{0}\oplus G_{1}$ r.e.\ in }$G_{2}$.
+Thus $\mathbf{a}$ will be r.e.\ in $\mathbf{g=}\deg (G_{2})$. We will have
+other requirements that make $\mathbf{g<a}$ as well.
+
+We begin with the dense sets that provide the differences we need: 
+\begin{equation*}
+D_{2n}=\{p\in \mathcal{P}:p_{0},p_{1}\text{ differ at at least $n$ points}\}.
+\end{equation*}%
+We define the required function $d(r,2n)$ by recursion on $n$. Given $r$ and 
+$n+1$, we suppose we have calculated $d(r,2n)=p=\langle
+p_{0},p_{1},p_{2}\rangle \in D_{2n}$ with $p\leq _{\mathcal{P}}r$. If $%
+p\notin D_{2n+2}$, we need to compute a $q=\langle q_{0},q_{1},q_{2}\rangle
+\in D_{2n+2}$ with $q\leq _{\mathcal{P}}p$. Let $q_{0}=p_{0}\symbol{94}A(n)$%
+, $q_{1}=p_{1}\symbol{94}(1-A(n))$. Choose $i\in \{0,1\}$ such that $%
+q_{i}(|p_{0}|)=1$. Define $q_{2}\supseteq p_{2}$ by choosing $x$ large and
+setting $q_{2}(\left\langle 2|p_{0}|+i,x\right\rangle )=1$ and $q_{2}(z)=0$
+for all $z\notin \limfunc{dom}(p_{2})$ and less than $\left\langle
+2|p_{0}|+i,x\right\rangle $. Now $q=\langle q_{0},q_{1},q_{2}\rangle $
+satisfies the requirements to be a condition in $P$. It obviously extends $p$
+and is in $D_{2n+2}$. This computation is clearly recursive in $A$.
+
+We must now add dense sets to guarantee that $A\nleq _{T}G_{2}$. A direct
+route is to let 
+\begin{eqnarray}
+D_{2n+1} &=&\{p\in \mathcal{P}:~\exists x(\Phi _{n}^{p_{2}}(x)\downarrow
+\neq A(x))~\text{or }\forall (\sigma _{0},\sigma _{1}\supseteq
+p_{2})[\exists x(\Phi _{n}^{\sigma _{0}}(x)\downarrow \neq \Phi _{n}^{\sigma
+_{1}}(x))\downarrow \Rightarrow   \notag \\
+(\exists i &\in &\{0,1\})(\exists \left\langle e,x\right\rangle
+)(e<|p_{0}\oplus p_{1}|~\&~\sigma _{i}(\left\langle e,x\right\rangle )=1\neq
+(p_{0}\oplus p_{1})(e)]\}.  \notag
+\end{eqnarray}%
+Of course, the first alternative guarantees that $\Phi _{n}^{G_{2}}\neq A$
+while the second that $\Phi _{n}^{G_{2}}$, if total, is recursive. The point
+here is that if some $p_{s}$ in our generic sequence satisfies the second
+clause then, we can, for any $z$, calculate $\Phi _{n}^{G_{2}}(z)$ by
+finding any $\sigma \supseteq p_{s,2}$ such that $\Phi _{n}^{\sigma
+}(z)\downarrow $ and taking its value as $\Phi _{n}^{G_{2}}(z)$. There is
+such a $\sigma \subseteq G_{2}$ as $\Phi _{n}^{G_{2}}$ is assumed to be
+total and $G_{2}\supseteq p_{s,2}$. If there were some other $\tau \supseteq
+p_{s,2}$ with $\Phi _{n}^{\tau }(z)\downarrow \neq \Phi _{n}^{\sigma
+}(z)\downarrow $ then, by our choice of $s$ and the definition of $D_{2n+1}$%
+, there is no $\left\langle e,x\right\rangle $ with $e<|p_{0}\oplus p_{1}|$
+such that $\tau (\left\langle e,x\right\rangle )=1\neq (p_{0}\oplus p_{1})(e)
+$. Thus we could form a condition $q\leq _{\mathcal{P}}p_{s}$ with $%
+q_{2}=\tau $ by extending $p_{0}$ and $p_{1}$ by setting $q_{1}(w)=q_{2}(w)=1
+$ (for $w\geq |p_{0}|$) if either $\left\langle 2w,v\right\rangle $ or $%
+\left\langle 2w+1,v\right\rangle $ is in $\tau $ for any $v$. In this way,
+no new differences between $q_{0}$ and $q_{1}$ (not already in $p_{0}$ and $%
+p_{1}$) occur and the definition of being a condition is satisfied. Thus $q$
+is a condition extending $p_{s,2}$ with $\Phi _{n}^{q_{2}}(z)\downarrow \neq
+A(z)$ contradicting our choice of $s$.
+
+We compute the required density function $d(q,2n+1)$ as follows. Given $q$
+we ask one question of $0^{\prime }$ determined recursively in $q$: Are
+there extensions $\sigma _{0},\sigma _{1}$ of $q_{2}$ that would show that $%
+q $ does not satisfy the second disjunct in the definition of $D_{2n+1}$. If
+not, let $d(q,2n+1)=q$ which is already in $D_{2n+1}$. If so, we find the
+first such pair (appearing in a recursive search) and ask $A$ which $\sigma
+_{i}$ gives an answer different from $A(x)$. We now need a condition $%
+r=d(q,2n+1)$ extending $q$ with third coordinate $r_{2}$ extending $\sigma
+_{i}$. For each $\left\langle e,x\right\rangle $ with $e\geq |q_{1}\oplus
+q_{2}|)$ and $\sigma _{i}(\left\langle e,x\right\rangle )=1$ we define $%
+r_{j}(z)=1$ for both $j\in \{0,1\}$ for the $z$ that makes $(r_{0}\oplus
+r_{1})(e)=1$ and otherwise we let $r_{j}(u)=0$ for all other $u$ less than
+the largest element put into either $r_{0}$ or $r_{1}$ by the previous
+procedure. We now extend $\sigma _{i}$ to the desired $r_{2}$ by putting in $%
+\left\langle k,y\right\rangle $ for a large $y$ for all those $k\geq |q_{1}|$
+put into $r_{0}\oplus r_{1}$ for which there is no $\left\langle
+k,w\right\rangle $ in $\sigma _{i}$. Otherwise we extend $\sigma _{i}$ by $0$
+up to the largest element put in by this procedure. It is clear that this
+produces a condition $r$ as required. (No points of difference between $%
+r_{0} $ and $r_{1}$ are created that were not already present in $q$.)
+
+We now apply Theorem \ref{dom} to get a $\mathcal{C}$-generic sequence $%
+\left\langle p_{s}\right\rangle \leq _{T}A$. As promised, we let $G_{i}=\cup
+\{p_{s,i}|s\in \mathbb{N\}}$ for $i=0,1,2$ and, as described above, $A\equiv
+_{T}G_{0}\oplus G_{1}$ which is r.e.\ in $G_{2}$. In addition, the
+conditions in $D_{2n+1}$ guarantee (as above) that $\Phi _{n}^{G_{2}}\neq A$
+as well. The uniformity assertions follow immediately from those in Theorem %
+\ref{dom} and our construction.
+\end{proof}
+
+We now point out some additional information about $G_{2}$ that can be
+extracted from this construction.
+
+\begin{proposition}
+\label{relngl2}For the $G_{2}$ constructed in the proof of Theorem \ref{anr}
+such that the given $A\in \mathbf{ANR}$ is r.e.\ in and strictly above $%
+G_{2} $ we also have $G_{2}^{\prime }\equiv _{T}A\oplus 0^{\prime }$ and so
+if $A\in \overline{\mathbf{GL}_{2}}$ then $A$ is also $\overline{\mathbf{GL}%
+_{2}}(G_{2})$, i.e. $(A\oplus G_{2}^{^{\prime }})^{\prime }<_{T}A^{\prime
+\prime } $.
+\end{proposition}
+
+\begin{proof}
+We first claim that $G_{2}^{\prime }\leq _{T}A\vee 0^{\prime }$. To see if $%
+e\in G_{2}^{\prime }$, recursively compute an $n$ such that, for every $\tau 
+$, $\Phi _{n}^{\tau }(x)=\tau (x)$ if $\Phi _{e}^{\tau }(e)\downarrow $ and
+is divergent otherwise. Now, recursively in $A\oplus 0^{\prime }$ find an $s$
+such that $p_{s+1}=d(p_{s},2n+1)$. If $p_{s+1}$ is in $D_{2n+1}$ because of
+the first clause of the definition then $\Phi _{n}^{p_{s+1,2}}(x)\downarrow $
+for some $x$ and so $e\in G_{2}^{\prime }$. Otherwise we claim $e\notin
+G_{2}^{^{\prime }}$. Suppose for the sake of a contradiction that, for some $%
+t$, $\Phi _{e}^{p_{t,2}}(e)\downarrow $. It is now easy to get extensions of 
+$p_{t,2}$ that show that $p_{s+1}$ does not satisfy the second clause of the
+definition of $D_{n}$ for the desired contradiction. Simply choose $%
+y>2|p_{s,0}|,|p_{t,2}|$ and extend $p_{t,2}$ by $0$ up to $\left\langle
+y,0\right\rangle $ and then with $i=0,1$ at $\left\langle y,0\right\rangle $
+to get the required $\sigma _{i}$. On the other hand, as $\mathbf{a}$ is
+r.e.\ in $G_{2}$, $A\oplus 0^{\prime }\leq _{T}G_{2}^{\prime }$ and $%
+G_{2}^{\prime }\equiv _{T}A\oplus 0^{\prime }$ as desired. If $\mathbf{a}\in 
+\overline{\mathbf{GL}_{2}}$, $\mathbf{a}^{\prime \prime }>(\mathbf{a\vee 0}%
+^{\prime })^{\prime }$ and so $\mathbf{a}^{\prime \prime }>(\mathbf{a\vee g}%
+_{2}^{\prime })^{\prime }$ as required.
+\end{proof}
+
+A reasonable question now would be to ask for an analogous result for $%
+\mathbf{ANR}$ degrees to that given in this Proposition for $\overline{%
+\mathbf{GL}_{2}}$ based on our Definition \ref{anrreldef} of relative array
+nonrecursiveness.
+
+\begin{theorem}
+\label{anrrrerel}If $\mathbf{a}$ is $\mathbf{ANR}$ then there is a $\mathbf{g%
+}$ relative to which $\mathbf{a}$ is both r.e.\ and $\mathbf{ANR}$.
+\end{theorem}
+
+\begin{proof}
+We replace the sets $D_{2n+1}$ of the proof of Theorem \ref{anr} with new
+ones (also called $D_{2n+1}$) that force a maximal number of convergences of 
+$\Phi _{n}^{G_{2}}(m)$. We here directly specify the (calculation procedure
+for the) associated density functions $d(p,2n+1)$: We ask $2^{p}$ many
+questions of $0^{\prime }$. For each subset $F$ of $\{i|i<p\}$ we ask if
+there is a $\sigma \supseteq p_{2}$ \textquotedblleft adding no new
+numbers\textquotedblright\ (i.e. $\lnot \exists \left\langle
+e,x\right\rangle (e<|p_{0}\oplus p_{1}|~\&~\sigma (\left\langle
+e,x\right\rangle )=1\neq (p_{0}\oplus p_{2})(\left\langle e,x\right\rangle )$%
+) that makes $\Phi _{n}^{\sigma }(m)\downarrow $ for every $m\in F$. We take
+a maximal such $F$ and find the first extension $\sigma >p$ witnessing the
+convergences for $m\in F$. We then get an extension $q$ of $p$ with third
+coordinate extending $\sigma $ as before. Note that by the usual coding of
+binary sequences and triples, $q>p$ as well. By induction then if $g(m)$ is
+the $m$th stage $s$ at which we have $p_{s+1}=d(p_{s},2n+1)$ for some $n$, $%
+p_{g(m)}>m$. Note that this procedure also satisfies the hypotheses of
+Theorem \ref{dom}(ii). The $D_{2n+1}$ are declared satisfied and unsatisfied
+as before but note that they become unsatisfied when we discover that the $F$
+associated with the extension used was not maximal (this is, after all, part
+of the computation on which we based the calculation of $d$). By the proof
+of Theorem \ref{dom}, there are infinitely many $m$ such that the $D_{2n+1}$
+declared satisfied at $g(m)$ is never declared unsatisfied. So in particular
+for such $m$, for every $e<m$ with $e\in G_{2}^{\prime }$, $\Phi
+_{e}^{p_{g(m)+1,2}}(e)\downarrow $. Thus if we now define $h(m)$ as the
+stage in the standard enumeration of $G_{2}^{\prime }$ at which all the
+numbers $e$ such that $\Phi _{e}^{p_{g(m)+1,2}}(e)\downarrow $ have been
+enumerated in $G_{2}^{\prime },$ then, for each of these infinitely many $m$%
+, $h(m)$ will be at least as large as the modulus function for $%
+G_{2}^{\prime }$ (relative to $G_{2}$) at $m$.
+\end{proof}
+
+In the next section we will improve Theorem \ref{anr} when $\mathbf{a\in 
+\overline{\mathbf{GL}_{2}}}$ by making the degree witnessing that $\mathbf{a}
+$ is $\mathbf{RRE}$ 1-generic. Here we present another extension to $\mathbf{%
+ANR}$ of a result result from [ASDWY] about $\overline{\mathbf{GL}_{2}}$
+both as an illustration of our general methodology as well as an
+introduction of the coding techniques that will be exploited in the next
+section.
+
+\begin{definition}
+\label{wo}For any set $G$, we define a relationship $\mathbf{as}(e,G)=\sigma 
+$, the number $e$ is \emph{assigned to (the string)} $\sigma $ to hold when $%
+\sigma $ is the shortest $\tau \subset G$ such that $\Phi _{e}^{\tau
+}(e)\downarrow $. If $\mathbf{as}(e,G)=\sigma $, we define the \emph{weak
+order} \emph{of} $e$ \emph{along} $G$, $\mathbf{wo}(e,G)$, recursively as
+one more than the weak order of $e^{\prime }$ along $G$ where $e^{\prime }$
+is the unique $x<e$ such, for some $\tau \subset \sigma $, $\mathbf{as}%
+(x,G)=\tau $ and for no $e^{\prime \prime }<x$ and $\rho $ with $\tau
+\subset \rho \subset \sigma $ is $\mathbf{as}(e^{\prime \prime },G)=\rho $.
+If there is no such $x$, then $\mathbf{wo}(e,G)=0$. We define $\mathbf{as}%
+(e,\rho )=\sigma $ and the weak order of $e$ along $\rho $ similarly for
+strings $\rho $.
+\end{definition}
+
+Intuitively, we first assign numbers to strings along $G$, and then for any $%
+e$ assigned to $\sigma $, we search downward from $\sigma $ for the first $%
+e^{\prime }<e$ assigned. The weak order of $e$ is then the weak order of $%
+e^{\prime }$ plus $1$. We use these notions to code $\mathbf{a}$ into $%
+\mathbf{g}^{\prime }$ in Proposition \ref{anr1gen}.
+
+\begin{remark}
+Without loss of generality we may clearly choose our master list of
+computations so that for any $\tau $ there is at most one $e$ such that $%
+\Phi _{e}^{\tau }(e)\downarrow $ but $\Phi _{e}^{\tau ^{-}}(e)\uparrow $. So
+along any $G$ each node is assigned at most one number.
+\end{remark}
+
+\begin{notation}
+For any string $\sigma $, we let $\sigma ^{-}$ be the initial segment of $%
+\sigma $ gotten by removing the last number in $\sigma $. If there is a set $%
+G$ (string $\tau $) that is clear from the context such that $\sigma \subset
+G$ ($\tau $), $\sigma ^{+}$ will denote $\sigma \symbol{94}G(|\sigma |)$ ($%
+\sigma \symbol{94}\tau (|\sigma |)$).
+\end{notation}
+
+\begin{proposition}
+\label{anr1gen}If $\mathbf{a}\in \mathbf{ANR}$ then there is an $1$-generic
+degree $\mathbf{g}$ recursive in $\mathbf{a}$ such that $\mathbf{g}^{\prime
+}=\mathbf{a}\vee \mathbf{0}^{\prime }$. Indeed, there is an $e$ such that,
+if $f$ is $ANR$, then $\Phi _{e}^{f}$ is 1-generic and $\Phi _{e}(f)^{\prime
+}\equiv _{T}f\oplus 0^{\prime }$ (and this equivalence is also given
+uniformly).
+\end{proposition}
+
+\begin{proof}
+We again begin with $A$ being the graph of $f$. Our forcing conditions are
+binary strings. Membership of $\rho $ in $\mathcal{P}$ is defined
+recursively: if $\sigma \subsetneq \rho $ is the longest initial segment of $%
+\rho $ such that $\mathbf{as}(e,\rho )=\sigma $ for some $e$ then we require
+that $\sigma ^{+}(|\sigma |)=A(\mathbf{wo}(e,\rho ))$; moreover, if $\tau $
+is the longest initial segment of $\sigma $ such that $\mathbf{as}(e^{\prime
+},\rho )=\tau $ for some $e^{\prime }<e$ then $\tau ^{+}$ is also
+(recursively required to be) in $\mathcal{P}$. (By default, for the base
+case, if no number is assigned to any $\sigma \subset $ $\tau $, then $\tau
+\in \mathcal{P}$.) Thus $\mathcal{P}$ is clearly recursive in $A$. The order 
+$\sigma \leq _{\mathcal{P}}\tau $ for our notion of forcing is the usual
+extension relation on strings, $\sigma \supseteq \tau $.
+
+Our dense sets will be:%
+\begin{equation*}
+D_{n}=\{\sigma \in \mathcal{P}|\Phi _{n}^{\sigma }(n)\downarrow ~\text{or~}%
+(\forall \tau \supset \sigma )(\Phi _{n}^{\tau ^{-}}(n)\downarrow ~\text{or~}%
+\Phi _{n}^{\tau }(n)\uparrow ~\text{or~}(\forall i)(\tau \symbol{94}i\notin 
+\mathcal{P}))\}\text{.}
+\end{equation*}%
+Now we define an appropriate density function $d(p,n)$. Consider any $\rho
+\in \mathcal{P}$. (If $\rho \notin \mathcal{P}$, we let $d(\rho ,n)=1$ for
+any $n$.) In order to find $\sigma \leq _{\mathcal{P}}\rho $ in $D_{n}$, we
+first check whether $\Phi _{n}^{\rho }(n)\downarrow $, if so we are done, if
+not then ask whether there is $\sigma \supset \rho $ such that $\Phi
+_{n}^{\sigma }(n)\downarrow $, $\Phi _{n}^{\sigma ^{-}}(n)\uparrow $ and $%
+\sigma \symbol{94}A(\mathbf{wo}(n,\sigma ))\in \mathcal{P}$. If so, $\sigma 
+\symbol{94}A(\mathbf{wo}(n,q))\in D_{n}$ and $\sigma \symbol{94}A(\mathbf{wo}%
+(n,q)\leq _{\mathcal{P}}\rho .$ If not, $\rho \in D_{n}$. The second
+question only requires $A\upharpoonright n$ to determine the question it
+asks of $0^{\prime }$. The rest of the procedure is recursive in $A$ and so $%
+d$ satisfies the hypotheses of Theorem \ref{dom}(ii).
+
+Theorem \ref{dom}(ii) now provides a sequence $\left\langle \sigma
+_{i}\right\rangle \leq _{T}A$ meeting all the $D_{n}$. Our desired $G$ is $%
+\cup \sigma _{i}$. So $G\leq _{T}A$. To see that $G$ is $1$-generic, we need
+to check that for any $e$ there is a node $\sigma \subset G$ which forces $%
+e\in G^{\prime }$ or $e\notin G^{\prime }$. Note that there is an $i$ such
+that $\sigma _{i}$ decides if $e^{\prime }\in G^{\prime }$ for every $%
+e^{\prime }<e$ (by induction) and $\sigma _{i+1}\in D_{e}$ (by the
+genericity of the sequence and the closure of the $D_{n}$ under extension in 
+$\mathcal{P}$). Of course, if $\Phi _{e}^{\sigma _{i+1}}(e)\downarrow $ we
+are done. Otherwise, we claim that $\sigma _{i+1}$ forces $e\notin G^{\prime
+}$. If not, then we can find the first $\tau \supset \sigma _{i}$ such that $%
+\Phi _{e}^{\tau }(e)\downarrow $, take a one-bit extension of $\tau $ by
+coding in $A(\mathbf{wo}(e,\tau ))$, then this $\tau ^{+}\in \mathcal{P}$
+because all $e^{\prime }<e$ in $G^{\prime }$ are forced in by strings
+shorter than $\sigma _{i}$. This contradicts the fact that $\sigma _{i+1}\in
+D_{n}$.
+
+Now we have $G^{\prime }\leq _{T}G\vee 0^{\prime }\leq _{T}A\vee 0^{\prime }$
+and it remains to show that $A\leq _{T}G^{\prime }$. We say some pair $%
+(e,\tau )$ has true weak order $n=\mathbf{wo}(e,\tau )$, if no string
+extending $\tau $ can have an assignment $e^{\prime }$ with weak order $n$,
+i.e., any $e^{\prime }$ assigned after $\tau $ is greater than $e$. For such 
+$a$ pair $(e,\tau )$, we must have $\tau ^{+}(|\tau |)=A(\mathbf{wo}(e,\tau
+))=A(n)$. Finally, for every $n$ we can use $G^{\prime }$ to find the unique
+pair $(e,\tau )$ with true weak order $n$, so $A\leq _{T}G^{\prime }$.
+
+As usual the desired uniformities are immediate from those of Theorem \ref%
+{dom}(ii) and our construction.
+\end{proof}
+
+\section{$\overline{\mathbf{GL}_{2}}$ degrees\label{ngl2sec}}
+
+Theorem \ref{anr} provides a procedure that, given any $\mathbf{ANR}$ degree 
+$\mathbf{a}$, produces a $\mathbf{g}<\mathbf{a}$ in which $\mathbf{a}$ is
+r.e. We now show how to make $\mathbf{g}$ 1-generic if $\mathbf{a\in 
+\overline{\mathbf{GL}_{2}}}$ much more directly than is done in [ASDWY].
+
+\begin{theorem}
+\label{ngl21gen}\emph{([ASDWY]) }If $\mathbf{a}\in \overline{\mathbf{GL}_{2}}
+$, then it is r.e.\ in and above a $1$-generic degree.
+\end{theorem}
+
+\begin{proof}
+Given a finite string $\sigma$, we define the \emph{rank} of $\sigma$ ($%
+\mathbf{rk}(\sigma)$) as the maximum weak order along $\sigma$.
+
+Define a notion of forcing $\mathcal{P}$ consisting of all $p=\langle
+p_{0},p_{1},p_{2}\rangle $, $p_{0},p_{1},p_{2}\in 2^{<\omega }$ such that:
+
+\begin{enumerate}
+\item $p_{0}$ and $p_{1}$ are of the same length and if $m$ is the $n$th
+position at which they differ, $p_{0}(m)=1-p_{1}(m)=A(n-1)$.
+
+\item For $n<|p_{0}\oplus p_{1}|$, $n\in p_{0}\oplus p_{1}$ if and only if
+there exists $\sigma \subsetneq p_{2}$ and an $e$ assigned to $\sigma $ with
+weak order $n$ and $p_{2}(|\sigma |)=1$ (i.e. $\sigma ^{+}(|\sigma |)=1$).
+
+\item $2|p_{0}|=\mathbf{rk}(p_{2})$.
+\end{enumerate}
+
+Let $q\leq _{\mathcal{P}}p$ if $q_{i}\supset p_{i}$ for each $i$. Clearly
+this notion of forcing is $A$-recursive. Intuitively, if we get $\langle
+A_{0},A_{1},G\rangle $ from a sufficiently generic sequence (recursive in $A$%
+), then $A\equiv _{T}A_{0}\oplus A_{1}$ which is r.e.\ in (and above) $G$.
+To determine whether $n\in A_{0}\oplus A_{1}$, one simply runs through $G$
+checking whether there is a node with weak order $n$ and a $1$ coded right
+after that. We also want to guarantee the $1$-genericity of $G$.
+
+Given $p\in \mathcal{P}$, we say $\tau \supset p_{2}$ \emph{respects} $p$ if
+there is no $(n,\sigma )$ such that $n<|p_{0}\oplus p_{1}|$, $n\notin
+p_{0}\oplus p_{1}$, $\sigma $ is between $p_{2}$ and $\tau $ with some
+number $e$ assigned to it and of weak order $n$ and $\tau (|\sigma |)=1$. So
+if $\tau $ does not respect $p$, then we cannot extend $p$ to a condition $q$
+with $q_{2}$ extending $\tau $ because any such extension would violate
+clause (2) in the definition of our notion of forcing. Conversely, the
+following holds:
+
+\begin{lemma}
+\label{l1}If $p\in \mathcal{P}$, $\mathbf{rk}(p_{2})>n$, $\Phi
+_{n}^{p_{2}}(n)\uparrow $, $\tau \supset p_{2}$ respects $p$ and $n$ is
+assigned to $\tau $, then there exists a $q\leq _{\mathcal{P}}p$ such that $%
+q_{2}\supset \tau $ and so one can be found recursively in $A$.
+\end{lemma}
+
+\begin{proof}
+We first try to extend $p_{0}$ and $p_{1}$. If we use $\tau $ and blindly
+follow the dictates of clause (2) of our definition of $\mathcal{P}$ to
+extend $p_{0},p_{1}$, we might violate clause (1). However, it is easy to
+see that we can fix this by extending $\tau $ by putting $1$'s after some
+nodes with certain weak orders between $\mathbf{rk}(p_{2})$ and $\mathbf{rk}%
+(\tau )$. Notice that $\mathbf{wo}(n,\tau )\leq n$ and $\mathbf{rk}(p_{2})>n$%
+, and those weak orders that need adjustments are $>n$, so we can extend $%
+\tau $ and wait for those weak orders to appear, then code in $1$'s after
+some of them so that we meet the requirements of clause (1).
+\end{proof}
+
+Define dense sets:%
+\begin{equation*}
+D_{n}=\{p:\Phi _{n}^{p_{2}}(n)\downarrow \hbox{ or }\forall \tau \supset
+p_{2}(\Phi _{n}^{\tau }(n)\uparrow )\}.
+\end{equation*}%
+These $D_{n}$ will guarantee that $G=\cup _{i}\{p_{i,2}\}$ is $1$-generic.
+We need to define a density function recursively in $A\oplus 0^{\prime }$.
+
+Given $p$, assume $\Phi _{n}^{p_{2}}(n)\uparrow $ and $\mathbf{rk}(p_{2})>n$
+(as we can always extend a string respectfully). We first ask whether there
+is a $\tau $ extending $p_{2}$ which makes $\Phi _{n}^{\tau }(n)\downarrow $
+and respects $p$. If so we find the first such $\tau $ and notice that $n$
+is assigned to $\tau $. Then, by Lemma \ref{l1}, we can find $q\in D_{n}$
+extending $p$. If not, we claim that we can find $q\leq _{\mathcal{P}}p$
+with $q\in D_{n}$ and $\Phi _{n}^{q_{2}}(n)\uparrow $, i.e. $q$ forces $%
+n\notin G^{\prime }$.
+
+Next we ask ($0^{\prime }$) whether there is a $\tau $ extending $p_{2}$
+which makes $\Phi _{n}^{\tau }(n)\downarrow $. If not then $p$ is already in 
+$D_{n}$. If so, find the first one $\tau _{1}$, then, by the negative answer
+to our first question, we know that $\tau _{1}$ does not respect $p$. Find
+the first initial segment $\eta _{1}$ of $\tau $ which does not respect $p$,
+i.e., $\eta _{1}^{-}$ is assigned a number with weak order $<\mathbf{rk}%
+(p_{2})$, $\eta _{1}(|\eta _{1}|-1)=1$ but the definition of $\eta _{1}$
+respecting $\tau $ would require it to be $0$. Then put $\xi _{1}=\eta
+_{1}^{-}\ast 0$, that is, we change the last bit to respect $p$.
+
+Note that $\Phi _{n}^{\xi _{1}}(n)\uparrow $ because $\xi _{1}$ respects $p$%
+. Now ask ($0^{\prime }$) whether $\xi _{1}$ forces $n\notin G^{\prime }$.
+If so, then we are done by (a slight variation of) Lemma \ref{l1}. If not,
+we repeat this process: find $\tau _{2}\supset \xi _{1}$ which makes $\Phi
+_{n}^{\tau _{2}}(n)\downarrow $, then find the first initial segment of $%
+\tau _{2}$ which does not respect $p$, change the last bit and get a $\xi
+_{2}$ which respects $p$.
+
+We can continue this process but at each repetition we need some new
+extension assigned a number with weak order $<\mathbf{rk}(p_{2})$. Therefore
+this process cannot continue forever, i.e. we will eventually stop and get a 
+$\xi _{i}$ which respects $p$ and which forces $n\notin G^{\prime }$.
+Finally use Lemma \ref{l1} to get $q\leq _{\mathcal{P}}p$, $q_{2}\supset \xi
+_{i}$ and $q\in D_{n}$.
+
+To make sure that $A_{0}$ and $A_{1}$ have infinitely many points of
+difference we add another sequence of dense sets:%
+\begin{equation*}
+D_{n}^{\ast }=\{p:p_{0},p_{1}\hbox{ differ at at least $n$ positions}\}
+\end{equation*}%
+This is similar to the last part of Lemma \ref{l1}: for any $p$, one has to
+be careful extending $p_{2}$ while still satisfying clauses (1) and (2) and
+yet adding a point of difference. Since we don't have any other
+requirements, this process is easy and recursive in $A$.
+\end{proof}
+
+Our final step is to prove that if $\mathbf{a\in }$\textbf{$\overline{%
+\mathbf{GL}_{2}}$} then every $\mathbf{b\geq }~\mathbf{a}$ is r.e.\ in a
+1-generic strictly below it. We prove a seemingly quite different
+proposition from which this result will easily follow.
+
+\begin{proposition}
+Every $\mathbf{a}\in \overline{\mathbf{GL}_{2}}$ computes an infinite binary
+tree $T$ in $2^{<\omega }$ such that for any path $C\in \lbrack T]$, $C$ is $%
+1$-generic, $C$ does not compute $\mathbf{a}$ and $\mathbf{a}$ is r.e.\ in $%
+C $ (but not necessarily above $C$).
+\end{proposition}
+
+\begin{proof}
+We now also arrange our master list of computations so that there is no $%
+\tau $ of even length such that $\Phi _{e}^{\tau }(e)\downarrow $ but $\Phi
+_{e}^{\tau ^{-}}(e)\uparrow $. Thus no string of even length is assigned a
+number.
+
+We say a string $\tau $ is $A$-admissible if there exist $p_{0},p_{1}$ s.t. $%
+\langle p_{0},p_{1},\tau \rangle $ is a forcing condition in the sense of
+the previous construction. Note that $p_{0}$ and $p_{1}$ are uniquely
+determined by $\tau $. We will denote them by $p_{0}(\tau )$ and $p_{1}(\tau
+)$, respectively.
+
+We say $\tau$ respects $\sigma$ if $\tau$ respects $\langle
+p_0(\sigma),p_1(\sigma),\sigma\rangle$ as in the previous construction.
+
+Now we define a new notion of forcing: $\mathcal{P}$ consists of finite
+binary trees such that every leaf is $A$-admissible. We let $q\leq _{%
+\mathcal{P}}p$ if $q$ is a binary tree extending $p$, and each leaf of $q$
+respects the corresponding leaf in $p$ that it extends.
+
+We define dense sets:%
+\begin{equation*}
+D_{n}=\{p:\hbox{ for every leaf $\sigma$ of p, }\Phi _{n}^{\sigma
+}(n)\downarrow \hbox{ or }\forall \tau \supset \sigma (\Phi _{n}^{\tau
+}(n)\uparrow )\}.
+\end{equation*}%
+\begin{equation*}
+D_{n}^{\ast }=\{p:%
+\hbox{ for every leaf $\sigma$ of p, $p_0(\sigma)$ and
+$p_1(\sigma)$ differ at at least $n$ positions}\}
+\end{equation*}%
+These two types of dense sets are handled in the same way as in the previous
+construction. For every leaf, after we find an extension satisfying the
+conditions in $D_{n}$ (or $D_{n}^{\ast }$), we can assume that it has even
+length and extend it by $0$ and $1$ to split it into two leaves. This
+preserves $A$-admissibility since no number is assigned to nodes of even
+length.
+
+Next, we want to make sure that no path $C$ can compute $A$. Define
+additional dense sets as follows:%
+\begin{equation*}
+E_n=\{p: \hbox{ for every leaf $\sigma$ of $p$, } [\exists
+x\Phi_n^\sigma(x)\downarrow\neq A(x)
+\end{equation*}%
+\begin{equation*}
+\hbox{ or } \exists x\forall\tau\supset\sigma(%
+\hbox{$\tau$ respects
+$\sigma$}\Rightarrow \Phi_n^\tau(x)\uparrow)]\}
+\end{equation*}
+
+Now given $\sigma $, a leaf of $p$, we first fix a recursive list of
+strictly increasing indices $n_{0}<n_{1}<...<n_{i}<...$ such that if $\Phi
+_{n}^{\tau }(i)\downarrow $ then for any $\tau ^{\prime }\supset \tau $
+which is large enough to allow for the spacing required by the conditions we
+imposed on our master list of computations, $\Phi _{n_{i}}^{\tau ^{\prime
+}}(n_{i})\downarrow $, and conversely $\Phi _{n_{i}}^{\tau ^{\prime
+}}(n_{i})\uparrow $ if no $\tau \subset \tau ^{\prime }$ makes $\Phi
+_{n}^{\tau }(i)\downarrow $.
+
+Let $\sigma _{i}=\sigma \ast 0^{j}$ where $j$ is the least such that $%
+\mathbf{rk}(\sigma \ast 0^{j})>n_{i}$ and $\mathbf{rk}(\sigma \ast 0^{j})$
+is even. Using $0^{\prime }$ and $A$ we go through the $\sigma _{i}$ asking
+whether: 
+\begin{equation*}
+\forall \tau \supset \sigma _{i}(\hbox{$\tau$ respects $\sigma_i$}%
+\Rightarrow \Phi _{n}^{\tau }(i)\uparrow )
+\end{equation*}
+
+If we ever get a\textquotedblleft yes\textquotedblright\ answer for some $%
+\sigma _{i}$, we output this $\sigma _{i}$ (note that $\sigma _{i}$ is
+always $A$-admissible and respects $\sigma $). If we get a \textquotedblleft
+no\textquotedblright\ answer for $\sigma _{i}$, we then find the first such $%
+\tau _{i}\supset \sigma _{i}$ which respects $\sigma _{i}$ and which makes $%
+\Phi _{n}^{\tau _{i}}(i)\downarrow $. If $\Phi _{n}^{\tau _{i}}(i)=$ $A(i)$
+we proceed to $i+1$. If $\Phi _{n}^{\tau _{i}}(i)\neq $ $A(i)$, then extend $%
+\tau _{i}$ to $\eta _{i}=\tau _{i}\ast 0^{k}$ for the first $k$ such that $%
+\eta _{i}$ is assigned the number $n_{i}$. Now this $\eta _{i}$ respects $%
+\sigma _{i}$ and by Lemma \ref{l1} we can find an extension $\eta $ of $\eta
+_{i}$ which is $A$-admissible, and then output $\eta $.
+
+Now we prove that we always halt in this process: Suppose not, then for any $%
+\sigma_i$ we would always get a ``yes'' answer and could find the first $%
+\tau_i\supset\sigma_i$ which respects $\sigma_i$ and $\Phi_n^{%
+\tau_i}(i)=A(i) $. That would make $A$ recursive.
+
+Finally we get extensions of all leaves of $p$ and then branch each them
+into two in the same way as in our analysis of $D_{n}$ and $D_{n}^{\ast }$.
+Now $E_{n}$ forces that, for each path $C$, either $\Phi _{n}^{C}$ is not
+total, or it is not $A$.
+\end{proof}
+
+\begin{theorem}
+\label{ngl2tree}If $\mathbf{a}\in \overline{\mathbf{GL}_{2}}$ and $\mathbf{b}%
+\geq \mathbf{a}$, then $\mathbf{b}$ is r.e.\ in and strictly above a $1$%
+-generic $\mathbf{c}$. Moreover, a $C\in \mathbf{c}$ can be found uniformly
+effectively in any $B\in \mathbf{b}$ from an index for an $A\in \mathbf{a}$
+as a set recursive in $B$ and an index for a function (recursive in $A$ and
+hence $B$) not dominated by a particular effectively determined function
+recursive $A\oplus 0^{\prime }$.
+\end{theorem}
+
+\begin{proof}
+Let $T$ be the tree recursive in $A$ constructed in the above Proposition.
+Given $B\geq _{T}A$, we let $C$ be the path in the tree gotten by following $%
+B$, i.e., $C=T(B)$. It is easy to see that $B\equiv _{T}A\oplus C$, so $B$
+is r.e.\ in and above $C$ which is, of course, 1-generic. Moreover, since $%
+A\nleq _{T}C$, $C$ is strictly below $B$.
+
+As for the uniformity assertions, we explain what we mean by describing the
+procedure. We are given $B$ and an index computing $A$ from $B$. From this
+information we can effectively find indices (from $A\oplus 0^{\prime }$) for
+the density functions for the sets $D_{n}$, $D_{n}^{\ast }$ and $E_{n}$ and
+then for the associated function $r$ (from $A\oplus 0^{\prime }$) used in
+the proof of Theorem \ref{dom}. The noneffective step is now to produce an
+index for the function $g\leq _{T}A$ which is not dominated by $r$. Given
+that index for $g$, the rest of the construction in the proof of Theorem \ref%
+{dom} proceeds effectively in $A$ and provides the generic sequence $%
+\left\langle p_{i}\right\rangle $ for our construction here and an index for
+it from $A$. Going from the sequence to the corresponding tree $T$ and then
+to the path $C=T(B)$ is then also uniformly effective in $B$.
+\end{proof}
+
+\section{Bibliography}
+
+%TCIMACRO{\TeXButton{parindent}{\hspace*{\parindent}}}%
+%BeginExpansion
+\hspace*{\parindent}%
+%EndExpansion
+Ambos-Spies, K., Ding, D., Wang, W. and Yu, L. [2009], Bounding non-GL$_{2}$
+and R.E.A., \emph{Journal of Symbolic Logic}, to appear.
+
+Cai, M. [2011], A $2$-minimal non-$\mathbf{GL}_{2}$ degree, \emph{Journal of
+Mathematical Logic}, to appear.
+
+Cai, M. [2012], Array nonrecursiveness and relative recursive enumerability, 
+\emph{Journal of Symbolic Logic}, to appear.
+
+Downey, R.\ G., Jockusch, C.\ G.\ jr.\ and Stob, M.\ [1990], Array
+nonrecursive sets and multiple permitting arguments, in \emph{Recursion
+Theory Week}, K.\ Ambos-Spies, G.\ H.\ M\"{u}ller and G.\ E.\ Sacks eds.,
+Springer-Verlag, Berlin, 141-174.
+
+Harizanov, V. [1998], Turing degrees of certain isomorphic images of
+computable relations, \emph{Ann. Pure and Applied Logic} \textbf{93},
+103-113.
+
+Hirschfeldt, D. and Shore, R. A. [2007], Combinatorial Principles Weaker
+than Ramsey's Theorem for Pairs, \emph{Journal of Symbolic Logic} \textbf{72}%
+, 171-206.
+
+Jockusch, C. G. Jr. and Posner, D. B. [1978], Double jumps of minimal
+degrees, \emph{Journal of Symbolic Logic} \textbf{43}, 715-724.
+
+Lerman, M.\ [1983], \emph{Degrees of Unsolvability}, Perspectives in
+Mathematical Logic, Springer-Verlag, Berlin.
+
+Robinson, R. W. [1971], Jump restricted interpolation in the recursively
+enumerable degrees, \emph{Annals of Mathematics (2)} \textbf{93, }586-596.
+
+Shoenfield, J. R. [1959], On degrees of unsolvability, \emph{Annals of
+Mathematics (2)} \textbf{69, }644-53.
+
+Shore, R. A. [1981], The theory of the degrees below $0^{\prime }$, \textit{%
+Journal of the London Mathematical Society} \textbf{24} (1981), 1-14.
+
+Shore, R. A. [2007], Direct and local definitions of the Turing jump, \emph{%
+Journal of Mathematical Logic }\textbf{7}, 229-262.
+
+Wang, W. [2012], Relative enumerability and 1-genericity, \emph{Journal of
+Symbolic Logic}, to appear.
+
+Yu, L. [2006], Lowness for genericity, \emph{Archive for Math. Logic }%
+\textbf{45}, 233-238.
+
+\end{document}

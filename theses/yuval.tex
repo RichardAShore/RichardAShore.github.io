@@ -1,0 +1,1340 @@
+\documentclass[12pt]{report} 
+\usepackage{amssymb,amsmath,amsthm,sectsty,fancyhdr,setspace,graphicx,customt}
+
+\pdfcompresslevel=1
+
+% PDF PAGE SETTINGS
+\setlength{\pdfpagewidth}{8in}
+\setlength{\pdfpageheight}{11in}
+
+% MARGIN SETTINGS
+% \setlength{\topmargin}{0in} 
+% \setlength{\leftmargin}{1.1in}
+% \setlength{\textwidth}{6in} 
+% \setlength{\textheight}{8.5in}
+
+  \setlength\topmargin{-0.4in}
+  \setlength\headheight{0.16667in}
+  \setlength\headsep{0.33333in}
+  \setlength\textheight{8.8in}
+  \setlength\footskip{0.5in}
+  \setlength\oddsidemargin{.4in}
+  \setlength\evensidemargin{.4in}
+  \setlength\textwidth{5.80in}
+  \setlength\marginparsep{0.1in}
+  \setlength\marginparwidth{0.8in}
+
+\doublespacing
+
+\allsectionsfont{\usefont{OT1}{cmr}{m}{sc}\fontsize{14}{16.8}\selectfont}
+\chapterfont{\usefont{OT1}{cmr}{bx}{n}\fontsize{17}{20.3}\selectfont}
+
+% \pagestyle{fancy}
+% \fancyhead[L]{\em Yuval Gabay}
+% \fancyhead[R]{\em Research Statement}
+
+\begin{document}
+%%%%%  PRELIMINARY PAGES %%%%%
+\comment{ BEGIN COMMENT
+% BEGIN DRAFT VERSION ---- REMOVE
+\addtocounter{page}{-1}
+\thispagestyle{empty}
+\begin{corner}\ \\
+Thesis draft: 8/9/04\\
+Yuval Gabay\\
+yuval@math.cornell.edu
+\end{corner}
+\newpage
+% END DRAFT VERSION
+END COMMENT } 
+\pagenumbering{roman}
+\pagestyle{plain}
+\thispagestyle{empty}
+%***********************% TITLE %***********************%
+\begin{center}
+\vspace{1.5in}
+\Large
+DOUBLE JUMP INVERSIONS
+AND STRONG MINIMAL COVERS
+IN THE TURING DEGREES\\
+\vspace{2in}
+\large
+A Dissertation\\
+Presented to the Faculty of the Graduate School\\
+of Cornell University\\
+in Partial Fulfillment of the Requirements for the Degree of\\
+Doctor of Philosophy\\
+\vspace{2in}
+by\\
+Yuval Gabay\\
+August 2004
+\end{center}
+\newpage
+\thispagestyle{empty}
+%***********************% COPYRIGHT %***********************%
+\vspace*{3.5in}
+\begin{center}
+\large
+\copyright\ 2004 Yuval Gabay\\
+ALL RIGHTS RESERVED
+\end{center}
+\newpage
+\thispagestyle{empty}
+\addtocounter{page}{-1}
+%***********************% ABSTRACT %***********************%
+\begin{center}
+\large
+DOUBLE JUMP INVERSIONS AND STRONG MINIMAL COVERS IN THE TURING DEGREES\\
+Yuval Gabay, Ph.D.\\
+Cornell University 2004\\
+\end{center}
+\ \\
+Decidability problems for (fragments of) the theory of the structure $\D$ of Turing degrees, form a wide and interesting class, much of which is yet unsolved. Lachlan showed in 1968 that the first order theory of $\D$ with the Turing reducibility relation is undecidable. Later results concerned the decidability (or undecidability) of fragments of this theory, and of other theories obtained by extending the language (e.g.~with $\dg{0}$ or with the Turing jump operator). Proofs of these results often hinge on the ability to embed certain classes of structures (lattices, jump-hierarchies, etc.) in certain ways, into the structure of Turing degrees. The first part of the dissertation presents two results which concern embeddings onto initial segments of $\D$ with known double jumps, in other words a double jump inversion of certain degree structures onto initial segments. These results may prove to be useful tools in uncovering decidability results for (fragments of) the theory of the Turing degrees in languages containing the double jump operator. 
+
+The second part of the dissertation relates to the problem of characterizing the Turing degrees which have a strong minimal cover, an issue first raised by Spector in 1956. Ishmukhametov solved the problem for the recursively enumerable degrees, by showing that those which have a strong minimal cover are exactly the r.e.~weakly recursive degrees. Here we show that this characterization fails outside the r.e.~degrees, and also construct a minimal degree below $\dg{0}'$ which is not weakly recursive, thereby answering a question from Ishmukhametov's paper.
+\newpage
+%***********************% BIOGRAPHICAL SKETCH %***********************%
+\begin{center}
+\Large
+BIOGRAPHICAL SKETCH\\
+\end{center}
+\ \\
+Yuval Gabay was born in the third person in Jerusalem, Israel. After graduating from the Hebrew University High School in 1992, he served in the Israeli Defense Forces for three years. He then attended the Hebrew University of Jerusalem, graduating with honors in 1998 with a B.Sc.~in Mathematics and a B.Sc.~in Computer Science. In 2002 he received an M.Sc. in Computer Science from Cornell University. He accepted a post-doctoral offer from the Mathematics Department at the Ben-Gurion University of the Negev in Beer-Sheva, Israel, starting October 2004. He firmly believes that eggplants were never meant to be food.
+
+\newpage
+%***********************% DEDICATION %***********************%
+\vspace*{3.0in}
+\begin{center}
+\begin{figure}[h]
+\centering
+\includegraphics{dvora.jpg}
+\end{figure}
+\large
+In memory of my mother.
+\end{center}
+\newpage
+%***********************% ACKNOWLEDGMENTS %***********************%
+\begin{center}
+\Large
+ACKNOWLEDGMENTS\\
+\end{center}
+\ \\
+One could argue that it is impossible to thank, or even list, all those who have made it possible, indeed inevitable, that I go down the road which has led me to a successful completion of this dissertation. One could say that such a list would have to include every person whom I ever had any contact with, as well as every person whom {\em they} ever had any contact with (prior to the time of their contact with me), and so on. Had any of these contacts failed to exist in the way that it did, one could explain, the chain of influences may have been irreparably broken. Thus for example, Chapter 4 could be attributed to the police officer who once caught me speeding, Chapter 5 may be claimed by the aunt of my high school janitor, and her cat's veterinarian could be responsible for the Introduction. This paragraph, however, is unmistakably and entirely my fault.
+
+I thank my parents above all. My father infected me with an insatiable curiosity about the inner workings of the universe. My numerous and fascinating childhood visits to his labs at the Hebrew University have made the pleasant grounds of the Givat Ram campus a second home to me. My mother, a philosopher at heart, exposed me to the tremendous joy of thinking. She is responsible for the eagerness with which I have developed my skill of clear and unconstrained thought, a bare necessity of mathematical research. It saddens me that she did not live to see this document and to celebrate her significant part in its authorship.
+I thank both my sisters for their love and care, and for not letting my being their family get in the way of their being my friends.
+
+I thank my advisor, Richard Shore, whom I cannot thank enough. Infinitely patient, Richard has guided me with calm and confidence through the precarious labyrinth of being a graduate student, having faith in my abilities even when I did not. Richard has been an inspiring teacher, both on the professional level and on the personal one. At this point I still do not know if I want to be a mathematician, but because of Richard I know that I can.
+
+I thank Dexter Kozen and Anil Nerode, members of my special committee. It has been a pleasure to know them and to get a taste of their mathematical interests and abilities. I only wish I had spent more of my time at Cornell interacting with both of them. I thank Juris Hartmanis, whose Complexity Theory course I thoroughly enjoyed first as a student and then (not as thoroughly) as a teaching assistant. The brief conversations we have had were positive and helpful, and I consider his acquaintance a privilege.
+
+Finally, I thank my friends, whom there is no need to name. For you were there, and are still, every step of the way, willing to listen to my ramblings concerning mathematics, my love for it and my frequent frustration with it (your personal preference notwithstanding). Of all mentioned here, you are the only ones of whom I ask to continue performing your seemingly ungratifying role. If not for others, this work would surely have not been written. If not for you it may have been written, but surely not by me.
+
+%***********************% TABLE OF CONTENTS %***********************%
+\tableofcontents
+\newpage
+%%%%% END PRELIMINARY PAGES %%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% CHAPTER 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagenumbering{arabic}
+\pagestyle{myheadings}
+\thispagestyle{plain}
+\chapter{Introduction}\label{introchp}
+
+The most significant part of Recursion Theory has always been the study of the structure $\D$ of Turing Degrees. This study has two main interests. One is of algebraic nature, asking local and global questions about the existence of certain formations of degrees. The second interest is logical, concentrating on computable complexity results for the theory (or sub-theories) of $\D$ (or substructures of it), in various languages.
+These two interests are strongly related. Most decidability results are based on algebraic findings, usually the existence of embeddings of certain structures into $\D$. The earliest such result was Lachlan's proof of the undecidability of $\Th(\D,\le)$ \cite{lachlan}, which is based on the embeddability of any countable distributive lattice as an initial segment of $\D$ (the embeddability of finite distributive lattices suffices, see \cite[VI.4.6]{lerman}). It was shown independently by Shore \cite{shore78} and Lerman (see \cite[VII.4.4]{lerman}) that $\Th_{\forall\exists}(\D,\le)$ is decidable. This result is based on the embeddability of any finite lattice as an initial segment of $\D$ and extension of embedding results. Later results concern the decidability of fragments of the theory of $\D$ with added operators, such as lattice operators and the Turing jump (as the jump operator has been recently shown to be definable in $\Th(\D,\le)$ \cite{jumpdef}, these language expansions affect only the complexity of theory fragments, not that of the whole theory). 
+
+This dissertation deals with two issues of the algebraic kind. The first, with an eye toward decidability results for fragments of the theory of $\D$ with languages containing the double jump operator, concerns the embeddability of certain structures as initial segments of $\D$ with prespecified double jumps. The second issue dealt with is the problem of characterizing the Turing degrees which have strong minimal covers.
+
+\begin{section}{Double Jump Inversion}
+While there is relatively little work concerning the inversion specifically of the double jump, much has been said about single jump inversion. The most basic jump inversion theorem is due to Friedberg.
+\begin{thm}{\em\cite{friedberg}}
+$\dg{a}\ge\dg{0}'$ iff there exists a degree $\dg{c}$ such that $\dg{c}'=\dg{a}$.
+\end{thm}
+Later results, such as the Sacks Inversion \cite{sacksinv} or the Cooper Inversion \cite{cooperinv} put further requirements on the given degree and on the produced, inverted degree (see Theorems \ref{sacksinv} and \ref{cooperinv}). However, the proofs of these theorems are very elaborate, and other similar problems are still in need of a solution. For instance, finite partial orders of degrees above $\dg{0}'$ can be jump inverted \cite[1.8]{shore}, but there is no known general method for inverting lattices (or even upper semi-lattices).
+The results we bring here attempt to suggest that double jump inversion is much more natural and flexible than its single jump counterpart.
+
+In Chapter \ref{fdlchp} we show that certain finite lattices of degrees (distributive ones in particular) above $\dg{0}''$ can be double jump inverted to initial segments of $\D$. In Chapter \ref{clochp} we show a similar result for countable linear orderings recursive in $\dg{0}''$ (Simpson \cite{simpson} has proven this for orders of type $\w$).
+
+In Chapter \ref{reachp} we directly (double jump) invert any degree r.e.~in and above $\dg{0}''$ to a minimal degree below $\dg{0}''$. From this it follows that the degrees r.e.~in and above $\dg{0}''$ are exactly the jumps of minimal degrees below $\dg{0}'$. 
+To contrast, not all degrees r.e.~in and above $\dg{0}'$ are jumps of minimal degrees below $\dg{0}'$, as all such jumps must be low over $\dg{0}'$ (that is, having $\dg{0}''$ as their jump). Moreover, even the degrees r.e.~in and low over $\dg{0}'$ cannot all be inverted to minimal degrees below $\dg{0}'$ \cite{dls}.
+
+We conclude this part by showing, as a corollary of Shore's Non-Inversion Theorem \cite[1.2]{shore}, that this inversion result for degrees r.e.~in and above $\dg{0}''$ cannot be extended for even the simplest lattices.
+\comment{
+ such as the one presented by Shore's Non-Inversion Theorem.
+\begin{thm}{\em\cite[1.2]{shore}}
+There are degrees $\dg{a}_0$ and $\dg{a}_1$, r.e.~in and above $\dg{0}'$ such that for no $\dg{b}_0$ and $\dg{b}_1\le\dg{0}'$ do we have $\dg{b}_i'=\dg{a}_i$ and $(\dg{b}_0\join\dg{b}_1)'=\dg{a}_0\join\dg{a}_1$.
+\end{thm}
+}
+\end{section}
+\begin{section}{Strong Minimal Covers}
+A degree $\dg{b}$ is a strong minimal cover of a degree $\dg{a}$ below it, if every degree $<\dg{b}$ is $\le\dg{a}$. In 1956 Spector constructed a minimal degree, which is by nature a strong minimal cover of $\dg{0}$, and raised the issue of characterizing those degrees which possess a strong minimal cover \cite{spector}. One should note that relativizing the minimal degree construction to $\D(\ge\dg{a})$ gives only a minimal cover of $\dg{a}$ (i.e.~a degree $\dg{b}>\dg{a}$ with no degrees strictly between the two).
+
+Several constructions of degrees with strong minimal covers were presented over the years. The first serious stab at a characterization was made by Downey, Jockush and Stob. In \cite{downey} they defined the notion of r.e.~array non-recursive degrees, and later extended it to $\D$ in general \cite{downey2}.
+
+\begin{defn}
+A degree $\dg{a}$ is {\em array non-recursive} if for each $f\le_{\text{wtt}}K$ there is a function $g$ recursive in $\dg{a}$ such that $g(n)\ge f(n)$ for infinitely many $n$.
+\end{defn}
+
+In other words, $\dg{a}$ is a.n.r.~if no function weak-truth-table recursive in $\dg{0}'$ dominates all $g\le_T\dg{a}$. This clearly implies that the class of a.n.r.~degrees is upward closed. This definition has other interesting equivalents which we will not go into here.
+
+\begin{thm}\label{anr}{\em\cite{downey2}}
+Let $\dg{a}$ be array non-recursive.
+\begin{itemize}
+\item[(i)] $\dg{a}$ is the supremum of two 1-generic a.n.r.~degrees which form a minimal pair.
+\item[(ii)] If $\dg{c}>\dg{a}$ then there is a degree $\dg{b}<\dg{c}$ such that $\dg{a}\join\dg{b}=\dg{c}$.
+\end{itemize}
+\end{thm}
+
+By (i), a.n.r.~degrees cannot be strong minimal covers. By (ii), they cannot have strong minimal covers (alternatively, one could argue that a strong minimal cover of an a.n.r.~degree would be a.n.r.~by upward closure, thereby contradicting (i)).
+
+The second half of the characterization came, for the r.e.~degrees, in a 1999 paper by Ishmukhametov \cite{ishmu}. He defined the class of weakly recursive degrees (see Definition \ref{wr}), argued that it is complementary to the class of a.n.r.~degrees in the r.e.~degrees, and then proved that all weakly recursive degrees possess strong minimal covers, concluding
+
+\begin{thm}\label{smcchar}
+If $\dg{a}$ is recursively enumerable, it has a strong minimal cover iff it is weakly recursive.
+\end{thm}
+
+In Chapter \ref{nwrsmcchp} we construct a minimal degree which is not weakly recursive, but has a strong minimal cover, showing that the characterization in Theorem \ref{smcchar} does not hold outside the realm of r.e.~degrees. This is also done independently in \cite{nies} (where the weakly recursive degrees are called {\em r.e.-traceable}).
+
+In Chapter \ref{nwrchp} we construct a minimal degree below $\dg{0}'$ which is not weakly recursive, thereby showing that the a.n.r.~and weakly recursive classes are not complementary in the degrees below $\dg{0}'$ (note that a minimal degree is not a.n.r.~by \ref{anr}(i)). This answers an open question in \cite{ishmu}.
+
+In Chapter \ref{vwrchp} we define the seemingly broader class of {\em very weakly recursive degrees}, and show that those possess a strong minimal cover as well, by a slight modification of Ishmukhametov's argument. At this time we do not know if there are very weakly recursive degrees which are not weakly recursive.
+
+Chapter \ref{nonjoinchp} has no new results. It describes a direct construction of a degree $\dg{a}$ for which the statement \ref{anr}(ii) does not hold. This is a product of a failed attempt to produce a counterpart to Theorem \ref{smc}, by constructing a degree which is not a.n.r., yet does not have a strong minimal cover. Nonetheless, we have chosen to include it, since we feel it may prove useful in the future, either in this or in other research routes, such as the characterization of the class of cuppable degrees (i.e.~degrees for which \ref{anr}(ii) does hold).
+\end{section}
+%%% END CHAPTER
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% CHAPTER 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\thispagestyle{plain}
+\chapter{Basic Definitions and Notation}\label{defchp}
+\begin{section}{Recursion Theory}
+
+The $e$-th partial recursive function with oracle $A\sle\w$ will be denoted $\phi_e^A$. The same function, computed for only $s$ steps, will be denoted $\phi_{e,s}^A$. We write $\phi_e^A(x)\cvg$ or $\phi_e^A(x)\dvg$ to mean the function is defined or undefined on an input $x\in\w$, respectively (and similarly for $\phi_{e,s}^A$).
+
+We write $\phi_e^A\simeq\phi_i^A$ to mean
+\[ \forall x\in\w\ \phi_e^A(x)\cvg=\phi_i^A(x)\lor(\phi_e^A(x)\dvg\land\phi_i^A(x)\dvg). \]
+ We write $\phi_e^A=B$ to mean that for all $x\in\w$, $(x\notin B\to\phi_e^A(x)\cvg=0)\land(x\in B\to\phi_e^A(x)\cvg=1)$.
+
+\begin{defn} $A$ is {\em (Turing) computable from $B$} if $\phi_e^A=B$ for some $e\in\w$. In this case we write $A\le_T B$.
+\end{defn}
+
+The relation $A\equiv_T B$ defined as $A\le_T B\land B\le_T A$ is an equivalence relation on $2^{\w}$, which divides it into countable equivalence classes, the {\em Turing degrees}. The set of Turing degrees is denoted by $\D$, and individual degrees by boldface letters ($\dg{a},\dg{b},\dots$). The Turing degree of a set $A$ is denoted $\deg(A)$. The least degree is the set of all recursive subsets of $\w$, denoted $\dg{0}$. We write $A<_T B$ to mean that $A$ is computable from $B$ and they are of distinct Turing degrees.
+
+\begin{defn} For $A\sle\w$, the {\em Turing jump of $A$} is the set
+\[ A'=\{e\st \phi_e^A(e)\cvg\} \]
+\end{defn}
+
+$A<_T A'$ and if $A\le_T B$ then $A'\le_T B'$. Consequently the Turing jump is well defined on Turing degrees, which allows us to define the jump of a Turing degree $\dg{a}=\deg(A)$ as $\dg{a'}=\deg(A')$.
+
+The following facts will be used throughout the text, sometimes implicitly.
+\begin{thm}\label{arith}{\em\cite[III.2.6]{lerman}}
+For $A\sle\w$ we have
+\begin{itemize}
+\item $A\in\Sigma^0_{n+1}$ iff $A$ is recursively enumerable in $\dg{0}^{(n)}$.
+\item $A\in\Delta^0_{n+1}$ iff $A$ is recursive in $\dg{0}^{(n)}$.
+\end{itemize}
+\end{thm}
+Hence, if $A$ is definable by a formula $\psi(x)$ in normal form with $n$ quantifiers, it is computable from $\dg{0}^{(n)}$.
+\begin{lem}\label{tot}{\em\cite[IV.3.2]{lerman}}
+The {\em totality set} of $A$,
+\[ \Tot(A)=\{e\st \phi_e^A\text{ is total}\}, \]
+is Turing equivalent to $A''$.
+\end{lem}
+\begin{lem}\label{gl2}{\em\cite[IV.3.6]{lerman}}
+Any degree $\dg{a}$ in a finite initial segment of $\D$ is in $\GL_2$, that is
+$\dg{a}''=(\dg{a}\join\dg{0}')'$.
+\end{lem}
+
+We denote by $\tuple{\cdot,\cdot}$ a fixed recursive bijection between $\w\times\w$ and $\w$. $\tuple{x,y,z}$ is used to mean $\tuple{x,\tuple{y,z}}$, and so on. 
+
+The {\em set-join} of $A,B\in\w$ is the set
+\[ A\oplus B = \{\tuple{i,x}\st (i=0\land x\in A)\lor(i=1\land x\in B)\} \]
+If $A\le_T C$ and $B\le_T D$ then $A\oplus B\le_T C\oplus D$. This allows us to define the join of two Turing degrees $\dg{a}=\deg(A)$ and $\dg{b}=\deg(B)$ as $\dg{a\join b}=\deg(A\oplus B)$. This  is the least upper bound of the degrees $\dg{a}$ and $\dg{b}$.
+
+\end{section}
+
+\begin{section}{Strings and Trees}
+
+Let $\B$ be a non-empty at most countable set.
+
+\begin{defn}\label{strings}
+A {\em $\B$-string} is a member of $\B^{\le\w}$. For a finite $\B$-string $\s$ and a $\B$-string $\t$ we define:
+\begin{itemize}
+\item[(i)] The {\em length} of $\t$ is $|\t|$. We identify elements of $\B$ and strings of length 1.
+\item[(ii)] If $\s\sle\t$ (as functions), we say that $\s$ is an {\em initial segment} of $\t$. 
+\item[(iii)] The {\em concatenation $\s\cat\t$} is the string $\r$ of length $|\s|+|\t|$ defined by
+\[ \r(n)=\begin{cases}\s(n)\qquad &n<|\s|\\ \t(n-|\s|) &|\s|\le n<|\s|+|\t|
+         \end{cases} \]
+\item[(iv)] If $\s\sle\t$ let $\t-\s$ denote the unique $\r$ such that $\s\cat\r=\t$.
+\item[(v)] If $\s\sle\t$ and $|\r|=|\s|$, we denote $\r\cat(\t-\s)$ by the special notation $\t[\s\to\r]$.
+\end{itemize}   
+\end{defn}
+
+We naturally identify a binary string (i.e.~a $\{0,1\}$-string) $A$ with the set $A^{-1}(1)$.
+
+\begin{defn}\label{xofa}
+Let $A$ be a $\B$-string and let $X\sle\w$ be infinite and enumerated by $m_0,m_1,m_2,\dots$ in increasing order. $X(A)$ is the $\B$-string $C$ such that $C(n)=A(m_n)$ for all $n$ for which this is defined. If $X(A_1)$ is compatible with $X(A_2)$, we say that $A_1$ and $A_2$ {\em agree on $X$}.
+\end{defn}
+Note that $X(A)$ is infinite iff $A$ is. Also, if $A$ is infinite, $X,Y$ are recursive and $X\sle^* Y$ (that is, $X\- Y$ is finite) then $X(A)\le_T Y(A)$. In particular, $X(A)\le_T \w(A) = A$ for all $X$.
+
+\begin{defn} 
+Let $\s,\t$ be (finite or infinite) $\B^k$-strings (for $k>0$), and $i<k$. 
+\begin{itemize}
+\item[(i)] $\col{\s}{i}$ is the $\B$-string given by $\col{\s}{i}(n)=\s(n)(i)$.
+\item[(ii)] $\s$ and $\t$ are {\em equivalent mod $i$} ($\s\equiv_i\t$) if $\col{\s}{i}=\col{\t}{i}$.
+\end{itemize}
+\end{defn}
+
+\begin{defn}
+\begin{itemize}
+\item[(i)] A {\em $\B$-tree} is an injective function $T:\B^{<\w}\to\B^{<\w}$ such that
+\[ \s\sle\t\iff T(\s)\sle T(\t) \]
+\item[(ii)] Given a $\B$-tree $T$ and an infinite $\B$-string $A$, we can define the infinite $\B$-string $P=\bigcup_{\s\sl A}T(\s)$. $P$ is called a {\em path on $T$}, and is sometimes denoted by $T(A)$ (slightly abusing notation). The set of paths on $T$ is denoted by $[T]$.
+\item[(iii)] A $\B$-tree $T$ is said to {\em force} a property $\P$ of infinite $\B$-strings if every path on $T$ satisfies $\P$. A finite string $\s\in\rg(T)$ forces $\P$ if every path extending $\s$ on $T$ satisfies $\P$. 
+\end{itemize}
+\end{defn}
+
+\begin{defn}\label{subtrees}
+For $\B$-trees $S$ and $T$, $S$ is a {\em subtree} of $T$ ($S\sle T$) if the range of $S$ is contained in the range of $T$. Note that in this case $[S]\sle[T]$ as well.
+\end{defn}
+
+Let $S,T$ be $\B$-trees. The composition $R=T\circ S$ is injective, and for all $\s,\t\in\B^{<\w}$ we have
+\[ \s\sle\t\Iff S(\s)\sle S(\t)\Iff R(\s)=T(S(\s))\sle T(S(\t))=R(\t). \]
+Hence $R$ is a $\B$-tree, and is called the {\em product} of $T$ and $S$ (denoted $T\cdot S$ or simply $TS$).
+
+If $S\sle T$, the composition $R=T^{-1}\circ S$ is well defined and injective, and for all $\s,\t\in\B^{<\w}$ we have
+\[ \s\sle\t\Iff T(R(\s))=S(\s)\sle S(\t)=T(R(\t))\Iff R(\s)\sle R(\t). \]
+Hence $R$ is a $\B$-tree, and is called the {\em quotient} of $S$ by $T$ (denoted $S/T$).
+
+\begin{prop}\label{treeopprop}
+Let $R,S,T$ be $\B$-trees. $\idtree$ denotes the identity $\B$-tree. 
+\begin{itemize}
+\item[(i)] $T\cdot(S\cdot R)=(T\cdot S)\cdot R$.
+\item[(ii)] $T/T=\idtree$ and $T/\idtree=\idtree\cdot T=T\cdot\idtree=T$.
+\item[(iii)] If $S\sle T$ then $T\cdot(S/T)=S$.
+\item[(iv)] If $S\sle T$ then $S\cdot R\sle T$, and $(S\cdot R)/T=(S/T)\cdot R$.
+\item[(v)] If $T\sle R\cdot S$ then $T\sle R$, $T/R\sle S$ and $(T/R)/S=T/(R\cdot S)$.
+\item[(vi)] If $S\sle T$ then $R\cdot S\sle R\cdot T$ and $(R\cdot S)/(R\cdot T)=S/T$.
+\end{itemize}
+\end{prop}
+
+\begin{proof}
+Immediate from the definitions.
+\end{proof}
+
+For a finite $\B$-string $\s$, let $E_{\s}$ be the tree defined by $E_{\s}(\t)=\s\cat\t$. If $T$ is a $\B$-tree then $T\cdot E_{\s}$ is an {\em extension subtree} of $T$ (denoted $\Ext(T,\s)$ in Lerman).
+
+Since $\B$ is at most countable, we allow ourselves to identify $\B$-strings with their codes (in some fixed G\"odel numbering). In this light, a tree $T$ is a numerical function, and has a Turing degree.
+
+Furthermore, when we talk about operators on recursive trees, we implicitly (and sometimes explicitly) refer to corresponding functions on recursive indices of trees (even though these are not unique).  
+For example, there is a (recursive!) function $f_{\cdot}(s,t)$ which maps a pair of recursive indices for trees $S,T$ to a recursive index for $S\cdot T$. We will frequently write $S\cdot T$ to mean $f_{\cdot}(s,t)$.
+
+Finally we address an important application of these tree operations.
+\begin{defn}\label{treeextequiv}
+Two $\B$-tree extensions $T'\sle T$ and $S'\sle S$ are {\em equivalent} if $T'/T=S'/S$.
+\end{defn}
+Informally speaking, the extensions are equivalent if $T'(\s)$ is on the same place on $T$ as $S'(\s)$ is on $S$ (for all strings $\s$). The tree operations let us construct equivalent extensions with ease.
+\begin{prop}
+If $T'\sle T$ is a $\B$-tree extension and $S$ is a $\B$-tree, then the tree
+\[ S' = S\cdot(T'/T) \]
+is an extension of $S$, equivalent to $T'\sle T$.
+\end{prop}
+\begin{proof}
+By Proposition \ref{treeopprop} (v) we have that $S'\sle S$ and
+\[ (S'/S)/(T'/T)=S'/(S\cdot(T'/T))=S'/S'=\idtree. \]
+\end{proof}
+\end{section}
+%%% END CHAPTER
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% CHAPTER 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\thispagestyle{plain}
+\chapter{Finite Distributive Lattices}\label{fdlchp}
+In this chapter we focus on embedding certain lattices as initial segments with given double jumps. Most of the introductory material is taken from Chapter IV of \cite{lerman}. In section 2 we present the main construction, and in section 3 we prove the results that are based on it.
+\begin{section}{Introduction}
+In the following, $\L=(L,\le,\join,\meet)$ is a finite lattice, where $L=\{u_0,\dots,u_n\}$, and the distinct bottom and top elements of $\L$ are $u_0$ and $u_n$, respectively. Also, $h:\L\to\D$ is an u.s.l.~homomorphism (i.e.~a map preserving the lattice weak order relation and the join function).
+
+\begin{defn}
+A {\em finite homogeneous lattice table} for $\L$ is a set $\TH$ of functions from $\{0,\dots,n\}$ to $\w$, such that
+\begin{itemize}
+\item[(i)] $\forall\a,\b\in\TH(\a\equiv_0\b)$ (equivalence mod 0 of $\TH$-strings of length 1)
+\item[(ii)] $\forall i,j\le n(u_i\le u_j\iff\forall\a,\b\in\TH(\a\equiv_j\b\to\a\equiv_i\b))$
+\item[(iii)] $\forall i,j,k\le n(u_i\join u_j=u_k\iff\forall\a,\b\in\TH(\a\equiv_k\b\iff\a\equiv_i\b\land\a\equiv_j\b))$
+\item[(iv)] $\forall i,j,k\le n(u_i\meet u_j=u_k\iff\forall\a,\b\in\TH(\a\equiv_k\b\iff\\ \exists s\in\w\,\exists\g_0,\dots,\g_s\in\TH(\a=\g_0\equiv_i\g_1\equiv_j\g_2\equiv_i\dots\equiv_j\g_s=\b)))$
+\item[(v)] For all $\a_0,\a_1,\b_0,\b_1\in\TH$, if $\forall i\le n(\a_0\equiv_i\a_1\to\b_0\equiv_i\b_1)$, then there is a function $f:\TH\to\TH$ such that $f(\a_0)=\b_0$, $f(\a_1)=\b_1$, and for all $\a,\b\in\TH$, $\forall i\le n(\a\equiv_i\b\to f(\a)\equiv_i f(\b))$.
+\end{itemize}
+\end{defn}
+
+We are concerned here only with finite lattices which have a finite homogeneous lattice table. In the following, assume that $\TH$ is such a table for $\L$. Embeddings of $\L$ into $\D$ will be given by infinite $\TH$-strings.
+
+\begin{defn}
+An infinite $\TH$-string $A$ {\em codes} a map $g:\L\to\D$ if for all $i\le n$
+\[ g(u_i)=\deg(\col A i)\join g(u_0). \]
+A map $g:\L\to\D$ is {\em $\TH$-representable} if there exists a $\TH$-string that codes it.
+\end{defn}
+
+Every $\TH$-string codes a u.s.l.~homomorphism $g$ with $g(u_0)=\dg{0}$ (this is essentially the Homomorphism Lemma, \cite[IV.1.4]{lerman}). In order to make $g$ an embedding onto an initial segment, we construct the string as a path on uniform $\TH$-trees forcing certain conditions.
+
+\begin{defn}
+A $\TH$-tree $T$ is {\em uniform} if
+\begin{itemize}
+\item[(i)] $|\s|=|\t| \iff |T(\s)|=|T(\t)|$
+\item[(ii)] $\s\equiv_i\t \iff T(\s)\equiv_iT(\t)$
+\item[(iii)] $|\s|=|\t| \then \forall\a\in\TH\ T(\s\cat\a)-T(\s) = T(\t\cat\a)-T(\t)$
+\end{itemize}
+\end{defn}
+
+Note that condition (iii) implies
+\begin{itemize}
+\item[(iii')] $|\s|=|\t| \then \forall\r\in\TH^{<\w}\ T(\s\cat\r)-T(\s) = T(\t\cat\r)-T(\t)$
+\end{itemize}
+by induction on the length of $\r$. Also note that if $S,T$ are recursive uniform trees then so are $S\cdot T$ and $S/T$ (when defined).
+
+\begin{defn}
+Let $e\in\w$, $i,j\le n$ and let $T$ be a $\TH$-tree.
+\begin{itemize}
+\item[(i)] $T$ {\em decides $e$-totality} if either $\phi_e^{P}$ is total for all $P\in[T]$ or $\phi_e^{P}$ is not total for all $P\in[T]$. $T$ {\em forces $e$-totality, $e$-partiality} in the first, resp.~second, case.
+\item[(ii)] $T$ is {\em $\tuple{e,i,j}$-differentiating} if for all $P\in[T]$, $\phi_e^{\col{P}{j}}\ne\col{P}{i}$.
+\item[(iii)] $T$ is {\em $e$-splitting} if there exists $i\le n$ such that for all $P\in[T]$ with $\phi_e^{P}$ total, we have $\phi_e^{P}\equiv_T \col{P}{i}$.
+\end{itemize}
+\end{defn}
+
+Clause (iii) differs from the definition of $e$-splitting in \cite{lerman}, but is shown to follow from it by the Computation Lemma \cite[IV.3.3]{lerman}. Hence, the justification of the following Lemma is not affected.
+
+\begin{lem}\label{density}
+There is a total function $f:\w\times\w\to\w$, computable in $\dg{0}''$, such that if $T$ is (a recursive index for) a uniform $\TH$-tree then 
+\begin{itemize}
+\item[(i)] if $r=\tuple{1,e}$ then $f(r,T)$ is (a recursive index for) a uniform subtree of $T$ which decides $e$-totality;
+\item[(ii)] if $u_i\nle u_j$ and $r=\tuple{2,e,i,j}$ then $f(r,T)$ is a uniform subtree of $T$ which is $\tuple{e,i,j}$-differentiating;
+\item[(iii)] if $r=\tuple{3,e}$ then $f(r,T)$ is a uniform subtree of $T$ which is $e$-splitting;
+\item[(iv)] for all other values of $r$, $f(r,T)=T$.
+\end{itemize}
+\end{lem}
+\begin{proof}
+The constructions needed to define $f$ are described in the proofs of Lemmas 2.13, 2.15 and 3.12 in \cite[IV]{lerman}. One should note that the constructions are uniform in $\dg{0}''$, as the different cases in each are defined by two quantifier statements. 
+\end{proof}
+\end{section}
+
+\begin{section}{The Main Construction}
+
+In order to get an embedding of $\L$ onto an initial segment of $\D$, Lerman applies $f$ of Lemma \ref{density} repeatedly to force all of the totality, differentiating and minimality requirements. The goal in this chapter is to code certain degrees into this construction, in a way which would make these degrees the double jumps of the degrees in the initial segment. Rather than explicitly coding any given degrees, we perform every possible coding simultaneously, by branching into separate forcing extensions after each application of $f$. This creates a tree of trees, as stated by the following Lemma.
+
+\begin{lem}\label{embtree}
+There is a uniform $\TH$-tree $\hat{T}$, computable in $\dg{0}''$, such that every $P\in[\hat{T}]$ codes an embedding of $\L$ onto an initial segment of $\D$. Furthermore, for any such path $P=\hat{T}(A)$ and any $i\le n$
+\[ {\col{P}{i}}''\equiv_T\col{P}{i}\join\dg{0}''\equiv_T\col{A}{i}\join\dg{0}'' \]
+\end{lem}
+\begin{proof}
+Let $f$ be as in Lemma \ref{density}. We define recursive uniform $\TH$-trees $T_{\s}$ for every finite $\TH$-string $\s$, such that
+\begin{itemize}
+\item[(i)] $T_{\s\cat\a}\sle T_{\s}E_{\a}$
+\item[(ii)] $T_{\s\cat\a}\sle f(|\s|,T)$ for some recursive tree $T$
+\item[(iii)] if $|\s_1|=|\s_2|$ and $|\r_1|=|\r_2|$ then the strings $\x_d=T_{\s_d}(\r_d)$ ($d=1,2$) are of equal length, and for all $i\le n$
+\[ \x_1\equiv_i\x_2 \Iff \s_1\cat\r_1\equiv_i\s_2\cat\r_2 \]
+\item[(iv)] if $|\s_1|=|\s_2|$ then 
+$T_{\s_1}(\r\cat\r')-T_{\s_1}(\r)=T_{\s_2}(\r\cat\r')-T_{\s_2}(\r)$.
+\end{itemize}
+
+Each tree $T_{\s}$ is the forcing condition which is obtained by coding $\s$ into Lerman's original construction. Property (i) ensures that these conditions are distinct, while property (ii) ensures that the next application of $f$ has taken place. Conditions (iii) and (iv) provide a kind of uniformity for $\hat{T}$, which will make the coding work. 
+
+Let $T_{\es}=\idtree$.
+Suppose $T_{\s}$ has been defined for all $\s$ of length $k$. Let $\{\t_j\}_{j=1}^m$ list all $\TH$-strings of length $k+1$, and let $\t_j=\s_j\cat\a_j$ with $|\s_j|=k$ and $\a_j\in\TH$. Let $T'_{\t_j}=T_{\s_j}E_{\a_j}$. We go by subinduction on $j$:
+\[ T^*_{\t_1}=f(k,T'_{\t_1}),\qquad T^*_{\t_{j+1}}=f(k,T'_{\t_{j+1}}(T^*_{\t_j}/T'_{\t_j})).\]
+For all $1\le j\le m$ now let 
+\[ T_{\t_j}=T'_{\t_j}(T^*_{\t_m}/T'_{\t_m}).\]
+The idea is simple and rather straightforward. We want to find conditions $T_{\t_j}$ which force the current requirement, and are all equivalent extensions (in the sense of Definition \ref{treeextequiv}) of the conditions $T'_{\t_j}$, respectively. To do this, we apply $f$ to the first one, then find the equivalent extension to the second and apply $f$ again, and so on. Finally, we take the final extension, and set the trees $T_{\t_j}$ to be the corresponding extensions equivalent to it.
+
+We now formally prove that these extensions are as required. The trees are all uniform recursive, since this quality is preserved by $f$ and by tree multiplication and division. We now show that the properties above hold by induction, assuming the notation of the construction. 
+\begin{itemize}
+\item[(i)] This follows directly from the definition, since for all $1\le j\le m$ we have
+\[ T_{\s_j\cat\a_j}=T_{\t_j}=T'_{\t_j}(T^*_{\t_m}/T'_{\t_m})\sle T'_{\t_j}=T_{\s_j}E_{\a_j}.\]
+\item[(ii)] From the definition of $f$ and $T^*_{\t_{j+1}}$ it follows that 
+\[ T^*_{\t_{j+1}}\sle T'_{\t_{j+1}}(T^*_{\t_j}/T'_{\t_j}) \]
+ and therefore
+\[ T^*_{\t_{j+1}}/T'_{\t_{j+1}}\sle T^*_{\t_j}/T'_{\t_j}. \]
+Hence the quotients $T^*_{\t_j}/T'_{\t_j}$ form a decreasing chain of trees. For any $1\le j\le m$ we then get
+\[ T_{\t_j}=T'_{\t_j}(T^*_{\t_m}/T'_{\t_m})\sle T'_{\t_j}(T^*_{\t_j}/T'_{\t_j})= T^*_{\t_j}=f(k,T) \]
+for some recursive $T$ as required.
+\item[(iii)] Consider strings $\r_1,\r_2$ of equal length, and $1\le j,l\le m$. If we let $R=T^*_{\t_m}/T'_{\t_m}$, then
+\[ T_{\t_j}(\r_1)=T'_{\t_j}R(\r_1)=T_{\s_j}E_{\a_j}R(\r_1)=T_{\s_j}(\a_j\cat R(\r_1)) \]
+and similarly
+\[ T_{\t_l}(\r_2)=T_{\s_l}(\a_l\cat R(\r_2)). \]
+Since $R$ is uniform, we have
+\begin{align*}
+|\a_j\cat R(\r_1)|& = 1+|R(\r_1)|= 1+|R(\r_2)|=|\a_l\cat R(\r_2)| \\
+  &\Then |T_{\s_j}(\a_j\cat R(\r_1))|=|T_{\s_l}(\a_l\cat R(\r_2))|
+\end{align*}
+by the induction hypothesis. By a similar reasoning
+\begin{align*}
+T_{\t_j}(\r_1)\equiv_i T_{\t_l}(\r_2)&\Iff
+T_{\s_j}(\a_j\cat R(\r_1)) \equiv_i T_{\s_l}(\a_l\cat R(\r_2))\\
+ &\Iff  \s_j\cat\a_j\cat R(\r_1)\equiv_i \s_l\cat\a_l\cat R(\r_2) \\
+ &\Iff  \t_j\cat\r_1\equiv_i\t_l\cat\r_2
+\end{align*}
+(since $R(\r_1)\equiv_i R(\r_2)$ iff $\r_1\equiv_i\r_2$ by uniformity of $R$).
+\item[(iv)] Let $R,j,l$ be as above, and set 
+\[ \x=R(\r),\quad \x'=R(\r\cat\r')-R(\r). \]
+Then
+\begin{align*}
+T_{\t_j}&(\r\cat\r') - T_{\t_j}(\r)\\
+  & =T_{\s_j}(\a_j\cat R(\r\cat\r'))-T_{\s_j}(\a_j\cat R(\r)) \\
+  & = T_{\s_j}(\a_j\cat\x\cat\x')-T_{\s_j}(\a_j\cat\x)\\
+  & =T_{\s_j}(\a_l\cat\x\cat\x')-T_{\s_j}(\a_l\cat\x)\quad \text{(by uniformity of $T_{\s_j}$, cond. (iii'))}\\
+  & =T_{\s_l}(\a_l\cat\x\cat\x')-T_{\s_l}(\a_l\cat\x)\quad\text{(by induction hypothesis)}\\
+  & =T_{\t_l}(\r\cat\r')-T_{\t_l}(\r).
+\end{align*}
+\end{itemize}
+
+\newpage
+
+Now let $\hat{T}(\s)=T_{\s}(\es)$ for all $\s$. Property (iii) implies that if $|\s|=|\t|$ then $|\hat{T}(\s)|=|\hat{T}(\t)|$ and for all $i\le n$
+\[ \hat{T}(\s)\equiv_i\hat{T}(\t)\iff \s\equiv_i\t. \]
+Property (iv) implies that if $|\s|=|\t|$ and $\a\in\TH$ then
+\[ \hat{T}(\s\cat\a)-\hat{T}(\s)=T_{\s}(\a\cat\r)-T_{\s}(\es)
+=T_{\t}(\a\cat\r)-T_{\t}(\es)=\hat{T}(\t\cat\a)-\hat{T}(\t) \]
+where $\r=R(\es)$ with $R$ as above. Therefore $\hat{T}$ is a uniform tree. It is computed with $f$ as an oracle, hence it is computable in $\dg{0}''$.
+
+Fix $P=\hat{T}(A)\in[\hat{T}]$. We show that $P$ codes an embedding of $\L$ onto an initial segment of $\D$. First, note that $P\in[T_{\s}]$ whenever $\s\sl A$. Indeed, 
+\[ P=\bigcup_{\s\sle\t\sl A}\hat{T}(\t)=\bigcup_{\s\sle\t\sl A}T_{\t}(\es) \]
+and $T_{\t}\sle T_{\s}$ for every $\t\sge\s$ (by property (i)).
+
+From property (ii) it now follows that for every $k\in\w$ there is a recursive tree $T$ such that $P\in[f(k,T)]$. In particular
+\begin{itemize}
+\item[(i)] If $u_i\nle u_j$ then for every $e\in\w$, $P$ lies on a recursive $\tuple{e,i,j}$-differentiating tree, and therefore $\col{P}{i}\nle_T\col{P}{j}$.
+\item[(ii)] For all $e\in\w$, $P$ lies on a recursive $e$-splitting tree, and therefore 
+\[ \D(\le\deg(P))=\D(\le\deg(\col{P}{n}))\sle\{\col{P}{i}\st i\le n\}. \]
+\end{itemize}
+
+Thus $P$ codes an embedding of $\L$ onto an initial segment of $\D$. It is left to prove the triple equality in the Lemma. Since $\dg{a}''\ge_T\dg{a}\join\dg{0}''$ for any degree $\dg{a}$, it suffices to demonstrate that the inequalities
+\[  \col{P}{i}\join\dg{0}''\ge_T\col{A}{i}\join\dg{0}''\ge_T{\col{P}{i}}'' \]
+hold for every $i\le n$.
+The first of the two follows from the uniformity of $\hat{T}$. If $\s$ is a $\TH$-string of length $k$, then
+\begin{align*}
+ \col{\s}{i}\sle\col{A}{i} &\Iff \s\equiv_i A\restrict k\\
+&\Iff\hat{T}(\s)\equiv_i\hat{T}(A\restrict k)\Iff\col{\hat{T}(\s)}{i}\sle\col{P}{i}.
+\end{align*}
+Hence, to find $\col{A}{i}\restrict k$ (with the given oracle) look for a string $\s$ of length $k$ which satisfies the last statement, and take $\col{\s}{i}$.
+
+For the second inequality, we show how to compute $\Tot^{\col{P}{i}}$ using $\col{A}{i}\join\dg{0}''$ as an oracle (this suffices by Lemma \ref{tot}). Given $e\in\w$, let $e^*$ be such that 
+$\phi_{e^*}^P \simeq \phi_e^{\col{P}{i}}$ ($e^*$ can be found in a uniformly recursive manner). Let $\s$ be of length $k=\tuple{1,e^*}+1$ such that $\col{\s}{i}\sl\col{A}{i}$. Note that both $T_{\s}$ and $T_{A\restrict k}$, decide $e^*$-totality by property (ii) and the nature of the function $f$. Now
+\begin{align*}
+e\in \Tot^{\col{P}{i}} & \Iff
+\phi_e^{\col{P}{i}}\text{ is total}\\
+& \Iff \phi_{e^*}^P\text{ is total}\\
+& \Iff T_{A\restrict k}\text{ forces $e^*$-totality}\Iff T_{\s}\text{ forces $e^*$-totality}
+\end{align*}
+where the last equivalence stems from the equality
+\[ \{\col{X}{i}\st X\in[T_{A\restrict k}]\}=\{\col{X}{i}\st X\in[T_{\s}]\}\]
+which is a consequence of property (iv) and the equivalence $T_{A\restrict k}\equiv_i\s$.
+\end{proof}
+\end{section}
+
+\begin{section}{The Results}
+Each path of $\hat{T}$ codes an embedding of $\L$ onto an initial segment of $\D$. Before we pay attention to the coding in the paths, we mention their cardinality.
+\begin{cor}
+If $\L$ has a finite homogeneous lattice table, then there are $2^{\w}$ many lattice embeddings of $\L$ as an initial segment of $\D$.
+\end{cor}
+\begin{proof}
+For each path $P\in[\hat{T}]$, the function $h_P:u_i\mapsto\deg(\col{P}{i})$ is such an embedding. Now
+\[ 2^{\w}\ge|\{h_P\st P\in[\hat{T}]\}\ge |\{\deg(\col{P}{n})\st P\in[\hat{T}]\}
+=|\{\deg(P)\st P\in[\hat{T}]\}|=2^{\w} \]
+since $|[\hat{T}]|=2^{\w}$ and Turing equivalence classes are countable.
+\end{proof}
+
+Now we turn to the main Theorem of this chapter, in its most general form.
+\begin{thm}\label{genrep}
+Suppose $\L$ has a finite homogeneous lattice table $\TH$, and $h:\L\to\D$ is a $\TH$-representable u.s.l.~homomorphism with $h(u_0)=\dg{0}''$. Then there is an initial segment $\C$ of $\D$ and a lattice isomorphism $g:\L\to\C$ such that 
+\[ g(x)''=g(x)\join\dg{0}''=h(x)\qquad\text{for all $x\in L$.} \]
+\end{thm}
+\begin{proof}
+Suppose the $\TH$-string $A$ codes $h$. Let $P=\hat{T}(A)$, $g(u_i)=\deg(\col{P}{i})$ and $\C=\rg(g)$. Then $g$ is an embedding of $L$ onto an initial segment of $\D$, and $P$ codes it. Furthermore, for all $i\le n$
+\[ g(u_i)'' = g(u_i)\join\dg{0}''=\deg(\col{A}{i})\join\dg{0}''=\deg(\col{A}{i})\join h(u_0) = h(u_i). \]
+\end{proof}
+
+Next we show that Theorem \ref{genrep} always applies to any finite distributive lattice. We already know (\cite[B.1]{lerman}) that every such lattice has a finite homogeneous lattice table, so it remains to show that any homomorphism from such a lattice is representable with respect to some table. To show this, we follow the construction of the lattice table in \cite[B.1]{lerman}, repeated here without the justification. In the following assume that $\L$ is distributive. 
+\begin{defn} $u_i\ne u_0$ is {\em join-irreducible} if $u_i=u_j\join u_k$ implies $i=j$ or $i=k$.
+\end{defn}
+
+Let $\{u_{i_k}\}_{k<r}$ be the join-irreducible elements of $\L$, and let $\B=\P\{a_0,\dots, a_{r-1}\}$ be the boolean algebra with $r$ atoms (with $\meet$ and $\join$ interpreted as set intersection and union, respectively). Define $g:\L\to\B$ by
+\[ g(u_i) = \{a_k\st u_{i_k}\le u_i\} \]
+\begin{lem} $g$ is a lattice embedding of $\L$ in $\B$.
+\end{lem}
+For every $A\sle\{a_0,\dots,a_{r-1}\}$, define a function $\a_A:\B\to\w$ as follows. If $C=\{a_{i_1},\dots,a_{i_{|C|}}\}$ with $i_1<\cdots<i_{|C|}$, then let 
+\[ \a_A(C)=\sum\{2^{|C|-j}\st a_{i_j}\in A\} \]
+Now, for every $A$ as above and $i\le n$, let $\a_A^*(i)=\a_A(g(u_i))$. Let
+\[ \TH=\{\a_A^*\st A\sle\{a_0,\dots,a_{r-1}\}\}. \]
+\begin{lem} $\TH$ is a finite homogeneous lattice table for $\L$.
+\end{lem}
+
+Now we show that all appropriate homomorphisms from $\L$ can be coded in $\TH$.
+\begin{lem}\label{coding}
+Let $\L$ be finite distributive, $\TH$ as described above, and suppose $h:\L\to\D$ is a u.s.l.~homomorphism, with $h(u_0)=\dg{0}''$. Then $h$ is $\TH$-representable.
+\end{lem}
+\begin{proof}
+Pick sets $A_k\in h(u_{i_k})$ for all $k<r$, and define (for all $x\in\w$ and $k<r$)
+\[ A(rx+k) = \begin{cases}\a^*_{\{a_k\}} \quad & x\in A_k\\ \a^*_{\es} & x\notin A_k \end{cases} \]
+The reason for this choice of lattice elements is that
+$\a^*_{\{a_k\}}\nequiv_{i_k}\a^*_{\es}$, but $\a^*_{\{a_k\}}\equiv_j\a^*_{\es}$ whenever $u_j\nge u_{i_k}$.
+
+Fix $k<r$. First note that for all $x\in\w$
+\[ x\in A_k \Iff A(rx+k)\nequiv_{i_k}\a^*_{\es} \]
+and therefore $A_k\le_T\col{A}{i_k}$.
+To show the converse, note that for all $j<r$ and $x\in\w$
+\[ \col{A}{i_k}(rx+j) = \begin{cases}\a^*_{\{a_j\}}(i_k)\quad & x\in A_j\\
+                            \a^*_{\es}(i_k) & x\notin A_j\end{cases} \]
+If $u_{i_j}\le u_{i_k}$ then $A_j\le_T A_k$. Given $A_k$ we can find whether or not $x\in A_j$, then find the required value. If $u_{i_j}\nle u_{i_k}$ then $\a^*_{\{a_j\}}\equiv_{i_k}\a^*_{\es}$, and consequently $\col{A}{i_k}(rx+j) = \a^*_{\es}(i_k)$.
+
+To complete the proof, fix $u_i\in\L$ with $i>0$. Let $J=\{j : u_{i_j}\le u_i\}$. Then
+\[ h(u_i) = \Join_{j\in J} h(u_{i_j}) = \Join_{j\in J}\deg(A_j) = \Join_{j\in J}\deg(\col{A}{i_j}) = \deg(\col{A}{i}) = \deg(\col{A}{i})\join h(u_0), \]
+and clearly $h(u_0)=\dg{0}''=\deg(\col{A}{0})\join h(u_0)$.
+\end{proof}
+
+The double-jump inversion of finite distributive lattices now follows.
+\begin{thm}\label{findist}
+Suppose $\L$ is a finite distributive lattice, and $h:\L\to\D$ is an u.s.l.~homomorphism, with $h(u_0)=\dg{0}''$. Then there is an initial segment $\C$ of $\D$ and a lattice isomorphism $g:\L\to\C$ such that 
+\[ g(x)''=g(x)\join\dg{0}''=h(x)\qquad\text{for all $x\in L$.} \]
+\end{thm}
+\begin{proof}
+Let $\TH$ be as above. Then $h$ is $\TH$-representable, and the result follows from Theorem \ref{genrep}.
+\end{proof}
+
+Finally, relativization and iteration of the previous two theorems yield the following results, which may be helpful tools in determining the decidability of fragments of $\Th(\D,0,\le,\join,'')$.
+\begin{thm}
+Suppose $\L$ has a finite homogeneous lattice table $\TH$, and $h:\L\to\D$ is a $\TH$-representable u.s.l.~homomorphism with $h(u_0)=\dg{0}^{(2n)}$. Then there are initial segments $\C_i$ of $\D(\ge\dg{0}^{(2i)})$ and lattice isomorphisms $g_i:\L\to\C_i$ for $i<n$ such that
+\begin{align*} 
+&g_i(x)''=g_i(x)\join\dg{0}^{(2i+2)}=g_{i+1}(x)\qquad& &\text{for all $x\in L$ and $i<n-1$, and} \\
+&g_{n-1}(x)''=g_{n-1}(x)\join\dg{0}^{(2n)}=h(x)\qquad& &\text{for all $x\in L$.}
+\end{align*}
+\end{thm}
+\begin{proof}
+First relativize Theorem \ref{genrep} to $\dg{0}^{(2n)}$, to get $g_{n-1}$ as required. Notice that $g_{n-1}$ is $\TH$-representable by the nature of the proof of Theorem \ref{genrep}. This allows relativization to $\dg{0}^{(2n-2)}$. Proceed by induction.
+\end{proof}
+\begin{thm}
+Suppose $\L_i$ are finite distributive lattices for $i\le n$, with u.s.l.~homomorphisms $h_i:\L_i\to\L_{i+1}$ for all $i<n$. Suppose further that $g_n:\L_n\to\D$ is a u.s.l.~isomorphism mapping the bottom element of $\L_n$ to $\dg{0}^{(2n)}$. Then there are initial segments $\C_i$ of $\D(\ge\dg{0}^{(2i)})$ and lattice isomorphisms $g_i:\L_i\to\C_i$ for $i<n$ such that
+\[ g_i(x)''=g_i(x)\join\dg{0}^{(2i+2)}=g_{i+1}(h_i(x))\qquad\text{for all $i<n$ and $x\in\L_i$.} \]
+\end{thm}
+\begin{proof}
+This is a fairly straightforward induction on $i$ starting at $n-1$, relativizing Theorem \ref{findist} to $\dg{0}^{(2i+2)}$ with $g_{i+1}\circ h_i:\L_i\to\D(\ge\dg{0}^{(2i+2)})$ as the u.s.l.~homomorphism. Lemma \ref{coding} ensures that the produced embedding $g_i$ is representable with respect to the appropriate lattice table for $\L_i$. 
+\end{proof}
+If we could demonstrate a similar guarantee of representability in the general (non-distributive) case, we could generalize this result. This, however, seems more difficult, if at all possible.
+\end{section}
+%%% END CHAPTER
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% CHAPTER 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\thispagestyle{plain}
+\chapter{Countable Linear Orders}\label{clochp}
+The narrative in this chapter is similar to the one in the previous chapter. The setting here is borrowed from \cite[IV-VI]{epstein}. Section 2 has the main construction and section 3 has the results.
+
+\begin{section}{Introduction}
+In the following, $\L=(\w,\le_{\L})$ is a countable linear order, computable in $\dg{0}''$, with bottom element $0$ and top element $1$. Let $\L_n$ be $\L$ restricted to $\{0,1,\dots,n\}$.
+
+As forcing conditions, we use recursive uniform binary trees (i.e.~$\{0,1\}$-trees). The linear order will be represented by a collection of recursive sets, ordered by inclusion, and the trees will have densely many branchings which differentiate between distinct sets in the representation. The following definitions make these notions precise.
+\begin{defn}
+A binary tree $T$ is {\em uniform} if for all finite binary strings $\s,\t$
+\begin{itemize}
+\item[(i)] $|\s|=|\t| \iff |T(\s)|=|T(\t)|$
+\item[(ii)] $|\s|=|\t| \then \forall i<2\ T(\s\cat i)-T(\s) = T(\t\cat i)-T(\t)$
+\end{itemize}
+\end{defn}
+
+\newpage
+
+\begin{defn} Let $X_i\sle\w$ be recursive for $i\in\w$.
+\begin{itemize}
+\item[(i)] The sequence $X_0,\dots,X_n$ {\em represents $\L_n$} if for all $i,j\le n$
+\[ i<_{\L} j \iff (X_i\sl^* X_j \land |X_j\- X_i|=\w). \]
+\item[(ii)] The sequence $X_0,X_1,\dots$ {\em represents $\L$} if $X_0,\dots,X_n$ represents $\L_n$ for all $n\in\w$.
+\end{itemize}
+\end{defn}
+\begin{defn} Recall Definition \ref{xofa}.
+\begin{itemize}
+\item[(i)] Let $X\sle Y\sle\w$. A uniform binary tree $T$ is
+{\em special for $X$} (resp.~{\em for $-Y$}, {\em for $X-Y$}) if there are infinitely many binary strings $\s$ such that $T(\s\cat 0)$ and $T(\s\cat 1)$ agree on $X$ (resp.~disagree on $Y$, agree on $X$ and disagree on $Y$).
+\item[(ii)] Let $\C_n=\{X_0,\dots,X_n\}$ represent $\L_n$. A uniform binary tree $T$ is {\em special for $\C_n$} if it is special for $X_i-X_j$ for all $i,j\le n$ such that $i<_{\L} j$. Note that in this case $T\cdot E_{\s}$ is special for $\C_n$ as well, for every $\s$.
+\end{itemize}
+\end{defn}
+\begin{defn}
+Let $\C=\{X_0,X_1,\dots\}$ be a sequence that represents $\L$. An infinite binary string $P$ {\em codes an embedding of $\L$ onto an initial segment of $\D$ with respect to $\C$} if the map $i\mapsto\deg(X_i(P))$ is such an embedding.
+\end{defn}
+Note that the map above is necessarily an order homomorphism by the remark following Definition \ref{xofa}. In order to make it an embedding onto an initial segment, some requirements need to be forced.
+\begin{defn}
+Let $e\in\w$, $T$ be a binary tree, and $\C_n$ represent $\L_n$.
+\begin{itemize}
+\item[(i)] $T$ {\em decides $e$-totality} if either $\phi_e^{P}$ is total for all $P\in[T]$ or $\phi_e^{P}$ is not total for all $P\in[T]$. $T$ {\em forces $e$-totality, $e$-partiality} in the first, resp.~second case.
+\item[(ii)] $T$ is {\em $e$-splitting for $\C_n$} if there exists $i\le n$ such that for all $P\in[T]$ with $\phi_e^{P}$ total, we have $\phi_e^{P}\equiv_T X_i(P)$.
+\end{itemize}
+\end{defn}
+The definition of $e$-splitting in \cite{epstein} is different, but implies this one by the Computation Lemma (\cite[IV.C]{epstein}).
+If the generic path lies on an $e$-splitting tree for all $e$, it will thus code a map onto an initial segment. To make sure that the map does not collapse anywhere, we can force differentiation as we did in Chapter \ref{fdlchp}. But it is simpler to rely on the general Diagonalization Lemma (\cite[IV.C]{epstein}, based on Posner's argument), which we reword as follows.
+\begin{lem}\label{posner}
+Suppose that the sequence $X_i$ represents $\L$, $i<_{\L}j$, and $B$ is an infinite binary string. Suppose further that the following is true for all but finitely many $n$: that $B$ lies on a uniform binary tree $T$ which is $n$-splitting and special for $X_i-X_j$. Then $X_j(B)\nle_T X_i(B)$.
+\end{lem}
+Finally we state the lemma concerning the effective density of the properties which we would like to force. As in Chapter \ref{fdlchp}, it is justified by reviewing the arguments in the source (\cite[V.A, VI.B]{epstein}) and noticing that the different cases are defined by two quantifier statements.
+\begin{lem}\label{ldensity}
+There is a total function $f:\w\times\w\times\w\to\w$, computable in $\dg{0}''$, such that if $\C_n$ is (a recursive index for) a sequence representing $\L_n$ and $T$ is (a recursive index for) a uniform binary tree, special for $\C_n$ then $f(\C_n,e,T)$ is (a recursive index for) a uniform subtree of $T$, special for $\C_n$ which decides $e$-totality and is $e$-splitting for $\C_n$. 
+\end{lem}
+\end{section}
+
+\newpage
+
+\begin{section}{The Main Construction}
+We construct a tree of embeddings, as we did in Chapter \ref{fdlchp}.
+\begin{lem}\label{embl}
+There is a sequence $\C$ representing $\L$ and a uniform binary tree $\hat{T}$, both computable in $\dg{0}''$, such that every $P\in[\hat{T}]$ codes an embedding of $\L$ onto an initial segment of $\D$ with respect to $\C$. Furthermore, there is a recursive sequence $\{Y_i\}$ of disjoint infinite subsets of $\w$ such that for any path $P=\hat{T}(A)$ and any $i\in\w$
+\[ {X_i(P)}''\equiv_T X_i(P)\join\dg{0}''\equiv_T \oplus_{j\le_{\L}i}Y_j(A)\join\dg{0}'' \]
+\end{lem}
+\begin{proof}
+First we fix the sequence $\{Y_i\}$. Let $l:\w\to\w\-\{0\}$ be recursive such that 
+\begin{itemize}
+\item[(i)] $l(i)\le i+1$ for all $i$
+\item[(ii)] $Y_i=l^{-1}(i)$ is infinite for all $i>0$
+\end{itemize}
+Let $f$ be as in Lemma \ref{ldensity}. We define in stages the sequence $\C=\{X_0,X_1,\dots\}$ and recursive uniform trees $T_{\s}$ for all finite binary strings $\s$. We use $\C_n$ to denote the partial sequence $X_0,\dots,X_n$. The trees $T_{\s}$ will satisfy the following properties:
+\begin{itemize}
+\item[(i)] $T_{\s}$ is special for $\C_{|\s|+1}$
+\item[(ii)] If $|\s|=j$ then $|T_{\s}(\es)|\le \min(X_{j+1})$
+\item[(iii)] If $|\s|=j$ then $T_{\s}(0)$ and $T_{\s}(1)$ disagree on $X_{l(j)}$, and $l(j)$ is the $\L_{j+1}$-least for which this holds.
+\item[(iii)${}^*$] If $|\s|=j$ then $T_{\s\cat 0}(\es)$ and $T_{\s\cat 1}(\es)$ disagree on $X_{l(j)}$, and $l(j)$ is the $\L_{j+1}$-least for which this holds.
+\item[(iv)] $T_{\s\cat d}\sle T_{\s}E_{d}$ (for $d=0,1$)
+\item[(v)] $T_{\s\cat d}\sle f(\C_{|\s|+1},|\s|,T)$ for some recursive tree $T$
+\item[(vi)] if $|\s_1|=|\s_2|$ then $|T_{\s_1}(\es)|=|T_{\s_2}(\es)|$
+\item[(vii)] if $|\s_1|=|\s_2|$ then 
+\[ T_{\s_1}(\r\cat\r')-T_{\s_1}(\r)=T_{\s_2}(\r\cat\r')-T_{\s_2}(\r). \]
+\end{itemize}
+
+ Let $X_0=\es$ and $X_1=\w$. We let $T_{\es}=\idtree$, and note that it is trivially special for $\C_1$ since {\em any} branching agrees on $X_0$ but not on $X_1$. Property (iii) is also fulfilled, since $l(0)=1$. Suppose $T_{\s}$ has been defined for all $\s$ of length $k$. Let $\{\t_j\}_{j=1}^m$ list all binary strings of length $k+1$, and let $\t_j=\s_j\cat d_j$ with $|\s_j|=k$ and $d_j<2$.Let $T'_{\t_j}=T_{\s_j}E_{d_j}$. We go by subinduction on $j$:
+\[ T^*_{\t_1}=f(\C_{k+1},k,T'_{\t_1}),\qquad T^*_{\t_{j+1}}=f(\C_{k+1},k,T'_{\t_{j+1}}(T^*_{\t_j}/T'_{\t_j})).\]
+For all $1\le j\le m$ now let 
+\[ \tilde{T}_{\t_j}=T'_{\t_j}(T^*_{\t_m}/T'_{\t_m}).\]
+As in Chapter \ref{fdlchp}, $\tilde{T}_{\t_j}$ are uniform recursive and satisfy conditions (iv)-(vii) above (in place of $T_{\t_j}$. Furthermore, it is easily seen that replacing these by $\tilde{T}_{\t_j}E_{\s}$ for any fixed $\s$ will maintain that.
+
+In order to satisfy property (i), we simply define $X_{k+2}$ in a way which would make the trees $\tilde{T}_{\t_j}$ special for $\C_{k+2}$. Let $a$ and $b$ be the immediate predecessor and immediate successor (resp.) of $k+2$ in $\L_{k+2}$. Now, $\tilde{T}_{\t_1}$ is special for $\C_{k+1}$, and in particular for $X_a-X_b$, so that the set
+\[ Z=\{m\st |\s|=m \then \tilde{T}_{\t_1}(\s\cat 0),\tilde{T}_{\t_1}(\s\cat 1)\text{ agree on $X_a$ but not on $X_b$}\} \]
+is infinite (and clearly recursive). Let $m_0,m_1,\dots$ be an increasing enumeration of $Z$. Let
+\[ Z_0=\{x\st x\in X_b\- X_a\text{ and }|\tilde{T}_{\t_1}(\s)|\le x<|\tilde{T}_{\t_1}(\s\cat 0)|\text{ where $|\s|=m_{2t}$, $t\in\w$}\}, \]
+an infinite recursive set. Let $\tilde{X}_{k+2}=X_a\cup Z_0$. Then $X_a\sle^* \tilde{X}_{k+2}\sle^* X_b$ and the differences are infinite. Also, $\tilde{T}_{\t_1}$ is special for $X_a-\tilde{X}_{k+2}$ since at any level $m_{2t}$ it branches in a way which agrees on $X_a$ and disagrees on $\tilde{X}_{k+2}$. By a similar argument (for levels $m_{2t+1}$) it is seen to be special for $\tilde{X}_{k+2}-X_b$. Now note that for any $1\le j\le m$ and any $\s$, the tree $\tilde{T}_{\t_j}E_{\s}$ will be special for $X_a-\tilde{X}_{k+2}$ and for $\tilde{X}_{k+2}-X_b$, because the branchings in all trees $\tilde{T}_{\t_j}$ are the same (property (vii)) and taking an extension tree will only remove finitely many levels.
+
+For condition (iii), let $b=l(k+1)$ and $a$ the immediate predecessor of $b$ in $\L_{k+2}$. Let $r$ be the least such that $\tilde{T}_{\t_1}(0^r0)$ and $\tilde{T}_{\t_1}(0^r1)$ agree on $X_a$ and not on $X_b$. Such $r$ exists, since the tree is special for $X_a-X_b$. Now let $T_{\t_j}=\tilde{T}_{\t_j}E_{0^r}$ for all $1\le j\le m$. This takes care of condition (iii). Condition (iii)${}^*$ is fulfilled as well, since for any $d<2$
+\[ T_{\s_j\cat d}(\es)=\tilde{T}_{\s_j\cat d}(0^r)
+  =T'_{\s_j\cat d}(T^*_{\t_m}/T'_{\t_m})(0^r)
+  =T_{\s_j}E_d(\r)=T_{\s_j}(d\cat \r) \]
+where $\r=(T^*_{\t_m}/T'_{\t_m})(0^r)$. By condition (vii), $T_{\s_j}(d\cat \r)-T_{\s_j}(d)$ is the same for both values of $d$, and thus the disagreement between the strings $T_{\s_j\cat d}(\es)$ is the same as between the strings $T_{\s_j}(d)$. Condition (iii)${}^*$ now follows immediately from condition (iii). 
+
+Finally, let $X_{k+2}=\tilde{X}_{k+2}\-\{0,1,\dots,|T_{0^{k+1}}(\es)|\}$. As this is only a finite change, we still have $X_a\sle^* X_{k+2}\sle^* X_b$ with infinite differences, and $T_{\t_j}$ is special for $X_a-X_{k+2}$ and for $X_{k+2}-X_b$, for all $1\le j\le m$. Therefore $\C_{k+2}$ represents $\L_{k+2}$, and the trees $T_{\t_j}$ are special for $\C_{k+2}$. Condition (ii) is now fulfilled by definition of $X_{k+2}$. This completes the induction on $k$.
+
+Now let $\hat{T}(\s)=T_{\s}(\es)$. By an argument analogous to that in Chapter \ref{fdlchp}, $\hat{T}$ is uniform. The tree, as well as the sequence $\C=\cup\C_k$ which represents $\L$, are recursive in $\dg{0}''$ since the construction is.
+
+Fix $P=\hat{T}(A)\in[\hat{T}]$. The requirements forced, together with lemma \ref{posner}, imply that $P$ codes an embedding of $\L$ onto an initial segment of $\D$. It is left to show that
+\[  X_i(P)\join\dg{0}''\ge_T \oplus_{j\le_{\L}i}Y_j(A)\join\dg{0}''\ge_T{X_i(P)}'' \]
+holds for every $i\in\w$.
+
+To establish the first inequality, it suffices to demonstrate that $X_i(P)\join\dg{0}''\ge_T Y_i(A)$ uniformly for all $i$, since then for all $j\le_{\L}i$ we have
+\[ X_i(P)\join\dg{0}''\ge_T X_j(P)\join\dg{0}''\ge_T Y_j(A). \]
+(The reduction on the left is uniform because the sequence $\{X_i\}$ is uniformly recursive in $\dg{0}''$.)
+We compute the value of $Y_i(A)(n)$ given $X_i(P)\join\dg{0}''$. First let $m$ be the $n$-th value of $Y_i$, so that $Y_i(A)(n)=A(m)$. Note that $l(m)=i$, and therefore $T_{\s\cat 0}(\es)$ and $T_{\s\cat 1}(\es)$ disagree on $X_i$ whenever $|\s|=m$, by property (iii)${}^*$. Then $A(m)=d$ such that $T(\s\cat d)$ agrees with $P$ on $X_i$ above $|T(\s)|$.
+
+Next we show that $\oplus_{j\le{\L}i}Y_j(A)\join\dg{0}''\ge_T {X_i(P)}''$. To find ${X_i(P)}''(n)$, we need to find whether $\phi_n^{X_i(P)}$ is total or not. First let $m>0$ be such that $\phi_n^{X_i(P)}\simeq\phi_m^P$ and $\phi_m$ depends only on oracle values at members of $X_i$ ($\phi_m$ first applies $X_i$ to the oracle, then computes $\phi_n$ with the new oracle).
+We find, by induction on $j\le m$, a string $\s$ of length $j+1$ such that $T_{\s}(\es)$ agrees with $P$ on $X_i$.
+Suppose that we have $\s$ up to length $j$. If $T_{0^j\cat 0}(\es)$ and $T_{0^j\cat 1}(\es)$ agree on $X_i$, let $\s(j)=0$ (a value of 1 would do just as well, of course). Otherwise, $T_{0^j\cat 0}(\es)$ and $T_{0^j\cat 1}(\es)$ disagree on $X_i$. We cannot have $i>j+1$, since then by condition (ii)
+\[ |T_{0^{j+1}}|\le |T_{0^{i-1}}(\es)| \le \min(X_i), \]
+in contradiction to the disagreement. Thus $i\in\L_{j+1}$, and by condition (iii)${}^*$ we have $l(j)\le_{\L} i$ (since $l(j)$ is the least in $\L_{j+1}$ for which there is a disagreement). $Y_{l(j)}(A)$ is then part of our oracle, and we can find $A(j)=Y_{l(j)}(A)(k)$ (the value of $k$ depends on $l$ alone). Set $\s(j)=A(j)$. This must be the branching which agrees with $P$ on $X_i$, since the tree is uniform. This completes the computation of $\s$.
+
+Now notice that
+\begin{align*}
+n\in {X_i(P)}'' & \Iff \phi_n^{X_i(P)}\text{ is total }\\
+   & \Iff \phi_m^P\text{ is total }\\
+   & \Iff T_{A\restrict (m+1)}\text{ forces $m$-totality}\\
+   & \Iff T_{\s}\text{ forces $m$-totality},
+\end{align*}
+where the last equivalence stems from the equality
+\[ \{X_i(Q)\st Q\in [T_{A\restrict (m+1)}]\} = \{X_i(Q)\st Q\in [T_{\s}]\} \]
+which is a consequence of property (vii) and the agreement of $T_{\s}(\es)$ and $P=\hat{T}(A)$ on $X_i$.
+\end{proof}
+\end{section}
+
+\newpage
+
+\begin{section}{The Results}
+As in Chapter \ref{fdlchp}, we first conclude
+\begin{cor}
+There are $2^{\w}$ many lattice embeddings of $\L$ as an initial segment of $\D$.
+\end{cor}
+On to the main theorem of this section.
+\begin{thm}
+Let $\L=(\w,\le)$ be a countable linear order, computable in $\dg{0}''$, with bottom element $0$ and top element $1$. Let $h:\L\to\D$ be an order homomorphism, with $h(0)=\dg{0}''$. There is an initial segment $\C$ of $\D$ and an order isomorphism $g:\L\to\C$ such that
+\[ g(i)''=g(i)\join\dg{0}''=h(i)\qquad\text{for all $i\in L$.} \]
+\end{thm}
+\begin{proof}
+In view of Lemma \ref{embl}, all we need is to define $A$ in such a way that $\deg(\oplus_{j\le_{\L}i}Y_j(A))\join\dg{0}'' = h(i)$ for all $i\in w$. Pick representatives $A_i\in h(i)$ for $i>0$, and let $A$ be such that $Y_i(A)=A_i$ for all $i\in\w$ (such $A$ is unique, since the sets $Y_i$ form a partition of $\w$). Now observe that for all $i>0$
+\[ h(i) = \deg(A_i) = \deg(Y_i(A)) = \deg(\oplus_{j\le_{\L}i}Y_j(A))\join\dg{0}'' \]
+since $h(i)\ge\dg{0}''$ for all $i>0$ and $A_i\ge_T A_j$ uniformly for $j\le_{\L} i$ (the uniformity follows from the fact that the sequence $\{Y_i\}$ is uniformly recursive.
+
+Now let $P=\hat{T}(A)$, and set $g(i)=\deg(X_i(P))$. The equality in the theorem follows for $i>0$ by the above, and for $i=0$ trivially.
+\end{proof}
+
+\newpage
+
+We can relativize and iterate to obtain
+\begin{thm}
+Let $\L=(\w,\le)$ be a countable linear order, computable in $\dg{0}''$, with bottom element $0$ and top element $1$. Let $h:\L\to\D$ be an order homomorphism, with $h(0)=\dg{0}^{(2n)}$. There are initial segments $\C_k$ of $\D(\ge\dg{0}^{(2k)})$ and order isomorphisms $g_k:\L\to\C_k$ for $k<n$ such that
+\begin{align*} 
+&g_k(i)''=g_k(i)\join\dg{0}^{(2k+2)}=g_{k+1}(i)\qquad& &\text{for all $i\in\w$ and $k<n-1$, and} \\
+&g_{n-1}(i)''=g_{n-1}(i)\join\dg{0}^{(2n)}=h(i)\qquad& &\text{for all $i\in\w$.}
+\end{align*}
+\end{thm}
+\begin{proof}
+This is straightforward. Since $\L$ is recursive in $\dg{0}''$, it is recursive in $\dg{0}^{(2k)}$ for any $k>0$.
+\end{proof}
+\end{section}
+%%% END CHAPTER
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% CHAPTER 5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\thispagestyle{plain}
+\chapter{Degrees r.e.a. in $\dg{0}''$}\label{reachp}
+Section 1 deduces the main result from known theorems. Section 2 presents a direct construction which produces a slight alteration of it. Section 3 explains why a generalization of the result to non-trivial lattices is problematic.
+\begin{section}{Introduction}
+The following theorem is a relativization of the Sacks Inversion Theorem. The second one is the Cooper Inversion Theorem.
+\begin{thm}\label{sacksinv}{\em\cite{sacksinv}}
+If $\dg{b}$ is r.e.~in and above $\dg{x}'$ then there exists a degree $\dg{c}$ r.e.~in and above $\dg{x}$ such that $\dg{c}'=\dg{b}$.
+\end{thm}
+\begin{thm}\label{cooperinv}{\em\cite{cooperinv}}
+If $\dg{c}\ge\dg{0}'$ then there exists a minimal degree $\dg{a}$ such that $\dg{a}'=\dg{c}$.
+\end{thm}
+If we take $\dg{x}$ to be $\dg{0}'$ in Theorem \ref{sacksinv}, the two theorems combine to produce
+\begin{thm}\label{rea}
+If $\dg{b}$ is r.e.~in and above $\dg{0}''$ then there exists a minimal degree $\dg{a}<\dg{0}''$ such that $\dg{b} = \dg{a}''$.
+\end{thm}
+\begin{proof}
+We get $\dg{a}<\dg{0}''$ since $\dg{c}=\dg{a}'$ is r.e.~in $\dg{0}'$, and so computable in $\dg{0}''$.
+\end{proof}
+
+Note that the converse also holds: if $\dg{a}<\dg{0}''$ is minimal, then $\dg{a}''$ is r.e.~in (and trivially above) $\dg{0}''$, for $\dg{a}''=(\dg{a}\join\dg{0}')'$ by Theorem \ref{gl2}, and that is r.e.~in $\dg{a}\join\dg{0}'\le\dg{0}''$. This characterizes the degrees r.e.~in and above $\dg{0}''$ as the double jumps of minimal degrees below $\dg{0}''$. As mentioned in Chapter \ref{introchp}, the corresponding problem for degrees r.e.~in and above $\dg{0}'$ is not yet solved, and any solution will not be as simple as in the case of $\dg{0}''$.
+
+In the following section we directly construct a double jump inversion of a degree r.e.~in and above $\dg{0}''$, in a manner which is considerably simpler than the sum of the proofs of the two theorems above. We build on the standard construction of a minimal through forcing with binary trees (uniformity is not needed here), and we code a set $B$ of degree $\dg{b}$ as we go along. However, we only have an enumeration of $B$ (since the oracle is $\dg{0}''$), and as a result we may make wrong coding steps. Going back to fix these mistakes creates finite injury, and the conditions settle down eventually.
+
+It turns out that the degree $\dg{a}$ produced by this construction is different in a fundamental way from the degree given by the proof of Theorem \ref{rea}. For we can reconstruct the set $B$ using $\dg{a}'$ and the construction oracle, giving
+\[ \dg{b} = \dg{a}'\join\dg{0}'', \]
+whereas in Theorem \ref{rea} we have $\dg{a}'\le \dg{0}''$, and so $\dg{a}'\join\dg{0}''=\dg{0}''$.
+
+Before presenting the construction, we mention the appropriate density lemma, justified in \cite[V.2.7, V.3.2]{lerman}.
+\begin{defn}
+A binary tree $T$ is {\em $e$-splitting} if for all $P\in[T]$, whenever $\phi_e^P$ is total it is either recursive or computes $P$.
+\end{defn}
+
+\newpage
+
+\begin{lem}
+There is a total function $f:\w\times\w\to\w$, computable in $\dg{0}''$, such that if $T$ is (a recursive index for) a binary tree then $f(e,T)$ is (a recursive index for) a binary tree which 
+\begin{itemize}
+\item[(i)] is a subtree of $T\cdot E_i$ where $i<2$ is such that $T(i)$ is incompatible with $\phi_e$;
+\item[(ii)] decides $e$-totality;
+\item[(iii)] is $e$-splitting.
+\end{itemize}
+\end{lem}
+
+We also define the {\em standard narrow binary tree} $N_2$ as follows:
+\[ N_2(d_0d_1\dots d_n)=d_00d_10\dots d_n0 \]
+for all $n\in\w$, $d_i<2$. Note that for every binary tree $T$, the tree $T\cdot N_2$ is a narrow subtree of $T$: for no binary string $\s$ is $T\cdot E_{\s}$ a subtree of $T\cdot N_2$. Moreover, if $T$ is recursive, so is $T\cdot N_2$.
+\end{section}
+\begin{section}{The Construction}
+\begin{thm}\label{readirect}
+If $\dg{b}$ is r.e.~in and above $\dg{0}''$ then there exists a minimal degree $\dg{a}<\dg{0}''$ such that
+\[ \dg{b} = \dg{a}''= \dg{a}'\join\dg{0}'' = (\dg{a}\join\dg{0}')'. \]
+\end{thm}
+\begin{proof}
+Fix a set $B\in b$ r.e.~in $\dg{0}''$, and let $\tuple{b_i}_{i\in\w}$ be an enumeration witnessing that. Let $B_s=\{b_i\st i<s\}$ approximate $B$. The construction is a finite injury one, with oracle $\dg{0}''$. At stage $s$ we define a nested sequence of recursive binary trees $T_i^s$ for $i\le g(s)$, and a finite string $\a_s=T_{g(s)}^s(\es)$.
+
+\newpage
+
+Let $g(0)=0$, and let $T_0^0$ be the identity tree (with $\a_0=\es$). At stage $s+1$, if $g(s)>b_s$ (injury) let $g(s+1)=b_s+1$, otherwise let $g(s+1)=g(s)+1$. For all $i<g(s+1)$ let $T_i^{s+1}=T_i^s$. Let $n=g(s+1)-1$. If $n\notin B_{s+1}$ let $T_{g(s+1)}^{s+1}=f(n,T_n^{s+1}N_2)$. Otherwise let $T_{g(s+1)}^{s+1}=f(n,T_n^{s+1}E_{\s})$ where $\s$ is the first string of even length $m$ such that $\s(m-1)=1$ and $T_n^{s+1}(\s)\sge\a_s$. In any case, let $\a_{s+1}=T_{g(s+1)}^{s+1}(\es)$.
+
+Let $A=\cup_s\a_s,\ \dg{a}=\deg(A)$. This completes the construction.
+
+Before we proceed with the proof, note that in case of injury ($g(s)>b_s$), $T_{b_s+1}^{s+1}$ is defined to be a subtree of $T_{b_s}^sE_{\s}$ where $\s$ is not on $N_2$, whereas at stage $s$, $T_{b_s+1}^s\sle T_{b_s}N_2$. Consequently, not only are $T_{b_s+1}^s$ and $T_{b_s+1}^{s+1}$ different, but they also have disjoint sets of paths. The importance of this point will be apparent in the proof.
+
+First we show by induction that $T_i=\lim_s T_i^s$ exists for all $i$. $T_0^s$ is never changed, since $g(s)>0$ for all $s>0$. Let $s$ be a stage at which $T_j^s=T_j$ for all $j\le i$. This implies that no $n<i$ enters $B$ after $s$. Let $t\ge s$ be the least such that $T_{i+1}^t\ne T_{i+1}^{t+1}$ (if there is no such, we're done). It must be that $b_t=i$, and so $g(t+1)=i+1$. Therefore after $t+1$ no $n\le i$ enters $B$, $g$ remains above $i+1,$ and $\lim_s T_{i+1}^s=T_{i+1}^{t+1}$.
+
+Next, observe that $\dg{a}$ is a minimal degree, since for every $e$ there is some tree $S$ such that $A$ lies on $T_{e+1}=f(e,S)$. The construction is recursive in $\dg{0}''$, consequently $\dg{a}<\dg{0}''$.
+
+To find $\Tot^A(n)$ given $B$, follow the construction (using $\dg{0}''\le B$) until $B_s\restrict(n+1)=B\restrict(n+1)$. As above, this means that $T_{n+1}=T_{n+1}^s=f(n,S)$ for some $S$. Since $A$ is a path on $T_{n+1},$ we have $n\in\Tot^A$ iff $T_{n+1}^s$ forces $n$-totality, and this can be found using $\dg{0}''$. Hence $\dg{a}''\le \dg{b}$.
+
+\newpage
+
+To find $B(n)$ given $A'\join\dg{0}''$, follow the construction, and at every stage $s$ where $T_{n+1}^s$ is redefined, find if $A$ lies on $T_{n+1}^s$ (this is recursive in $A'$). Since $A\in[T_{n+1}]$, this will eventually be the case. We claim that $n\in B$ iff $n\in B_s$, where $s$ is the first such that $A\in[T_{n+1}^s]$. Indeed, if $n\in B_s$, clearly $n\in B$. Suppose $n\notin B_s$. Let $m=b_t$ be the least with $t\ge s$, and suppose that $m\le n$. Then 
+\[ A\in[T_{n+1}^s]\sle [T_{m+1}^s]=[T_{m+1}^t]\quad\text{and}\quad 
+[T_{m+1}^t]\cap[T_{m+1}^{t+1}]=\es, \]
+hence $A\notin [T_{m+1}^{t+1}]$. But $T_{m+1}=T_{m+1}^{t+1}$ and $A$ does lie on $T_{m+1}$. The contradiction implies that $m>n$, and consequently that $n$ never enters $B$.
+
+Together with the inequality $\dg{a}'\join\dg{0}''\le \dg{a}''$, this proves the first two equalities in the theorem. The last one follows from Lemma \ref{gl2}.
+\end{proof}
+\end{section}
+\begin{section}{Limitations}
+It is natural to hope for a generalization of the construction which would allow double-jump inversions of certain lattices (of degrees r.e.a.~in $\dg{0}''$) onto initial segments. As it turns out, even Theorem \ref{rea} is not generalizable to the simplest lattices.
+\begin{thm} 
+There are degrees $\dg{b}_1$ and $\dg{b}_2$, r.e.~in and above $\dg{0}''$, such that for no four element initial segment $\{\dg{0}, \dg{a}_1, \dg{a}_2, \dg{a}_1\join\dg{a}_2\}$ below $\dg{0}''$ do we have $\dg{a}_i''=\dg{b}_i$ and $(\dg{a}_1\join\dg{a}_2)''=\dg{b}_1\join\dg{b}_2$.
+\end{thm}
+\begin{proof}
+We relativize Shore's non-inversion theorem \cite[1.2]{shore} to $\dg{0}'$: there are degrees $\dg{b}_1$ and $\dg{b}_2$, r.e.~in and above $\dg{0}''$, such that for no $\dg{0}'\le\dg{c}_1,\dg{c}_2\le\dg{0}''$ do we have $\dg{c}_i'=\dg{b}_i$ and $(\dg{c}_1\join\dg{c}_2)'=\dg{b}_1\join\dg{b}_2$. Fix such $\dg{b}_1$ and $\dg{b}_2$.
+
+\newpage
+
+Suppose there is an initial segment as in the theorem, and let $\dg{c}_i=\dg{a}_i\join\dg{0}'$ for $i=1,2$. Then $\dg{0}'\le\dg{c}_1,\dg{c}_2\le\dg{0}''$, and for $i=1,2$ we have
+\[ \dg{c}_i'=(\dg{a}_i\join\dg{0}')'=\dg{a}_i''=\dg{b}_i \]
+since $\dg{a}_i$ is $\GL_2$ by Lemma \ref{gl2}. For a contradiction, note that $(\dg{a}_1\join\dg{a}_2)$ is $\GL_2$ as well, and therefore
+\[ (\dg{c}_1\join\dg{c}_2)'=((\dg{a}_1\join\dg{a}_2)\join\dg{0}')'=(\dg{a}_1\join\dg{a}_2)''=\dg{b}_1\join\dg{b}_2. \]
+\end{proof}
+\end{section}
+%%% END CHAPTER
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% CHAPTER 6 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\thispagestyle{plain}
+\chapter{A Non-Weakly Recursive Minimal With a Strong Minimal Cover}\label{nwrsmcchp}
+We enter the second part of the thesis, concerning weakly recursive degrees and strong minimal covers. The introduction to this section covers the basic definitions and gives an overview of the construction, which follows in section 2.
+\begin{section}{Introduction}
+The following definition applies to any partial order. However we restrict our attention to Turing degrees.
+\begin{defn} Let $\dg{b}<\dg{a}$ be Turing degrees.
+\begin{itemize}
+\item[(i)] $\dg{a}$ is a {\em minimal cover} of $\dg{b}$ if the interval $(\dg{b},\dg{a})$ is empty.
+\item[(ii)] $\dg{a}$ is a {\em strong minimal cover} of $\dg{b}$ if the intervals $[\dg{0},\dg{b}]$ and $[\dg{0},\dg{a})$ are equal.
+\end{itemize}
+\end{defn}
+Clearly (ii) implies (i).
+The following definition and theorem are due to Ishmukhametov.
+
+\begin{defn}\label{wr}
+A degree $\dg{a}$ is {\em weakly recursive} if there is a recursive function $p$ such that for every function $f\le\dg{a}$ there is a recursive function $h$ such that $|W_{h(n)}|\le p(n)$ and $f(n)\in W_{h(n)}$ for all $n\in\w$.
+\end{defn}
+\begin{thm}{\em\cite{ishmu}}
+Every weakly recursive degree has a strong minimal cover.
+\end{thm}
+While the converse is true for r.e.~degrees \cite{ishmu}, we show that it is not true in general. Indeed, in this chapter we construct a (minimal) degree $\dg{b}$ which is not weakly recursive but has a strong minimal cover. The $\dg{0}''$ construction is based on that of a three element linear initial segment \cite[III]{epstein} with uniform trees. In order to make the middle degree non-weakly recursive, we define functions $f_i\le\dg{b}$ and diagonalize with $f_i$ against $p_i,h_j$ for all $j$, where $p_k=h_k$ is an enumeration of all recursive functions (which our oracle provides). 
+
+The diagonalization requires fattening the trees so that the branching exceeds the bounds given by $p_i$. This leads us to abandon binary trees in favor of partial $\w$-trees. The trees are finitely branching, but all of their paths are infinite (so that their partiality is still limited).
+
+Since the trees diverge from the definition given in Chapter \ref{defchp}, care must be taken when dealing with concepts such as tree division (which is used, but in a limited capacity). Also, we are forced to go into the semi-gory details of splitting trees (which were elegantly skipped in previous chapters).
+
+Recall Definition \ref{xofa}, and let $\Od$ be the set of odd natural numbers.
+\begin{defn}
+\begin{itemize}
+\item[(i)] Two strings $\s,\t$ form an {\em $e$-split} if $\phi_e^{\s}(x)\cvg\ne\phi_e^{\t}(x)\cvg$ for some $x\in\w$.
+\item[(ii)] A tree is {\em $e$-non-splitting} if no pair of strings in its range form an $e$-split.
+\item[(iii)] A tree is {\em $e$-splitting} if every pair of non-compatible strings in its range form an $e$-split.
+\item[(iv)] A tree $T$ is {\em $e$-splitting on the odds} if every branching pair on $T$ (i.e.~two immediate successors of the same node) which disagrees on $\Od$ forms an $e$-split, and no pair of strings on $T$ which agrees on the odds forms an $e$-split.
+\end{itemize}
+\end{defn}
+The following is a summary of the Computation Lemmas from \cite[I.G, III.A]{epstein}.
+\begin{lem}\label{comp}
+Let $A$ be a path on a tree $T$, such that $C=\phi_e^A$ is a total function.
+\begin{itemize}
+\item[(i)] If $T$ is $e$-non-splitting, then $C$ is recursive.
+\item[(ii)] If $T$ is $e$-splitting, then $C\ge_T A$.
+\item[(iii)] If $T$ is $e$-splitting on the odds, then $C\equiv_T\Od(A)$.
+\end{itemize}
+\end{lem}
+\end{section}
+\begin{section}{The Construction}
+\begin{thm}\label{smc} There are degrees $\dg{b}<\dg{a}\le\dg{0}''$ such that $\dg{b}$ is minimal and not weakly recursive, and $\dg{a}$ is a strong minimal cover of $\dg{b}$.
+\end{thm}
+
+\begin{proof} 
+We construct, with oracle $\dg{0}''$, an infinite $\w$-string $A$ and functions $\{f_i\}_{i\in\omega}$ recursive in $\Od(A)$ satisfying the following requirements:
+\begin{align*}
+&R^0_s:&\qquad &\Od(A)\ne\phi_s\\
+&R^1_s:&\qquad &A\ne\phi_s^{\Od(A)}\\
+&R^2_s:& &s=\tuple{i,j}\then\exists n\ 
+         \left(\left|W_{h_j(n)}\right|>p_i(n)\ 
+         \lor\ f_i(n)\notin W_{h_j(n)}\right)\\
+&R^3_s:& &\phi_s^A = C\text{ is total} \then (C\le_T\dg{0}\ \lor\ A\le_T C\ \lor\ C\equiv_T\Od(A))
+\end{align*}
+
+Where $p_i=h_i$ is the $i$-th recursive function (which can be found recursively in $\dg{0}''$). Clearly, if $A$ satisfies these requirements for all $k\in\w$, then $\dg{b}=\deg(\Od(A))$ is minimal and not weakly recursive, and $\dg{a}=\deg(A)$ is a strong minimal cover of $\dg{b}$.
+The construction will produce a sequence of recursive uniform partial $\w$-trees such that $T_{n+1}\sle T_n$ for all $n$. We use $\t\sqsubset_i\t'$ to mean that for some string $\s$ and $k\in\w$, $\t=T_i(\s)$ and $\t'=T_i(\s\cat k)$ (in other words, $\t'$ is an immediate successor of $\t$ on $T_i$).
+We want the following conditions to hold for all $i$:
+\begin{itemize}
+\item[(i)] If $\s\cat k\in\dom(T_i)$ and $k'<k$ then $\s\cat k'\in\dom(T_i)$.
+\item[(ii)] $T_i$ is 2-branching at odd levels, i.e.~if $\s\in\dom(T_i)$ is of odd length then $T_i(\s\cat0)$ and $T_i(\s\cat1)$ are the (only) immediate successors of $T_i(\s)$ on $T_i$.
+\item[(iii)] $(\t_1,\t_2\sqsupset_i T_i(\s)\land\t_1\ne\t_2)\then
+         \ \left(|\s|\text{ is odd} \iff \Od(\t_1)=\Od(\t_2)\right)$
+\item[(iv)] $(\t_1\in \rg(T_i)
+  \ \land\ i'<i\ \land\ \t_1\sqsubset_{i'}\t_2)
+  \then \exists\t_3\supseteq\t_2\ (\t_1\sqsubset_i\t_3)$
+\end{itemize}
+Note that if $T_i$ satisfies these conditions and $T_{i+1}$ is an extension subtree $T_i\cdot E_{\s}$ with $|\s|$ even, then $T_{i+1}$ satisfies these conditions as well.
+
+$A$ will be the unique path which lies on all $T_i$, and the functions $f_i$ are computed from $A$ as follows:
+\[ f_i(n)=C(2n)\quad\text{ where $A=T_{5i}(C)$}.\]
+Thus, in order to force the value of $f_i(n)$ it suffices to specify which node on level $2n+1$ of $T_{5i}$ is an initial segment of $A$. 
+Note that by condition (iii), if $C_1(2n)\ne C_2(2n)$ then $\Od(T_{5i}(C_1))\ne\Od(T_{5i}(C_2))$, and therefore $f_i$ is computable in $\Od(A)$ (for all $i$).
+
+To define $T_0$, let
+\[T_0(k_0d_0k_1d_1k_2d_2\dots)=(0k_0)\cat(d_00)\cat(0k_1)\cat(d_10)\cat(0k_2)\cat(d_20)\cat\dots \]
+for all $k_n\le\max(p_0(n),1)$ and $d_n=0,1$ (the parenthesis are for readability).
+Note that $T_0$ satisfies conditions (i)-(iii), and has $>p_0(n)$-branching
+at level $2n$ (for all $n$). 
+Stages $5s+4$ of the construction will ensure that $T_{5s}$ will be
+$>p_s(n)$-branching at level $2n$, for all $s>0$ as well (this will be assumed in stages $5s+2$).
+
+\newpage
+\noindent\textbf{Stage $5s$:}
+Pick the first $\s$ of length 2 such that $\Od(T_{5s}(\s))$ 
+is incompatible with $\phi_s$ (this is recursive in $\dg{0}'$). 
+Let $T_{5s+1}=T_{5s}E_{\s}$.
+Then $T_{5s+1}$ forces $R^0_s$, and conditions (i)-(iv) are maintained as in the remark above.
+\ \\\ \\
+\textbf{Stage $5s+1$:}
+Let $\a_i=T_{5s+1}(0\cat i)$ for $i=0,1$, and let $x$ be the first 
+on which $\a_0,\alpha_1$ disagree 
+(note that $\Od(\a_0)=\Od(\a_1)$, so $x$ is even). If there is an extension of
+$\a_0$ on $T_{5s+1}$ which forces $\phi_s^{\Od(A)}(x)\dvg$, 
+let $\s$ to be the first of even length such that $T_{5s+1}(\s)$
+is such an extension (this is recursive in $\dg{0}''$).
+
+Otherwise let $\s_0$ be the first of even length such that
+$\b_0=T_{5s+1}(\s_0)=\a_0\cat\tau$ satisfies $\phi_s^{\Od(\b_0)}(x)\cvg$.
+Let $\b_1=\a_1\cat\t=T_{5s+1}(\s_1)$ (exists by uniformity). Then
+\[ \b_0(x)\ne\b_1(x)\quad\text{and}\quad
+\phi_s^{\Od(\b_0)}(x)\cvg=\phi_s^{\Od(\b_1)}(x)\cvg \]
+since $\Od(\b_0)=\Od(\b_1)$.
+Let $i$ be the first such that $\phi_s^{\Od(\b_i)}(x)\ne\b_i(x)$, and
+let $\s=\s_i$.
+
+In any case, now let $T_{5s+2}=T_{5s+1}E_{\s}$. 
+Then $T_{5s+2}$ is recursive and forces $R^1_s$, 
+and conditions (i)-(iv) are maintained.
+\ \\\ \\
+\textbf{Stage $5s+2$:}
+Let $i,j$ be such that $s=\tuple{i,j}$. Let $\t = T_{5s+2}(\es)=T_{5i}(\s)$. By conditions (iii) and (iv), $\s$ is of some even length $2n$.
+If $\left|W_{h_j(n)}\right|\le p_i(n)$, find $t\le p_i(n)$ such that
+$t\notin W_{h_j(n)}$ (given $h_j$ and $p_i$, this is computable in $\dg{0}'$), 
+and let $T_{5s+3}=T_{5s+2}E_{r\cat0}$ where 
+$T_{5s+2}(r)\supseteq T_{5i}(\s\cat t)$ (such $r$ exists by condition (iv)).
+Then $T_{5s+3}$ satisfies conditions (i)-(iv) and fixes $f_i(n)=t$, thus forcing $R^2_s$.
+
+If $\left|W_{h_j(n)}\right| > p_i(n)$, then $R^2_s$ is already satisfied. In
+this case, simply let $T_{5s+3}=T_{5s+2}$.
+
+\newpage
+\noindent\textbf{Stage $5s+3$:}
+\begin{itemize}
+\item[(i)]
+If there is some $x$ and some $\t=T_{5s+3}(\s)$ which forces 
+$\phi_s^A(x)\dvg$, let $x,\t,\s$ be the first such with $|\s|$ even,
+and let $T_{5s+4}=T_{5s+3}E_{\s}$. This will force $\phi_s^A$ to not be total.
+
+\item[(ii)]
+Otherwise, if there is some $\t=T_{5s+3}(\s)$ above which there are no 
+$s$-splits, let $\t,\s$ be the first such with $|\s|$ even,
+and let $T_{5s+4}=T_{5s+3}E_{\s}$. This will force $\phi_s^A$ to be recursive by Lemma \ref{comp} (i).
+
+\item[(iii)]
+Otherwise, if there is some $\t=T_{5s+3}(\s)$ above which there are no
+$s$-splits which agree on the odds, let $\t,\s$ be the first such with $|\s|$ even. The idea here is to construct a subtree of $T_{5s+3}E_{\s}$ with the branching at every even level being pairwise $s$-splitting.
+
+\comment{
+Construction sketch: at even levels look for pairwise $s$-splitting extensions
+of all immediate successors, and copy extensions across the level to maintain
+uniformity. Finally extend as needed to get all extensions on the same odd 
+level. At odd levels keep the original 2-branching.
+}
+We replace $T_{5s+3},T_{5s+4}$ with $T,T',$ resp., for readability. The construction is by induction on the tree level, starting with $T'(\es)=\t$.
+Suppose we have defined level $n'$ of $T'$, consisting of strings from level $n$ of $T$ (where $n-n'$ is even). If $n'$ is odd, simply copy the successors from level $n+1$ of $T$, that is let
+\[ T'(\s\cat i)=T((T'/T)(\s)\cat i)\quad\text{for all $\s\in\dom(T')$ of length $n$ and $i=0,1$.} \]
+Note that this is clearly in accordance with conditions (i)-(iv).
+If $n'$ is even, let $\t_i=T'(\s_i)$ (for $1\le i\le r$) be the strings on level $n'$ of $T'$, and let $q$ be the branching size at level $n$ of $T$. We go by induction on $i\le r$ defining a set of extensions $\r_{i,j}$ for $j<q$. First let $\r_{0,j}=T((T'/T)(\s_0)\cat j)-\t_0$ (that is, the original $q$ extensions of $\t_1$ on $T$). For the induction step, suppose we have defined $\r_{i-1,j}$ for all $j<q$. We define strings $\r_{i,j}^m$ by a subinduction on $m$ running over an ordered list of all pairs $\tuple{t,t'}\in q\times q$ with $t<t'$. First let $\r_{i,j}^{-1}=\r_{i-1,j}$. Given $\r_{i,j}^{m^-}$, with the next pair being $m=\tuple{t,t'}$, let $(\x_0,\x_1)$ be the first $s$-split above $\t_i\cat\r_{i,t}^{m^-}$ on $T$, and let $x$ be the first such that $\phi_s^{\x_0}(x)\ne\phi_s^{\x_1}(x)$. Let $\x_2$ be the first extension of $\t_i\cat\r_{i,t'}^{m^-}$ on $T$ such that $\phi_s^{\x_2}(x)\cvg$. Let $\r_{i,t'}^m=\x_2-\t_i$, and let $\r_{i,t}$ be $\x_k-\t_i$ where $k<2$ is the first such that $(\t_k,\t_2)$ $s$-splits. Let $\r_{i,j}^m=\r_{i,j}^{m^-}$ for all other $j$. This completes the subinduction. Having defined $\r_{i,j}^m$ for the last pair $m$, let $w$ be the least odd number not less than all levels of $T$ on which the strings $\t_i\cat\r_{i,j}^m$ lie. For all $j<q$, let $\r_{i,j}$ be the least extension of $\r_{i,j}^m$ such that $\t_i\cat\r_{i,j}$ lies on level $w$ of $T$. This completes the induction on $i$. Finally, let $T'(\s_i\cat j)=\t_i\cat\r_{r,j}$ for all $1\le i\le r$ and $j<q$. This completes the construction in this case.
+
+$T'$ satisfies conditions (i)-(iv). Furthermore, every branching in $T$ which disagrees on the odds $s$-splits, while no $s$-split agrees on the odds. Thus $T'$ is $s$-splitting on the odds, and consequently forces $\phi_s^A\equiv\Od(A)$ by Lemma \ref{comp} (iii).
+
+\item[(iv)]
+Otherwise, it is necessarily the case that there are $s$-splits agreeing on the odds above every node on $T_{5s+3}$. In this case we construct a fully $s$-splitting tree $T_{5s+4}$ with $T_{5s+4}(\es)=T_{5s+3}(\es)$. At even levels, we apply the same process of erecting splits which was applied in case (iii). At odd levels the process is similar, but with two differences. First, there is no subinduction on $m$, since there is only one pair ($q=2$ here). Second, we need to define the extensions $\r_{i,j}$ (for $j=0,1$) to agree on the odds. The latter slightly complicates the definition of $\r_{i,j}$ given $\r_{i-1,j}$:
+Let $(\x_0,\x_1)$ be the first $s$-split above $\t_i\cat\r_{i-1,0}$ on $T$, which agrees on the odds, and let $x$ be the first such that $\phi_s^{\x_0}(x)\ne\phi_s^{\x_1}(x)$. Let $\x_2$ be the first extension of $\x_0[\t_i\cat\r_{i-1,0}\to\t_i\cat\r_{i-1,1}]$ on $T$ such that $\phi_s^{\x_2}(x)\cvg$. Let $k<2$ be the least such that $(\x_k,\x_2)$ is an $s$-split (which agrees on the odds, note). Now let $\r_{i,0}$ and $\r_{i,1}$ be extensions of equal length of $\r^*_{i,0}=\x_k-\t_i$ and $\r^*_{i,1}=\x_2-\t_i$ (resp.), which agree on the odds, by copying the extension from the longer to the shorter. For instance, if $\r^*_{i,0}$ is the longer, let $\r_{i,0}=\r^*_{i,0}$ and let $\r_{i,1}=\r^*_{i,0}[(\r^*_{i,0}\restrict|\r^*_{i,1}|)\to \r^*_{i,1}]$.
+
+The tree thus created forces $A\le\phi_s^A$, by Lemma \ref{comp} (ii).
+\end{itemize}
+
+In each of these cases we get a uniform subtree $T_{5s+4}$ 
+satisfying conditions (i)-(iv), which forces $R^3_s$.
+\ \\\ \\
+\textbf{Stage $5s+4$:}
+The goal here is to build a subtree of $T_{5s+4}$, fat enough so as to have $>p_{s+1}(m)$-branching at level $2m$ (for every $n$).
+
+The tree $T'=T_{5s+5}$ is constructed by induction on levels. As before, $T_{5s+4}$ is denoted by $T$. First let $T'(\es)=T(\es)$. Suppose we have defined level $n'$ of $T'$, consisting of strings from level $n$ of $T$ (where $n-n'$ is even). If $n'$ is odd, copy the successors from level $n+1$ of $T$, as was done in case (iii). If $n'=2m$ is even, let $\t$ be a string on level $n$ of $T$, and let $w$ be the least odd number such that there are $q>p_{s+1}(m)$ successors of $\t$ on level $w$ of $T$, name them $\t\cat\r_j$ for $j<q$. For each $\s$ of length $n'$ such that $T'(\s)\cvg$, and for each $j<q$, let $T'(\s\cat j)=T'(\s)\cat\r_j$. This ends the construction.
+
+$T_{5s+5}$ satisfies conditions (i)-(iv), and has $>p_{s+1}(n)$-branching at level $2n$, as required by the construction.
+\ \\
+\end{proof}
+\end{section}
+%%% END CHAPTER
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% CHAPTER 7 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\thispagestyle{plain}
+\chapter{A Non-Weakly Recursive Minimal Below $\dg{0}'$}\label{nwrchp}
+We answer a question raised in \cite{ishmu}. An outline is given in section 1, and the construction itself in section 2.
+\begin{section}{Introduction}
+We want to construct a minimal degree below $\dg{0}'$ which is not weakly recursive. In order to achieve that, we apply the diagonalization method presented in Chapter \ref{nwrsmcchp} to the classic construction of a minimal degree below $\dg{0}'$, using partial recursive trees and a finite injury argument \cite[IX.2.1]{lerman}.
+
+Since $\dg{0}'$ is the oracle, we do not have the privilege of enumerating the recursive functions. However, if $p_i$ (or $h_i$) is not total that fact will be found out eventually, and we can go back and act accordingly, just as we do when we run out of splittings.
+
+As any minimal degree is not a.n.r.~(see Theorem \ref{anr}(i)), this result tightens the bound on the scope of Ishmukhametov's characterization. The structure of $\Delta^0_2$ degrees (i.e.~$\D(\le\dg{0}')$) is considered to be the ``closest'', in many aspects, to the structure of recursively enumerable Turing degrees. Here we see that, while every r.e.~degree is either weakly recursive or array non-recursive, the same does not hold for the $\Delta^0_2$ degrees.
+\end{section}
+
+\newpage
+
+\begin{section}{The Construction}
+\begin{thm}\label{mdnotwr}
+There is a minimal degree $\dg{a}<\dg{0}'$ which is not weakly recursive.
+\end{thm}
+\begin{proof}
+The requirements here are:
+\begin{align*}
+&R^0_k:&\qquad &A\ne\phi_k\\
+&R^1_k:& &k=\tuple{i,j}\land \phi_i,\phi_j\text{ are total }\then\exists n\ 
+         \left(\left|W_{\phi_j(n)}\right|>\phi_i(n)\ 
+         \lor\ f_i(n)\notin W_{\phi_j(n)}\right)\\
+&R^2_k:& &\phi_k^A = C\text{ is total} \then (C\le_T\dg{0}\ \lor\ A\le_T C)
+\end{align*}
+The construction is a finite injury one, with oracle $\dg{0}'$. At stage $s$ we construct partial recursive trees $T_i^s$ for $i\le g(s)$, and a string $\a_s=T_{g(s)}^s(\es)$. Following the notation of Chapter \ref{nwrsmcchp}, we use $\t\sqsubset_i^s\t'$ to mean that $\t'$ is an immediate successor of $\t$ on $T_i^s$. Since a single degree is being constructed, no uniformity is needed here. We will satisfy the following conditions for all $s$ and $i\le g(s)$:
+\begin{itemize}
+\item[(i)] If $i=4k$ and $\phi_k(n)\cvg$ then every non-terminal node on the $n$-th level of $T_i^s$ has $>\phi_k(n)$ immediate successors.
+\item[(ii)] If $i=4k+1$ then $T_i^s$ forces $R^0_k$.
+\item[(iii)] If $i=4k+2$ then $T_i^s$ forces $R^1_k$ ($f_i$ are defined below).
+\item[(iv)] If $i=4k+3$ then $T_i^s$ is either a $k$-splitting subtree or a non-splitting extension subtree of $T_{i-1}^s$.
+\item[(v)] If $\t_1$ is a non-terminal node on $T_i^s$ and $\t_1\sqsubset_{i'}^s\t_2$ for some $i'<i$, then there exists some $\t_3\sge\t_2$ such that $\t_1\sqsubset_i^s\t_3$.
+\end{itemize}
+
+For each $i$, the trees $T_i^s$ will approach a partial recursive limit tree $T_i$. The function $A=\cup\a_s$ is the unique path lying on all of the limit trees. The functions $f_i$ are computed as follows:
+\[ f_i(n)=C(n)\quad\text{ where }A=T_{4i}(C). \]
+We start with $g(0)=0$ and $T_0$ being the identity tree with domain $\{\s\st \s(n)\le\phi_0(n)\}$ (we assume wlog that $\phi_0$ is total). 
+
+At stage $s+1$, let $g(s+1)=g(s)+1$ (this might be changed if there is an injury). Let $T_i^{s+1}=T_i^s$ for all $i\le g(s)$. Let $T=T_{g(s)}^{s+1}$. We define $T'=T_{g(s)+1}^{s+1}$ by cases as described below. Before carrying out the appropriate instructions, however, we check for convergence of all computations $\phi_i(x)$ which are mentioned (only finitely many, so the $\dg{0}'$ oracle suffices). If $\phi_i(x)$ is found to diverge, $\phi_i$ is marked non-total.
+\begin{itemize}
+\item[(i)] If $g(s+1)=4k+1$, let $T'=T\cdot E_r$ where $r$ is the first such that $T(r)$ is incompatible with $\phi_k$ (this is computable in $\dg{0}'$). This can fail if $T(\es)$ is terminal on $T$, in which case an injury occurs (see below).
+\item[(ii)] If $g(s+1)=4k+2$, let $i,j$ be such that $k=\tuple{i,j}$. If either of $\phi_i,\phi_j$ has been found to be non-total in a prior stage, there is nothing to be done, so let $T'=T$. Otherwise observe that $\a_s=T(\es)=T_{4i}^{s+1}(\s)$ for some $\s$, and let $n=|\s|$. Look for the least $p\le\phi_i(n)$ such that $p\notin W_{\phi_j(n)}$ (a $\dg{0}'$ computation). If $p$ is found, find the $q$ such that $T(q)\sge T_{4i}^{s+1}(\s\cat p)$ (exists by property (v) above), and let $T'=T\cdot E_q$. If no such $p$ is found then $|W_{\phi_j(n)}|>\phi_i(n)$, and the requirement is already fulfilled, so let $T'=T$. The same applies to the case where $\phi_j(n)\dvg$. If, however, $T(\es)$ is terminal on $T$, an injury occurs (see below). Note that this includes the cases where $\phi_i(n)\dvg$ or $\a_s$ is terminal on $T_{4i}^{s+1}$.
+
+\newpage
+
+\item[(iii)] If $g(s+1)=4k+3$ let $T'(\es)=T(\es)$, and define $T'$ to be a $k$-splitting subtree of $T$ in a manner which preserves property (v): when we have defined $T'(\s')=T(\s)=\t$ which has $m$ immediate successors on $T$, we define immediate successors $T'(\s'\cat p)\sge T(\s\cat p)$ for all $p<m$, which $k$-split pairwise. The process is much simpler than in Chapter \ref{nwrsmcchp}, as we do not need to have uniformity: start with $\r_p=T(\s\cat p)$ for $p<m$, then for each pair $u<v<m$ extend $\r_u$ and $\r_v$ to be $k$-splitting (and still on $T$). If this process cannot be completed, $\t$ is terminal on $T'$.
+\item[(iv)] If $g(s+1)=4k+4$ let $T'(\es)=T(\es)$, and define $T'$ to satisfy condition (v). When we have defined $T'(\s')=T(\s)=\t$ with $|\s'|=n$, let $\{\t_p\}_{p<m}$ be the first set of pairwise incompatible successors of $\t$ on $T$ such that $m>\phi_{k+1}(n)$ and every immediate successor of $\t$ on $T$ is contained in some $\t_p$. Let $T'(\s'\cat p)=\t_p$ for $p<m$. If no such set of successors is found, $\t$ is terminal on $T'$.
+\end{itemize}
+In cases (i) or (ii) above, injury occurs if $\a_s=T(\es)$ is terminal on $T$. In this case, let $j$ be the least such that $\a_s$ is terminal on $T_j^s$. Note that $j$ is either $4k+3$ or $4k+4$, since in the other two cases the tree is an extension subtree, and cannot be the first on which $\a_s$ is terminal. In either case, let $g(s+1)=4k+3$, and as before let $T_i^{s+1}=T_i^s$ for all $i<g(s+1)$.  
+If $j=4k+3$ then some string $\t\sge\a_s$ on $T_{4k+2}^s$ has no $k$-splits above it on that tree. On the other hand, if $j=4k+4$, then there are no infinite paths extending $\a_s$ on $T_{4k+3}^s$ (the existence of such path would yield a set of successors as required in case (iv) above). This in turn means that some extension of $\a_s$ is terminal on $T_{4k+3}^s$, and again the existence of such a string $\t$ is implied. Find the first such $\t=T_{4k+2}^s(\s)$ using $\dg{0}'$, and set $T_{4k+3}^{s+1}=T_{4k+2}^{s+1}\cdot E_{\s}$, a non-splitting extension subtree. This ends the construction.
+
+\newpage
+
+Now we turn to the proof. The trees reach a limit by the usual argument: once $T_j^s$ have stabilized for all $j<i$, $T_i^s$ can be injured at most once (if $i=4k+3$). The sequence $\a_s$ is increasing, and so $A=\cup\a_s$ is a function recursive in $\dg{0}'$, the oracle for the construction. The requirements $R^0_k,R^1_k,R^2_k$ are forced by the trees $T_{4k+1},T_{4k+2},T_{4k+3}$ (respectively), and so $\dg{a}=\deg(A)$ is minimal and not weakly recursive (refer to Lemma \ref{comp}).
+\end{proof}
+\end{section}
+%%% END CHAPTER
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% CHAPTER 8 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\thispagestyle{plain}
+\chapter{Very Weakly Recursive Degrees}\label{vwrchp}
+We define very weakly recursive degrees, and modify Ishmukhametov's original proof to show that this possibly larger class of degrees has the strong minimal cover property as well. At this point we have not been able to determine if there exists a very weakly recursive degree which is not weakly recursive.
+
+\begin{defnc}\label{vwr}
+A degree $\dg{a}$ is {\em very weakly recursive} if there is a function $p\le\dg{a}$ such that for every function $f\le\dg{a}$ there is a recursive function $h$ with $|W_{h(n)}|\le p(n)$ and $f(n)\in W_{h(n)}$ for all $n\in\w$.
+\end{defnc}
+Clearly every weakly recursive degree is very weakly recursive.
+\comment{
+\begin{thmc}
+There is a minimal degree $\dg{a}<\dg{0}^{(3)}$ which is very weakly recursive and not weakly recursive.
+\end{thmc}
+\begin{proof}
+We adjust the construction in the proof of Theorem \ref{mdnotwr} to give this result. First, we do away with requirements $R^0_k$ and change property (ii) to
+\begin{itemize}
+\item[(ii)]  If $i=4k+1$ then $T_i^s=T_{4k}^s\cdot E_{0^{(3)}(k)}$.
+\end{itemize}
+We implement this by using a $\dg{0}^{(3)}$ oracle when defining $T_{4k}^s$, dealing with a terminal root as before.
+
+The second change occurs when defining the $k$-splitting trees $T'=T_{4k+3}^s$. When looking for immediate successors $\r_p$ for a string $\t$ on level $n$ of $T'$, require also that all of them satisfy $\phi_k^{\r_p}(n)\cvg$. This changes the injury argument slightly: if there is now a terminal node $\t$ extending $\a_s$ on $T'$, it could be that it does have splits above it, but no extension which forces convergence on some $n$. But this does not matter: the extension subtree of $T_{4k+2}^s$ rooted at $\t$ will now satisfy $R^2_k$ by forcing $k$-partiality.
+
+The degree $\dg{a}=\deg(A)$ produced by this modified construction is still minimal and not weakly recursive. However, it is computable in $\dg{0}^{(3)}$ rather than $\dg{0}'$. Moreover, the construction is computable in $\dg{a}\join \dg{0}'$: when $g(s)=4k+1$ define $T_{4k+1}^s=T_{4k}^s\cdot E_r$ where $T_{4k}^s(r)\sle A$ (which also implies that $0^{(3)}(k)=r$). This will be correct regardless of injury, since the construction guarantees that $T_{4k+1}^s(\es)=\a_s\sle A$. As a result, we have 
+\[ \dg{a}'\ge(\dg{a}\join\dg{0}')\ge\dg{0}^{(3)}. \]
+According to the Domination Lemma for $\textbf{H}_1(\dg{0}')$ \cite[IV.3.3]{lerman}, this implies the existence of a total function $p\le_T\dg{a}$, which dominates every recursive function (reference). We show that this $p$ satisfies the statement of Definition \ref{vwr}. Let $f=\phi_k^A$ be total, and consider the limit tree $T=T_{4k+3}$. By the second modification to the construction, the value of $f(n)$ is forced by some string on level $n+1$ of $T$. Since the tree is partial recursive, there is a recursive function $h$ such that
+\[ W_h(n) = \{ \phi_k^{\t}\st \t=T(\s)\ \land\ |\s|=n+1 \}. \]
+Furthermore, 
+
+*** Problem: in order to apply the domination lemma, 
+*** we need $\dg{a}\ge\dg{0}'$, which we don't have!
+*** Previously we tried coding 0'', but that didn't work either, since
+*** we can't show that the limit trees have recursively bounded level sizes.
+\end{proof}
+ *** END COMMENT *** }
+\begin{thmc} Every very weakly recursive degree $\dg{a}$ has a strong minimal cover.
+\end{thmc}
+\begin{proof} Let $A\in\dg{a}$, and let $p$ be the recursive function given
+  by Definition \ref{vwr}.
+
+  We construct a set $M$ with
+  $M(2n) = A(n)$, such that the following requirements are satisfied:
+\begin{align*}
+  N_e &: \quad \phi_e^M \text{ is total }\then 
+        (\phi_e^M \le_T A \lor M \le_T \phi_e^M),\\
+  P_e &: \quad M \ne \phi_e^A.
+\end{align*}
+In order to construct $M$, we will construct a sequence of trees
+  $\{T_e\}_{e\in\omega}$ such that for all $e\in\omega$:
+\begin{itemize}
+\item[(i)] $T_e\le_T A$ is a full binary tree,
+\item[(ii)] $T_{e+1}$ is a subtree of $T_e$, 
+  with $T_{e+1}(\es)\sg T_e(\es)$,
+\item[(iii)] $T_{e+1}$ forces both $N_e$ and $P_e$.
+\end{itemize}
+We will then define $M$ as the unique path which lies on all of the trees $T_e$.
+$M$ will consequently satisfy all requirements $N_e$ and $P_e$, and will thus be a strong minimal cover for $A$.
+
+We start by defining 
+\[ T_0=\{\s : \forall n\; (\s(2n)\cvg\then\s(2n) = A(n))\} \]
+(that is, the full tree of ``$A$-true'' strings). $T_0$ clearly satisfies condition (i).
+
+At stage $e>0$ the trees $T_k$ for $k\le e$ have been already defined and satisfy conditions (i)-(iii). There are two cases.
+\begin{case} There are no $e$-splits on $T_e$ above some $\s=T_e(\t)$.
+\end{case}
+In this case let $T_{e+1}=T_e\cdot E_{\t^*}$,
+where $\t^*\sg\t$ is the first such that $T_e(\t^*)\snle\phi_e^A$.
+Conditions (i) and (ii) are clearly satisfied by $T_{e+1}$.
+For condition (iii), note that $N_e$ is forced since if $\phi_e^M$ is total then it can be computed from the non-$e$-splitting $T_{e+1}$.
+
+\begin{case} $e$-splits are dense on $T_e$.
+\end{case}
+In other words, there is an $e$-split above every $\s\in\rg(T_e)$. Merely
+taking the splitting subtree as $T_{e+1}$ will not do here, as it will
+produce a minimal cover which is not necessarily strong.
+
+Therefore, in addition to the tree $T_{e+1}$ we shall also construct a partial tree $T:\w^{<\w}\to 2^{<\w}$ for which the following conditions hold:
+\begin{itemize}
+\item[(a)] $T$ is partial recursive (i.e.~has a r.e.~graph),
+\item[(b)] $T$ is $e$-splitting (i.e.~every branching $e$-splits),
+\item[(c)] $T_{e+1}\subseteq T$.
+\end{itemize}
+
+Given such $T$ and $T_{e+1}$, it is easy to show that $T_{e+1}$ forces the
+requirement $N_e$. Indeed, if $M$ is a path on $T_{e+1}$, 
+and $\phi_e^M=C$ is total, then we can compute $M$ from $C$
+by enumerating $\rg(T)$ and throwing away all strings $\s$ for which
+$\phi_e^\s(n)$ is incompatible with $C$. Condition (b) guarantees that the
+remaining strings are all compatible, while condition (c) guarantees that
+they will form the full set $M$, which has arbitrarily long initial segments in $\rg(T_{e+1})$.
+
+For the purpose of constructing $T$, we will first introduce some terminology.
+\begin{defnc} 
+\begin{itemize}
+\item[(i)] An {\em $e$-splitting $k$-fan} is a set 
+$F=\{\t_0;\t_1,\dots,\tau_k\}$ of
+distinct strings, such that $\tau_i$ and $\tau_j$ form an $e$-split of 
+$\tau_0$ for every $1\le i<j\le k$. $\tau_0$ is the {\em root} of $F$ and
+$\tau_1,\dots,\tau_k$ are the {\em blades} of $F$.
+\item[(ii)] Two $e$-splitting fans $F_0, F_1$ {\em $e$-split a string $\s$} 
+if their roots $e$-split $\s$.
+\end{itemize}
+\end{defnc}
+
+We now define a function $f$ recursively in $A$. Let $\s^*=T_e(\t^*)$ 
+be the first non-root string incompatible with $\phi_e^A$ (this may not be computable in $A$, but it is only done once, and no uniformity is claimed). Find two $e$-splitting $p(1)$-fans $F^{\s^*}_0, F^{\s^*}_1\sle\rg(T_e)$ 
+which split $\s^*$, and let $f(0) = [F^{\s^*}_0\cup F^{\s^*}_1]$,
+where $[\cdot]$ here denotes a recursive coding of finite sets of strings (not to be confused with the notation for the set of paths on a tree).
+
+Inductively, suppose we have defined
+\[ f(n-1) = \left[\bigcup_{i<t_n,\,j<2} F^{\sigma_i}_j\right] \]
+where $F_0^{\s_i},F_1^{\s_i}\sle\rg(T_e)$ are $e$-splitting $p(n)$-fans which $e$-split $\s_i\in\rg(T_e)$.
+Find for each blade $\t$ of every fan $F^{\s_i}_j$, two $p(n+1)$-fans
+$F^{\tau}_0, F^{\tau}_1\sle\rg(T_e)$ which split $\t$, and let
+\[ f(n) = \left[\bigcup_{\t,j} F^{\t}_j\right] \]
+This definition can be carried out with oracle $A$ since both $T_e$ and $p$ are computable in $A$, and splitting fans will always be found because of the density of $e$-splits on $T_e$.
+
+By Definition \ref{vwr}, there is a recursive function $h$ such that
+\[ \forall n\in\w\;(f(n)\in W_{h(n)}\; \land\; |W_{h(n)}|\le p(n)). \]
+Now we construct $T$. First throw into $T$ all strings in 
+$\{\s^*\}\cup F^{\s^*}_0\cup F^{\s^*}_1$ (that is, let $\s^*$ be the root of $T$, the two fan roots its successors, and the all the blades as their successors on level 2 of $T$). 
+Call $F^{\s^*}_0$ and $F^{\s^*}_1$ \emph{accepted fans of level 0}.
+Now simultaneously enumerate all $W_{h(n)}$ for $n>0$, and for each element $a^n=[U]$ enumerated in $W_{h(n)}$ do the following:
+
+{\bf First validation:}
+Check that $U$ is a union of $e$-splitting $k$-fans for some fixed $k$, and that all strings in $U$ agree on even elements. If not, drop $a^n$.
+
+{\bf Second validation:}
+Wait until some $a^{n-1}$ is enumerated in $W_{h(n-1)}$ and passes the first
+and second validation, such that for each blade of a fan given by
+$a^{n-1}$ there is a distinct pair of fans given by $a^n$ which split it.
+If this happens, then $a^n$ passes the second validation, and is said to be 
+{\em extending} $a^{n-1}$.
+
+Now, label the elements of $W_{h(n)}$ as $a^n_1,\dots,a^n_{k_n}$ in order of
+enumeration, with $k_n\le p(n)$.
+For each accepted fan $F$ of level $n-1$, given by some $a^{n-1}$, with blades 
+$\t_1,\dots,\t_{r}$, and for each $1\le i\le r$, if $a^n_i$ exists
+and extends $a^{n-1}$, then enumerate in $T$ the two fans given by $a^n_i$
+which split $\t_i$ (setting their roots to be successors of $\t_i$ in $T$), and call them {\em accepted fans of level $n$}.
+This ends the construction of $T$. 
+
+Properties (a),(b) clearly hold. Next we define $T_{e+1}$ by induction as a subtree of $T$, to ensure property (c). Note that for all $n>0$ the set coded by $f(n)$ will pass both validations.
+Set $T_{e+1}(\es)=\s^*$ and set $T_{e+1}(i)$ to be the root of $F^{\s^*}_i$ ($i=0,1$). Suppose we have defined level $n>0$ of $T_{e+1}$, which consists of roots of accepted fans of level $n-1$ given by $f(n-1)$. Given $\t$ on level $n$, the root of the accepted fan $F$, there is a blade $\t'$ of $F$ such that there are two accepted fans $F^{\t'}_0$ and $F^{\t'}_1$ given by $f(n)$, which $e$-split $\t'$ (and hence $\t$). This is because $F$ is a ``true'' fan, which has no more than $p(n)$ blades. Let the roots of the fans $F^{\t'}_i$ be the successors of $\t$ on level $n+1$.
+
+Now, $T_{e+1}$ is a subtree of $T$ since all roots (as well as all blades) of accepted fans appear on $T$. It is also a subtree of $T_e$, since all roots (as well as all blades) of ``true'' fans appear on $T_e$. It was constructed from $T$ with knowledge of $f$, so it is computable in $A$. It is clearly $e$-splitting, hence forces $P_e$. Finally, it forces $N_e$ and satisfies condition (ii) by choice of $\s^*$.
+\end{proof}
+%%% END CHAPTER
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% CHAPTER 9 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\thispagestyle{plain}
+\chapter{Constructing a Non-Join}\label{nonjoinchp}
+We give a direct construction of a non-join, with the hope that it may be built upon to produce interesting results (e.g.~concerning the class of cuppable degrees).
+
+\begin{lemc}
+There are degrees $0<\dg{b}<\dg{a}\le\dg{0}''$ such that no degree $\dg{c}<\dg{a}$ satisfies $\dg{b}\join\dg{c}=\dg{a}$.
+\end{lemc}
+
+\begin{proof}
+The requirements which we are trying to satisfy are
+\begin{align*}
+&R^0_s:&\qquad &\Od(A)\ne\phi_s\\
+&R^1_s:& &s=\tuple{e_1,e_2}\then\\
+       &&&\left(
+  \phi_{e_1}^A\text{ is total }\land\phi_{e_2}^{\phi_{e_1}^A\oplus\Od(A)}\text{ is total and equal to $A$}\then \phi_{e_1}^A\ge_T A\right)
+\end{align*}
+
+We construct a sequence of recursive uniform binary trees $T_i$ such that for all $i\in\w$ and binary strings $\s$ we have $T_{i+1}\sle T_i$ and 
+\[ |\s|\text{ is odd } \iff \Od(T_i(\s\cat0))=\Od(T_i(\s\cat1)). \]
+That is, the levels of each tree alternate between agreeing and disagreeing on the odds.
+
+To define $T_0$, let
+\[T_0(d_0d_1d_2d_3\dots)=(0d_0)\cat(d_10)\cat(0d_2)\cat(d_30)\cat\dots \]
+for all $d_i<2$ (the parenthesis are for readability).
+
+At stage $2s$, let $\s$ be the first of length 2 such that $\Od(T_{2s}(\s))$ is incompatible with $\phi_s$. Let $T_{2s+1}=T_{2s}E_{\s}$. This tree is in the required form, and satisfies $R^0_s$.
+
+At stage $2s+1$, let $T=T_{2s+1}$, and let $e_1,e_2$ be such that $s=\tuple{e_1,e_2}$. We construct $T'=T_{2s+2}$ as follows.
+\begin{itemize}
+\item[(i)] If there is some $\s$ and $x$ such that $T(\s)$ forces $\phi_{e_1}^A(x)\dvg$ on $T$, let $\s$ be the first such of even length, and let $T'=T\cdot E_{\s}$.
+
+\item[(ii)] Otherwise, if there is some $\s$ and $x$ such that $T(\s)$ forces $\phi_{e_2}^{\phi_{e_1}^A\oplus\Od(A)}(x)\dvg$ on $T$, let $\s$ be the first such of even length, and let $T'=T\cdot E_{\s}$.
+
+\item[(iii)] Otherwise, if there is some $\s$ and $x$ such that
+\[ \phi_{e_2}^{\phi_{e_1}^{T(\s)}\oplus\Od(T(\s))}(x)\cvg\ne T(\s)(x) \]
+let $\s$ be the first such of even length, and let $T'=T\cdot E_{\s}$.
+
+\item[(iv)] Otherwise, we first prove
+\begin{propc}
+Every $\s$ has extensions $\s_0,\s_1$ such that $T(\s_0),T(\s_1)$ agree on the odds and $e_1$-split.
+\end{propc}
+\begin{proof}
+Assume wlog that $|\s|$ is odd, and let $x$ be the first on which $T(\s\cat0)$ and $T(\s\cat1)$ disagree (note that $x$ is even, since these strings must agree on the odds). Since cases (i),(ii) do not hold, there is some $\s_0\sge\s\cat0$ such that $\phi_{e_2}^{\phi_{e_1}^{T(\s_0)}\oplus\Od(T(\s_0))}(x)\cvg$. Let $\s_1^*=\s_0[\s\cat0\to\s\cat1]$. Similarly, there is some $\s_1\sge\s_1^*$ such that $\phi_{e_2}^{\phi_{e_1}^{T(\s_1)}\oplus\Od(T(\s_1))}(x)\cvg$.
+
+Now, $T(\s_0)$ and $T(\s_1)$ agree on the odds by uniformity of $T$ and because $\Od(T(\s\cat0))=\Od(T(\s\cat1))$. On the other hand, we must have
+\[ \phi_{e_2}^{\phi_{e_1}^{T(\s_i)}\oplus\Od(T(\s_i))}(x)\cvg=T(\s_i)(x) \]
+for both $i=0,1$, since case (iii) fails. But $T(\s_0)(x)\ne T(\s_1)(x)$ by choice of $x$, and so the oracles must disagree. Since $\Od(T(\s_0))=\Od(T(\s_0))$, it must be that $\phi_{e_1}^{T(\s_0)}$ is incompatible with $\phi_{e_1}^{T(\s_1)}$, hence $T(\s_0)$ and $T(\s_1)$ form an $e_1$-split.
+\end{proof}
+
+The proposition implies that we can construct an $e_1$-splitting subtree of $T$ in the required form. The construction is by induction on levels, and is similar in nature to the one carried out in case (iv) of the proof of Theorem \ref{smc}. Start with $T'(\es)=T(\es)$. Suppose we have defined level $n$ of $T'$, and let $\t_i=T'(\s_i)$ be the strings on that level (for $1\le i\le r$). We define by induction on $i\le r$ strings $\r_{0,i},\r_{1,i}$, starting with $\r_{j,0}=\es$ for $j=0,1$. Having defined $\r_{j,i-1}$, find a $e_1$-split $\x_0,\x_1\sge\t_i\cat\r_{0,i-1}$ on $T$, such that $\Od(\x_0)=\Od(\x_1)$ (the existence of such is guaranteed by the proposition). Let $x$ be the first such that $\phi_{e_1}^{\x_0}(x)\cvg\ne\phi_{e_1}^{\x_1}(x)\cvg$, and let $\x_2\sge\x_0[\t_i\cat\r_{0,i-1}\to\t_i\cat\r_{1,i-1}]$ on $T$ such that $\phi_{e_1}^{\x_2}(x)\cvg$ (guaranteed to exist since case (i) fails). Let $k<2$ be the first such that $\phi_{e_1}^{\x_k}(x)\ne\phi_{e_1}^{\x_2}(x)$.
+Now let $\r_{i,0}$ and $\r_{i,1}$ be extensions of equal length of $\r^*_{i,0}=\x_k-\t_i$ and $\r^*_{i,1}=\x_2-\t_i$ (resp.), which agree on the odds, by copying the extension from the longer to the shorter. For instance, if $\r^*_{i,0}$ is the longer, let $\r_{i,0}=\r^*_{i,0}$ and let $\r_{i,1}=\r^*_{i,0}[(\r^*_{i,0}\restrict|\r^*_{i,1}|)\to \r^*_{i,1}]$. Note that $\Od(\r_{i,0})=\Od(\r_{i,1})$. This completes the induction on $i$. 
+Finally, if $n$ is odd, simply let $T'(\s_i\cat k)=\t_i\cat\r_{r,k}$ for all $1\le i\le r$ and $k=0,1$. This is a uniform $e_1$-splitting branching which agrees on the odds. If $n$ is even we need to make the branching disagree on the odds, so let $\r_0,\r_1$ be the first extensions of equal length of $\r_{r,0},\r_{r,1}$ (resp.), which disagree on the odds, such that $\t_1\cat\r_k\in\rg(T)$ for $k<2$ (such exist since the branching on every even level of $T$ disagrees on the odds). Let $T'(\s_i\cat k)=\t_i\cat\r_k$ for all $1\le i\le r$ and $k<2$. Thus level $n+1$ of $T'$ is constructed, and the induction on $n$ is complete.
+
+Note that $T_{2s+2}=T'$ is an $e_1$-splitting tree, and therefore it forces requirement $R^1_s$ by Lemma \ref{comp}.
+\end{itemize}
+
+In each of the cases, $T_{2s+2}$ is a tree of the required form which forces $R^1_s$. Now let $A$ be the unique path lying on all $T_i$, and let $B=\Od(A)$. Since the requirements $R^0_s$ are satisfied, $B$ is not recursive. Since the requirements $R^1_s$ are satisfied, if $X\le_T A$ and $X\oplus B\ge_T A$ then $X\ge_T A$. It follows that $\dg{a}=deg(A)$ and $\dg{b}=\deg(B)$ are as stated in the lemma.
+\end{proof}
+%%% END CHAPTER
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%% BIBLIOGRAPHY %%%%%%%%%%%%%%%%%%%%%%%%%%
+\thispagestyle{plain}
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliography{mybib}
+\bibliographystyle{alpha}
+\end{document}

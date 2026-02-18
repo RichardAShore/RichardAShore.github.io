@@ -1,0 +1,1850 @@
+REGEDIT4
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00]
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\ActivePage]
+"UserSetup"="4"
+"DocInfo"="4"
+"UserCompSettings"="0"
+"DocCompSettings"="0"
+"EngineSettings"="0"
+"FramePropertiesPg"="0"
+"GraphicPropertiesPg"="0"
+"PlotPropertiesPg"="0"
+"ReviseTable"="0"
+"TypesetOptions"="1"
+"OptionsAndPackages"="1"
+"PageSetup"="0"
+"ExportSettings"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\AprxAreaDlg]
+"AprxAreaDlgIntervals"="10"
+"AprxAreaDlgRule"="0"
+"AprxAreaDlgLower"=""
+"AprxAreaDlgUpper"=""
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\AutoRecognize]
+"ARdisable"="0"
+"AR.0000"="eqt,1,$\\equiv _{T}$"
+"AR.0001"="arccos,1,$\\arccos$"
+"AR.0002"="arcsin,1,$\\arcsin$"
+"AR.0003"="arctan,1,$\\arctan$"
+"AR.0004"="arg,1,$\\arg$"
+"AR.0005"="cos,1,$\\cos$"
+"AR.0006"="cot,1,$\\cot$"
+"AR.0007"="csc,1,$\\csc$"
+"AR.0008"="deg,1,$\\deg$"
+"AR.0009"="det,1,$\\det$"
+"AR.0010"="dim,1,$\\dim$"
+"AR.0011"="exp,1,$\\exp$"
+"AR.0012"="gcd,1,$\\gcd$"
+"AR.0013"="hom,1,$\\hom$"
+"AR.0014"="inf,1,$\\inf$"
+"AR.0015"="ker,1,$\\ker$"
+"AR.0016"="lg,1,$\\lg$"
+"AR.0017"="lim,1,$\\lim$"
+"AR.0018"="ln,1,$\\ln$"
+"AR.0019"="log,1,$\\log$"
+"AR.0020"="max,1,$\\max$"
+"AR.0021"="min,1,$\\min$"
+"AR.0022"="sec,1,$\\sec$"
+"AR.0023"="sin,1,$\\sin$"
+"AR.0024"="sup,1,$\\sup$"
+"AR.0025"="tan,1,$\\tan$"
+"AR.0026"="lcm,1,$\\func{lcm}$"
+"AR.0027"="arcsec,1,$\\func{arcsec}$"
+"AR.0028"="arccsc,1,$\\func{arccsc}$"
+"AR.0029"="arccot,1,$\\func{arccot}$"
+"AR.0030"="Si,1,$\\func{Si}$"
+"AR.0031"="Ci,1,$\\func{Ci}$"
+"AR.0032"="Ei,1,$\\func{Ei}$"
+"AR.0033"="erf,1,$\\func{erf}$"
+"AR.0034"="BetaDist,1,$\\func{BetaDist}$"
+"AR.0035"="BetaDen,1,$\\func{BetaDen}$"
+"AR.0036"="BetaInv,1,$\\func{BetaInv}$"
+"AR.0037"="BinomialDist,1,$\\func{BinomialDist}$"
+"AR.0038"="BinomialDen,1,$\\func{BinomialDen}$"
+"AR.0039"="BinomialInv,1,$\\func{BinomialInv}$"
+"AR.0040"="CauchyDist,1,$\\func{CauchyDist}$"
+"AR.0041"="CauchyDen,1,$\\func{CauchyDen}$"
+"AR.0042"="CauchyInv,1,$\\func{CauchyInv}$"
+"AR.0043"="ChiSquareDist,1,$\\func{ChiSquareDist}$"
+"AR.0044"="ChiSquareDen,1,$\\func{ChiSquareDen}$"
+"AR.0045"="ChiSquareInv,1,$\\func{ChiSquareInv}$"
+"AR.0046"="ExponentialDist,1,$\\func{ExponentialDist}$"
+"AR.0047"="ExponentialDen,1,$\\func{ExponentialDen}$"
+"AR.0048"="ExponentialInv,1,$\\func{ExponentialInv}$"
+"AR.0049"="FDist,1,$\\func{FDist}$"
+"AR.0050"="FDen,1,$\\func{FDen}$"
+"AR.0051"="FInv,1,$\\func{FInv}$"
+"AR.0052"="GammaDist,1,$\\func{GammaDist}$"
+"AR.0053"="GammaDen,1,$\\func{GammaDen}$"
+"AR.0054"="GammaInv,1,$\\func{GammaInv}$"
+"AR.0055"="HypergeomDist,1,$\\func{HypergeomDist}$"
+"AR.0056"="HypergeomDen,1,$\\func{HypergeomDen}$"
+"AR.0057"="HypergeomInv,1,$\\func{HypergeomInv}$"
+"AR.0058"="NormalDist,1,$\\func{NormalDist}$"
+"AR.0059"="NormalDen,1,$\\func{NormalDen}$"
+"AR.0060"="NormalInv,1,$\\func{NormalInv}$"
+"AR.0061"="PoissonDist,1,$\\func{PoissonDist}$"
+"AR.0062"="PoissonDen,1,$\\func{PoissonDen}$"
+"AR.0063"="PoissonInv,1,$\\func{PoissonInv}$"
+"AR.0064"="TDist,1,$\\func{TDist}$"
+"AR.0065"="TDen,1,$\\func{TDen}$"
+"AR.0066"="TInv,1,$\\func{TInv}$"
+"AR.0067"="UniformDist,1,$\\func{UniformDist}$"
+"AR.0068"="UniformDen,1,$\\func{UniformDen}$"
+"AR.0069"="UniformInv,1,$\\func{UniformInv}$"
+"AR.0070"="WeibullDist,1,$\\func{WeibullDist}$"
+"AR.0071"="WeibullDen,1,$\\func{WeibullDen}$"
+"AR.0072"="WeibullInv,1,$\\func{WeibullInv}$"
+"AR.0073"="mod,1,$\\func{mod}$"
+"AR.0074"="about,1,$\\func{about}$"
+"AR.0075"="additionally,1,$\\func{additionally}$"
+"AR.0076"="assume,1,$\\func{assume}$"
+"AR.0077"="real,1,$\\func{real}$"
+"AR.0078"="complex,1,$\\func{complex}$"
+"AR.0079"="integer,1,$\\func{integer}$"
+"AR.0080"="positive,1,$\\func{positive}$"
+"AR.0081"="negative,1,$\\func{negative}$"
+"AR.0082"="nonzero,1,$\\func{nonzero}$"
+"AR.0083"="unassume,1,$\\func{unassume}$"
+"AR.0084"="Re,1,$\\func{Re}$"
+"AR.0085"="Im,1,$\\func{Im}$"
+"AR.0086"="rand,1,$\\func{rand}$"
+"AR.0087"="ttt,1,$\\times 10^{{}}$"
+"AR.0088"="rmat,1,$\\func{randmat}$"
+"AR.0089"="distinct,1,$\\func{distinct}$"
+"AR.0090"="factor,1,$\\func{factor}$"
+"AR.0091"="series,1,$\\func{series}$"
+"AR.0092"="simplify,1,$\\func{simplify}$"
+"AR.0093"="eval,1,$\\func{eval}$"
+"AR.0094"="float,1,$\\func{float}$"
+"AR.0095"="xpnd,1,$\\func{expand}$"
+"AR.0096"="solve,1,$\\func{solve}$"
+"AR.0097"="istrue,1,$\\func{istrue}$"
+"AR.0098"="row,1,$\\func{row}$"
+"AR.0099"="col,1,$\\func{col}$"
+"AR.0100"="seq,1,$\\func{seq}$"
+"AR.0101"="uA,1,$\\unit{A}$"
+"AR.0102"="uV,1,$\\unit{V}$"
+"AR.0103"="uBtu,1,$\\unit{Btu}$"
+"AR.0104"="ueV,1,$\\unit{eV}$"
+"AR.0105"="uJ,1,$\\unit{J}$"
+"AR.0106"="ukcal,1,$\\unit{kcal}$"
+"AR.0107"="uN,1,$\\unit{N}$"
+"AR.0108"="ulbm,1,$\\unit{lb}$"
+"AR.0109"="ucm,1,$\\unit{cm}$"
+"AR.0110"="uft,1,$\\unit{ft}$"
+"AR.0111"="uin,1,$\\unit{in}$"
+"AR.0112"="ukme,1,$\\unit{km}$"
+"AR.0113"="ume,1,$\\unit{m}$"
+"AR.0114"="umi,1,$\\unit{mi}$"
+"AR.0115"="uTe,1,$\\unit{T}$"
+"AR.0116"="uHe,1,$\\unit{H}$"
+"AR.0117"="ugr,1,$\\unit{g}$"
+"AR.0118"="ukg,1,$\\unit{kg}$"
+"AR.0119"="uhp,1,$\\unit{hp}$"
+"AR.0120"="uWa,1,$\\unit{W}$"
+"AR.0121"="uatm,1,$\\unit{atm}$"
+"AR.0122"="uPa,1,$\\unit{Pa}$"
+"AR.0123"="uCo,1,$\\unit{C}$"
+"AR.0124"="uF,1,$\\unit{F}$"
+"AR.0125"="uda,1,$\\unit{d}$"
+"AR.0126"="uhr,1,$\\unit{h}$"
+"AR.0127"="umn,1,$\\unit{min}$"
+"AR.0128"="use,1,$\\unit{s}$"
+"AR.0129"="uy,1,$\\unit{y}$"
+"AR.0130"="uBq,1,$\\unit{Bq}$"
+"AR.0131"="uCi,1,$\\unit{Ci}$"
+"AR.0132"="umol,1,$\\unit{mol}$"
+"AR.0133"="umcA,1,$\\unit{\\U{3bc}A}$"
+"AR.0134"="umA,1,$\\unit{mA}$"
+"AR.0135"="unA,1,$\\unit{nA}$"
+"AR.0136"="umcF,1,$\\unit{\\U{3bc}F}$"
+"AR.0137"="umF,1,$\\unit{mF}$"
+"AR.0138"="unF,1,$\\unit{nF}$"
+"AR.0139"="upF,1,$\\unit{pF}$"
+"AR.0140"="ukS,1,$\\unit{kS}$"
+"AR.0141"="umcS,1,$\\unit{\\U{3bc}S}$"
+"AR.0142"="umS,1,$\\unit{mS}$"
+"AR.0143"="uS,1,$\\unit{S}$"
+"AR.0144"="uGohm,1,$\\unit{G\\U{03a9}}$"
+"AR.0145"="ukohm,1,$\\unit{k\\U{03a9}}$"
+"AR.0146"="uMohm,1,$\\unit{M\\U{03a9}}$"
+"AR.0147"="umohm,1,$\\unit{m\\U{03a9}}$"
+"AR.0148"="uohm,1,$\\unit{\\U{03a9}}$"
+"AR.0149"="uerg,1,$\\unit{erg}$"
+"AR.0150"="uGeV,1,$\\unit{GeV}$"
+"AR.0151"="uMeV,1,$\\unit{MeV}$"
+"AR.0152"="umcJ,1,$\\unit{\\U{3bc}J}$"
+"AR.0153"="umJ,1,$\\unit{mJ}$"
+"AR.0154"="unJ,1,$\\unit{nJ}$"
+"AR.0155"="udyn,1,$\\unit{dyn}$"
+"AR.0156"="uEHz,1,$\\unit{EHz}$"
+"AR.0157"="uGHz,1,$\\unit{GHz}$"
+"AR.0158"="uHz,1,$\\unit{Hz}$"
+"AR.0159"="ukHz,1,$\\unit{kHz}$"
+"AR.0160"="uMHz,1,$\\unit{MHz}$"
+"AR.0161"="uPHz,1,$\\unit{PHz}$"
+"AR.0162"="uTHz,1,$\\unit{THz}$"
+"AR.0163"="ufc,1,$\\unit{fc}$"
+"AR.0164"="ulx,1,$\\unit{lx}$"
+"AR.0165"="uphot,1,$\\unit{phot}$"
+"AR.0166"="uan,1,$\\unit{\\U{c5}}$"
+"AR.0167"="uame,1,$\\unit{am}$"
+"AR.0168"="ufme,1,$\\unit{fm}$"
+"AR.0169"="umcme,1,$\\unit{\\U{3bc}m}$"
+"AR.0170"="umme,1,$\\unit{mm}$"
+"AR.0171"="unme,1,$\\unit{nm}$"
+"AR.0172"="upme,1,$\\unit{pm}$"
+"AR.0173"="ulm,1,$\\unit{lm}$"
+"AR.0174"="ucd,1,$\\unit{cd}$"
+"AR.0175"="uMx,1,$\\unit{Mx}$"
+"AR.0176"="uWb,1,$\\unit{Wb}$"
+"AR.0177"="uGa,1,$\\unit{G}$"
+"AR.0178"="uu,1,$\\unit{u}$"
+"AR.0179"="umcg,1,$\\unit{\\U{3bc}g}$"
+"AR.0180"="umg,1,$\\unit{mg}$"
+"AR.0181"="udeg,1,$\\unit{\\U{b0}}$"
+"AR.0182"="umcWa,1,$\\unit{\\U{3bc}W}$"
+"AR.0183"="umWa,1,$\\unit{mW}$"
+"AR.0184"="ukWa,1,$\\unit{kW}$"
+"AR.0185"="ubar,1,$\\unit{bar}$"
+"AR.0186"="umbar,1,$\\unit{mbar}$"
+"AR.0187"="utorr,1,$\\unit{torr}$"
+"AR.0188"="usr,1,$\\unit{sr}$"
+"AR.0189"="ucel,1,$\\unit{\\U{2103}}$"
+"AR.0190"="ufahr,1,$\\unit{\\U{2109}}$"
+"AR.0191"="uK,1,$\\unit{K}$"
+"AR.0192"="uas,1,$\\unit{as}$"
+"AR.0193"="ufs,1,$\\unit{fs}$"
+"AR.0194"="umcs,1,$\\unit{\\U{3bc}s}$"
+"AR.0195"="ums,1,$\\unit{ms}$"
+"AR.0196"="uns,1,$\\unit{ns}$"
+"AR.0197"="ups,1,$\\unit{ps}$"
+"AR.0198"="umcrad,1,$\\unit{\\U{3bc}rad}$"
+"AR.0199"="umrad,1,$\\unit{mrad}$"
+"AR.0200"="udmn,1,$\\unit{\\U{2032}}$"
+"AR.0201"="urad,1,$\\unit{rad}$"
+"AR.0202"="uds,1,$\\unit{\\U{2033}}$"
+"AR.0203"="ucal,1,$\\unit{cal}$"
+"AR.0204"="usb,1,$\\unit{sb}$"
+"AR.0205"="uGWa,1,$\\unit{GW}$"
+"AR.0206"="uMWa,1,$\\unit{MW}$"
+"AR.0207"="ugal,1,$\\unit{gal}$"
+"AR.0208"="uli,1,$\\unit{l}$"
+"AR.0209"="uqt,1,$\\unit{qt}$"
+"AR.0210"="unWa,1,$\\unit{nW}$"
+"AR.0211"="uacre,1,$\\unit{acre}$"
+"AR.0212"="uml,1,$\\unit{ml}$"
+"AR.0213"="umT,1,$\\unit{mT}$"
+"AR.0214"="umcT,1,$\\unit{\\U{3bc}T}$"
+"AR.0215"="unT,1,$\\unit{nT}$"
+"AR.0216"="upT,1,$\\unit{pT}$"
+"AR.0217"="umH,1,$\\unit{mH}$"
+"AR.0218"="umcH,1,$\\unit{\\U{3bc}H}$"
+"AR.0219"="umWb,1,$\\unit{mWb}$"
+"AR.0220"="umcWb,1,$\\unit{\\U{3bc}Wb}$"
+"AR.0221"="unWb,1,$\\unit{nWb}$"
+"AR.0222"="umV,1,$\\unit{mV}$"
+"AR.0223"="umcV,1,$\\unit{\\U{3bc}V}$"
+"AR.0224"="unV,1,$\\unit{nV}$"
+"AR.0225"="upV,1,$\\unit{pV}$"
+"AR.0226"="ukV,1,$\\unit{kV}$"
+"AR.0227"="udme,1,$\\unit{dm}$"
+"AR.0228"="uMV,1,$\\unit{MV}$"
+"AR.0229"="uMPa,1,$\\unit{MPa}$"
+"AR.0230"="umcPa,1,$\\unit{\\U{3bc}Pa}$"
+"AR.0231"="ukJ,1,$\\unit{kJ}$"
+"AR.0232"="uMJ,1,$\\unit{MJ}$"
+"AR.0233"="uGJ,1,$\\unit{GJ}$"
+"AR.0234"="ukA,1,$\\unit{kA}$"
+"AR.0235"="uamol,1,$\\unit{amol}$"
+"AR.0236"="upmol,1,$\\unit{pmol}$"
+"AR.0237"="unmol,1,$\\unit{nmol}$"
+"AR.0238"="umcmol,1,$\\unit{\\U{3bc}mol}$"
+"AR.0239"="ummol,1,$\\unit{mmol}$"
+"AR.0240"="ukmol,1,$\\unit{kmol}$"
+"AR.0241"="uMmol,1,$\\unit{Mmol}$"
+"AR.0242"="uGmol,1,$\\unit{Gmol}$"
+"AR.0243"="uTmol,1,$\\unit{Tmol}$"
+"AR.0244"="uEmol,1,$\\unit{Emol}$"
+"AR.0245"="ufmol,1,$\\unit{fmol}$"
+"AR.0246"="uPmol,1,$\\unit{Pmol}$"
+"AR.0247"="umcN,1,$\\unit{\\U{3bc}N}$"
+"AR.0248"="umN,1,$\\unit{mN}$"
+"AR.0249"="ukN,1,$\\unit{kN}$"
+"AR.0250"="uMN,1,$\\unit{MN}$"
+"AR.0251"="ulbf,1,$\\unit{lbf}$"
+"AR.0252"="uozf,1,$\\unit{ozf}$"
+"AR.0253"="uslug,1,$\\unit{slug}$"
+"AR.0254"="ukPa,1,$\\unit{kPa}$"
+"AR.0255"="ukbar,1,$\\unit{kbar}$"
+"AR.0256"="ummHg,1,$\\unit{mmHg}$"
+"AR.0257"="upint,1,$\\unit{pint}$"
+"AR.0258"="uhectare,1,$\\unit{hectare}$"
+"AR.0259"="udg,1,$\\unit{dg}$"
+"AR.0260"="ucg,1,$\\unit{cg}$"
+"AR.0261"="let,1,$\\leq _{T}$"
+"AR.0262"="op,1,$\\oplus $"
+"AR.0263"="sat,1,$\\vDash $"
+"AR.0264"="rr,1,$\\QTR{Bbb}{R}$"
+"AR.0265"="nn,1,$\\QTR{Bbb}{N}$"
+"AR.0266"="zz,1,$\\QTR{Bbb}{Z}$"
+"AR.0267"="res,1,$\\upharpoonright $"
+"AR.0268"="iff,1,$\\Leftrightarrow $"
+"AR.0269"="prv,1,$\\vdash $"
+"AR.0270"="ang,1,$\\left\\langle {}\\right\\rangle $"
+"AR.0271"="leq,1,$<_{\\QTR{cal}{Q}}$"
+"AR.0272"="al,1,$\\aleph $"
+"AR.0273"="nlet,1,$\\nleq _{T}$"
+"AR.0274"="dom,1,$\\func{dom}$"
+"AR.0275"="qq,1,$\\QTR{Bbb}{Q}$"
+"AR.0276"="for,1,$\\Vdash $"
+"AR.0277"="phi,1,$\\varphi $"
+"AR.0278"="tG,1,$\\QTR{tt}{\\QTR{group}{G}}$"
+"AR.0279"="nfor,1,$\\nVdash $"
+"AR.0280"="tg,1,$\\QTR{tt}{G}$"
+"AR.0281"="lep,1,$\\leq _{\\QTR{cal}{P}}$"
+"AR.0282"="p01,1,$\\Pi _{1}^{0}$"
+"AR.0283"="D0,1,$\\QTR{cal}{D(\\leq }\\QTR{bf}{0}^{\\prime }\\QTR{bf}{)}$"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Bibliography]
+"DefBibScheme"="2"
+"BibTeXSearchTypes"="ARTICLE,BOOK,INCOLLECTION,INPROCEEDINGS,MISC,PHDTHESIS,TECHREPORT"
+"BibTeXSearchField"="title,,0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\BibTeX]
+"BibTeXStyleDir"="C:\\sw50\\TCITeX\\bibtex\\bst"
+"BibTeXDataDir"="C:\\sw50\\TCITeX\\bibtex\\bib"
+"BibTeXexe"="BibTeX"
+"TypesSuperSet"="ARTICLE,BOOK,BOOKLET,CONFERENCE,INBOOK,INCOLLECTION,INPROCEEDINGS,MANUAL,MASTERSTHESIS,MISC,PHDTHESIS,PROCEEDINGS,TECHREPORT,UNPUBLISHED"
+"FieldsSuperSet"="author,booktitle,edition,journal,key,note,publisher,school,series,title,volume"
+"BibTeXShowMode"="0"
+"BibTeXFlags"="1"
+"BibTeXStyleDir1"=""
+"BibTeXDataDir1"=""
+"BibTeXexe1"=""
+"TypesSuperSet1"="ARTICLE,BOOK,BOOKLET,CONFERENCE,INBOOK,INCOLLECTION,INPROCEEDINGS,MANUAL,MASTERSTHESIS,MISC,PHDTHESIS,PROCEEDINGS,TECHREPORT,UNPUBLISHED"
+"FieldsSuperSet1"="author,booktitle,edition,journal,key,note,publisher,school,series,title,volume"
+"BibTeXShowMode1"="0"
+"BibTeXFlags1"="1"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\BibTeXCiteDlg]
+"DatabaseFile"=""
+"BibTeXCiteDlgX"="0"
+"BibTeXCiteDlgY"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\BinomialDlg]
+"BinomialDlgLine"="1"
+"BinomialDlgLeft"="0"
+"BinomialDlgRight"="0"
+"BinomialDlgSize"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\BracketDlg]
+"BracketDlgLeft"="3"
+"BracketDlgRight"="3"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\CGI]
+"Server"="tcicgi.dll"
+"AuxProgram"="tcipost.exe"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\CharacterSettings]
+"ReplaceAccentMode"="1"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\CompEnv]
+"Engine"="4"
+"DisplayDigits"="5"
+"SciNotThreshold"="5"
+"TrigArgParens"="0"
+"RestoreDefs"="2"
+"SaveDefs"="2"
+"ClearDefs"="0"
+"jImaginary"="0"
+"LogBase"="0"
+"Bessel"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\DecorDlg]
+"DecorDlgSelected"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\DialogMathTag]
+"TAG_NAME"="Dialog Math"
+"TAG_TYPE"="INTERNAL"
+"TAG_BEHAVIOR"="FORCESMATH"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\DialogPrefs]
+"DialogStickiness"="0"
+"DialogPlacement"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\DialogTextTag]
+"TAG_NAME"="Dialog Text"
+"TAG_TYPE"="INTERNAL"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\DisplayDlg]
+"DisplayUnits"="1"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\DocFileTypes]
+"OpenSavePath"="C:\\sw50\\Docs\\ASLPub\\"
+"DefTextInType"="SW/SWP/SN Document"
+"DefTextOutType"="SW/SWP/SN Document"
+"DefImportType"="SW/SWP/SN Document"
+"UseFilterStoredInDoc"="1"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\DocMan]
+"DocManExecutablePath"="C:\\sw50\\docman.exe"
+"WrapParameters"="/q /ow"
+"UnWrapParameters"="/q"
+"UnWrapOverWriteCheckList"="DOCUMENT_EXIST_NEWER|DOCUMENT_EXIST_READONLY"
+"UnWrapOverWriteCheckURL"="0"
+"DocManParameter.0001"="/iC:\\sw50\\docman.ini"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\DocumentState]
+"CurrentDoc"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\EditPreferences]
+"DragAndDrop"="1"
+"RightButtonCopies"="0"
+"ReviseOnDoubleClick"="1"
+"NoMouseHScroll"="1"
+"RightBtnSelect"="0"
+"RightButtonMenu"="1"
+"ThinCaretInMath"="1"
+"MathModeMouseCursor"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\EQConfig]
+"UpdateDelay"="300"
+"ImportContentsDir"="C:\\sw50\\Docs\\Medvedev\\"
+"TotalGraphicsMem"="32000"
+"MaxDeletedGrfxFiles"="20"
+"MaxMatrixRows"="30"
+"MaxMatrixColumns"="30"
+"LineLimit"="100"
+"SaveFindReplaceText"="1"
+"UseFullPathForTitle"="1"
+"HasExtendedFonts"="0"
+"PaletteMode"="0"
+"DisplayParagraphUsage"="0"
+"MaxNumberOfCells"="10000"
+"DefaultPrintOptions"="4063"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\EQStyle]
+"StyleDir"="C:\\sw50\\styles"
+"SpecialStyleDir"="[Special]"
+"TypesetStyleDir"="C:\\sw50\\Typeset"
+"StyleListFilters"="7"
+"TAGUnits"="1"
+"MarginUnits"="1"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\ExamBld]
+"ExamBldExecutablePath"="c:/swp50/eb.exe"
+"Method"="POST"
+"Action"="eb.exe"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\ExportFileDirs]
+"ExportFileDir"=""
+"ExportDefType"=".htm"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\ExportFileTypes]
+"ExportFileType.0001"="Shell,T,LATEX.DLL,O,LaTeX,.shl"
+"ExportFileType.0002"="Quiz,T,LATEX.DLL,O,LaTeX,.qiz"
+"ExportFileType.0003"="Wrap,T,LATEX.DLL,R,LaTeX,.rap"
+"ExportFileType.0004"="RTF Document,T,RTFOUT.DLL,O,RTF,.rtf"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\ExportHTMLOptions]
+"ExportCSS"="1"
+"ExportMathML"="0"
+"ExportMathAsGraphics"="1"
+"ExportMathGraphicsType"=".png"
+"ExportPlotsAsGraphics"="1"
+"ExportPlotGraphicsType"=".png"
+"GraphicsSelector"="0"
+"ConvertLinkTargets"="0"
+"NotesInSingleList"="1"
+"ExportAllGraphicsType"=".png,2"
+"ExportVectorGraphicsType"=".png,2"
+"ExportRasterGraphicsType"=".png,2"
+"HTMLExpGraphicsType.0001"="Browser Graphics,.jpg|.gif|.png,.png,0"
+"ExportGraphicsSubdirectory"="graphics"
+"ExpPlotGrfxName"="%s__%d|<documentName>|<graphicsIndex>"
+"ExpMathGrfxName"="%s__%d|<documentName>|<graphicsIndex>"
+"ExpGraphicsGrfxName"="%s__%d|<documentName>|<graphicsIndex>"
+"CopyGraphicsToTargetDir"="1"
+"HTMLGenerateResizedGraphics"="3"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\ExportRTFOptions]
+"ExportMathFormats"="1"
+"RTFWarn"="0"
+"RTFExportEquationNumbers"="0"
+"RTFColorizeMathObjects"="0"
+"RTFInheritAmbientSize"="1"
+"MTEF5EqpFile"="C:\\sw50\\TeXLook.eqp"
+"CopyGraphicsToTargetDir"="1"
+"RTFGraphicsSelector"="0"
+"RTFConvertLinkTargets"="0"
+"RTFNotesInSingleList"="1"
+"RTFExportAllGraphicsType"=".emf,2"
+"RTFExportRasterGraphicsType"=".emf,2"
+"RTFExportVectorGraphicsType"=".emf,2"
+"RTFExportPlotsAsGraphics"="1"
+"RTFExportPlotGraphicsType"=".emf"
+"RTFExportMathGraphicsType"=".emf"
+"RTFGenerateResizedGraphics"="3"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\FillMatrixDlg]
+"FillMatrixDlgRows"="1"
+"FillMatrixDlgCols"="1"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\FindDlg]
+"FindWholeWordsOnly"="0"
+"FindExactCase"="0"
+"FindSearchBackwards"="0"
+"FindDlgX"="0"
+"FindDlgY"="0"
+"LeftPos"="1484"
+"TopPos"="6620"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\FindReplaceText]
+"FindText"="\\PARA{038<p type=\"texpara\" tag=\"Body Text\" >goncharov}"
+"ReplaceText"="\\PARA{038<p type=\"texpara\" tag=\"Body Text\" >Yu}"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\FitcvDlg]
+"FitcvDlgType"="1"
+"FitcvDlgDegree"="2"
+"FitcvDlgDepVarCol"="1"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\FKeys]
+"0x0001"="(Remove Item Tag)"
+"0x0002"="Body Text"
+"0x0003"="(Normal)"
+"0x0004"="bf"
+"0x0005"="em"
+"0x0006"="enumerate"
+"0x0007"="itemize"
+"0x0008"="cal"
+"0x000a"="section"
+"0x000b"="subsection"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\FontMappings]
+"UseSymbolFontMapping"="0"
+"UseDefaultFontMapping"="1"
+"UseAccentFontMapping"="1"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\FormulaDialog]
+"ComputeOption"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\FractionDlg]
+"FractionDlgLines"="1"
+"FractionDlgSize"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\FragmentSection]
+"FragSaveDir"=""
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Frame]
+"SNFrameDefaults"="dtbpxFU,3.0in,2.0in,0.00in"
+"SWFrameDefaults"="ftbpxFU,3.0in,2.0in,0.00in"
+"FrameDefaults"="ftbpxFU,3.0in,2.0in,0.00in"
+"CurrentGraphicsSettings"="D"
+"GraphicsSettingsDefaults"="mbc"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\GraphicPropDlg]
+"GraphicPropDlgDispMode"="1"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\GraphicsExport]
+"GfxExpType.0001"="Windows Enhanced Metafile,G,WMFInternal,IEMm,Native,.emf"
+"GfxExpType.0002"="Graphics Interchange Format,G,gear32sd.dll,IEBb,AccuSoft,.gif"
+"GfxExpType.0003"="JPEG,G,gear32sd.dll,IEBb,AccuSoft,.jpg"
+"GfxExpType.0004"="Aldus Tagged Image,G,gear32sd.dll,IEBb,AccuSoft,.tif"
+"GfxExpType.0005"="Aldus Tagged Image,G,gear32sd.dll,IEBb,AccuSoft,.tiff"
+"GfxExpType.0006"="Windows Metafile,G,WMFInternal,IEMm,Native,.wmf"
+"GfxExpType.0007"="Portable Document Format,G,pxclib30.dll,EM,PDFXChange,.pdf"
+"GfxExpType.0008"="Encapsulated Postscript,G,wmf2epsc.exe,EM,WMF2EPS,.eps"
+"GfxExpType.0009"="IBM AFP Format,G,lfAFP13n.dll,IBb,LeadTools_Raster,.afp"
+"GfxExpType.0010"="Windows Animated Cursor,G,lfani13n.dll,IEBb,LeadTools_Raster,.ani"
+"GfxExpType.0011"="Windows AVI File,G,lfavi13n.dll,IBb,LeadTools_Raster,.avi"
+"GfxExpType.0012"="Windows Bitmap,G,lfbmp13n.dll,IEBb,LeadTools_Raster,.bmp"
+"GfxExpType.0013"="Windows Clipboard,G,lfclp13n.dll,IEBb,LeadTools_Raster,.clp"
+"GfxExpType.0014"="LEAD Compressed,G,LFCMP13n.dll,IEBb,LeadTools_Raster,.cmp"
+"GfxExpType.0015"="LEAD Compressed (CMW),G,LFCMP13n.dll,IEBb,LeadTools_Raster,.cmw"
+"GfxExpType.0016"="Scitex Continuous Tone Format (CT),G,lfbmp13n.dll,IEBb,LeadTools_Raster,.ct"
+"GfxExpType.0017"="Windows Cursor,G,lfbmp13n.dll,IEBb,LeadTools_Raster,.cur"
+"GfxExpType.0018"="Halo,G,lfCUT13n.dll,IEBb,LeadTools_Raster,.cut"
+"GfxExpType.0019"="Multi-Page PCX,G,lfpcx13n.dll,IEBb,LeadTools_Raster,.dcx"
+"GfxExpType.0020"="Windows DIB,G,lfbmp13n.dll,IEBb,LeadTools_Raster,.dib"
+"GfxExpType.0021"="Flic Animation (FLI),G,lfflc13n.dll,IBb,LeadTools_Raster,.flc"
+"GfxExpType.0022"="Flic Animation (FLC),G,lfflc13n.dll,IEBb,LeadTools_Raster,.fli"
+"GfxExpType.0023"="Kodak FlashPix,G,lffpx13n.dll,IEBb,LeadTools_Raster,.fpx"
+"GfxExpType.0024"="Microsoft Windows Icon,G,lfbmp13n.dll,IEBb,LeadTools_Raster,.ico"
+"GfxExpType.0025"="Commodore Amiga,G,lfiff13n.dll,IEBb,LeadTools_Raster,.iff"
+"GfxExpType.0026"="JBIG,G,lfjbg13n.dll,IEBb,LeadTools_Raster,.jbg"
+"GfxExpType.0027"="Portable Mono Bitmap,G,LFPNM13n.dll,IEBb,LeadTools_Raster,.pbm"
+"GfxExpType.0028"="Kodak Photo CD,G,lfpcd13n.dll,IBb,LeadTools_Raster,.pcd"
+"GfxExpType.0029"="Macintosh Quickdraw,G,Lfpct13n.dll,IEbM,LeadTools_Raster,.pct"
+"GfxExpType.0030"="Zsoft PC Paintbrush Bitmap,G,lfpcx13n.dll,IEBb,LeadTools_Raster,.pcx"
+"GfxExpType.0031"="Portable Graymap,G,LFPNM13n.dll,IBb0,LeadTools_Raster,.pgm"
+"GfxExpType.0032"="Portable Network Graphics,G,Lfpng13n.dll,IEBbW,LeadTools_Raster,.png"
+"GfxExpType.0033"="Portable Any-Map,G,LFPNM13n.dll,IBb0,LeadTools_Raster,.pnm"
+"GfxExpType.0034"="Portable Pixmap,G,LFPNM13n.dll,IBb,LeadTools_Raster,.ppm"
+"GfxExpType.0035"="Abobe Photoshop,G,lfpsd13n.dll,IEBb,LeadTools_Raster,.psd"
+"GfxExpType.0036"="SUN Raster Graphic,G,lfras13n.dll,IEBb,LeadTools_Raster,.ras"
+"GfxExpType.0037"="Windows RLE BMP,G,lfbmp13n.dll,IEBb,LeadTools_Raster,.rle"
+"GfxExpType.0038"="Scitex Continuous Tone Format (SCT),G,lfbmp13n.dll,IEBb,LeadTools_Raster,.sct"
+"GfxExpType.0039"="SGI Image,G,lfsgi32n.dll,IBb,LeadTools_Raster,.sgi"
+"GfxExpType.0040"="Truevision Targa,G,lftga13n.dll,IEBb,LeadTools_Raster,.tga"
+"GfxExpType.0041"="Wireless Bitmap,G,lfwmp13n.dll,IEBb,LeadTools_Raster,.wbmp"
+"GfxExpType.0042"="WordPerfect Graphic 2.0,G,lfwpg13n.dll,IBb,LeadTools_Raster,.wpg"
+"GfxExpType.0043"="X Window System Bitmap,G,lfXbm13n.dll,IEBb,LeadTools_Raster,.xbm"
+"GfxExpType.0044"="X Window System Pixmap,G,lfXpm13n.dll,IEBb,LeadTools_Raster,.xpm"
+"GfxExpType.0045"="X Window System Dump,G,lfxwd13n.dll,IEBb,LeadTools_Raster,.xwd"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\GraphicsImport]
+"GfxImpType.0001"="Enhanced Windows Metafile,G,WMFInternal,IEMm,Native,.emf"
+"GfxImpType.0002"="Graphics Interchange Format,G,gear32sd.dll,IEBbW,AccuSoft,.gif"
+"GfxImpType.0003"="JPEG,G,gear32sd.dll,IEBbW,AccuSoft,.jpg"
+"GfxImpType.0004"="Aldus Tagged Image,G,gear32sd.dll,IEBb,AccuSoft,.tif"
+"GfxImpType.0005"="Aldus Tagged Image,G,gear32sd.dll,IEBb,AccuSoft,.tiff"
+"GfxImpType.0006"="Kodak Photo CD,G,gear32sd.dll,IBb,AccuSoft,.pcd"
+"GfxImpType.0007"="Windows Metafile,G,WMFInternal,IEMm,Native,.wmf"
+"GfxImpType.0008"="EPS Passthrough,G,EPSInternal,PM0,Postscript,.eps"
+"GfxImpType.0009"="Postscript Passthrough,G,EPSInternal,PM0,Postscript,.ps"
+"GfxImpType.0010"="IBM AFP Format,G,lfAFP13n.dll,IBb0,LeadTools_Raster,.afp"
+"GfxImpType.0011"="Windows Animated Cursor,G,lfani13n.dll,IEBb,LeadTools_Raster,.ani"
+"GfxImpType.0012"="Windows AVI File,G,lfavi13n.dll,IBb,LeadTools_Raster,.avi"
+"GfxImpType.0013"="Windows Bitmap,G,lfbmp13n.dll,IEBb,LeadTools_Raster,.bmp"
+"GfxImpType.0014"="Windows Clipboard,G,lfclp13n.dll,IEBb,LeadTools_Raster,.clp"
+"GfxImpType.0015"="LEAD Compressed,G,LFCMP13n.dll,IEBb,LeadTools_Raster,.cmp"
+"GfxImpType.0016"="LEAD Compressed (CMW),G,LFCMP13n.dll,IEBb,LeadTools_Raster,.cmw"
+"GfxImpType.0017"="Scitex Continuous Tone Format (CT),G,lfbmp13n.dll,IEBb0,LeadTools_Raster,.ct"
+"GfxImpType.0018"="Windows Cursor,G,lfbmp13n.dll,IEBb,LeadTools_Raster,.cur"
+"GfxImpType.0019"="Halo,G,lfCUT13n.dll,IEBb,LeadTools_Raster,.cut"
+"GfxImpType.0020"="Multi-Page PCX,G,lfpcx13n.dll,IEBb0,LeadTools_Raster,.dcx"
+"GfxImpType.0021"="Windows DIB,G,lfbmp13n.dll,IEBb,LeadTools_Raster,.dib"
+"GfxImpType.0022"="Flic Animation (FLI),G,lfflc13n.dll,IBb,LeadTools_Raster,.flc"
+"GfxImpType.0023"="Flic Animation (FLC),G,lfflc13n.dll,IEBb0,LeadTools_Raster,.fli"
+"GfxImpType.0024"="Kodak FlashPix,G,lffpx13n.dll,IEBb,LeadTools_Raster,.fpx"
+"GfxImpType.0025"="Microsoft Windows Icon,G,lfbmp13n.dll,IEBb,LeadTools_Raster,.ico"
+"GfxImpType.0026"="Commodore Amiga,G,lfiff13n.dll,IEBb,LeadTools_Raster,.iff"
+"GfxImpType.0027"="JBIG,G,lfjbg13n.dll,IEBb,LeadTools_Raster,.jbg"
+"GfxImpType.0028"="Portable Mono Bitmap,G,LFPNM13n.dll,IEBb,LeadTools_Raster,.pbm"
+"GfxImpType.0029"="Macintosh Quickdraw,G,Lfpct13n.dll,IEbM,LeadTools_Raster,.pct"
+"GfxImpType.0030"="Zsoft PC Paintbrush Bitmap,G,lfpcx13n.dll,IEBb,LeadTools_Raster,.pcx"
+"GfxImpType.0031"="Portable Graymap,G,LFPNM13n.dll,IBb0,LeadTools_Raster,.pgm"
+"GfxImpType.0032"="Portable Network Graphics,G,Lfpng13n.dll,IEBbW,LeadTools_Raster,.png"
+"GfxImpType.0033"="Portable Any-Map,G,LFPNM13n.dll,IBb0,LeadTools_Raster,.pnm"
+"GfxImpType.0034"="Portable Pixmap,G,LFPNM13n.dll,IBb,LeadTools_Raster,.ppm"
+"GfxImpType.0035"="Abobe Photoshop,G,lfpsd13n.dll,IEBb,LeadTools_Raster,.psd"
+"GfxImpType.0036"="SUN Raster Graphic,G,lfras13n.dll,IEBb,LeadTools_Raster,.ras"
+"GfxImpType.0037"="Windows RLE BMP,G,lfbmp13n.dll,IEBb,LeadTools_Raster,.rle"
+"GfxImpType.0038"="Scitex Continuous Tone Format (SCT),G,lfbmp13n.dll,IEBb,LeadTools_Raster,.sct"
+"GfxImpType.0039"="SGI Image,G,lfsgi13n.dll,IBb,LeadTools_Raster,.sgi"
+"GfxImpType.0040"="Truevision Targa,G,lftga13n.dll,IEBb,LeadTools_Raster,.tga"
+"GfxImpType.0041"="Wireless Bitmap,G,lfwmp13n.dll,IEBb0,LeadTools_Raster,.wbmp"
+"GfxImpType.0042"="WordPerfect Graphic 2.0,G,lfwpg13n.dll,IBb,LeadTools_Raster,.wpg"
+"GfxImpType.0043"="X Window System Bitmap,G,lfXbm13n.dll,IEBb,LeadTools_Raster,.xbm"
+"GfxImpType.0044"="X Window System Pixmap,G,lfXpm13n.dll,IEBb,LeadTools_Raster,.xpm"
+"GfxImpType.0045"="X Window System Dump,G,lfxwd13n.dll,IEBb,LeadTools_Raster,.xwd"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\GraphicsImportINSO]
+"INSOImpType.0001"="Adobe Illustrator,G,imps_2.flt,IMm,ImageStream,.ai"
+"INSOImpType.0002"="CorelDRAW Drawing,G,imcdr2.flt,IMm,ImageStream,.cdr"
+"INSOImpType.0003"="Computer Graphics Metafile,G,imcgm2.flt,IMm,ImageStream,.cgm"
+"INSOImpType.0004"="Clear Text CGM,G,imcgm2.flt,IMm,ImageStream,.ctm"
+"INSOImpType.0005"="Drawing from Micrografx,G,imdrw2.flt,IMm,ImageStream,.drw"
+"INSOImpType.0006"="Drawing Interchange File from AutoCAD,G,imdxf2.flt,IMm,ImageStream,.dxf"
+"INSOImpType.0007"="Encapsulated Postscript,G,impsi2.flt,IMm,ImageStream,.eps"
+"INSOImpType.0008"="Picture from Macintosh Quickdraw,G,impct2.flt,IMm1,ImageStream,.pct"
+"INSOImpType.0009"="Picture from Lotus 123,G,impic2.flt,IMm,ImageStream,.pic"
+"INSOImpType.0010"="Plot in Hewlett Packard Graphics Language,G,imhgl2.flt,IMm,ImageStream,.plt"
+"INSOImpType.0011"="PostScript,G,impsi2.flt,IMm,ImageStream,.ps"
+"INSOImpType.0012"="Tagged Image Fomat,G,ibtif2.flt,IMm1,ImageStream,.tif"
+"INSOImpType.0013"="WordPerfect Graphic 1.0,G,imwpg2.flt,IMm1,ImageStream,.wpg"
+"INSOImpType.0014"="WordPerfect Graphic 2.0,G,imwpg2.flt,IMm,ImageStream,.wp2"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\GraphicsMisc]
+"ResizeGraphicsOnCopy"="3"
+"GrfxImpScaleToWindow"="1"
+"GrfxResizeThreshhold"="0.075"
+"SuppressGrfxNamingMsg"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\GrfxImportDirs]
+"DefGfxInExt"=".wmf"
+"Windows Metafile"="C:\\sw50\\Graphics"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Help]
+"INS_HELPDIR"="C:\\sw50\\help"
+"Contents"="%INS_HELPDIR%/contents.tex"
+"Index"="%INS_HELPDIR%/general/index.tex"
+"MathIndex"="%INS_HELPDIR%/computing/dmindex.tex"
+"INS_REFDIR"="C:\\sw50\\help\\reference"
+"RefIndex"="%INS_REFDIR%/ReferenceIndex.tex"
+"TellMeMore"="C:\\sw50\\common\\tellmemore.tex"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\HelpSearchDlg]
+"HelpSearchLastEntry"="zoom factor"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\HTMLExportGrfxDlg]
+"HTMLCurrGraphicsSourceType"="0"
+"HTMLCurrSpecialSetsName"=""
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\HyperBitmapDlg]
+"BmpUnits"="1"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\IMEPreferences]
+"TurnOffInMath"="1"
+"TurnBackOnInText"="1"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\IMS_Ini_Info]
+"IMSGDI_Section"="EMWMF"
+"IMS_DispStatus"="Display Status"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\InitialSettings]
+"INS_DOCSDIR"="C:\\sw50\\Common"
+"DOC.0001"="%INS_DOCSDIR%/SWWelcome.tex"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\InputDlg]
+"InputType"="0"
+"InputSize"="30"
+"InputName"=""
+"InputVal"=""
+"InputImage"=""
+"InputImageDir"=""
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Installation]
+"LastBuildValidated"="5.00  Build 2606"
+"MoveToIniDbase"="0"
+"ServerINSTimeStamp"="1229374997"
+"InitialUse"="0"
+"ViewerBillboard"="4"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Keyboard]
+"CtrlM"="2"
+"CtrlT"="3"
+"InsertAction"="2"
+"SNRejectedReturnInfo"="28,1,0,0,0,1,0"
+"SWRejectedReturnInfo"="33,0.00in,0,0,0,1,0"
+"RejectedReturnInfo"="33,0.00in,65536,0,0,1,0"
+"RejectedSpaceInfo"="0,0,1,12pt,65536,0,0,0"
+"RejectedTabInfo"="4,1,0,,65536,0,0,0"
+"SecondSpaceInfo"="1,1,0,,65536,0,0,0"
+"SpaceEndsMath"="1"
+"SpaceSpaceMath"="1"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\LabelDlg]
+"LabelDlgPosition"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Languages]
+"ProximityDir"="C:\\sw50"
+"Language.0001"="American English,p,engphon.env,eng16.clx,%INS_PATH1%"
+"INS_PATH1"="C:\\sw50"
+"LexFile.0001"="usa86.lex,usa8603.lex"
+"LexFileDesc.0001"="American English Proximity/Franklin Linguibase,American English Merriam-Webster Sci/Tech Supplement"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\LaTeXTypes]
+"DefaultDVIFormatter"="LaTeX,2"
+"DefaultPDFFormatter"="LaTeX,11"
+"DefaultDVIFormatter1"="LaTeX,2"
+"DefaultPDFFormatter1"="LaTeX,11"
+"TeXType.0001"="TrueTeX,dvi,LaTeX,%INS_LTXEXE1%,%x -i% %I &%m %X %f,latex,%INS_LTXINI1%,0,0,1"
+"TeXType.0002"="TrueTeX MultiLingual,dvi,LaTeX,%INS_LTXEXE2%,%x -i% %I &%m %X %f,latex_ml,%INS_LTXINI2%,0,0,2"
+"TeXType.0003"="TeX Live LaTeX,dvi,LaTeX,,LaTeX-L %f,,,1,0,3"
+"TeXType.0004"="TeX Live MultiLingual,dvi,LaTeX,,LaTeX-T %f,,,1,0,4"
+"TeXType.0005"="TeX Live Lambda,dvi,Lambda,,Lambda %f,,,1,0,5"
+"TeXType.0006"="PCTeX,dvi,LaTeX,%INS_LTXEXE6%,%x &%m %f,latex,%INS_LTXINI6%,0,0,6"
+"TeXType.0007"="Y & Y,dvi,LaTeX,%INS_LTXEXE7%,%x +%m -v -L %f,latex,%INS_LTXINI7%,0,0,7"
+"TeXType.0008"="MiKTeX,dvi,LaTeX,%INS_LTXEXE8%,%x \"%f\",latex,%INS_LTXINI8%,0,0,8"
+"TeXType.0009"="emTeX,dvi,LaTeX,%INS_LTXEXE9%,%x %f,latex,%INS_LTXINI9%,0,0,9"
+"TeXType.0010"="TrueTeX pdfTeX,pdf,pdfLaTeX,,LaTeX-PDF %f,,,1,0,10"
+"TeXType.0011"="TrueTeX pdfTeX MultiLingual,pdf,pdfLaTeX,,LaTeX-PDG %f,,,1,0,11"
+"TeXType.0012"="MiKTeX pdfTeX,pdf,MiKTeX pdfLaTeX,%INS_LTXEXE12%,%x \"%f\",,%INS_LTXINI12%,0,1,12"
+"INS_LTXEXE1"="C:\\sw50\\TCITeX\\TrueTeX\\initex32.exe"
+"INS_LTXEXE2"="C:\\sw50\\TCITeX\\TrueTeX\\initex32.exe"
+"INS_LTXEXE3"=""
+"INS_LTXEXE4"=""
+"INS_LTXEXE5"=""
+"INS_LTXEXE6"="c:/pctex32/ptitex.exe"
+"INS_LTXEXE7"="c:/yandy/yandytex/yandytex.exe"
+"INS_LTXEXE8"="c:/miktex/texmf/miktex/bin/latex.exe"
+"INS_LTXEXE9"="c:/emtex/BIN/Latex2e.bat"
+"INS_LTXEXE10"=""
+"INS_LTXEXE11"=""
+"INS_LTXEXE12"="c:/texmf/miktex/bin/pdflatex.exe"
+"INS_LTXINI1"=""
+"INS_LTXINI2"=""
+"INS_LTXINI3"=""
+"INS_LTXINI4"=""
+"INS_LTXINI5"=""
+"INS_LTXINI6"=""
+"INS_LTXINI7"=""
+"INS_LTXINI8"=""
+"INS_LTXINI9"=""
+"INS_LTXINI10"=""
+"INS_LTXINI11"=""
+"INS_LTXINI12"=""
+"IDX_ARG"="\\def\\TCIMAKEINDEX{} \\input "
+"UseOldAuxFiles"="0"
+"WarnFilenames"="0"
+"Warn209"="1"
+"PresetTeXType.0001"="TrueTeX,dvi,LaTeX,%INS_LTXEXE1%,%x -i% %I &%m %X %f,latex,%INS_LTXINI1%,0,0,1"
+"PresetTeXType.0002"="TrueTeX MultiLingual,dvi,LaTeX,%INS_LTXEXE2%,%x -i% %I &%m %X %f,latex_ml,%INS_LTXINI2%,0,0,2"
+"PresetTeXType.0003"="TeX Live LaTeX,dvi,LaTeX,,LaTeX-L %f,,,1,0,3"
+"PresetTeXType.0004"="TeX Live MultiLingual,dvi,LaTeX,,LaTeX-T %f,,,1,0,4"
+"PresetTeXType.0005"="TeX Live Lambda,dvi,Lambda,,Lambda %f,,,1,0,5"
+"PresetTeXType.0006"="PCTeX,dvi,LaTeX,%INS_LTXEXE6%,%x &%m %f,latex,%INS_LTXINI6%,0,0,6"
+"PresetTeXType.0007"="Y & Y,dvi,LaTeX,%INS_LTXEXE7%,%x +%m -v -L %f,latex,%INS_LTXINI7%,0,0,7"
+"PresetTeXType.0008"="MiKTeX,dvi,LaTeX,%INS_LTXEXE8%,%x \"%f\",latex,%INS_LTXINI8%,0,0,8"
+"PresetTeXType.0009"="emTeX,dvi,LaTeX,%INS_LTXEXE9%,%x %f,latex,%INS_LTXINI9%,0,0,9"
+"PresetTeXType.0010"="TrueTeX pdfTeX,pdf,pdfLaTeX,,LaTeX-PDF %f,,,1,0,10"
+"PresetTeXType.0011"="TrueTeX pdfTeX MultiLingual,pdf,pdfLaTeX,,LaTeX-PDG %f,,,1,0,11"
+"PresetTeXType.0012"="MiKTeX pdfTeX,pdf,MiKTeX pdfLaTeX,%INS_LTXEXE12%,%x \"%f\",,%INS_LTXINI12%,0,1,12"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\MakeIndex]
+"MakeIndxExe"="MakeIndex"
+"IDXShowMode"="0"
+"IDXFlags"="1"
+"MakeIndxExe1"="MakeIndex"
+"IDXShowMode1"="0"
+"IDXFlags1"="1"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\ManualCiteDlg]
+"ManualCiteDlgX"="0"
+"ManualCiteDlgY"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Maple]
+"Digits"="20"
+"SeriesOrder"="5"
+"ErrNotifyLevel"="1"
+"CmdNotifyLevel"="0"
+"LoggingFlags"="0"
+"SimpleMapleMenu"="0"
+"MapleKernelDir"="c:/swp50"
+"MapleLibDir"="c:/swp50/Maple"
+"MapleSolveMaxDegree"="3"
+"MapleSolvePvalOnly"="1"
+"MapleSolveIgnoreSCases"="1"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\MathNameDlg]
+"MathNameDlgLastName"="dom"
+"MathNameDlgLastKind"="FUNCTION"
+"MathNameDlgLastPos"="0"
+"MathNameDlgAddList"="1"
+"MathNameDlgUserDef.0000"="dom,FUNCTION"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\MathPreferences]
+"EquationNumbers"="0"
+"MultLineGap"="1196"
+"MathLimitPlacement"="0"
+"MathUnits"="1"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\MatrixDlg]
+"MatrixDlgRows"="2"
+"MatrixDlgCols"="2"
+"MatrixDlgColAlign"="1"
+"MatrixDlgBaseAlign"="1"
+"MatrixDlgDelimiters"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\MomentDlg]
+"MomentDlgOrder"="0"
+"MomentDlgExpandVal"="M"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\MuPAD]
+"Digits"="20"
+"SeriesOrder"="5"
+"ErrNotifyLevel"="1"
+"CmdNotifyLevel"="0"
+"LoggingFlags"="0"
+"SimpleMuPADMenu"="0"
+"MuPADLibDir"="c:/swp50/MuPAD/lib"
+"MuPADSolveMaxDegree"="3"
+"MuPADSolvePvalOnly"="0"
+"MuPADSolveIgnoreSCases"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\OpenLocDlg]
+"MaxListSize"="10"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\OperatorDlg]
+"OperatorSelected"="15"
+"OperatorLimitPos"="1"
+"OperatorSize"="1"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Order]
+"OrderExecutablePath"="C:\\sw50\\Order.exe"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\OutputChoiceDlg]
+"OutputChoiceDlgX"="50"
+"OutputChoiceDlgY"="50"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Palettes]
+"LCGreek"="1"
+"UCGreek"="1"
+"BinOperations"="1"
+"BinRelations"="1"
+"NegatedSymbols"="1"
+"Arrows"="1"
+"MiscSymbols"="1"
+"SpecialDelimiters"="1"
+"Latin1"="1"
+"LatinExtendedA"="1"
+"GeneralPunctuation"="1"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\PDFExportGrfxDlg]
+"PDFCurrGraphicsSourceType"="0"
+"PDFCurrSpecialSetsName"=""
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\PlotData]
+"PlotFrameAttrs"="0,6480,4320,in,PlotInFrame,PlotInFrame,Displayed,0,0,1,1,1"
+"PlotAttrs2D"="Line,Solid,Thin,Dot,[flat::RGB:0x00000000],Normal,0"
+"PlotAttrs3D"="Solid,Thin,Dot,Normal,Color Patch,Mesh,[linear:XYZ:RGB:0x00ff0000:0x000000ff]"
+"SWPlotBehaviors"="1,0,0"
+"SNPlotBehaviors"="0,0,0"
+"PlotData2DRectX"="-5,5,100"
+"PlotData2DParamT"="-5,5,100"
+"PlotData2DImpX"="-5,5,24"
+"PlotData2DImpY"="-5,5,24"
+"PlotData2DPolarT"="-3.1416,3.1416,100"
+"PlotData2DVecX"="-5,5,10"
+"PlotData2DVecY"="-5,5,10"
+"PlotData2DConX"="0,1,11"
+"PlotData2DConY"="0,1,11"
+"PlotData3DRectX"="-5,5,25"
+"PlotData3DRectY"="-5,5,25"
+"PlotData3DSphT"="-3.1416,3.1416,25"
+"PlotData3DSphPhi"="0,3.1416,25"
+"PlotData3DImpX"="-5,5,10"
+"PlotData3DImpY"="-5,5,10"
+"PlotData3DImpZ"="-5,5,10"
+"PlotData3DCylT"="-3.1416,3.1416,25"
+"PlotData3DCylZ"="0,5,25"
+"PlotData3DVecX"="-5,5,6"
+"PlotData3DVecY"="-5,5,6"
+"PlotData3DVecZ"="-5,5,6"
+"PlotData3DTubeT"="0,1,50"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\PlotSettings]
+"CurrentPlotSettings"="fbcs"
+"PlotHeight"="1"
+"PlotWidth"="1"
+"PlotXRange"="1"
+"PlotXYRange"="1"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\PortableFilterOptions]
+"PortablePlot2EPS"="0"
+"PortableWMF2EPS"="0"
+"PortExportPlotsAsGraphics"="1"
+"PortExportPlotGraphicsType"=".png"
+"PortGraphicsSelector"="0"
+"PortExportAllGraphicsType"=".jpg,0"
+"PortExportVectType"=".eps,0"
+"PortExportRastType"=".jpg,0"
+"PortExpPlotGrfxName"="%s__%d|<documentName>|<graphicsIndex>"
+"PortExpGraphicsGrfxName"="%s__%d|<graphicsFilename>|<graphicsIndex>"
+"PortExportGraphicsSubdirectory"="graphics"
+"PortCopyGraphicsToTargetDir"="0"
+"PortGenerateResizedGraphics"="0"
+"PortExpGraphicsType.0001"="IncludeGraphicsSupported,.jpg|.gif|.eps,.jpg,0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\PortExportGrfxDlg]
+"PortCurrGraphicsSourceType"="0"
+"PortCurrSpecialSetsName"=""
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Previewers]
+"DefaultDVIPreviewer"="1"
+"DefaultPDFPreviewer"="6"
+"DefaultDVIPreviewer1"="1"
+"DefaultPDFPreviewer1"="6"
+"CommandProcessor"="C:\\sw50\\TCITeX\\TrueTeX\\dvigdi32.exe"
+"TeXPreviewer.0002"="PCTeX Previewer,dvi,%INS_PVEXE2%,!%x /nologo \"%f\"!,%INS_PVINI2%,!!!,!!!,!!!,,,,,0,2"
+"TeXPreviewer.0004"="YAP (MiKTeX),dvi,%INS_PVEXE4%,!%x \"%f\"!,%INS_PVINI4%,!!!,!!!,!!!,,,,,0,4"
+"TeXPreviewer.0006"="Acrobat,pdf,C:/Program Files/Adobe/Reader 9.0/Reader/AcroRd32.exe,!%x \"%f\"!,%INS_PVINI6%,!!!,!!!,!!!,,,,,0,6"
+"INS_PVEXE1"="C:\\sw50\\TCITeX\\TrueTeX\\dvigdi32.exe"
+"INS_PVEXE2"="c:/pctex32/pctexw32.exe"
+"INS_PVEXE3"="c:/yandy/DVIWindo/DVIWindo.exe"
+"INS_PVEXE4"="c:/miktex/texmf/miktex/bin/yap.exe"
+"INS_PVEXE5"="c:/emtex/bin/v.bat"
+"INS_PVEXE6"="C:\\Program Files\\Adobe\\Reader 8.0\\Reader\\AcroRd32.exe"
+"INS_PVARG1"="%x \"%f\" -i% %I -d 0 0 -1 -1"
+"INS_PVARG2"="%x /nologo \"%f\""
+"INS_PVARG3"="%x \"%f\""
+"INS_PVARG4"="%x \"%f\""
+"INS_PVARG5"="%x \"%f\""
+"INS_PVARG6"="%x \"%f\""
+"INS_PVINI1"=""
+"INS_PVINI2"=""
+"INS_PVINI3"=""
+"INS_PVINI4"=""
+"INS_PVINI5"=""
+"INS_PVINI6"=""
+"PresetTeXPreviewer.0001"="TrueTeX Previewer,dvi,%INS_PVEXE1%,!%INS_PVARG1%!,%INS_PVINI1%,!!!,!!!,!!!,,,,1,0,1"
+"PresetTeXPreviewer.0002"="PCTeX Previewer,dvi,%INS_PVEXE2%,!%INS_PVARG2%!,%INS_PVINI2%,,,,,,,,0,2"
+"PresetTeXPreviewer.0003"="DVIWindo (Y & Y),dvi,%INS_PVEXE3%,!%INS_PVARG3%!,%INS_PVINI3%,,,,,,,,0,3"
+"PresetTeXPreviewer.0004"="YAP (MiKTeX),dvi,%INS_PVEXE4%,!%INS_PVARG4%!,%INS_PVINI4%,,,,,,,,0,4"
+"PresetTeXPreviewer.0005"="emTeX Previewer,dvi,%INS_PVEXE5%,!%INS_PVARG5%!,%INS_PVINI5%,,,,,,,,0,5"
+"PresetTeXPreviewer.0006"="Acrobat,pdf,%INS_PVEXE6%,!%INS_PVARG6%!,%INS_PVINI6%,!!!,!!!,!!!,,,,,0,6"
+"TeXPreviewer.0001"="TrueTeX Previewer,dvi,%INS_PVEXE1%,!%x \"%f\" -i% %I -d 0 0 -1 -1!,%INS_PVINI1%,!!!,!!!,!!!,,,,1,0,1"
+"TeXPreviewer.0003"="DVIWindo (Y & Y),dvi,%INS_PVEXE3%,!%x \"%f\"!,%INS_PVINI3%,!!!,!!!,!!!,,,,,0,3"
+"TeXPreviewer.0005"="emTeX Previewer,dvi,%INS_PVEXE5%,!%x \"%f\"!,%INS_PVINI5%,!!!,!!!,!!!,,,,,0,5"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\PROGFileTypes]
+"PROGFileType.0001"="SW/SWP/SN Document,T,LATEX.DLL,IOP,LaTeX,.tex"
+"PROGFileType.0002"="LaTeX,T,LATEX.DLL,I,LaTeX,.tex"
+"PROGFileType.0003"="Portable LaTeX,T,LATEX2.DLL,SP,LaTeX,.tex"
+"PROGFileType.0004"="Quiz,T,LATEX.DLL,I,LaTeX,.qiz"
+"PROGFileType.0005"="Wrap,T,LATEX.DLL,R,LaTeX,.rap"
+"PROGFileType.0006"="Wrap created by SW/SWP 2.5,T,LATEX.DLL,I,,.msg"
+"PROGFileType.0007"="ASCII,T,ASCII.DLL,I,,.txt"
+"PROGFileType.0008"="ANSI,T,ANSI.DLL,I,,.txt"
+"PROGFileType.0009"="RTF,T,LATEX.DLL,I,,.rtf"
+"PROGFileType.0010"="CASIO Files,T,CASIO.DLL,I,,.txt"
+"PROGFileType.0011"="HP Files,T,HP.DLL,I,,.txt"
+"PROGFileType.0012"="TI Files,T,TI.DLL,I,,.txt"
+"PROGFileType.0013"="T3,T,T3TEX.DLL,I,,.tex"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\ProgramFiles]
+"ProgDir"=""
+"DataDir"=""
+"TempDir"="C:\\sw50\\temp"
+"CharMetricsFile"="tr21.efm"
+"UnicodeMapperFile"="unitofnt.efn"
+"Options"="packgs.opt,classes.opt"
+"ClassPkgs"="classes.pkg"
+"UnicodeToValidCharsets"="codepage.ecp"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\ProgramGraphics]
+"ProgBitmapsPath"="C:\\sw50\\Graphics\\Internal"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\QuantileDlg]
+"QuantileDlgVal"=""
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\RadicalDlg]
+"RadicalDlgStyle"="1"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\RandMatDlg]
+"RandMatDlgRows"="5"
+"RandMatDlgCols"="5"
+"RandMatDlgType"="1"
+"RandMatDlgLower"="-99"
+"RandMatDlgUpper"="99"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\RandomDlg]
+"RandomDlgNumSamp"="10"
+"RandomDlgType"="0"
+"RandomDlgParam1"=""
+"RandomDlgParam2"=""
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\RecentFileList]
+"RecentListSize"="6"
+"File.0001"="C:\\sw50\\Docs\\ASLPub\\SpringerSeries.tex,"
+"File.0002"="C:\\sw50\\Docs\\Reports\\00blank.tex,LATEX.DLL"
+"File.0003"="C:\\sw50\\Docs\\Reports\\searchspeakers1023412.tex,LATEX.DLL"
+"File.0004"="C:\\sw50\\Docs\\Reports\\searchspeakers1021412.tex,LATEX.DLL"
+"File.0005"="C:\\sw50\\Docs\\Reports\\searchspeakers092612.tex,LATEX.DLL"
+"File.0006"="C:\\sw50\\Docs\\vita\\vita62.tex,LATEX.DLL"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\RecentURL]
+"URL.0001"="http://"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Registration]
+"Name"="Richard Shore"
+"Organization"="Cornell"
+"SerialNumber"="300-e0500-20572-80720-18266"
+"RunDate"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\ReplaceDlg]
+"ReplaceWholeWordsOnly"="0"
+"ReplaceExactCase"="1"
+"ReplaceSearchBackwards"="0"
+"ReplaceDlgX"="0"
+"ReplaceDlgY"="0"
+"LeftPos"="2158"
+"TopPos"="4440"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\ReshapeDlg]
+"ReshapeDlgColumns"="1"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\RTF]
+"RTFExecutablePath"="C:\\sw50\\rtf\\rtf2latex2e.exe"
+"RTFParameter.0001"="-kn"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\RTFExportGrfxDlg]
+"RTFCurrGraphicsSourceType"="0"
+"RTFCurrSpecialSetsName"=""
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\SaveForPDFOptions]
+"PDFGraphicsSelector"="1"
+"PDFExportPlotGraphicsType"=".pdf"
+"PDFExportPlotsAsGraphics"="1"
+"PDFExportAllGraphicsType"=".pdf,2"
+"PDFExportVectorGraphicsType"=".pdf,2"
+"PDFExportRasterGraphicsType"=".pdf,2"
+"PDFExpPlotGrfxName"="%s__%d|<documentName>|<graphicsIndex>"
+"PDFExpGraphicsGrfxName"="%s__%d|<graphicsFilename>|<graphicsIndex>"
+"PDFExportGraphicsSubdirectory"="graphics"
+"PDFCopyGraphicsToTargetDir"="1"
+"PDFGenerateResizedGraphics"="3"
+"PDFConvertLinkTargets"="0"
+"PDFGraphicsTypesAllowable"=".jpg|.png|.pdf|.mps"
+"PDFGraphicsCompression"="ZIP"
+"PDFGraphicsFontInclusion"="EmbedNonBaseFonts"
+"PDFExpGraphicsType.0001"="graphics supported in PDF,.jpg|.png|.pdf|.mps,.pdf,0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\SeriesDlg]
+"SeriesDlgOrder"="5"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Shells]
+"ShellDir"="C:\\sw50\\Shells"
+"NewShell"="Standard LaTeX\\Blank - Standard LaTeX Article.shl"
+"StartShell"="Standard LaTeX\\Standard LaTeX Article(mine)"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\SpaceDlg]
+"SpaceDlgInfo"="0,0,0,,65536,0,0,0"
+"VSpaceDlgInfo"="28,0.20in,65536,0,0"
+"RuleDlgInfo"=",1pt,12pt"
+"BreakDlgInfo"="12,0pt,0,0,0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\SpellCheckDlg]
+"SpellCheckDlgX"="422"
+"SpellCheckDlgY"="295"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\SpellChecker]
+"LanguageID"="1"
+"OptionFlags"="5"
+"UserDictionary.0001"="C:\\sw50\\enguser.clm"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\StateOptions]
+"SaveStateInfo"="0"
+"SaveDocInfo"="1"
+"SaveWindowInfo"="1"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\StripsConfig]
+"LargeIcons"="0"
+"ToolTips"="1"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\StyleEditor]
+"StyleEditorExecutablePath"="C:\\sw50\\StyleEditor\\se.exe"
+"StyleEditorParameter.0001"="/iC:\\sw50\\STYLEE~1\\se.ini"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\SymbolPanelColumns]
+"LowerGreeks"="4"
+"UpperGreeks"="2"
+"BinOps"="5"
+"BinRels"="6"
+"NegRels"="5"
+"Arrows"="5"
+"MiscChars"="6"
+"Delimiters"="2"
+"Latin1"="6"
+"LatinEx"="8"
+"GeneralPunct"="2"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\TableColumnDlg]
+"TableColUnits"="1"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\TableDlg]
+"TableDlgRows"="4"
+"TableDlgCols"="5"
+"TableDlgColAlign"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\TextColors]
+"Color.0001"="Black,0r,0g,0b"
+"Color.0002"="Blue,0r,0g,128b"
+"Color.0003"="BlueGreen,0r,128g,128b"
+"Color.0004"="Green,0r,128g,0b"
+"Color.0005"="Red,128r,0g,0b"
+"Color.0006"="Purple,128r,0g,128b"
+"Color.0007"="Brown,128r,128g,0b"
+"Color.0008"="Gray,128r,128g,128b"
+"Color.0009"="DarkGray,64r,64g,64b"
+"Color.0010"="LightBlue,0r,0g,255b"
+"Color.0011"="LtBlueGreen,0r,255g,255b"
+"Color.0012"="LightGreen,0r,255g,0b"
+"Color.0013"="LightRed,255r,0g,0b"
+"Color.0014"="LightGray,192r,192g,192b"
+"Color.0015"="Yellow,255r,255g,0b"
+"Color.0016"="Magenta,255r,0g,255b"
+"Color.0017"="White,255r,255g,255b"
+"Color.0018"="Sienna,192r,128g,0b"
+"Color.0019"="Navy,0r,0g,64b"
+"Color.0020"="Cyan,128r,255g,255b"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars]
+"CacheBar"=hex:74,24,00,00,97,23,00,00,35,24,00,00,93,23,00,00,58,23,00,00,57,23,00,\
+00,54,23,00,00,59,23,00,00,55,23,00,00,fb,24,00,00,85,24,00,00
+"LowerGreeks"=hex:28,23,00,00,29,23,00,00,2a,23,00,00,2b,23,00,00,2c,23,00,00,2d,23,\
+00,00,2e,23,00,00,2f,23,00,00,30,23,00,00,31,23,00,00,32,23,00,00,33,23,00,00,34,\
+23,00,00,35,23,00,00,36,23,00,00,37,23,00,00,38,23,00,00,39,23,00,00,3a,23,00,00,\
+3b,23,00,00,3c,23,00,00,3d,23,00,00,3e,23,00,00,3f,23,00,00,40,23,00,00,41,23,00,\
+00,42,23,00,00,43,23,00,00,44,23,00,00,45,23,00,00
+"UpperGreeks"=hex:46,23,00,00,47,23,00,00,48,23,00,00,49,23,00,00,4a,23,00,00,4b,23,\
+00,00,4c,23,00,00,4d,23,00,00,4e,23,00,00,4f,23,00,00,50,23,00,00,51,23,00,00
+"BinOps"=hex:52,23,00,00,53,23,00,00,54,23,00,00,55,23,00,00,56,23,00,00,57,23,00,00,\
+58,23,00,00,59,23,00,00,5a,23,00,00,5b,23,00,00,5c,23,00,00,5d,23,00,00,5e,23,00,\
+00,5f,23,00,00,60,23,00,00,61,23,00,00,62,23,00,00,63,23,00,00,64,23,00,00,65,23,\
+00,00,66,23,00,00,67,23,00,00,68,23,00,00,69,23,00,00,6a,23,00,00,6b,23,00,00,6c,\
+23,00,00,6d,23,00,00,6e,23,00,00,6f,23,00,00,70,23,00,00,71,23,00,00,72,23,00,00,\
+73,23,00,00,74,23,00,00,75,23,00,00,76,23,00,00,77,23,00,00,78,23,00,00,79,23,00,\
+00,7a,23,00,00,7b,23,00,00,7c,23,00,00,7d,23,00,00,7e,23,00,00,7f,23,00,00,80,23,\
+00,00,81,23,00,00,82,23,00,00,83,23,00,00,84,23,00,00,85,23,00,00,86,23,00,00,87,\
+23,00,00,88,23,00,00,89,23,00,00,8a,23,00,00,8b,23,00,00,8c,23,00,00,8d,23,00,00,\
+8e,23,00,00
+"BinRels"=hex:8f,23,00,00,90,23,00,00,91,23,00,00,92,23,00,00,93,23,00,00,94,23,00,00,\
+95,23,00,00,96,23,00,00,97,23,00,00,98,23,00,00,99,23,00,00,9a,23,00,00,9b,23,00,\
+00,9c,23,00,00,9d,23,00,00,9e,23,00,00,9f,23,00,00,a0,23,00,00,a1,23,00,00,a2,23,\
+00,00,a3,23,00,00,a4,23,00,00,a5,23,00,00,a6,23,00,00,a7,23,00,00,a8,23,00,00,a9,\
+23,00,00,aa,23,00,00,ab,23,00,00,ac,23,00,00,ad,23,00,00,ae,23,00,00,af,23,00,00,\
+b0,23,00,00,b1,23,00,00,b2,23,00,00,b3,23,00,00,b4,23,00,00,b5,23,00,00,b6,23,00,\
+00,b7,23,00,00,b8,23,00,00,b9,23,00,00,ba,23,00,00,bb,23,00,00,bc,23,00,00,bd,23,\
+00,00,be,23,00,00,bf,23,00,00,c0,23,00,00,c1,23,00,00,c2,23,00,00,c3,23,00,00,c4,\
+23,00,00,c5,23,00,00,c6,23,00,00,c7,23,00,00,c8,23,00,00,c9,23,00,00,ca,23,00,00,\
+cb,23,00,00,cc,23,00,00,cd,23,00,00,ce,23,00,00,cf,23,00,00,d0,23,00,00,d1,23,00,\
+00,d2,23,00,00,d3,23,00,00,d4,23,00,00,d5,23,00,00,d6,23,00,00,d7,23,00,00,d8,23,\
+00,00,d9,23,00,00,da,23,00,00,db,23,00,00,dc,23,00,00,dd,23,00,00,de,23,00,00,df,\
+23,00,00,e0,23,00,00,e1,23,00,00,e2,23,00,00,e3,23,00,00,e4,23,00,00,e5,23,00,00,\
+e6,23,00,00,e7,23,00,00,e8,23,00,00,e9,23,00,00,ea,23,00,00,eb,23,00,00,ec,23,00,\
+00,ed,23,00,00,ee,23,00,00,ef,23,00,00,f0,23,00,00,f1,23,00,00,f2,23,00,00,f3,23,\
+00,00,f4,23,00,00
+"NegRels"=hex:f5,23,00,00,f6,23,00,00,f7,23,00,00,f8,23,00,00,f9,23,00,00,fa,23,00,00,\
+fb,23,00,00,fc,23,00,00,fd,23,00,00,fe,23,00,00,ff,23,00,00,00,24,00,00,01,24,00,\
+00,02,24,00,00,03,24,00,00,04,24,00,00,05,24,00,00,06,24,00,00,07,24,00,00,08,24,\
+00,00,09,24,00,00,0a,24,00,00,0b,24,00,00,0c,24,00,00,0d,24,00,00,0e,24,00,00,0f,\
+24,00,00,10,24,00,00,11,24,00,00,12,24,00,00,13,24,00,00,14,24,00,00,15,24,00,00,\
+16,24,00,00,17,24,00,00,18,24,00,00,19,24,00,00,1a,24,00,00,1b,24,00,00,1c,24,00,\
+00,1d,24,00,00,1e,24,00,00,1f,24,00,00,20,24,00,00,21,24,00,00,22,24,00,00,23,24,\
+00,00,24,24,00,00,25,24,00,00,26,24,00,00,27,24,00,00,28,24,00,00,29,24,00,00,2a,\
+24,00,00,2b,24,00,00,2c,24,00,00,2d,24,00,00,2e,24,00,00,2f,24,00,00,30,24,00,00,\
+31,24,00,00,32,24,00,00
+"Arrows"=hex:33,24,00,00,34,24,00,00,35,24,00,00,36,24,00,00,37,24,00,00,38,24,00,00,\
+39,24,00,00,3a,24,00,00,3b,24,00,00,3c,24,00,00,3d,24,00,00,3e,24,00,00,3f,24,00,\
+00,40,24,00,00,41,24,00,00,42,24,00,00,43,24,00,00,44,24,00,00,45,24,00,00,46,24,\
+00,00,47,24,00,00,48,24,00,00,49,24,00,00,4a,24,00,00,4b,24,00,00,4c,24,00,00,4d,\
+24,00,00,4e,24,00,00,4f,24,00,00,50,24,00,00,51,24,00,00,52,24,00,00,53,24,00,00,\
+54,24,00,00,55,24,00,00,56,24,00,00,57,24,00,00,58,24,00,00,59,24,00,00,5a,24,00,\
+00,5b,24,00,00,5c,24,00,00,5d,24,00,00,5e,24,00,00,5f,24,00,00,60,24,00,00,61,24,\
+00,00,62,24,00,00,63,24,00,00,64,24,00,00,65,24,00,00,66,24,00,00,67,24,00,00,68,\
+24,00,00,69,24,00,00,6a,24,00,00,6b,24,00,00,6c,24,00,00,6d,24,00,00,6e,24,00,00,\
+6f,24,00,00,70,24,00,00,71,24,00,00,72,24,00,00,73,24,00,00
+"MiscChars"=hex:74,24,00,00,75,24,00,00,76,24,00,00,77,24,00,00,78,24,00,00,79,24,00,\
+00,7a,24,00,00,7b,24,00,00,7c,24,00,00,7d,24,00,00,7e,24,00,00,7f,24,00,00,80,24,\
+00,00,81,24,00,00,82,24,00,00,83,24,00,00,84,24,00,00,85,24,00,00,86,24,00,00,87,\
+24,00,00,88,24,00,00,89,24,00,00,8a,24,00,00,8b,24,00,00,8c,24,00,00,8d,24,00,00,\
+8e,24,00,00,8f,24,00,00,90,24,00,00,91,24,00,00,92,24,00,00,93,24,00,00,94,24,00,\
+00,95,24,00,00,96,24,00,00,97,24,00,00,98,24,00,00,99,24,00,00,9a,24,00,00,9b,24,\
+00,00,9c,24,00,00,9d,24,00,00,9e,24,00,00,9f,24,00,00,a0,24,00,00,a1,24,00,00,a2,\
+24,00,00,a3,24,00,00,a4,24,00,00,a5,24,00,00,a6,24,00,00,a7,24,00,00,a8,24,00,00,\
+a9,24,00,00,aa,24,00,00,ab,24,00,00,ac,24,00,00,ad,24,00,00,ae,24,00,00,af,24,00,\
+00,b0,24,00,00,b1,24,00,00,b2,24,00,00,b3,24,00,00,b4,24,00,00,b5,24,00,00,b6,24,\
+00,00,b7,24,00,00,b8,24,00,00,b9,24,00,00,ba,24,00,00,bb,24,00,00,bc,24,00,00,bd,\
+24,00,00,be,24,00,00,bf,24,00,00,c0,24,00,00,c1,24,00,00,c2,24,00,00,c3,24,00,00,\
+c4,24,00,00,c5,24,00,00,c6,24,00,00
+"Delimiters"=hex:c7,24,00,00,c8,24,00,00,c9,24,00,00,ca,24,00,00,cb,24,00,00,cc,24,00,\
+00,cd,24,00,00,ce,24,00,00,cf,24,00,00,d0,24,00,00
+"Latin1"=hex:d1,24,00,00,d2,24,00,00,d3,24,00,00,d4,24,00,00,d5,24,00,00,d6,24,00,00,\
+d7,24,00,00,d8,24,00,00,d9,24,00,00,da,24,00,00,db,24,00,00,dc,24,00,00,dd,24,00,\
+00,de,24,00,00,df,24,00,00,e0,24,00,00,e1,24,00,00,e2,24,00,00,e3,24,00,00,e4,24,\
+00,00,e5,24,00,00,e6,24,00,00,e7,24,00,00,e8,24,00,00,e9,24,00,00,ea,24,00,00,eb,\
+24,00,00,ec,24,00,00,ed,24,00,00,ee,24,00,00,ef,24,00,00,f0,24,00,00,f1,24,00,00,\
+f2,24,00,00,f3,24,00,00,f4,24,00,00,f5,24,00,00,f6,24,00,00,f7,24,00,00,f8,24,00,\
+00,f9,24,00,00,fa,24,00,00,fb,24,00,00,fc,24,00,00,fd,24,00,00,fe,24,00,00,ff,24,\
+00,00,00,25,00,00,01,25,00,00,02,25,00,00,03,25,00,00,04,25,00,00,05,25,00,00,06,\
+25,00,00,07,25,00,00,08,25,00,00,09,25,00,00,0a,25,00,00,0b,25,00,00,0c,25,00,00,\
+0d,25,00,00,0e,25,00,00,0f,25,00,00,10,25,00,00,11,25,00,00,12,25,00,00,13,25,00,\
+00,14,25,00,00,15,25,00,00,16,25,00,00,17,25,00,00,18,25,00,00,19,25,00,00,1a,25,\
+00,00,1b,25,00,00,1c,25,00,00,1d,25,00,00,1e,25,00,00,1f,25,00,00,20,25,00,00,21,\
+25,00,00,22,25,00,00,23,25,00,00,24,25,00,00,25,25,00,00,26,25,00,00,27,25,00,00,\
+28,25,00,00,29,25,00,00,2a,25,00,00,2b,25,00,00,2c,25,00,00,2d,25,00,00,2e,25,00,\
+00,2f,25,00,00,30,25,00,00
+"LatinEx"=hex:31,25,00,00,32,25,00,00,33,25,00,00,34,25,00,00,35,25,00,00,36,25,00,00,\
+37,25,00,00,38,25,00,00,39,25,00,00,3a,25,00,00,3b,25,00,00,3c,25,00,00,3d,25,00,\
+00,3e,25,00,00,3f,25,00,00,40,25,00,00,41,25,00,00,42,25,00,00,43,25,00,00,44,25,\
+00,00,45,25,00,00,46,25,00,00,47,25,00,00,48,25,00,00,49,25,00,00,4a,25,00,00,4b,\
+25,00,00,4c,25,00,00,4d,25,00,00,4e,25,00,00,4f,25,00,00,50,25,00,00,51,25,00,00,\
+52,25,00,00,53,25,00,00,54,25,00,00,55,25,00,00,56,25,00,00,57,25,00,00,58,25,00,\
+00,59,25,00,00,5a,25,00,00,5b,25,00,00,5c,25,00,00,5d,25,00,00,5e,25,00,00,5f,25,\
+00,00,60,25,00,00,61,25,00,00,62,25,00,00,63,25,00,00,64,25,00,00,65,25,00,00,66,\
+25,00,00,67,25,00,00,68,25,00,00,69,25,00,00,6a,25,00,00,6b,25,00,00,6c,25,00,00,\
+6d,25,00,00,6e,25,00,00,6f,25,00,00,70,25,00,00,71,25,00,00,72,25,00,00,73,25,00,\
+00,74,25,00,00,75,25,00,00,76,25,00,00,77,25,00,00,78,25,00,00,79,25,00,00,7a,25,\
+00,00,7b,25,00,00,7c,25,00,00,7d,25,00,00,7e,25,00,00,7f,25,00,00,80,25,00,00,81,\
+25,00,00,82,25,00,00,83,25,00,00,84,25,00,00,85,25,00,00,86,25,00,00,87,25,00,00,\
+88,25,00,00,89,25,00,00,8a,25,00,00,8b,25,00,00,8c,25,00,00,8d,25,00,00,8e,25,00,\
+00,8f,25,00,00,90,25,00,00,91,25,00,00,92,25,00,00,93,25,00,00,94,25,00,00,95,25,\
+00,00,96,25,00,00,97,25,00,00,98,25,00,00,99,25,00,00,9a,25,00,00,9b,25,00,00,9c,\
+25,00,00,9d,25,00,00,9e,25,00,00,9f,25,00,00,a0,25,00,00,a1,25,00,00,a2,25,00,00,\
+a3,25,00,00,a4,25,00,00,a5,25,00,00,a6,25,00,00,a7,25,00,00,a8,25,00,00,a9,25,00,\
+00,aa,25,00,00,ab,25,00,00,ac,25,00,00,ad,25,00,00,ae,25,00,00,af,25,00,00
+"GeneralPunct"=hex:b0,25,00,00,b1,25,00,00,b2,25,00,00,b3,25,00,00,b4,25,00,00,b5,25,\
+00,00,b6,25,00,00,b7,25,00,00,b8,25,00,00,b9,25,00,00
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Bar0]
+"BarID"="59419"
+"Bars"="16"
+"Bar#0"="0"
+"Bar#1"="8002"
+"Bar#2"="0"
+"Bar#3"="8030"
+"Bar#4"="0"
+"Bar#5"="8001"
+"Bar#6"="8023"
+"Bar#7"="8026"
+"Bar#8"="0"
+"Bar#9"="8016"
+"Bar#10"="0"
+"Bar#11"="8025"
+"Bar#12"="8019"
+"Bar#13"="0"
+"Bar#14"="8004"
+"Bar#15"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Bar1]
+"BarID"="59422"
+"Bars"="4"
+"Bar#0"="0"
+"Bar#1"="8003"
+"Bar#2"="8018"
+"Bar#3"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Bar10]
+"BarID"="8025"
+"YPos"="58"
+"Docking"="1"
+"MRUDockID"="59419"
+"MRUDockLeftPos"="0"
+"MRUDockTopPos"="58"
+"MRUDockRightPos"="207"
+"MRUDockBottomPos"="90"
+"MRUFloatStyle"="4"
+"MRUFloatXPos"="0"
+"MRUFloatYPos"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Bar11]
+"BarID"="8029"
+"XPos"="-2"
+"YPos"="251"
+"Docking"="1"
+"MRUDockID"="59421"
+"MRUDockLeftPos"="-2"
+"MRUDockTopPos"="251"
+"MRUDockRightPos"="31"
+"MRUDockBottomPos"="507"
+"MRUFloatStyle"="4"
+"MRUFloatXPos"="0"
+"MRUFloatYPos"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Bar12]
+"BarID"="8019"
+"XPos"="205"
+"YPos"="58"
+"Docking"="1"
+"MRUDockID"="59419"
+"MRUDockLeftPos"="205"
+"MRUDockTopPos"="58"
+"MRUDockRightPos"="677"
+"MRUDockBottomPos"="90"
+"MRUFloatStyle"="4096"
+"MRUFloatXPos"="0"
+"MRUFloatYPos"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Bar13]
+"BarID"="8017"
+"XPos"="-2"
+"Docking"="1"
+"MRUDockID"="59421"
+"MRUDockLeftPos"="-2"
+"MRUDockTopPos"="-1"
+"MRUDockRightPos"="31"
+"MRUDockBottomPos"="103"
+"MRUFloatStyle"="4"
+"MRUFloatXPos"="0"
+"MRUFloatYPos"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Bar14]
+"BarID"="8026"
+"XPos"="515"
+"YPos"="-2"
+"Docking"="1"
+"MRUDockID"="59419"
+"MRUDockLeftPos"="515"
+"MRUDockTopPos"="-2"
+"MRUDockRightPos"="731"
+"MRUDockBottomPos"="30"
+"MRUFloatStyle"="4"
+"MRUFloatXPos"="0"
+"MRUFloatYPos"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Bar15]
+"BarID"="8028"
+"XPos"="-2"
+"YPos"="105"
+"Docking"="1"
+"MRUDockID"="59421"
+"MRUDockLeftPos"="-2"
+"MRUDockTopPos"="105"
+"MRUDockRightPos"="31"
+"MRUDockBottomPos"="253"
+"MRUFloatStyle"="4"
+"MRUFloatXPos"="0"
+"MRUFloatYPos"="736"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Bar16]
+"BarID"="8021"
+"Visible"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Bar17]
+"BarID"="8030"
+"Visible"="0"
+"YPos"="257"
+"Docking"="1"
+"MRUDockID"="0"
+"MRUDockLeftPos"="0"
+"MRUDockTopPos"="257"
+"MRUDockRightPos"="60"
+"MRUDockBottomPos"="289"
+"MRUFloatStyle"="4"
+"MRUFloatXPos"="0"
+"MRUFloatYPos"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Bar18]
+"BarID"="8004"
+"XPos"="293"
+"YPos"="88"
+"Docking"="1"
+"MRUDockID"="59419"
+"MRUDockLeftPos"="293"
+"MRUDockTopPos"="88"
+"MRUDockRightPos"="562"
+"MRUDockBottomPos"="120"
+"MRUFloatStyle"="4"
+"MRUFloatXPos"="0"
+"MRUFloatYPos"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Bar19]
+"BarID"="8003"
+"YPos"="-2"
+"Docking"="1"
+"MRUDockID"="59422"
+"MRUDockLeftPos"="-1"
+"MRUDockTopPos"="-2"
+"MRUDockRightPos"="416"
+"MRUDockBottomPos"="30"
+"MRUFloatStyle"="4096"
+"MRUFloatXPos"="0"
+"MRUFloatYPos"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Bar2]
+"BarID"="59421"
+"Bars"="5"
+"Bar#0"="0"
+"Bar#1"="8017"
+"Bar#2"="8028"
+"Bar#3"="8029"
+"Bar#4"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Bar20]
+"BarID"="8018"
+"XPos"="416"
+"YPos"="-2"
+"Docking"="1"
+"MRUDockID"="59422"
+"MRUDockLeftPos"="416"
+"MRUDockTopPos"="-2"
+"MRUDockRightPos"="634"
+"MRUDockBottomPos"="30"
+"MRUFloatStyle"="4096"
+"MRUFloatXPos"="0"
+"MRUFloatYPos"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Bar21]
+"BarID"="8006"
+"Visible"="0"
+"XPos"="0"
+"YPos"="0"
+"MRUWidth"="96"
+"Docking"="1"
+"MRUDockID"="0"
+"MRUDockLeftPos"="0"
+"MRUDockTopPos"="0"
+"MRUDockRightPos"="0"
+"MRUDockBottomPos"="0"
+"MRUFloatStyle"="4"
+"MRUFloatXPos"="0"
+"MRUFloatYPos"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Bar22]
+"BarID"="8007"
+"Visible"="0"
+"XPos"="0"
+"YPos"="0"
+"MRUWidth"="48"
+"Docking"="1"
+"MRUDockID"="0"
+"MRUDockLeftPos"="0"
+"MRUDockTopPos"="0"
+"MRUDockRightPos"="0"
+"MRUDockBottomPos"="0"
+"MRUFloatStyle"="4"
+"MRUFloatXPos"="0"
+"MRUFloatYPos"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Bar23]
+"BarID"="8008"
+"Visible"="0"
+"XPos"="0"
+"YPos"="0"
+"MRUWidth"="120"
+"Docking"="1"
+"MRUDockID"="0"
+"MRUDockLeftPos"="0"
+"MRUDockTopPos"="0"
+"MRUDockRightPos"="0"
+"MRUDockBottomPos"="0"
+"MRUFloatStyle"="4"
+"MRUFloatXPos"="0"
+"MRUFloatYPos"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Bar24]
+"BarID"="8009"
+"Visible"="0"
+"XPos"="0"
+"YPos"="0"
+"MRUWidth"="144"
+"Docking"="1"
+"MRUDockID"="0"
+"MRUDockLeftPos"="0"
+"MRUDockTopPos"="0"
+"MRUDockRightPos"="0"
+"MRUDockBottomPos"="0"
+"MRUFloatStyle"="4"
+"MRUFloatXPos"="0"
+"MRUFloatYPos"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Bar25]
+"BarID"="8010"
+"Visible"="0"
+"XPos"="0"
+"YPos"="0"
+"MRUWidth"="120"
+"Docking"="1"
+"MRUDockID"="0"
+"MRUDockLeftPos"="0"
+"MRUDockTopPos"="0"
+"MRUDockRightPos"="0"
+"MRUDockBottomPos"="0"
+"MRUFloatStyle"="4"
+"MRUFloatXPos"="0"
+"MRUFloatYPos"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Bar26]
+"BarID"="8005"
+"Visible"="0"
+"XPos"="0"
+"YPos"="0"
+"MRUWidth"="120"
+"Docking"="1"
+"MRUDockID"="0"
+"MRUDockLeftPos"="0"
+"MRUDockTopPos"="0"
+"MRUDockRightPos"="0"
+"MRUDockBottomPos"="0"
+"MRUFloatStyle"="4"
+"MRUFloatXPos"="0"
+"MRUFloatYPos"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Bar27]
+"BarID"="8011"
+"Visible"="0"
+"XPos"="0"
+"YPos"="0"
+"MRUWidth"="144"
+"Docking"="1"
+"MRUDockID"="0"
+"MRUDockLeftPos"="0"
+"MRUDockTopPos"="0"
+"MRUDockRightPos"="0"
+"MRUDockBottomPos"="0"
+"MRUFloatStyle"="8192"
+"MRUFloatXPos"="861"
+"MRUFloatYPos"="89"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Bar28]
+"BarID"="8012"
+"Visible"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Bar29]
+"BarID"="8013"
+"Visible"="0"
+"XPos"="0"
+"YPos"="0"
+"MRUWidth"="144"
+"Docking"="1"
+"MRUDockID"="0"
+"MRUDockLeftPos"="0"
+"MRUDockTopPos"="0"
+"MRUDockRightPos"="0"
+"MRUDockBottomPos"="0"
+"MRUFloatStyle"="8192"
+"MRUFloatXPos"="769"
+"MRUFloatYPos"="101"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Bar3]
+"BarID"="59393"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Bar30]
+"BarID"="8014"
+"Visible"="0"
+"XPos"="0"
+"YPos"="0"
+"MRUWidth"="192"
+"Docking"="1"
+"MRUDockID"="0"
+"MRUDockLeftPos"="0"
+"MRUDockTopPos"="0"
+"MRUDockRightPos"="0"
+"MRUDockBottomPos"="0"
+"MRUFloatStyle"="8192"
+"MRUFloatXPos"="781"
+"MRUFloatYPos"="109"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Bar31]
+"BarID"="8015"
+"Visible"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Bar32]
+"BarID"="59423"
+"Horz"="1"
+"Floating"="1"
+"XPos"="594"
+"YPos"="145"
+"Bars"="3"
+"Bar#0"="0"
+"Bar#1"="8011"
+"Bar#2"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Bar33]
+"BarID"="59423"
+"Horz"="1"
+"Floating"="1"
+"XPos"="526"
+"YPos"="145"
+"Bars"="3"
+"Bar#0"="0"
+"Bar#1"="8009"
+"Bar#2"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Bar34]
+"BarID"="59423"
+"Horz"="1"
+"Floating"="1"
+"XPos"="565"
+"YPos"="144"
+"Bars"="3"
+"Bar#0"="0"
+"Bar#1"="8005"
+"Bar#2"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Bar35]
+"BarID"="59423"
+"Horz"="1"
+"Floating"="1"
+"XPos"="773"
+"YPos"="117"
+"Bars"="3"
+"Bar#0"="0"
+"Bar#1"="8013"
+"Bar#2"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Bar36]
+"BarID"="59423"
+"Horz"="1"
+"Floating"="1"
+"XPos"="783"
+"YPos"="127"
+"Bars"="3"
+"Bar#0"="0"
+"Bar#1"="8014"
+"Bar#2"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Bar37]
+"BarID"="59423"
+"Horz"="1"
+"Floating"="1"
+"XPos"="649"
+"YPos"="101"
+"Bars"="3"
+"Bar#0"="0"
+"Bar#1"="8006"
+"Bar#2"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Bar38]
+"BarID"="59423"
+"Horz"="1"
+"Floating"="1"
+"XPos"="513"
+"YPos"="107"
+"Bars"="3"
+"Bar#0"="0"
+"Bar#1"="8010"
+"Bar#2"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Bar39]
+"BarID"="59423"
+"Horz"="1"
+"Floating"="1"
+"XPos"="721"
+"YPos"="101"
+"Bars"="3"
+"Bar#0"="0"
+"Bar#1"="8007"
+"Bar#2"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Bar4]
+"BarID"="8001"
+"YPos"="-2"
+"Docking"="1"
+"MRUDockID"="0"
+"MRUDockLeftPos"="-1"
+"MRUDockTopPos"="-2"
+"MRUDockRightPos"="480"
+"MRUDockBottomPos"="30"
+"MRUFloatStyle"="8196"
+"MRUFloatXPos"="0"
+"MRUFloatYPos"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Bar40]
+"BarID"="59423"
+"Horz"="1"
+"Floating"="1"
+"XPos"="503"
+"YPos"="145"
+"Bars"="3"
+"Bar#0"="0"
+"Bar#1"="8008"
+"Bar#2"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Bar5]
+"BarID"="8023"
+"XPos"="478"
+"YPos"="-2"
+"Docking"="1"
+"MRUDockID"="59419"
+"MRUDockLeftPos"="478"
+"MRUDockTopPos"="-2"
+"MRUDockRightPos"="517"
+"MRUDockBottomPos"="30"
+"MRUFloatStyle"="4096"
+"MRUFloatXPos"="0"
+"MRUFloatYPos"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Bar6]
+"BarID"="8000"
+"Visible"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Bar7]
+"BarID"="8002"
+"Visible"="0"
+"XPos"="202"
+"Docking"="1"
+"MRUDockID"="0"
+"MRUDockLeftPos"="202"
+"MRUDockTopPos"="0"
+"MRUDockRightPos"="449"
+"MRUDockBottomPos"="30"
+"MRUFloatStyle"="4"
+"MRUFloatXPos"="0"
+"MRUFloatYPos"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Bar8]
+"BarID"="8024"
+"Visible"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Bar9]
+"BarID"="8016"
+"YPos"="28"
+"Docking"="1"
+"MRUDockID"="59419"
+"MRUDockLeftPos"="0"
+"MRUDockTopPos"="28"
+"MRUDockRightPos"="287"
+"MRUDockBottomPos"="60"
+"MRUFloatStyle"="4"
+"MRUFloatXPos"="0"
+"MRUFloatYPos"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Toolbars\TB-Summary]
+"Bars"="41"
+"ScreenCX"="1024"
+"ScreenCY"="768"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Translators]
+"DefaultDVI"="1,!Samsung!ML-2850!Series!PS,winspool,IP_10.84.234.49(0)"
+"DefaultPDF"="5,"
+"DefaultDVI1"="1,"
+"DefaultPDF1"="5,"
+"Translator.0001"="TrueTeX,dvi,%INS_TranslatorEXE1%,!%INS_TranslatorARG1%!,%INS_PVINI1%,N!-b!!,!!!,!!!,,%v,,,0,1"
+"Translator.0002"="PCTeX,dvi,%INS_TranslatorEXE2%,|%INS_TranslatorARG2%|,%INS_PVINI2%,N-b,,,,%v,,,0,2"
+"Translator.0003"="DVIPSONE (Y & Y),dvi,%INS_TranslatorEXE3%,!%INS_TranslatorARG3%!,%INS_PVINI3%,N-b,,,,%v,,,0,3"
+"Translator.0004"="dvips (MiKTeX),dvi,%INS_TranslatorEXE4%,!%INS_TranslatorARG4%!,%INS_PVINI4%,N-b,,,,%v,,,0,4"
+"Translator.0005"="Acrobat,pdf,%INS_TranslatorEXE5%,!%INS_TranslatorARG5%!,%INS_PVINI6%,!!!,!!!,!!!,,%v,,,0,5"
+"INS_TranslatorEXE1"="C:\\sw50\\TCITeX\\TrueTeX\\dvigdi32.exe"
+"INS_TranslatorEXE2"="c:/pctex32/pctexw32.exe"
+"INS_TranslatorEXE3"="c:/yandy/DVIPSONE/Dvipsone.exe"
+"INS_TranslatorEXE4"="c:/miktex/texmf/miktex/bin/dvips.exe"
+"INS_TranslatorEXE5"="C:/Program Files/Adobe/Acrobat 5.0/Acrobat/Acrobat.exe"
+"INS_TranslatorARG1"="%x \"-w%s%v,%d,%o\" %r -c%n -o%b:%e:%i -i% %I \"%f\" -z"
+"INS_TranslatorARG2"="%x /print=\"%f\""
+"INS_TranslatorARG3"="%x -d=%P \"%f\""
+"INS_TranslatorARG4"="%x \"%f\""
+"INS_TranslatorARG5"="%x /p /h \"%f\""
+"PresetTranslator.0001"="TrueTeX,dvi,%INS_TranslatorEXE1%,!%INS_TranslatorARG1%!,%INS_PVINI1%,N!-b!!,!!!,!!!,,%v,,,0,1"
+"PresetTranslator.0002"="PCTeX,dvi,%INS_TranslatorEXE2%,|%INS_TranslatorARG2%|,%INS_PVINI2%,N-b,,,,%v,,,0,2"
+"PresetTranslator.0003"="DVIPSONE (Y & Y),dvi,%INS_TranslatorEXE3%,!%INS_TranslatorARG3%!,%INS_PVINI3%,N-b,,,,%v,,,0,3"
+"PresetTranslator.0004"="dvips (MiKTeX),dvi,%INS_TranslatorEXE4%,!%INS_TranslatorARG4%!,%INS_PVINI4%,N-b,,,,%v,,,0,4"
+"PresetTranslator.0005"="Acrobat,pdf,%INS_TranslatorEXE5%,!%INS_TranslatorARG5%!,%INS_PVINI6%,!!!,!!!,!!!,,%v,,,0,5"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\TypesetGenSettingDlg]
+"TypesetGenSettingDlgX"="50"
+"TypesetGenSettingDlgY"="50"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\URLs]
+"ResourceCenter"="http://www.scinotebook.com/homepage.tex"
+"MSIsSite"="http://www.mackichan.com"
+"OnlineOrder"="licensing.mackichan.com/"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\UserFilePagePrefs]
+"FragDir"="C:\\sw50\\frags"
+"AutoSaveTime"="0"
+"CreateBackups"="1"
+"NetworkFiles"="1"
+"RemovableFiles"="0"
+"MaxReadOnlyFiles"="10"
+"MaxOpenFilesNoSwap"="10"
+"ProgTimeoutSecs"="60"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\UserGraphicsExport]
+"DefGfxOutType"=".wmf"
+"Adobe_Exp_Illustrator"=""
+"GraphicImageOutType"=".jpg"
+"GraphicImageOutDir"=""
+"GraphicImageOptions"="16351"
+"GraphicImageZoom"="100"
+"GfxPDFExportFromFile"="0"
+"GraphicImageLMargin"="1"
+"GraphicImageRMargin"="1"
+"GraphicImageTMargin"="1"
+"GraphicImageBMargin"="1"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\UserInterfaceLanguage]
+"UILanguageID"="ENUS"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\ViewPreferences]
+"ShowHide"="0"
+"WorkingView"="125"
+"NoteShowHide"="1"
+"NoteWorkingView"="100"
+"HelpLineColor"="0r,128g,0b"
+"LeftPos"="212"
+"TopPos"="-3"
+"RightPos"="1028"
+"BottomPos"="755"
+"WindowZoomed"="0"
+"ViewMaximized"="0"
+
+[HKEY_CURRENT_USER\Software\MacKichan Software\Scientific Word\5.00\Web]
+"ExternalBrowser"=""

@@ -1,0 +1,1976 @@
+%% This document created by Scientific Word (R) Version 3.0
+%\input{tcilatex}
+%\input{tcilatex}
+
+
+\documentclass[12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{amsopn}
+\usepackage{amsthm}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.00.0.2606}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Monday, May 10, 2010 18:28:03}
+%TCIDATA{LastRevised=Sunday, July 18, 2010 11:55:36}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Standard LaTeX Article(mine)">}
+%TCIDATA{Language=American English}
+%TCIDATA{CSTFile=LaTexArt(mine).cst}
+
+\setlength{\evensidemargin}{0in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{6.25in}
+\setlength{\textheight}{8.5in}
+\setlength{\topmargin}{0in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\itemsep}{0pt}
+\renewcommand{\topfraction}{.9}
+\renewcommand{\textfraction}{.1}
+\setlength{\parskip}{\smallskipamount}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{remark}[theorem]{Remark}
+\input{tcilatex}
+
+\begin{document}
+
+\title{The n-r.e. degrees: undecidability and $\Sigma _{1}$ substructures}
+\author{Mingzhong Cai \addtocounter{footnote}{1}\thanks{%
+Partially supported by NSF Grant DMS-0852811.} \\
+%EndAName
+Department of Mathematics\\
+Cornell University\\
+Ithaca NY 14853 \and Richard A. Shore\addtocounter{footnote}{-2}\thanks{%
+Partially supported by NSF Grants DMS-0554855, DMS-0852811 and John
+Templeton Foundation Grant 13408.} \\
+%EndAName
+Department of Mathematics\\
+Cornell University\\
+Ithaca NY 14853 \and Theodore A. Slaman\addtocounter{footnote}{1}\thanks{%
+Partially supported by NSF Grant DMS-1001551 and by the John Templeton
+Foundation.} \\
+%EndAName
+Department of Mathematics\\
+University of Califonia, Berkeley}
+\maketitle
+
+\section{Introduction}
+
+Turing reducibility (introduced in Turing [1939]) captures the intuitive
+notion of one set $A\subseteq \mathbb{N}$ being computable from another $B$,
+We write $A\leq _{T}B$, $A$ is \emph{Turing reducible} to or \emph{%
+computable from} $B$ to mean that there is a Turing machine (program) $\Phi $
+that can compute $A$ if given access to an \textquotedblleft
+oracle\textquotedblright\ for $B$ in the sense that the computing machine is
+augmented by a procedure that allows it to ask for any number $n$ it
+computes if $n\in B$ and to receive the correct answer. This reducibility
+naturally induces a partial order $\leq _{T}$ on the set $\mathcal{D}$ of
+equivalence classes (called \emph{Turing degrees} or simply \emph{degrees}) $%
+\mathbf{a=\{}B|A\leq _{T}B~\&~B\leq _{T}A\}$. The structure of $\mathcal{D}$
+then captures that of relative complexity of computation of sets and
+functions (on $\mathbb{N}$). The study of this relation on all sets
+(functions), and on many important subclasses of sets has been a major
+occupation of recursion (computability) theory ever since its introduction.
+
+In addition to the full structure, $\mathcal{D}$, the most important
+substructures studied have been those of the recursively enumerable degrees, 
+$\mathcal{R}$, and $\mathcal{D}(\leq \mathbf{0}^{\prime })$, the degrees
+below the halting problem, $K=\{e|\Phi _{e}(e)$ converges$\}$ whose degree
+is denoted by $\mathbf{0}^{\prime }$. The recursively enumerable sets are
+those which can be enumerated (listed) by a recursive (computable) function.
+They can also be seen as those sets $A$ for which there is a very simple
+approximation procedure, a recursive function $f(x,s)$ to the characteristic
+function $A(x)$ of $A$ such that $\forall x(f(x,0)=0~\&~\lim f(x,s)=A(x))$
+that changes its mind about membership in $A$ at most once, i.e. there is at
+most one $s$ such that $f(x,s)\neq f(x,s+1)$. Shoenfield's Limit Lemma
+[1959] says that the sets (or functions) computable from the halting problem 
+$0^{\prime }$ are precisely those with some convergent recursive
+approximation, i.e. the sets $A$ such that there is a recursive function $%
+f(x,s)$ such that $\forall x(f(x,0)=0~\&~\lim f(x,s)=A(x))$. So, while for
+each $x$ there are only finitely many changes, the number of such changes
+over all $x$ may be unbounded.
+
+In this paper we study a natural hierarchy of intermediate classes of sets
+and degrees. The $n$-r.e. sets are those for which there is a recursive
+approximation $f(x,s)$ as above for which there are at most $n$ changes of
+value at each $x$. The corresponding degree structures are denoted $\mathcal{%
+D}_{n}$, the degrees of the $n$-r.e. sets. (So $\mathcal{D}_{1}=\mathcal{R}$
+the r.e. degrees.) This hierarchy was introduced by Putnam [1965] and Gold
+[1965]. It was extended into the transfinite by Ershov [1968, 1968a, 1970]
+who proved that the sets in the transfinite hierarchy he defined are
+precisely those computable from $0^{\prime }$.
+
+The early work on degree theories began with the investigation of local
+algebraic or order-theoretic properties of the structures. This work
+continues in full force to this day. In the past three decades or so, a more
+global approach has emerged as well. Here one studies issues such as the
+decidability or, more generally, the complexity of the theories of degree
+structures as well as related questions about definability in, and possible
+automorphisms of, these structures.
+
+For the first couple of decades, a major motivating idea was that (at least
+some of) these structures should be simple and characterizable by basic
+algebraic properties. Shoenfield's conjecture [1965] would have been such a
+complete characterization of $\mathcal{R}$ analogous to that of the
+rationals as the countable dense linear order without endpoints. Even after
+the conjecture had been refuted by Lachlan [1966] and Yates [1966], Sacks
+[1966] still conjectured that the r.e. degrees were decidable. More recent
+results have produced a dramatically different prevailing paradigm for $%
+\mathcal{D}$, $\mathcal{D}(\leq _{T}\mathbf{0}^{\prime })$ and $\mathcal{R}$
+as well as many degree structures for other notions of reducibility. Rather
+than seeing the complexity of the structures as an obstacle to
+characterization, it suggests that a sufficiently strong proof of complexity
+would completely characterize each structure. Instead of expecting the
+structures to be decidable and homogeneous with many automorphisms (like the
+rationals), one looks to prove that the theories are as complicated as
+possible, there are definable degrees and that the structure has few
+automorphisms.\ 
+
+Typical results include the following:
+
+\begin{theorem}
+$\mathcal{D}$, $\mathcal{D}(\leq _{T}\mathbf{0}^{\prime })$ and $\mathcal{R}$
+are each undecidable by Lachlan [1968]; Epstein [1979] and Lerman [1983];
+and Harrington and Shelah [1982], respectively.
+\end{theorem}
+
+\begin{theorem}
+The theories of $\mathcal{D}$, $\mathcal{D}(\leq _{T}\mathbf{0}^{\prime })$
+and $\mathcal{R}$ are as complicated as possible, i.e. recursively
+isomorphic to true second order arithmetic for $\mathcal{D}$ and to true
+first order arithmetic for $\mathcal{D}(\leq _{T}\mathbf{0}^{\prime })$ and $%
+\mathcal{R}$ by Simpson [1977]; Shore [1981]; and Harrington and Slaman and
+then Slaman and Woodin (both unpublished) (see Nies, Shore and Slaman [1998]
+for a proof and stronger results), respectively.
+\end{theorem}
+
+\begin{theorem}
+All relations invariant under the double jump that are definable in
+arithmetic are definable in $\mathcal{D}$, $\mathcal{D}(\leq _{T}\mathbf{0}%
+^{\prime })$ and $\mathcal{R}$ where for $\mathcal{D}$ we mean second order
+arithmetic and for the others first order by Slaman and Woodin [2001] (see
+Slaman [1991] for an announcement and Shore [2007] for a quite different
+proof that applies to various substructures of $\mathcal{D}$ as well),
+essentially Shore [1988] (but see also Nies, Shore and Slaman [1998, Theorem
+3.11 and the remarks following it])and Nies, Shore and Slaman [1998],
+respectively. (The converse holds by the definability of these degree
+structures in arithmetic.)
+\end{theorem}
+
+A survey paper for this area is Shore [2006].
+
+In this paper we take the first steps on this road for the structures $%
+\mathcal{D}_{n}$ by proving that they are all undecidable. We conjecture
+that our work can be extended along the lines of Nies, Shore and Slaman
+[1998] to show that their theories are also all recursively isomorphic to
+that of true arithmetic. Perhaps one can even prove definability results as
+done there for $\mathcal{R}$. Basic survey papers on the structure of the $%
+\mathcal{D}_{n}$ are Arslanov [2009, 2010] and Stephan, Yang and Yu [2009].
+
+Another important theme in the study of these degree structures has been
+delimiting the similarities and explicating the differences among them.
+While it is relatively easy to distinguish among $\mathcal{D}$, $\mathcal{D}%
+(\leq _{T}\mathbf{0}^{\prime })$ and $\mathcal{R}$ in many way the issue
+becomes particularly compelling when we turn to the $\mathcal{D}_{n}$. It is
+easy to imagine, and was proved early on, that moving from $\mathcal{R}$ to
+all sets or even to the unlimited approximations characterizing those below $%
+0^{\prime }$ introduces many differences. For the $\mathcal{D}_{n}$,
+however, the question is what does the ability to change precisely one more
+time buy us in terms of additional degrees, algebraic structure and
+complexity.
+
+Of course, the first question is are the $\mathcal{D}_{n}$ actually
+distinct. Indeed, there are, for each $n$, $(n+1)$-r.e. degrees which are
+not $n$-r.e. ([Cooper [1971] with the stronger result that they can be found
+not even $n$-rea in Jockusch and Shore [1984]]). While the one quantifier
+theory of all the degree structures from $\mathcal{R}$ to $\mathcal{D}$ are
+the same since one can embed all finite (even countable) partial orderings
+into $\mathcal{R}$ (and so all the rest as well), there were many early
+results establishing elementary differences between $\mathcal{R}$ and the
+other $\mathcal{D}_{n}$ with cupping, density and lattice embedding
+properties playing the featured role (as in, for example, Arslanov [1985]
+Cooper et al. [1991], Downey [1989], respectively). Differences between any
+of the other $\mathcal{D}_{n}$, however, seemed hard to find. Downey [1989]
+even conjectured that they might all be elementarily equivalent, i.e. all
+sentences (in the first order language with $\leq $) true in any $\mathcal{D}%
+_{n}$ for $n\geq 2$ is true in all of them. This conjecture was not refuted
+until quite recently. Arslanov, Kalimullin and Lempp [2010] provide an
+elementary difference between $\mathcal{D}_{2}$ and $\mathcal{D}_{3}$. In
+fact, the sentence they exhibit on which the structures differ is at the
+smallest possible level: two quantifiers ($\forall \exists $). They
+conjecture (as one would now expect) that the $\mathcal{D}_{n}$ are pairwise
+not elementarily equivalent. They also conjecture that this level of
+difference ($\forall \exists $) is as small as possible in the strong sense
+that every $\exists \forall $ sentence true in any $\mathcal{D}_{n}$ is true
+in every $\mathcal{D}_{m}$ for $m\geq n$.
+
+Now an $\exists \forall $ sentence is true if there are choices (parameters
+substitutable) for the existentially quantified variables such that the
+resulting universal sentence is true of these parameters. The strongest way
+that their conjecture could be true is for the same parameters to work in
+both structures. This view brings to mind a much earlier question raised
+about other pairs of our degree structures. Are any $\Sigma _{1}$
+substructures of any others. ($\mathcal{M}$ is a $\Sigma _{1}$\emph{\
+substructure} of $\mathcal{N}$, $\mathcal{M}\preceq _{1}\mathcal{N}$, if for
+any $\Sigma _{1}$ formula $\exists \bar{y}\varphi (\bar{x},\bar{y})$ where $%
+\varphi $ is quantifier free and any choice of elements $\bar{a}$ from $%
+\mathcal{M}$, $\mathcal{M}\vDash \exists \bar{y}\varphi (\bar{a},\bar{y}%
+)\Leftrightarrow \mathcal{N}\vDash \exists \bar{y}\varphi (\bar{a},\bar{y})$%
+.)
+
+Slaman ([1983]) proved early on that this fails at the extreme ends: $%
+\mathcal{R}\npreceq _{1}\mathcal{D}(\leq \mathbf{0}^{\prime }$) (and so, 
+\emph{a fortiori}, $\mathcal{D}_{n}\npreceq _{1}\mathcal{D}(\leq \mathbf{0}%
+^{\prime }$) for any $n\geq 1$. Slaman and then others raised the natural
+question of whether it could be that $\mathcal{D}_{n}\preceq _{1}\mathcal{D}%
+_{m}$ for any $n<m$. Yang and Yu [2006] provided a negative answer for $n=1$
+and $m=2$ (and so for any $m\geq 2$). We complete the picture by showing
+that $\mathcal{D}_{n}\npreceq _{1}\mathcal{D}_{m}$ for any $n<m$. (We have
+just heard that Arslanov and Jamaleev are preparing a different proof for
+the case $n=2$.)
+
+Turning now to our proofs, we begin with undecidability. As usual (see for
+essentially our situation \S 2 of Nies, Shore and Slaman [1998] or for a
+more general model theoretic treatment Hodges [1993, 5.3]), we have a
+formula $\varphi _{D}(x,\bar{p})$ which, for each choice of parameters $\bar{%
+p}$, defines a subset $D$ of our structure $\mathcal{D}_{n}$ and another
+formula $\varphi _{R}(x,y,\bar{p})$ which defines a binary relation $R$ on $%
+D $. To prove undecidability it suffices to show that, as the parameters
+vary over $\mathcal{D}_{n}$, a sufficiently rich class of structures $(D,R)$
+are coded in this way. In our case, we code partial orders. As the (r.e.)
+set of theorems of the theory of partial orders is recursively inseparable
+from the (r.e.) set of sentences (of the language of partial orders) that
+are false in some finite partial order (Taitslin [1962]), it suffices to
+code any collection of relations containing all finite partial orders. The
+point here is that if $\mathcal{D}_{n}$ were decidable then the set of
+sentences true in every partial order coded by $\varphi _{D}$ and $\varphi
+_{R}$ as the parameters $\bar{p}$ range over all elements of $\mathcal{D}_{n}
+$ would be recursive. Of course, it contains the theorems of the theory of
+partial orders and, if we code all finite ones, is disjoint from the set of
+sentences with finite counterexamples. As it turns out, it is no more
+difficult to prove that one can code all recursive partial orders than all
+finite ones. This is what we do explicitly in our proof of Theorem \ref{po}.
+We use the basic idea of the domain being maximal degrees $\mathbf{g\leq
+_{T}a}$ not joining some other degree $\mathbf{p}$ above $\mathbf{q}$ from
+Harrington and Shelah [1982] and build on their work.
+
+\begin{theorem}
+\label{po}Given a recursive partial order $(\omega ,\leq _{\ast })$ and an $%
+n\geq 1$, there exist uniformly $n$-r.e.\ sets $G_{i}$ for each $i\in \omega 
+$, an $n$-r.e.\ set $L$ and r.e.\ sets $P$ and $Q$ such that:
+
+\begin{enumerate}
+\item Each $\mathbf{g}_{i}$ is a maximal $n$-r.e. degree below $\mathbf{a}$
+such that $\mathbf{q}\nleq \mathbf{g}_{i}\vee \mathbf{p}$ where $%
+A=\bigoplus_{i}G_{i}$.
+
+\item $\mathbf{g}_{i}\leq \mathbf{g}_{j}\vee \mathbf{l}$ if and only if $%
+i\leq _{\ast }j$.
+\end{enumerate}
+\end{theorem}
+
+Thus the required formulas $\varphi _{D}$ and $\varphi _{R}$ defining our
+domains and order relations have parameters $\mathbf{a}$, $\mathbf{p}$ and $%
+\mathbf{q}$. The first says that $\mathbf{x}$ is a maximal degree below $%
+\mathbf{a}$ such that $\mathbf{q}\nleq \mathbf{x}\vee \mathbf{p}$. The
+second says that $\mathbf{x}\leq \mathbf{y}\vee \mathbf{l}$. so we have the
+desired result.
+
+\begin{theorem}
+The theories of $\mathcal{D}_{n}$ are undecidable for every $n$.
+\end{theorem}
+
+If instead of recursive inseparability, we wanted to rely only on the
+undecidability of the theory of partial orders, we should code all partial
+orders recursive in $0^{\prime }$ as every sentence which is not a theorem
+(of the theory) has a counterexample recursive in $0^{\prime }$ by the
+effective version of the completeness theorem.
+
+One can with only minor modifications not affecting the structure of our
+proof handle partial orders recursive in $0^{\prime }.$ We precisely
+describe the modifications needed in \ref{0' 0''}. With some additional work
+and a serious reorganization of the priority tree, one can get all partial
+orders recursive in $0^{\prime \prime }$. One puts in a new type of node
+which guesses in a $\Delta _{3}$ procedure at each bit of information about
+this partial order and bases later work on these guesses. The added
+complexity is considerable without much gain for applications. It seems that
+one can even get any $\Sigma _{3}$ partial order by a slightly more
+complicated procedure. We briefly describe this procedure in \ref{0' 0''} as
+well.
+
+It is worth remarking that our proof works for $n=1$ as well as all larger $%
+n $. Indeed, it can be significantly simplified for $n=1$ by omitting all
+items that consider the possibility that the $G_{i}$ and $W_{i}$ (the list
+of $n$-r.e. sets recursive in $A$) are not r.e. This gives a considerably
+simplified proof of the undecidability of $\mathcal{R}$ along the lines
+suggested in Harrington and Shelah but with a simpler statement using fewer
+parameters and a significantly easier construction. We do not believe any
+proof even for $\mathcal{R}$ along these lines has been published before.
+
+We next turn to $\Sigma _{1}$ substructures.
+
+\begin{theorem}
+$\mathcal{D}_{n}\npreceq _{1}\mathcal{D}_{m}$ for $n<m$.
+\end{theorem}
+
+The technical result needed here is the following generalization of Theorem
+1.12 in Yang and Yue [2006] who do the case $n=1$:
+
+\begin{theorem}
+\label{n/n+1}For any $n\geq 1$, there are r.e. degrees $\mathbf{g},\mathbf{p}%
+,\mathbf{q}$, an $n$-r.e.\ degree $\mathbf{a}$ and an $n+1$-r.e.\ degree $%
+\mathbf{d}$ such that:
+
+\begin{enumerate}
+\item For every $n$-r.e.\ degree $\mathbf{w}\leq \mathbf{a}$, either $%
+\mathbf{q}\leq \mathbf{w}\vee \mathbf{p}$, or $\mathbf{w}\leq \mathbf{g}$.
+
+\item $\mathbf{d}\leq\mathbf{a}$, $\mathbf{q}\nleq\mathbf{d}\vee\mathbf{p}$,
+and $\mathbf{d}\nleq\mathbf{g}$.
+\end{enumerate}
+\end{theorem}
+
+This theorem shows directly that $\mathcal{D}_{n}$ is not a $\Sigma _{1}$
+elementary substructure of $\mathcal{D}_{n+1}$ in the language with $\vee $
+as well as $\leq $: In $\mathcal{D}_{n}$, no $\mathbf{w}$ below $\mathbf{a}$
+has the property that $\mathbf{q}\nleq \mathbf{w}\vee \mathbf{p}$ and $%
+\mathbf{w}\nleq \mathbf{g}$ while in $\mathcal{R}_{n+1}$, $\mathbf{d}\leq
+_{T}\mathbf{a}$ has both properties. We can eliminate $\vee $ by rephrasing
+the property of $\mathbf{w}$ as $\exists \mathbf{z(w,p\leq z~\&~q}\nleq 
+\mathbf{z)~\&~w}\nleq \mathbf{g}$ which is $\Sigma _{1}$ in just $\leq $ and
+so the existence of a $\mathbf{w}$ with this property is true in $\mathcal{D}%
+_{n+1}$ (i.e. $\mathbf{d}$) but false in $\mathcal{D}_{n}$. Of course, as $%
+\mathbf{d}$ is in $\mathcal{D}_{m}$ for every $m\geq n+1$, $\mathcal{D}%
+_{n}\npreceq _{1}\mathcal{D}_{m}$ as well.
+
+Much of the construction and verification is the same for Theorems \ref{po}
+and \ref{n/n+1}. We treat the first theorem as primary. In \S \ref{basic}
+where we cover basic notions and conventions common to both, we use curly
+brackets \{\} to indicate changes (usually alphabetic only at this stage)
+for the second theorem. The rest of the paper is divided into two parts, one
+for each of the theorems. Each part describes first the requirements (\S \ref%
+{Req}, \ref{Req II}), then the priority tree (\S \ref{tree}, \ref{tree II}),
+the construction (\S \ref{con}, \ref{con II}) and finally the verifications
+that the construction succeeds (\S \ref{ver}, \ref{ver II}). We describe
+everything in full detail for the first theorem and then for the second
+describe only the changes needed. In our descriptions of the constructions,
+material enclosed in square brackets [] is meant to convey intuition or
+describe aspects of the construction that will only be verified later. It is
+not part of the formal definition of the construction procedures.
+
+As might be expected from the types of requirements, both constructions are $%
+0^{\prime \prime \prime }$ arguments even for the case $n=1$. As these
+constructions go, however, ours are at the simpler end: the priority tree is
+finitely branching, there is no backtracking and only one type of
+requirement is injured along the true path. The key idea for carrying the
+arguments from the r.e. case ($n=1$) to the $n$-r.e. one ($n>1$) in Theorem %
+\ref{po} is what we call \emph{shuffling }(\S \ref{shuf}). Roughly speaking,
+at the crucial $0^{\prime \prime \prime }$ determined nodes, we are
+attempting to construct functionals $\Delta $ that, to working towards the
+maximality of the $\mathbf{g}_{i}$, try to compute some given $n$-r.e. set $%
+W=\Phi (A)$ from one $G_{i}$ that we are building over the full
+construction. The most delicate part of the verification of the first
+construction is the correctness of these functionals (Lemma \ref{Delta}). We
+argue that the cause of an incorrect computation, say of $\Delta (u)$, must
+be that some number $z$ entered $A$ for the first time and allowed $W(u)$ to
+change. Another delicate argument shows that if $W$ also changed for the
+first time, we could correct the functional $\Delta $ (or see that we are
+not on the true path). If the change in $W$ was not that $u$ entered for the
+first time, we argue that we can shuffle $A$ between two past values
+(giving, via $\Phi $, two different values for $W(u)$) by repeatedly taking $%
+z$ out and putting it back in as necessary so as to eventually show that $%
+W\neq \Phi (A)$.The point here is that $z$ has entered $A$ for the first
+time while the change in $W$ is not a first change. Thus as $W_{l}$ can make
+no more than $n$ changes overall, it can make no more than $n-2$ additional
+changes. On the other hand, as $z$ has entered $A$ for the first time, we
+can make $n-1$ more changes in $A$ and so eventually guarantee that $W\neq
+\Phi (A)$.
+
+In the second construction (\S \ref{Plan R}), the correctness of the
+functionals $\Delta $ becomes immediate as we simply change $G$ when
+necessary. The crucial problem then becomes guaranteeing the correctness of
+computations from $G$ diagonalizing against $D$ (\S \ref{ver II}). Here we
+take advantage of the fact that $D$ can change one more time than any other
+set by using a procedure like one used in Yang and Yu [2006] to remove a
+number (that entered for the first time) from $D$. In our case it allows us
+to either cure some problem we are facing or start a shuffling procedure for 
+$A$ diagonalizing against the offending $W$.
+
+\section{Basic Notions and Conventions\label{basic}}
+
+Given a set $A$, let $A\upharpoonright u$ be the initial segment of $A$ of
+length $u$.
+
+We use upper case Greek letters to denote Turing functionals. For any Turing
+functional $\Delta $, the \emph{use} of a convergent $\Delta (A;x)$ is
+defined as the least number $u$ such that $\Delta (A\upharpoonright
+u;x)\downarrow $. We use lower case Greek letters corresponding to the
+Turing functional to denote the use, e.g. $\delta (A;x)$ denotes the use of $%
+\Delta $ at $x$. More importantly, we injure the computation by adding $%
+\delta (A;x)-1$ into $A$, but not by adding $\delta (A;x)$ into $A$. If it
+doesn't cause confusion, we may omit $A$ and write $\delta (x)$.
+
+We will have families $\Psi $, $\Pi $, $\Theta $ and $\Phi $ which specify
+standard enumerations of all the Turing functionals. We follow the usual
+conventions for such standard enumerations such as the approximations to
+these functionals for any (approximation to an) oracle set at stage $s$ asks
+questions about (makes use of) only numbers less than $s$ and converges only
+at inputs less than $s$. We also assume, without loss of generality, that
+for the standard enumerations with two oracles such as $\Theta (G\oplus P;x)$
+the uses on both are always the same and we denote it by $\theta (x)$.
+
+We will also construct two families of Turing functionals $\Delta (G)$ and $%
+\Gamma (W\oplus P)$. For the ones with two oracles, we \emph{do not} require
+that the uses of $W$ and $P$ are the same. Hence we can write $\gamma (W;x)$
+and $\gamma (P;x)$ to denote the $W$ and $P$ parts of the use, respectively.
+Although for simplicity we generally work as if we are specifically defining
+these oracles at each individual $x$ with the associated uses, we really are
+assuming that the uses are monotonic in $x$ and make all changes to keep
+them that way, usually without explicit mention. As $Q$ is r.e., when we are
+computing it from $W\oplus P$ by $\Gamma $, except for this monotonicity
+condition, we only need to produce computations (axioms) that at $x$ give
+output $0$ when $x\notin Q$. These may be injured and new ones put into $%
+\Gamma $ (perhaps with larger use). In the case that $x\notin Q$ and we are
+expecting $\Gamma $ to compute $Q$, we must eventually settle on a
+convergent computation (axiom) applying to $W_{i}\oplus P$. If $x\in Q$,
+when $x$ enters $Q$ it suffices to kill any current computation of $0$ from $%
+W_{i}\oplus P$. We do this by putting a number less than the $P$-use into $P$%
+. We can then simply keep the value of $\Gamma $ at $1$ without changing the
+use (remembering that $P$ is r.e.).
+
+In our two constructions, we specify priority trees which grow downward. At
+each stage $s$ of the construction, we build a path of length $s$ \{at most $%
+s$\} of \emph{accessible} nodes along the priority tree. Our convention is
+that, the nodes to the left of, or above, a node $\alpha $ have higher
+priority. We always preserve the information used at previous stages by the
+nodes that are to the left of the accessible ones by initializing the nodes
+that are to the right of the accessible ones, i.e., remove all information
+from previous stages such as witness numbers, defined functionals and
+imposed restraints.
+
+Nodes can impose two types of restraint: a permanent one or an alternating
+one. Permanent restraint means that no node of lower priority can act so as
+to injure the restraint by changing a set where restrained. By convention
+permanent restraint imposed at stage $s$ restrains the initial segments of
+length $s$ of $L$ and all the $G_{i}$ \{$A$, $D$ and $G$\}. Any permanent
+restraint on $P$ must be mentioned specifically. [We never need to restrain $%
+Q$.] Alternating restraints are caused by the announcements of $A$-stages or 
+$P$-stages which we describe later in the construction. Basically, during $A$%
+-stages, we remove the alternating restraint for $L$ and the $G_{i}$ \{$A$
+and $D$\} allowing numbers to enter (or leave) these sets and we impose an
+alternating restraint on $P$ and $Q$ \{and $G$\} so that no numbers can
+enter $P$ or $Q$ \{or $G$\} at this stage. During $P$-stages, we do the
+opposite (except that no numbers ever leave the r.e. sets $P$ or $Q$ \{or $G$%
+\}).
+
+\section{Requirements I\label{Req}}
+
+\label{t1s1}
+
+We now begin the proof of our main technical result. \setcounter{section}{1} %
+\setcounter{theorem}{3}
+
+\begin{theorem}
+Given a recursive partial order $(\omega ,\leq _{\ast })$ and an $n\geq 1$,
+there exist uniformly $n$-r.e.\ sets $G_{i}$ for each $i\in \omega $, an $n$%
+-r.e.\ set $L$ and r.e.\ sets $P$ and $Q$ such that:
+
+\begin{enumerate}
+\item Each $\mathbf{g}_{i}$ is a maximal $n$-r.e. degree below $\mathbf{a}$
+such that $\mathbf{q}\nleq \mathbf{g}_{i}\vee \mathbf{p}$ where $%
+A=\bigoplus_{i}G_{i}$.
+
+\item $\mathbf{g}_{i}\leq \mathbf{g}_{j}\vee \mathbf{l}$ if and only if $%
+i\leq _{\ast }j$.
+\end{enumerate}
+\end{theorem}
+
+\setcounter{section}{3} \setcounter{theorem}{0} First, for the negative
+order facts, we have requirements for each pair $i\nleq _{\ast }j$ and each $%
+e$: 
+\begin{equation*}
+\Psi _{e,i,j}:\ \Psi _{e}(L\oplus G_{j})\neq G_{i}.
+\end{equation*}
+
+Similarly for each triple $(i,j,e)$ with $i\neq j$, we also want: 
+\begin{equation*}
+\Pi _{e,i,j}:\ \Pi _{e}(G_{j})\neq G_{i},
+\end{equation*}
+
+i.e., the $G_{i}$'s are pairwise incomparable.
+
+Then for each pair $(i,e)$ we need: 
+\begin{equation*}
+\Theta _{e,i}:\ \Theta _{e}(G_{i}\oplus P)\neq Q.
+\end{equation*}
+
+We also need the main requirements that each $\mathbf{g}_{i}$ is a maximal $%
+n $-r.e. degree $\mathbf{g\leq _{T}a}$ such that $\mathbf{q}\nleq \mathbf{g}%
+\vee \mathbf{p}$. We let $W_{i}$ be an effective list of all the $n$-r.e.
+sets. 
+\begin{equation*}
+\Phi _{e,i}:\ \Phi _{e}(A)=W_{i}\rightarrow \lbrack \exists \Gamma (\Gamma
+(W_{i}\oplus P)=Q)\vee (\exists k(W_{i}\leq _{T}G_{k}))].
+\end{equation*}
+
+\begin{itemize}
+\item Note that these $\Phi $ requirements by themselves do not ensure that
+each $\mathbf{g}_{i}$ is maximal. That is why we need the $\Pi $
+requirements to make all the $G_{i}$'s pairwise incomparable. The $\Phi $
+requirements then do guarantee that the $\mathbf{g}_{i}$ are maximal.
+\end{itemize}
+
+If it does not cause confusion, we may omit the subscripts of the
+requirements and sets in our argument to simplify the notation.
+
+Finally, we have to deal with the positive order facts, i.e., $G_{i}\leq
+_{T}L\oplus G_{j}$ for $i<_{\ast }j$. We will guarantee that, for $x>i,j$, $%
+x\in G_{i}\Leftrightarrow x\in L$ or $x\in G_{j}$. Putting numbers into a $%
+G_{i}$ is initiated only by a $\Psi $ or $\Pi $ requirement. For $\Pi $
+action, we simply put a witness $x$ that is going into $G_{i}$ (for
+diagonalization) into $L$ as well. When action is initiated for
+diagonalization by $\Psi $ at stage $s$, we put $x$ into $G_{i}$ and also
+into each $G_{l}$ with $l>_{\ast }i$ for each $l<x$. As, in this case, $%
+i\nleq _{\ast }j$, this action does not add elements to $G_{j}$ and so it
+does not injure the $\Psi $ computation initiating the action. We say that
+each witness $x$ (for a $\Psi $ or $\Pi $ requirement) has an \emph{%
+associated block of sets} (the $G_{l}$ such that $l<x$ and $i\leq l$ or $%
+G_{i}$ and $L$, respectively). During the construction $x$ moves into or out
+of all the sets in its block simultaneously.
+
+\section{Priority Tree I\label{tree}}
+
+We put all the $\Psi ,\Pi ,\Theta $ and $\Phi $ requirements into one
+priority list. Our \emph{priority tree} consists of \emph{nodes} and \emph{%
+branches}. Each node is associated with a requirement in the list and each
+branch leaving a node is assigned an outcome. We label each node with its
+associated requirement and each branch with the assigned outcome. When we
+list outcomes of a node we do so in a left to right order that specifies the
+left to right order on the priority tree of the branches leaving that node
+
+A $\Psi $ or $\Pi $ node has two outcomes: $d$ and $w$, which stand for
+\textquotedblleft diagonalization\textquotedblright\ and \textquotedblleft
+wait\textquotedblright\ respectively.
+
+A $\Phi $ node has outcomes $s_{n-1}$, $s_{n-2}$, ..., $s_{1}$, $i$ and $w$.
+Outcome $s_{i}$ stands for \textquotedblleft shuffle\textquotedblright\ for
+the $i$-th time. We will explain what this means in detail in the
+construction. Roughly, it means that we expect to shuffle between two
+versions of $A$ (by removing numbers from $A$ and then possibly putting them
+back in) as we cycle back to this node. The expected result of this
+shuffling is to guarantee that $\Phi (A)\neq W$ by a diagonalization.
+Outcome $i$ stands for \textquotedblleft infinite\textquotedblright\
+agreement between $\Phi (A)$ and $W$ and outcome $w$ stands for
+\textquotedblleft wait\textquotedblright .
+
+A $\Theta $ node $\beta $ has outcomes $d$, $g_{\alpha _{1}}$, $g_{\alpha
+_{2}}$,...,$g_{\alpha _{k}}$ and $w$. As usual, $d$ and $w$ stand for
+\textquotedblleft diagonalization\textquotedblright\ and \textquotedblleft
+wait\textquotedblright\ respectively. Each $\alpha _{i}$ is a $\Phi $ node
+above $\beta $ which has outcome $i$ along $\beta $. If $\gamma $ is a node
+below $\beta $ extending the $g_{\alpha _{i}}$ branch from $\beta $, then we
+say that $\gamma $ \emph{sees} an $\alpha _{i}-\beta $ pair. [The intuition
+here is that $\gamma $ believes that $\alpha _{i}$ and its associated
+requirement is satisfied by $\beta $.]
+
+A $\Phi $ node $\alpha $ is \emph{active} at $\gamma \supset \alpha $ if $%
+\alpha $ has outcome $i$ along $\gamma $ and $\gamma $ does not see an $%
+\alpha ^{\prime }-\beta ^{\prime }$ pair such that $\alpha ^{\prime
+}\subseteq \alpha \subset \beta ^{\prime }\subset \gamma $. For there to be
+a $g_{\alpha _{i}}$ outcome of a $\Theta $ node $\beta $, we also require
+that $\alpha _{i}$ be active at $\beta $. We order these $g_{\alpha _{i}}$'s
+from left to right in descending order going down the tree to $\beta $,
+i.e., $\alpha _{1}\subset \alpha _{2}\subset ...\subset \alpha _{k}$. [This
+choice of left to right order comes into play at the very end of the proof
+of Lemma \ref{Phi i} and is discussed in \S \ref{s13}.]
+
+The priority tree is defined recursively as follows: suppose $\tau $ is an
+immediate extension of $\sigma $, we associate $\tau $ with the highest
+priority requirement among all requirements which either have not appeared
+above $\tau $ or are $\Phi $ requirements that, above $\tau $, have appeared
+only at nodes $\delta $ with outcome $i$ such that $\tau $ sees an $\alpha
+-\beta $ pair with $\alpha \subset \delta \subset \beta $. [So $\delta $
+looks inactive but not really satisfied, i.e. if satisfied at some earlier
+point it has since been \textquotedblleft captured\textquotedblright\ by
+some other pair.] Then we add the corresponding number of branches
+(outcomes) below $\tau $. It is easy to see that this tree is recursive.
+
+\section{Construction I\label{con}}
+
+At stage $s$ of the construction, we build a path of length $s$ of the \emph{%
+accessible nodes }along the priority tree. It is possible that at some
+accessible node we will \emph{announce }that $s$ is an $A$-stage or a $P$%
+-stage. All later nodes accessible at $s$ must respect this announcement by
+acting according the the rules governing $A$-stages or $P$-stages: no
+changes in $A$ can occur once a $P$-stage has been announced and none in $P$
+or $Q$ once an $A$-stage has been announced. In the construction, we will
+make sure that the first accessible $\Theta $ node with a type $g$ outcome
+(if any) makes the announcement for the stage $s$. An over-riding rule is
+that permanent restraint imposed by a node (not since initialized) is not
+violated by action at any node of lower priority (i.e. below it or to its
+right). If any instruction below leads to any such situation, we do not
+carry it out and instead go to outcome $w$ [and do nothing].
+
+In this section, we first describe the construction at stage $s$ for each
+node when there has been as yet no announcement for the stage and then
+specify the modifications for when there has already been one.
+
+\subsection{no announcement, $\Psi$ or $\Pi$ node}
+
+\label{t1s3c1}
+
+The actions at $\Psi $ and $\Pi $ nodes are quite standard: If it is the
+first time we come to this node (after it was last initialized), then we
+pick a witness number $x$ which is \emph{fresh}, i.e., larger than any
+number we have seen by this point in the construction. In general, at a $%
+\Psi $ ($\Psi (L\oplus G_{j})\neq G_{i}$) or a $\Pi $ ($\Pi (G_{j})\neq
+G_{i} $) node with a witness $x$ already assigned (and not yet canceled by
+initialization), we check whether the computation at $x$ converges to $0$.
+If it diverges or converges to a nonzero number, then we do nothing and go
+to the $w$ outcome. If it converges to $0$ and $x\notin G_{i}$, then we do a
+diagonalization: put $x$ into $G_{i}$ and into all the other sets in its
+block as described in Section \ref{t1s1}, impose permanent restraint [to
+preserve the use of the computation] and go to the $d$ outcome. If $x$ is
+already in $G_{i}$, then we (again) go to outcome $d$ [and keep the
+restraint already imposed].
+
+\subsection{no announcement, $\Phi $ node\label{shuf}}
+
+\label{t1s3c2}
+
+At a $\Phi $ node $\alpha $ ($\Phi (A)=W$) if we have not yet had a type $s$
+outcome (since $\alpha $ was last initialized) let $t$ be the last stage at
+which $\alpha $ was accessible (since last initialized). If there is a such
+stage and a $u<l_{\alpha }(t),l_{\alpha }(s)$ such that $\Phi (u)$ (and so $%
+W(u)$) differ at $t$ and $s$ with the difference not being that $u$ has
+entered $W$ for the first time and the only change in $A\upharpoonright \phi
+(u)$ at $t$ is that some $z$ has entered its block of sets for the first
+time because of the action of a node extending $\alpha $ then we \emph{%
+initiate a shuffle on }$z$\emph{\ }by removing $z$ from its block of sets,
+impose permanent restraint and go to outcome $s_{1}$. We call this shuffle
+strategy \emph{Plan S} with \emph{shuffle points }$sp1(=t)<sp2(=s)$. [Note
+that these shuffle points have the property that $A_{sp1}$($%
+=A_{sp1}\upharpoonright sp1$) and $A_{sp2}$($=A_{sp2}\upharpoonright sp2$)
+differ below $sp1$ only in that $z$ is in its block of sets in $A_{sp2}$ and
+out of them in $A_{sp1}$. More crucially, they produce different values for $%
+\Phi $ at some $u$, i.e. $\Phi (A_{sp1};u)\neq \Phi (A_{sp2};u)$.] If we had
+an outcome of type $s$ at the last stage $t$ at which $\alpha $ was
+accessible, we check whether $W(u)$ is different at $s$ than at $t$. If so,
+restore the initial segment of $A$ to the version of $A$ which is different
+from the current one (by putting $z$ into or taking it out of its block of
+sets), impose permanent and let the outcome be $s_{i+1}$. If not, we stay at
+the $s_{i}$ outcome. [This maintains any previously imposed permanent
+restraint.]
+
+If we haven't initiated shuffling, let $l_{\alpha }(s)$ be the length of
+agreement between the current versions of $\Phi (A)$ and $W$. Note that
+whenever we initialize this node $\alpha $, we also initialize the values of
+this function to be $0$. If this is the first time that $l_{\alpha }(s)>0$
+after it has last been initialized, or $l_{\alpha }(s)>l_{\alpha }(t)$ where 
+$t$ is the last stage when $\alpha $ had an $i$ outcome, then we go to the $%
+i $ outcome; otherwise we go to the $w$ outcome.
+
+If we go to the $i$ outcome, we continue to define a functional $\Gamma $
+[aiming to make $\Gamma (W\oplus P)=Q$]. At this point, we enumerate a new
+axiom making $\Gamma (W\upharpoonright l_{\alpha }(s)\oplus P\upharpoonright
+v;w)=Q(w)$, where $v$ is a fresh number and $w$ is one more than the largest
+number where we have previously defined $\Gamma $ (since it was last
+initialized). If $P$ has changed on its $\Gamma $-use at some $x<w$ and the
+change was caused by the action of a node $\beta \symbol{94}g_{\alpha }$
+[necessarily extending $\alpha \symbol{94}i$] with witness $x$ as in \S \ref%
+{t1s3c3ss3}, then we redefine $\Gamma (x)$ to be the current value of $Q(x)$
+with $W$-use $l_{\alpha }(s)$ and fresh $P$-use. [As $P$ is r.e. this change
+permanently invalidates the previous axiom for $\Gamma (x)$.] Similarly, if $%
+W$ has changed on its use $u_{1}$ (where its old $P$-use is $v_{1}$) so as
+to make $\Gamma (x)$ divergent but $x$ has not entered $Q$, we see if $x$ is
+currently the witness for some $\Theta $ node $\beta $ below $\alpha $ (for $%
+G$). If so, we look at the last stage $t$ at which $\beta $ was accessible
+and see if its outcome was $g_{\alpha }$. If $G$ has not changed on $\theta
+(x)$ as defined at the point of stage $t$ at which $\beta $ was reached and
+the change in $W$ includes one at some $u$ making it different from the
+common value of $\Delta (u)$ and $W(u)$ at $t$, then we redefine $\Gamma (x)$
+with $W$-use $l_{\alpha }(s)=u_{2}$ and fresh $P$-use. In all other cases of
+a $W$ or $P$ change on $\gamma (W;x)$ or $\gamma (P;x)$, respectively, that
+makes $\Gamma (x)$ divergent we redefine $\Gamma (x)$ with the same uses as
+it last had but for the new values of $W$ and $P$ (subject, of course, to
+our monotonicity requirements on the use).
+
+\subsection{no announcement, $\Theta $ node}
+
+\label{t1s3c3}
+
+At a $\Theta $ node $\beta $ accessible for first time after it has been
+last initialized, we pick a fresh witness $x$ for diagonalizing $\Theta
+(G_{i}\oplus P)\neq Q$. In general, if we have a witness $x$ already
+assigned (and not yet canceled by initialization), we check whether the
+computation converges at the witness $x$. [As usual when there are higher
+priority requirements that are expected to put infinitely many numbers into
+a set, we restrict our attention to computations that are consistent with
+our beliefs as prescribed by our actions in \S \ref{t1s3c3ss3}. Here this
+means the following:] We also require that the computation be \emph{%
+believable}, i.e. for every requirement $\hat{\Theta}$ assigned to a node $%
+\alpha $ with witness $\hat{x}$ and $\alpha \symbol{94}g_{\hat{\alpha}%
+}\subseteq \beta $ for some $\hat{\alpha}$, $\theta (x)<\gamma _{\hat{\alpha}%
+}(P;\hat{x})$ and if $\gamma _{\hat{\alpha}}(P;\hat{x})$ has been previously
+increased by a $\hat{W}$ change (as described at the end of \S \ref{t1s3c2})
+from say $u_{1}$ to $u_{2}$ and $v_{1}-1$ is not yet in $P$ then $\theta
+(x)<v_{1}$ as well. If $\Theta (x)$ does not converge with a believable
+computation or so converges to a nonzero number, then we go to the $w$
+outcome and do nothing.
+
+[If the believable computation $\Theta (G_{i}\oplus P;x)$ converges to $0$
+with $P$-use $\theta (x)$, then we would like to diagonalize, i.e., put $x$
+into $Q$ and preserve the $P$ and $G_{i}$ use of the computation. However,
+we must worry about whether doing so injures some already defined $\Gamma $
+computation at a node above $\beta $. For example, if there is a such a $%
+\Gamma (W\oplus P)=Q$ which computes $Q(x)=0$ with $\gamma (P;x)\leq \theta
+(x)$, then our desired diagonalization would falsify this computation of $Q$
+while correcting the $\Gamma $ computation (by putting its use into $P$ and
+redefining the functional) would injure our $\Theta $ computation for
+diagonalization. Our plans must be more subtle.] If $\Theta (x)$ converges
+with a believable computation we proceed as follows:
+
+Let $\alpha _{1}\subset \alpha _{2}\subset ...\subset \alpha _{k}$ be all
+the active nodes above $\beta $ with each $\alpha _{j}$ defining its
+functional $\Gamma _{j}(W_{l_{j}}\oplus P)$. Let $\gamma _{j}(P;x)$ be the $%
+P $-use of $\Gamma _{j}$ at $x$, if it has already been defined. [See \S \ref%
+{s13} for some comments on the left-right ordering indicted here for these
+nodes and the associated outcomes $g_{\alpha _{j}}$ below.]
+
+\subsubsection{Plan D: diagonalization}
+
+\label{t1s3c3ss1}
+
+If $\theta (x)<\gamma _{j}(P;x)$ for all $j$ for which $\gamma _{j}(P;x)$ is
+defined, we do a modified diagonalization: We enumerate $x$ into $Q$ and
+also enumerate $\gamma _{\alpha _{j}}(P;x)-1$ into $P$ for each $j$. [This
+allows us to correct the $\Gamma _{j}(x)$ when $\alpha _{j}\symbol{94}i$ is
+next accessible.] We now impose the usual permanent restraint but also one
+on $P\upharpoonright \theta (x)$ [to preserve the $\Theta $ computation] and
+go to outcome $d$. Until $\beta $ is initialized, it has outcome $d$ at
+every later stage at which it is accessible.
+
+\subsection{Stage Announcements}
+
+If we cannot follow Plan D, i.e., $\theta (x)\geq \gamma _{j}(P;x)$ for some 
+$j$, then we take the largest $j$ such that $\theta (x)\geq \gamma _{j}(P;x)$
+[and are likely to go to outcome $g_{\alpha _{j}}$ where we build a
+functional $\Delta $ computing $W_{l_{j}}$ from $G_{i}$]. [The choice of $j$
+is relevant at the very end of the proof of Lemma \ref{Delta} but our choice
+of the largest $j$ (rather than say the smallest) doesn't make any
+difference in this construction. It does, however, matter in the at the end
+of the proof of Lemma \ref{Plan R lem} for our second theorem.]
+
+\subsubsection{Plan A: $A$-stage announcement}
+
+\label{t1s3c3ss2}
+
+If this is the first time (since the last initialization) that we would go
+to the $g_{\alpha _{j}}$ outcome or the last time we went there we announced
+a $P$-stage then we go to outcome $g_{\alpha _{j}}$ and announce an $A$%
+-stage [and so allow elements to be enumerated into or taken out of $A$].
+
+Otherwise, let $t$ be the last stage when $\beta \symbol{94}g_{\alpha _{j}}$
+was accessible. By our construction and case assumption, $t$ must have been
+announced as an $A$-stage at $\beta \symbol{94}g_{\alpha _{j}}$. (If some
+node to the right or left of $\beta \symbol{94}g_{\alpha _{j}}$ made an
+announcement at stage $t$ then $\beta $ would not have been accessible at $t$%
+. If some node $\alpha $ above $\beta $ made an announcement at $t$ then one
+would also have to be made above $\beta $ at $s$ contrary to our case
+assumption that no announcement has been made at this stage before we
+reached $\beta $.)
+
+%\subsubsection{Plan S: shuffle}
+%
+%\label{t1s3c3ss4}
+%
+%If we see that $W_{l_{j}}(u)$ is no longer the value previously computed by $%
+%\Delta $ at $t$ for some $u$ and the only change in $A\upharpoonright t$
+%since $t$ is that some $z$, a witness for a node $\alpha \supset \beta $,
+%has entered its block of sets for the first time while the change in $%
+%W_{l_{j}}(u)$ is one other than $u$ entering for the first time, we \emph{%
+%initiate the shuffling strategy for }$\alpha _{j}$ as follows: Let $%
+%A_{sp1}=A_{t}\upharpoonright t$ and $A_{sp2}=A_{s}\upharpoonright s$. So we
+%have $\Phi _{j}(A_{sp1};u)\downarrow \neq \Phi _{j}(A_{sp2};u)\downarrow $.
+%We impose permanent restraint [to preserve $A_{sp2}$] and move to outcome $w$%
+%. [The rest of the shuffling plan will then be taken over by $\alpha _{j}$
+%(as described above for $\Phi $ nodes) once it is accessible again.] If not,
+%we move to the next plan.
+
+\subsubsection{Plan P: $P$-stage announcement}
+
+\label{t1s3c3ss3}
+
+We now go to the $g_{\alpha _{j}}$ outcome and extend $\Delta $ by adding
+axioms computing $W_{l_{j}}(u)$ from $G_{i}$ with fresh use for any $%
+u<l_{\alpha _{j}}(s)$ for which $\Delta $ has not previously been defined.
+In addition, we put $\gamma _{j}(P;x)-1$ into $P$ to injure the current $%
+\Theta $ computation (since $\gamma _{j}(P;x)\leq \theta (x)$). [This kills
+the current computation of $\Gamma (x)$ and as $P$ is r.e. it can never
+apply to $W\oplus P$ again.] Moreover, if $\gamma _{j}(P;x)$ has been
+previously increased by a $\hat{W}$ change (as described at the end of \S %
+\ref{t1s3c2} from say $u_{1}$ to $u_{2}$ and $v_{1}-1$ is not yet in $P$
+then we also put $v_{1}-1$ into $P$. [This kills the old computation of $%
+\Gamma _{j}(x)$ as well as and guarantees that it too will never again apply
+to $W\oplus P$.] [We will redefine $\Gamma _{j}$ with axioms using the new
+version of $P$ with a fresh $P$-use and $W_{l_{j}}$ use $l_{\alpha _{j}}(v)$
+when we next get to $\alpha _{j}\symbol{94}i$ at $v$. The result of this
+action is that we increase the $\Gamma _{j}$ use from $P$ and $W_{l_{j}}$
+and so the next time when this $\beta $ is accessible with the $g_{\alpha
+_{j}}$ outcome, the use $\theta (x)$ must be larger than that of this stage.
+If this happens infinitely often $\Gamma _{j}(x)$ diverges but we expect to
+satisfy the associated $\Phi $ requirement by building $\Delta
+(G_{i})=W_{l_{j}}$ at $\beta \symbol{94}g_{\alpha _{j}}$. We then also
+satisfy the $\Theta $ requirement associated with $\beta $ as $\Theta (x)$
+diverges as well.] We now announce that the current stage is a $P$-stage.
+
+If there has been a change in $G_{i}$ that leaves $\Delta (u)$ undefined
+where it had previously been defined, we put in a new axiom computing the
+current value of $W_{l_{j}}(u)$ with the old use.
+
+[We shall argue for $\beta $ on the true path with true outcome $g_{\alpha
+_{j}}$ that we build $\Delta $ consistently and correctly compute $W_{l_{j}}$
+at each stage (Lemma \ref{Delta}). Typically, it turns out that, along the
+true path, if $W_{l_{j}}$ has changed where previously computed, then $G_{i}$
+must have changed at the corresponding part used in the computation.]
+
+\subsection{modifications with a stage announcement}
+
+\label{t1s3c4}
+
+When there is has already been a stage announcement before we reach $\beta $%
+, the node $\beta $ has to obey the appropriate rules. For a $\Psi $, $\Pi $
+or $\Theta $ node, we see what we would have done if there had been no stage
+announcement as yet. If that action is compatible with the current stage
+announcement (no announcement of an $A$-stage or change in $A$ if a $P$%
+-stage; no change in $P$ or $Q$ and no announcement of a $P$-stage if an $A$%
+-stage), we proceed as if there had been no announcement. If not, we do
+nothing and go to outcome $w$.
+
+For a $\Phi $ node, the modification is slightly trickier. [Later we will
+need the fact that each node along the true path passes down alternating $A$
+and $P$ restraints in the construction.] Here in order to go to the $i$
+outcome, we need to wait (with outcome $w$) for a stage when the stage
+announcement is different from the last stage $t$ when we had an $i$
+outcome, and also the length of agreement is longer than its last value. [In
+this way, the $\Phi $ node passes down alternating $A$ and $P$ restraints
+along the $i$ outcome.] When we have already initiated shuffling, we act as
+before at $A$-stages and at $P$-stages we go to outcome $w$. [This maintains
+the permanent restraint imposed when we initiated shuffling or last shuffled
+as the nodes that imposed it are now to our left.]
+
+\section{Verification I\label{ver}}
+
+\label{t1s5}
+
+\subsection{True path and true outcome}
+
+\label{t1s4ss1}
+
+First of all, as in usual priority tree arguments, there is a leftmost path
+accessible infinitely often. (Each node has only finitely many outcomes.)
+This is the \emph{true path} and the outcomes along it the \emph{true
+outcomes}.
+
+\begin{lemma}
+\label{change A}Numbers enter or leave $A$ or $L$ only when permanent
+restraint is imposed by a $\Pi $, $\Psi $ or $\Phi $ node. When such nodes $%
+\beta $ impose permanent restraint, we move to the left of any previous
+outcome that has been accessible since $\beta $ was last initialized.
+\end{lemma}
+
+\begin{proof}
+By inspection of the construction.
+\end{proof}
+
+\begin{lemma}
+\label{only one}At most one node acts to change $A$ at any stage $s$.
+\end{lemma}
+
+\begin{proof}
+If we first act at $\alpha $ to change $A$ at $s$ then we move to an outcome
+to the left of all previously accessible ones (since $\alpha $ was last
+initialized) by Lemma \ref{change A}. So all later nodes accessible at $s$
+that can change $A$ are accessible for the first time since last initialized
+and so at most appoint fresh witnesses or (for $\Phi $ nodes) begin their
+construction of $\Gamma $ anew. None of these witnesses can go in at $s$ as
+no convergences can be seen at numbers larger than $s$. No shuffling can
+been initiated for any of the $\Phi $ nodes by construction.
+\end{proof}
+
+\begin{lemma}
+\label{after init}If a node $\alpha $ is initialized at stage $s$ then it
+never later acts to change any set below $s$.
+\end{lemma}
+
+\begin{proof}
+If $\alpha $ is a $\Pi $, $\Psi $ or $\Theta $ node it only acts to put
+numbers at least as large as its witness $x$ into $A$ or $P$ and any witness
+appointed after $s$ is larger than $s$. For $\Pi $ and $\Psi $ nodes this is
+immediate. For $\Theta $, its action puts numbers of the form $\gamma
+(P;x)-1 $ into $P$ and by construction $\gamma (P;x)>x$. For $\Phi $ nodes,
+the only action changing sets is shuffling. This shuffling only involves
+numbers appointed below $\alpha $ at stages when $\alpha $ was accessible
+since it was last initialized.
+\end{proof}
+
+Recursively along the true path, we now determine the actions of the nodes
+on it after no node to their left is ever accessible and prove that all the
+requirements are satisfied along it. For any node $\beta $ on the true path
+we let $s(\beta )$ be the first stage at which $\beta $ is accessible but
+after which no node to its left is ever accessible again.
+
+\begin{lemma}
+\label{rest A}Any permanent restraint imposed by a node $\beta $ at any $%
+s\geq s(\beta )$ is never injured by any other node.
+\end{lemma}
+
+\begin{proof}
+The only actions that can injure such restraint after $s(\beta )$ are ones
+by nodes above it on the true path. None can change $A$ or $L$ by Lemma \ref%
+{change A}. As for $P$, the only permanent restraint imposed on $P$ is by $%
+\Theta $ nodes when we go to outcome $d$ and restrain $P\upharpoonright
+\theta (x)$. Now nodes $\hat{\beta}$ above $\beta $ of type $\Theta $ with
+outcomes $g_{\hat{\alpha}}$ may put numbers into $P$ but they only put in
+ones of the form $\gamma _{\hat{\alpha}}(P;\hat{x})$ and our believability
+requirement on the computation of $\Theta (x)$ guarantees that all of the
+current values of these $\gamma _{\hat{\alpha}}(P;\hat{x})$ are larger than $%
+\theta (x)$. The only way one of them could decrease is if it had previously
+been increased from $u_{1}$ to $u_{2}$ by a change in $W$ as described at
+the end of \S \ref{t1s3c2} and then $W$ changes back to the old value before
+the old computation is killed by $v_{1}-1$ going into $P$. However, our
+believability condition also requires that $\theta (x)$ is less than these $%
+v_{1}$ as well. Any later change increases the use above the previous values
+Thus no changes every occur in $P$ below $\theta (x)$.
+\end{proof}
+
+\begin{lemma}
+\label{wit large}The final witness for any node $\beta $ chosen at $s(\beta
+) $ is larger than any permanent restraint of higher priority than $\beta $.
+\end{lemma}
+
+\begin{proof}
+By construction the witness is chosen fresh and so larger than anything
+previously seen. The only nodes of higher priority that can impose permanent
+restraint later are ones above $\beta $. None of type $\Pi $, $\Psi $ or $%
+\Phi $ can do so by Lemma \ref{change A}. One of type $\Theta $ also imposes
+permanent restraint only when it moves left to outcome $d$ contradicting our
+definition of $s(\beta )$.
+\end{proof}
+
+Before we show that the requirements are satisfied we analyze the
+alternating restraint.
+
+\subsection{Alternating $A$ and $P$-stages}
+
+\label{t1s4ss2}
+
+\begin{lemma}
+\label{alt}Every node along the true path above the first $\Theta $ node $%
+\beta $ with type $g$ outcome on the true path never sees or makes a stage
+announcement (imposes alternating restraint) when accessible. For the other
+nodes $\alpha $ on the true path, their true outcomes, $o$, are accessible
+at infinitely many $A$ and $P$-stages. Indeed, after $s(\alpha \symbol{94}o)$%
+, the stages at which $\alpha \symbol{94}o$ is accessible alternate between $%
+A$ and $P$ ones (the node passes down alternating $A$ and $P$ restraints
+along its true outcome).
+\end{lemma}
+
+\begin{proof}
+For any node above $\beta $ the claim is immediate from the rules of the
+construction. For a $\Pi $ or $\Psi $ node below $\beta $, it is immediate
+from the construction that after $s(\beta )$ either we always have outcome $%
+w $ or, whenever we are at $\beta $ after the first time we have outcome $d$
+we also have outcome $d$. So for these nodes the Lemma is obvious. For a $%
+\Phi $ node below $\beta $, either the true outcome is shuffling ($s$), or
+waiting ($w$), or infinitary ($i$). In the two former cases, the outcome is
+again eventually constant: Once we move to a type $s$ outcome, the
+construction guarantees that we can move only to the left to another type $s$
+outcome. Thus the outcome is eventually constant at some type $s$ outcome.
+As for outcome $w$, any rightmost outcome that is the true outcome of a node 
+$\beta $ on the true path is the outcome at almost every stage at which $%
+\beta $ is accessible. In the third case, our construction in \S \ref{t1s3c4}
+ensures that it passes down alternating $A$ and $P$ restraint along the
+outcome $i$ as required.
+
+The $\Theta $ node $\beta $ which first makes the announcements along the
+true path must have true outcome some $g_{\alpha }$. Then according to our
+construction, if it announced a $P$-stage the last time it was accessible,
+we follow Plan $A$ and make an $A$-stage announcement. If it last announced
+an $A$-stage, then we follow Plan P and announce a $P$-stage.
+
+% since acting for the
+%only other possible plan (shuffle) would make us move to the $s_{1}$
+%outcome for $\alpha $ when it is next accessible but $\alpha \symbol{94}%
+%s_{1} $ is to the left of $\alpha \symbol{94}i\subseteq \beta $ for a
+%contradiction.
+
+Finally for any other $\Theta $ node $\beta ^{\prime }$ on the true path,
+the claim is also immediate for true outcome $d$ or $w$ as above. In the
+case of a $g_{\alpha }$ outcome, the construction automatically guarantees
+that it always waits for an alternation in the type of restraint to move
+again to the true $g_{\alpha }$ outcome.
+\end{proof}
+
+We next analyze the functionals $\Delta $ and $\Gamma $ that we construct.
+
+\subsection{The functionals are well-defined and correct\label{t1s4ss3}}
+
+\begin{lemma}
+\label{Gamma}The functionals $\Gamma $ built at nodes $\alpha \symbol{94}i$
+on the true path starting at $s(\alpha \symbol{94}i)$ are well-defined,
+i.e., we do not add contradictory axioms in the construction and when
+defined give the correct current value for $Q$. They are defined on
+arbitrarily large initial segments of $\omega $ and so, if convergent at
+every $x$, they correctly compute the desired sets.
+\end{lemma}
+
+\begin{proof}
+It is clear by construction that we define $\Gamma (x)$ at least once for
+each $x$: As $\alpha \symbol{94}i$ is on the true path, $l_{\alpha }(s)$ is
+going to infinity on the stages at which $\alpha \symbol{94}i$ is
+accessible. On each of these stages we define $\Gamma $ on a new number.
+Once defined $\Gamma (x)$ is then defined at every stage at which $\alpha 
+\symbol{94}i$ is accessible by construction. As for consistency and
+correctness, note first that it is immediate from the construction that at
+any stage at most one axiom in $\Gamma $ applies to the current value of $%
+W\oplus P$. Now, the only way any problem could arise is if $Q(x)$ has
+changed for some $x$ but $W$ and $P$ have not changed on the corresponding
+use or they change and then $W$ reverts back to a previous value that
+applies to some older computation (with value $0$). However, in our
+construction, $Q(x)$ can change only when we implement Plan D to put $x$
+into $Q$ at a some stage $v$ for a $\Theta $ node $\hat{\beta}$. Any number $%
+x$ put into $Q$ by such nodes to the right of $\alpha \symbol{94}i$ must be
+both appointed fresh and then put in while we are to the right of $\alpha 
+\symbol{94}i$ without $\alpha \symbol{94}i$ becoming accessible in between.
+Thus when $\alpha \symbol{94}i$ is again accessible $\Gamma $ has not been
+defined at $x$ and so when we define $\Gamma (x)$ we set it equal to $1$
+with the first axiom and all later ones as well. Any $x$ put in by nodes to
+the left of $\alpha \symbol{94}i$ are in by $s(\alpha \symbol{94}i)$ and so
+we define $\Gamma $ correctly on them as well.
+
+Thus we can assume that $\hat{\beta}$ is below $\alpha \symbol{94}i$. If $%
+\alpha $ is active at $\hat{\beta}$, then when $x$ enters $Q$ at $v$ we put $%
+\gamma (P;x)-1$ into $P$ by construction and so kill the current computation
+and put in a new one giving the correct answer when we next reach $\alpha 
+\symbol{94}i$. If $\alpha $ is not active at $\hat{\beta}$, there must be a
+first $\beta ^{\prime }\subset \hat{\beta}$ with $\beta ^{\prime }\symbol{94}%
+\hat{\alpha}\subset \hat{\beta}$ for some $\hat{\alpha}\subseteq \alpha $.
+So in particular, $\alpha $ is active at $\beta ^{\prime }$. Now $\beta
+^{\prime }$ has a witness $x^{\prime }$ necessarily less than $x$ (as $x$ is
+appointed later) and at stage $v$ when we reached $\beta ^{\prime }\symbol{94%
+}g_{\hat{\alpha}}$ we put $\gamma (x^{\prime })<\gamma (x)$ into $P$ and so
+kill the current computation of $\Gamma (x)$ and correct it when we next
+reach $\alpha \symbol{94}i$. Note that both $P$ and $Q$ are r.e. so $\gamma
+(P;x)-1$ has never been in $P$ before and $x$ will never leave $Q$. As we
+impose permanent restraint when we go to outcome $d$ and diagonalize, no
+later change in $W$ can return us to any old computation.
+\end{proof}
+
+\begin{lemma}
+\label{Delta}The functional $\Delta $ defined at the true $g_{\alpha }$
+outcome of a $\Theta $ node $\beta $ (for $G_{i}$) on the true path starting
+at $s(\beta \symbol{94}g_{\alpha })$ is well-defined. When $\Delta (u)$ is
+convergent while we are at $\beta \symbol{94}g_{\alpha }$, it always give
+the current value of $W(u)$ on an initial segment of $\omega $. Indeed, $%
+\Delta (G_{i})=W$ as desired. (For notational convenience we assume that $%
+\alpha $ is assigned the $\Phi $ requirement for $W$ which is constructing
+the functional $\Gamma $ at its $i$ outcome.)
+\end{lemma}
+
+\begin{proof}
+As for the final claim, note first that by construction if $\Delta (u)$ is
+ever defined it is defined at every $u^{\prime }<u$ and then it is defined
+there at every later $P$-stage at which $\beta \symbol{94}g_{\alpha }$ is
+accessible. Moreover, at these stages we extend its domain of definition to $%
+l_{\alpha }(s)$ which is going to infinity since $\alpha \symbol{94}%
+i\subseteq \beta $ is on the true path. Once $\Delta (u)$ is defined, its
+use never changes by construction and so if, at every stage when defined at $%
+\beta \symbol{94}g_{\alpha }$, it correctly computes $W(u)$, it does so in
+the end.
+
+For correctness, we argue by induction on the stages at which $\beta \symbol{%
+94}g_{\alpha }$ is accessible beginning at $s(\beta \symbol{94}g_{\alpha })$
+that $\Delta (u)=W(u)$ at every $u$ at which $\Delta $ is defined. This is
+obviously true by construction if $s$ is the first stage at which $\Delta
+(u) $ is defined. Suppose it is true at $s$ and the next stage at which $%
+\beta \symbol{94}g_{\alpha }$ is accessible is $t$ and the problem occurs at 
+$u$.
+
+Note that no change in $A\upharpoonright s$ or $P\upharpoonright \theta (x)$
+can occur between $s$ and $t$. No node to the right of $\beta \symbol{94}%
+g_{\alpha }$ can make such a change by Lemma \ref{after init}. No node to
+its left can do so as they are never accessible after $s(\beta \symbol{94}%
+g_{\alpha })$. No node above $\beta \symbol{94}g_{\alpha }$ can change $A$
+at all by Lemma \ref{change A}. Nodes above $\beta \symbol{94}g_{\alpha }$
+may act to put numbers of the form $\gamma _{\hat{\alpha}}(P;\hat{x})$ into $%
+P$ via other $\Theta $ requirements $\hat{\beta}$ above $\beta $ with
+outcome $g_{\hat{\alpha}}$ but by our believability condition on the $\Theta
+(x)$ computation, at stage $s$ none of them are below $\theta (x)$ at $s$.
+The only way one of them could decrease is if it had previously been
+increased from $u_{1}$ to $u_{2}$ by a change in $W$ as described at the end
+of \S \ref{t1s3c2} and then $W$ changes back to the old value before the old
+computation is killed by $v_{1}-1$ going into $P$. However, our
+believability condition requires that $\theta (x)$ is also less than these $%
+v_{1}$.
+
+If $s$ was a $P$-stage then no change occurred in $A\upharpoonright s$ at $s$
+so none has by stage $t$. Thus if $W(u)$ at $t$ is different from its value
+at $s$ it would be different from $\Phi (A;u)$ at $t$ since that is the same
+as it was at $s$. This would move us to outcome $w$ at $\alpha $ and so $%
+\beta \symbol{94}g_{\alpha }$ would not be accessible for a contradiction.
+
+Suppose then that $s$ was an $A$-stage. No change in $P\upharpoonright
+\theta (x)$ occurs at $s$ as no node above the one announcing the $A$-stage
+can change $P$ without declaring a $P$-stage or moving left and none after
+it can because it is an $A$-stage. Moreover, none can occur before $t$ as
+above. If no change occurs in $A$ at $s$ then, as none occurs before $t$, $%
+\Phi (u)$ and $\Delta (u)$ would be the same at $t$ as at $s$. If this value
+is not that of $W(u)$ at $t$ then $\alpha \symbol{94}i$ would again not be
+accessible at $t$ for a contradiction. Thus there has been some change in $A$
+at $s$. By Lemma \ref{only one}, there is precisely one $z$ that entered or
+left its block of sets at $s$. By Lemmas \ref{change A} and \ref{after init}%
+, the node $\sigma $ causing the change must extend $\beta \symbol{94}%
+g_{\alpha }$ as we are after $s(\beta \symbol{94}g_{\alpha })$ and $\beta 
+\symbol{94}g_{\alpha }$ is accessible. Now if there is no change in $W(u)$
+between $s$ and $t$, then the only way we could have a disagreement with $%
+\Delta (u)$ at $t$ (so the old axiom for $\Delta (u)$ at $s$ is no longer
+valid but we cannot simply put in a new one with the same value) is that the
+change for $z$ returns us to a previous computation of $\Delta (u)$ giving a
+different value. However, such a change in $z$ can be caused only by $\sigma 
+$ shuffling $z$. Such a shuffle returns $A\upharpoonright v$ to its value at
+a previous stage $v$. If $\Delta (u)$ was defined at $v$ then by induction
+it would have the same value as $\Phi (u)$ and $W(u)$ and no change can have
+happened in any of these when we reach $t$. Thus we would still have
+agreement at $t$ as required. So we may also assume that $W(u)$ is different
+at $s$ and $t$.
+
+Suppose first that $z<\theta (x)$ and $G_{i}$ is in its block of sets. Next,
+suppose the change occurred because of some shuffling procedure at $\sigma $%
+. If $\Delta (u)$ was first defined before the shuffling began at $\sigma $,
+then we would have a contradiction as above.
+
+If $\Delta (u)$ was first defined after the shuffling began, say at $v\leq s$
+with, for the sake of definiteness, $z\in G$, then its use is fresh at $v$
+and so larger than $z$. Let $v^{\prime }\geq v$ be the next stage after $v$
+at which we shuffle $z$ at $\sigma $. If $v^{\prime }=s$ then $z$ has been
+in $G_{i}$ from $v$ to $s$ and is removed at stage $s$ by our action at $%
+\sigma \supset \beta \symbol{94}g_{\alpha }$. Thus when we next return to $%
+\beta \symbol{94}g_{\alpha }$ at $t$ we have $z\notin G_{i}$ for the first
+time since $\Delta (u)$ was defined and we redefine it to be the current
+value of $W(u)$ as required. So we may assume that $v^{\prime }<s$ and at
+stage $v^{\prime }$ we have $\Phi (u)=W(u)=\Delta (u)$ at $\beta \symbol{94}%
+g_{\alpha }$ by induction. When we reach $\sigma $ at $v^{\prime }$ we
+remove $z$ from its block of sets including $G_{i}$ and impose permanent
+restraint. When $\beta \symbol{94}g_{\alpha }$ is next accessible, say at $%
+v^{\prime \prime }\leq s$, we redefine $\Delta (u)=W(u)=\Phi (u)$ with $%
+z\notin G_{i}$ (and its block of sets) but with the rest of $%
+A\upharpoonright v^{\prime }$ the same as it was at $v^{\prime }$ (because
+of the permanent restraint imposed at $v^{\prime }$ which, by Lemma \ref%
+{change A}, could be violated only by moving to the left of $\sigma $ which
+could then not cause our problem at $s)$. If $v^{\prime \prime }=s$ then at
+stage $s$ we shuffle $z$ back into $G_{i}$ (and its block of sets) at $%
+\sigma $ and impose permanent restraint. We next return to $\beta \symbol{94}%
+g_{a}$ at $t$ and have $\Phi (u)$ and $\Delta (u)$ and so $W(u)$ the same as
+they were at stage $v^{\prime }$ at $\beta \symbol{94}g_{\alpha }$, i.e.
+they all agree as required. Finally, if $v^{\prime \prime }<s$ then later at
+stage $s$ we shuffle at $\sigma $ between the values for all of these sets
+and functionals that we had at $v^{\prime }$ and $v^{\prime \prime }$. Thus
+once again when we reach $\beta \symbol{94}g_{\alpha }$ at $t$ all agree.
+
+Thus the change that has occurred is that $z$ entered $G_{i}$ for the first
+time at $s$. If the change in $W(u)$ is not that $u$ has entered for the
+first time, then we would have initiated a shuffling procedure at $\alpha $
+at stage $t$ and so move to $\alpha \symbol{94}s_{1}$ hence to the left of $%
+\beta \symbol{94}g_{\alpha }\supset \alpha \symbol{94}i$ for a contradiction.
+
+Thus through stage $s$, $W(u)=0$. Suppose $\Delta (u)$ was first defined at $%
+s^{\prime }$, of course with value $0$ and fresh use $q$. We claim that $z<q$
+and so its entry into $G$ allows us to correct $\Delta (u)$ at $t$ as
+desired. If not, it was chosen fresh as a witness for $\sigma $ at a point
+in the construction during a stage $s^{\prime \prime }\geq s^{\prime }$
+after $\Delta (u)$ was defined at $s^{\prime }$ but before $s$. In this
+case, however, $z>s^{\prime \prime }$ and so $z>\phi (u)$ at $s^{\prime
+\prime }$. Note that $\Phi (u)$ is defined at $s^{\prime \prime }$ because $%
+z $ is appointed at $\sigma \supset \beta \supset \alpha \symbol{94}i$. Now
+from the point of stage $s^{\prime \prime }$ at which $\alpha \symbol{94}i$
+is accessible to stage $s$ any change in $A\upharpoonright s^{\prime \prime
+} $ would initialize $\sigma $ and so $z$ could not enter $A$ at $s$. (At $%
+s^{\prime \prime }$ no node between $\alpha \symbol{94}i$ and $\sigma $ can
+change $A$ without moving left of $\sigma $. Then at $\sigma $ all nodes to
+the right of $\sigma $ are initialized and so cannot make any changes below $%
+s^{\prime \prime }$ by Lemma \ref{after init}. As $\sigma $ appointed a
+witness at $s^{\prime \prime }$, this is the first stage at which $\sigma $
+has been accessible since it was last initialized so all $A$ action by nodes
+below $\sigma $ also involve only numbers larger than $s^{\prime \prime }$.
+Finally, any $A$ action after $s^{\prime \prime }$ by a node of higher
+priority than $\sigma $ would also initialize it by Lemma \ref{change A}.)
+Thus at $s$, $\phi (u)$ and $A\upharpoonright \phi (u)$ are the same as they
+were at $s^{\prime \prime }$, i.e. $\Phi (A,u)=0=W(u)$ at $s$ with the same
+computations as at $s^{\prime \prime }$. Now the only changes in $A$ during
+stage $s$ is that $z$ enters its block of sets but $z>s^{\prime \prime }$
+and then no changes occur in $A\upharpoonright s$ before stage $t$. Thus at
+stage $t$ we also have $\Phi (A,u)=0$ and so if $W(u)=1$ at $t$, the outcome
+of $\alpha $ would not be $i$, for a contradiction.
+
+Finally, suppose $z\geq \theta (x)$ or $G_{i}$ is not in its block so no
+change occurs in $G_{i}\upharpoonright \theta (x)$ at $s$ and so none before 
+$t$. When $\Delta (u)$ was defined at the $P$-stage $v$ (necessarily before
+the $A$-stage $s$), $u<l_{\alpha }(v)$ and so after $v$, $u<\gamma (W;x)$
+whenever it is defined. In fact, at each $P$-stage during which we reach $%
+\beta \symbol{94}g_{\alpha }$ (starting with $v$) we put $\gamma (P;x)$ into 
+$P$ and subsequently increase $\gamma (W;x)$ to $l_{\alpha }(v^{\prime
+})>l_{\alpha }(v)$ when we are next at $\alpha \symbol{94}i$ (at $v^{\prime
+}>v$). Each computation of $\Gamma (x)$ killed in this way can never to
+reapply to $W\oplus P$ as $P$ is r.e. As we cannot reach $\beta \symbol{94}d$%
+, the only other way $\gamma (x)$ can change requires a $W$ change that
+causes a difference between the previously computed common values of $\Delta 
+$ and $W$. By our induction assumption this cannot have occurred before $s$.
+So all axioms for $\Gamma (x)$ provided before $s$ are invalid by the end of
+stage $s$.
+
+As $W(u)$ has different values at $s$ and $t$, the change in $W$ introduces
+a value of $W(u)$ that we see at $\alpha \symbol{94}i$ at some first stage $%
+v^{\prime \prime }$ after $s$ but no later than $t$. As we have argued, no
+old computation of $\Gamma (x)$ is still valid at $v^{\prime \prime }$. Thus
+by construction we would increase $\gamma (P;x)$ at $v^{\prime \prime }$ to
+a fresh value larger than $\theta (x)$. When we return to $\beta \symbol{94}%
+g_{\alpha }$ at $t$, $\gamma (P;x)$ is now larger than $\theta (x)$ which
+has not changed since $s$. Thus by construction, $g_{\alpha }$ cannot be the
+outcome of $\beta $ at $t$ for a contradiction.
+\end{proof}
+
+\subsection{All requirements are satisfied}
+
+\label{t1s4ss5}
+
+Finally we want to show that all requirements are satisfied.
+
+The positive order requirements are easily verified by our construction.
+
+\begin{lemma}
+\label{pos order}If $i<_{\ast }j$ then $G_{i}\leq _{T}L\oplus G_{j}$.
+\end{lemma}
+
+\begin{proof}
+Consider an $x>i,j$. To decide if $x\in G_{i}$ go to stage $x$ of the
+construction and see if $x$ has been appointed as a witness for some $\Pi $
+or $\Psi $ requirement with $G_{i}$ in its block. If not, then $x\notin
+G_{i} $. (Indeed $x$ is not in any $G_{k}$.) If it is in the block for a $%
+\Pi $ requirement then $L$ is also in its block. If for a $\Psi $
+requirement then $G_{j}$ is in the block. In any case, as once appointed $x$
+moves into or out of all sets in its block during the entire construction, $%
+x\in G_{i}\Leftrightarrow x\in L$ in the $\Pi $ case and $x\in
+G_{i}\Leftrightarrow x\in G_{j}$ in the $\Psi $ case.
+\end{proof}
+
+We now move to the negative (diagonalization) requirements.
+
+\begin{lemma}
+\label{Pi or Psi} The $\Pi $ and $\Psi $ requirements are satisfied.
+\end{lemma}
+
+\begin{proof}
+Suppose the requirement is assigned to the node $\beta $ on the true path.
+If, after $s(\beta )$, we ever go to outcome $d$ and so diagonalize, the
+result is immediate from the construction and Lemma \ref{rest A}. If not, it
+must be that the outcome is always $w$ after after $s(\beta )$. If the
+relevant computation converged to $0$ the correct computation would be
+available from some point on and so by Lemma \ref{alt} we would eventually
+see it at an $A$-stage and so move to outcome $d$ by Lemma \ref{wit large}.
+If not, then $x$ never enters $G_{i}$ and we also satisfy the requirement as
+desired.
+\end{proof}
+
+We next consider the $\Theta $ requirements.
+
+\begin{lemma}
+\label{Theta d}If a $\Theta $ node $\beta $ on the true path has true
+outcome $d$ then the associated requirement is satisfied.
+\end{lemma}
+
+\begin{proof}
+Consider the stage $s(\beta \symbol{94}d)$ when $\beta $ has outcome $d$
+(and is never again initialized). We put the witness $x$ into $Q$ and impose
+permanent restraint to preserve the computations $\Theta (G_{i}\oplus P;x)=0$%
+. Lemma \ref{rest A} shows that this computation is preserved.
+\end{proof}
+
+\begin{lemma}
+\label{Theta g}\label{t1s4ss5sss3}If a $\Theta $ node $\beta $ on the true
+path has true outcome $g_{\alpha }$, then its requirement is satisfied.
+Indeed, for $x$ the final witness for $\beta $, both $\theta (x)$ and $%
+\gamma _{\alpha }(x)$ go to infinity on the stages when $\beta \symbol{94}%
+g_{\alpha }$ is accessible. Moreover, any time we increase $\gamma _{\alpha
+}(x)$ because of a $W$ change as at the end of \S \ref{t1s3c2}, we later
+kill the $P$-use of the old computation as well by putting $v_{1}$ into $P$.
+\end{lemma}
+
+\begin{proof}
+In this case, by our construction (and Lemmas \ref{wit large} and \ref{alt}%
+), we infinitely often put numbers ($\gamma (P;x)-1$) into $P$ and redefine $%
+\Gamma (W_{i}\oplus P)$ with a fresh $P$-use. (The first of these Lemmas
+implies that the numbers we want to put into $P$ are larger than any
+permanent restraint as they are of the form $\gamma (P;x)$ which is larger
+than the witness $x$ for $\beta $.) So by our criteria for going to outcome $%
+g_{\alpha }$, we infinitely often see $\theta (x)>\gamma (P;x)$, so $\theta
+(x)$ must go to infinity (when $\beta \symbol{94}g_{\alpha }$ is accessible)
+along with $\gamma (P;x)$ and the computation $\Theta (G_{i}\oplus P;x)$
+diverges. As for any increase in $\gamma (x)$ because of $W$ change as in \S %
+\ref{t1s3c2}, the next time we are at $\beta \symbol{94}g_{\alpha }$ we put
+the associated $v_{1}$ into $P$ by construction.
+\end{proof}
+
+\begin{lemma}
+\label{Theta w}If a $\Theta $ node $\beta $ on the true path has true
+outcome $w$ then the associated requirement is satisfied.
+\end{lemma}
+
+\begin{proof}
+Note that if the outcome of $\beta $ were $d$ at any stage after $s(\beta )$
+then $d$ would be the true outcome by construction. Thus in our case, we
+never put the final witness $x$ for $\beta $ into $G_{i}$. So our only
+concern is that $\Theta (G_{i}\oplus P;x)=0$. In this case, there is a stage
+after which it always converges to $0$ and with a fixed use. By the previous
+Lemma this computation is believable at almost every stage when we are at $%
+\beta $. Thus by construction and Lemmas \ref{wit large} and \ref{alt}, as
+in Lemma \ref{Theta g}, we would eventually have outcome $d$ for a
+contradiction.
+\end{proof}
+
+We now turn to the $\Phi $ requirements.
+
+\begin{lemma}
+\label{Phi s} If a $\Phi $ node $\beta $ on the true path has true outcome
+of type $s$, then the associated requirement is satisfied.
+\end{lemma}
+
+\begin{proof}
+The nature of the shuffling points guarantees that, at every stage with
+outcome of type $s$, $\Phi (A;x)\downarrow \neq W(x)$ and so this is true at
+the end of the construction as well and the requirement is satisfied. The
+crucial point here is that the permanent restraint imposed by $\beta $ which
+are increasing as we move left among the type $s$ outcomes can never be
+injured (other than by the shuffling done by $\beta $ itself) by Lemma \ref%
+{rest A}.
+\end{proof}
+
+\begin{lemma}
+\label{Phi w}If a $\Phi $ node $\beta $ on the true path has true true
+outcome $w$ then the associated requirement is satisfied.
+\end{lemma}
+
+\begin{proof}
+If $\Phi (A)=W$ then the length of agreement would go to infinity and so, by
+construction and Lemma \ref{alt}, we would eventually move to outcome $i$
+after $s(\beta \symbol{94}w)$ for a contradiction.
+\end{proof}
+
+Finally, we have to deal with the case that every $\Phi $ node on the true
+path has true outcome $i$.
+
+\begin{lemma}
+\label{Phi i}\label{t1s4ss5sss2}Every $\Phi $ requirement is satisfied.
+\end{lemma}
+
+\begin{proof}
+As usual in a $0^{\prime \prime \prime }$ priority tree argument, we want to
+consider the last node $\alpha $ along the true path assigned to a given $%
+\Phi $ requirement. To see that there is such a node, argue by induction on
+the $\Phi $ requirements. The point here is that any $\Phi $ requirement,
+once assigned to a node that is never again initialized, can return to the
+list of requirements from which we draw to make assignments of requirements
+to nodes (along the true path) only when a strictly higher priority node
+becomes inactive. So once no node with a higher priority $\Phi $ requirement
+assigned ever becomes inactive again, the next node $\beta $ assigned to $%
+\Phi $ either becomes inactive once along the true path (by being satisfied
+by action at a lower $\Theta $ node on the true path) and then remains
+inactive or it never becomes inactive on the true path. In either case, $%
+\Phi $ is never assigned to a node below $\beta $ by the definition of the
+priority tree.
+
+Let $\alpha $ be the last node along the true path assigned to the $\Phi $
+requirement ($\Phi (A)=W_{i}$). By the previous two Lemmas, we may assume
+that its true outcome is $i$. If there is an $\Theta $ node $\beta $ ($%
+\Theta (G_{k}\oplus P)\neq Q$) on the true path with true outcome $g_{\alpha
+}$, then we have built a functional $\Delta $ at $\beta \symbol{94}g_{\alpha
+}$ that computes $W_{i}$ from $G_{k}$ by Lemma \ref{Delta}.
+
+If there is no such $\Theta $ node $\beta $, then we claim that we have
+successfully built $\Gamma (W_{i}\oplus P)=Q$ starting at $s(\alpha \symbol{%
+94}i)$. By Lemma \ref{Gamma}, we only have to verify that $\gamma (x)$ is
+eventually constant for each $x$. We begin to define our $\Gamma $ at $%
+s(\alpha \symbol{94}i)$. Assume inductively that $\gamma (\hat{x})$ has
+stabilized for $\hat{x}<x$. Thereafter, once $\Gamma (x)$ is defined, our
+construction allows $\gamma (x)$ to increase because of a change in $P$ at
+most once for each time some $\beta \symbol{94}g_{\alpha }$ below $\alpha 
+\symbol{94}i$ is accessible and the $\Theta $ requirement assigned to $\beta 
+$ has witness $x$ or once when $\beta \symbol{94}d$ is accessible (again
+with witness $x$ for $\beta $). It can increase because of a $W$ change at
+most finitely often for each such $\beta \symbol{94}g_{\alpha }$ and stage.
+(At worst only when $W$ changes on the domain of $\Delta $ at that stage.)
+At most one $\beta $ has $x$ assigned as a witness. If $\beta $ is not on
+the true path, it can be accessible with witness $x$ at most finitely often.
+If $\beta $ is on the true path, once $\beta \symbol{94}d$ is accessible, $%
+\beta \symbol{94}g_{\alpha }$ cannot be accessible again unless $\beta $ is
+initialized and so chooses a new witness. If $\beta \symbol{94}g_{\alpha }$
+is accessible infinitely often, then some $g_{\hat{\alpha}}$ (possibly to
+the left of $g_{\alpha }$) would be its true outcome and so $\hat{\alpha}%
+\subseteq \alpha $. If $\alpha =\hat{\alpha}$ we contradict our case
+assumption. If $\hat{\alpha}\subset \alpha $ then $\alpha $ would be come
+inactive and $\Phi $ would be reassigned later to a node below $\beta 
+\symbol{94}g_{\alpha }$ on the true path contradicting our choice of $\alpha 
+$. Thus $\Gamma (x)$ can change at most finitely often as required.
+\end{proof}
+
+\subsection{$\Delta _{2}^{0}$ and $\Delta _{3}^{0}$ partial orders\label{0'
+0''}}
+
+To handle partial orders recursive in $0^{\prime }$ we make the following
+changes in the construction:
+
+We begin with a recursive approximation $f(i,j,s)$ to the (characteristic
+function of the) relation $i\leq _{\ast }j$. We now have requirements $\Psi
+_{e,i,j}$ for every $e,i,j$ with a new additional leftmost outcome $n$. At
+stage $s$ at a node $\alpha $ for $\Psi _{e,i,j}$, if $f(i,j,,s)=1$ (so we
+think we do not want to diagonalize) we go to outcome $n$ and do nothing. If 
+$f(i,j,s)=0$ we act as before with a new definition of the block for our
+witness $x$. When $x$ (necessarily larger than $i$ and $j$) is appointed as
+a witness, we determine its block by calculating $f(k,l,t)$ for each $k,l<x$
+and $t>x$ until we reach a $t$ at which either $f(i,j,t)=1$ or the relation
+on numbers $k,l<x$ defined by $f(k,l,t)$ is a partial order $\preceq $. In
+the first case, the outcome is again $n$ and we do nothing. In the second
+case, we put $G_{k}$ into the block for $x$ if and only if $i\preceq k$
+(i.e. $f(i,k,t)=1$). Note that $f(i,j,t)=0$ by our case assumption and so $%
+G_{j}$ is not in the block.
+
+To see that this modification works, note that if $i\nleq _{\ast }j$ then
+from some point on $f(i,j,t)=0$ and so we never again have an outcome $n$
+for $\Psi _{e,i,j}$ and so satisfy the negative order requirements as
+before. For the positive ones, suppose $k\leq _{\ast }l$ and for $t\geq
+t_{0} $, $f(k,l,t)=1$. For any witness $x\geq k,l,t_{0}$, if its block does
+not contain $k$ then, of course, $x\notin k$. If it does contain $k$ it also
+contains $l$ and so $x\in G_{k}$ if and only if $x\in G_{l}$. (The case for $%
+\Pi $ requirements is as before.)
+
+The modifications needed for partial orders recursive in $0^{\prime \prime }$
+are more complicated. For each $i,j$ we insert a requirement into the
+priority order used for the $\Delta _{2}^{0}$ case and so on each path of
+the priority tree a node $\varepsilon $ that guesses in a $\Delta _{3}^{0}$
+way whether $i\leq _{\ast }j$, i.e. the node has infinitely many outcomes $%
+\left\langle x,k\right\rangle $ with $x\in w$ and $k\in \{0,1\}$ ordered
+lexicographically. We organize determining the outcome of $\varepsilon $ at
+each stage $s$ so that if $\left\langle x,k\right\rangle $ is the leftmost
+outcome accessible infinitely often then $x$ is the least witness to the $%
+\Sigma _{3}$ formula which says that $i\leq _{\ast }j$ if $k=1$ and the
+least witness to the $\Sigma _{3}$ formula which says that $i\nleq _{\ast }j$
+if $k=0$. In addition we coordinate this guessing with the stage
+announcements so that the true outcome passes on alternating restraint as
+before. We then act at nodes as in the $\Delta _{2}^{0}$ case but using at
+each node only the information about the ordering coded on the outcomes of
+the $\varepsilon $ type nodes above it. So for for a $\Psi $ type
+requirement, if the relation given in this way is not a partial order $%
+\preceq $ or says that $i\preceq j$, we go to outcome $n$. (We put the $%
+\varepsilon $ nodes on the tree so that any node for a requirement $\Psi
+_{e,i,j}$ has an $\varepsilon $ type node above it assigned to $i\leq _{\ast
+}j$.) If it is does specify a partial order with $i\npreceq j$, then we act
+as before but now the block of sets for a witness $x$ consists of all $G_{k}$
+with $i\preceq k$. One can now verify that the construction works. The
+argument for the positive order relations runs as follows: If $i\leq _{\ast
+}j$, find the node $\sigma $ on the true path by which that fact has been
+decided. Nodes to the left of $\sigma $ put only finitely many $x$ into $%
+G_{i}$ and can be ignored. For nodes to its right that appoint any witness $%
+x $ (necessarily before stage $x$), we can wait for the node to be
+initialized to see if $x$ enters $G_{i}$. For nodes below $\sigma $ in the
+tree assigned to any $\Psi $ requirement, any witness $x$ that puts $G_{i}$
+in its block also puts $G_{j}$ and so for those $x$, $x\in
+G_{i}\Leftrightarrow x\in G_{j} $. Of course, for witness $x$ for $\Pi
+_{e,i,k}$ type nodes, $x\in G_{i}\Leftrightarrow x\in L$ as before. Of
+course, for any $x$ not appointed as a witness for one of these type nodes, $%
+x\notin G_{i}$.
+
+If the partial order is only $\Sigma _{3}$, then one adjust the previous
+procedure by instead of single nodes with $\Delta _{3}$ guessing at $i\leq
+_{\ast }j$ putting in individual nodes for each $i$ and $j$ guessing that a
+particular number is the (least) witness to the $\Sigma _{3}$ fact that $%
+i\leq _{\ast }j$. Along a path with the $\Pi _{2}^{0}$ outcome that the
+witness is correct, one follows a coding stratgey incorporating this
+individual fact. If it is true, then some node $\sigma $ on the true path
+has the correct witness and all nodes below it obey the required coding
+strategy. Nodes not below this one, are handled as above. For each node
+guessing a witness for the $\Sigma _{3}$ fact, where we see that it is
+false, i.e. along a path with the $\Sigma _{2}^{0}$ outcome, we put in one
+more $\Psi $ requirement for $i\nleq _{\ast }j$. So if $i\nleq _{\ast }j,$
+then along the true path, we will put in $\Psi _{e,i,j}$ requirements for
+every $e$ and so satisfy the requirement.
+
+\section{Requirements II\label{Req II}}
+
+We now turn to our second technical result: \setcounter{section}{1} %
+\setcounter{theorem}{6}
+
+\begin{theorem}
+For any $n\geq 1$, there are r.e. degrees $\mathbf{g},\mathbf{p},\mathbf{q}$%
+, an $n$-r.e.\ degree $\mathbf{a}$ and an $n+1$-r.e.\ degree $\mathbf{d}$
+such that:
+
+\begin{enumerate}
+\item For every $n$-r.e.\ degree $\mathbf{w}\leq \mathbf{a}$, either $%
+\mathbf{q}\leq \mathbf{w}\vee \mathbf{p}$, or $\mathbf{w}\leq \mathbf{g}$.
+
+\item $\mathbf{d}\leq \mathbf{a}$, $\mathbf{q}\nleq \mathbf{d}\vee \mathbf{p}
+$, and $\mathbf{d}\nleq \mathbf{g}$.
+\end{enumerate}
+\end{theorem}
+
+\setcounter{section}{7} \setcounter{theorem}{0} Our list of requirements is
+very similar to the one used for our first technical theorem:
+
+\begin{enumerate}
+\item $\Psi_e: \Psi_e(G)\neq D$;
+
+\item $\Theta_e: \Theta_e(D\oplus P)\neq Q$;
+
+\item $\Phi_{e,i}: (\Phi_e(A)=W_i)\rightarrow [ \exists\Gamma(
+\Gamma(W_i\oplus P)=Q) \vee \exists\Delta (\Delta(G)=W_i)]$.
+\end{enumerate}
+
+In addition, we need to make $D\leq _{T}A$. Note that we only add elements
+into $D$ by diagonalization for $\Psi $ requirements. Whenever we pick a
+witness $x$ for $D$, $x$ is fresh at that stage, and we reserve the pair $%
+(x,x+1)$ for coding $D$ into $A$. If $x$ enters $D$ for the first time, then
+we also put $x$ into $A$. If $x$ leaves $D$ later, we either take $x$ out of 
+$A$ or put $x+1$ into $A$. In the first case, we may shuffle $x$ into and
+out of $A$ and $D$ simultaneously but allowing at most $n$ changes. In the
+second case, we may shuffle $x+1$ into and out of $A$ and $D$ simultaneously
+again allowing at most $n$ changes in $A$ (but this may make for $n+1$
+changes in $D$ altogether). Therefore in the end $x$ is in $D$ if and only
+if $x$ is in $A$ and $x+1$ is not in $A$. No numbers other than these $\Psi $%
+-witnesses enter or leave $D$ in our construction, and so $D$ is recursive
+in $A$, $A$ is $n$-r.e. and $D$ is $(n+1)$-r.e.
+
+\section{Priority Tree II\label{tree II}}
+
+Our priority tree here is almost the same as the one used in the first
+theorem. Of course, we do not have $\Pi $ nodes. For any $\Theta $ node $%
+\beta $, we put a new [temporary] outcome $r_{\alpha _{j}}$ to the left of
+each $g_{\alpha _{j}}$. So the outcomes of $\beta $ are $d$, $r_{\alpha
+_{1}} $, $g_{\alpha _{1}}$, $r_{\alpha _{2}}$,...,$g_{\alpha _{k}}$ and $w$.
+We do not add nodes below these type $r$ outcomes. [So a stage $s$ may
+terminate at such an outcome before we reach level $s$ of the priority tree.
+We show, however, in Lemma \ref{Plan R lem} that no node of type $r$ can be
+on the true path.] The notions of active $\Phi $ nodes, $\alpha -\beta $
+pairs are defined in the same way as in Section \ref{tree}.
+
+\section{Construction II\label{con II}}
+
+We only specify the construction at stage $s$ when there is no stage
+announcement. In the case when there is a stage announcement, we act as in 
+\S \ref{t1s3c4}. Note that in this construction we only change $G$ during $P$
+stages. The default permanent restraint is on $A$, $D$ and $G$ while for $P$
+it must be specifically mentioned.
+
+\subsection{$\Psi$ node and $\Phi$ node}
+
+At a $\Psi $ node, the action is the same as the one in \S \ref{t1s3c1} with 
+$G$ for $L\oplus G_{i}$ and $D$ for $G_{i}$.
+
+At a $\Phi $ node $\alpha $, we follow almost the same procedure as we did
+in \S \ref{t1s3c2}. The only difference is in how we revise the computations
+from old $\Gamma $-axioms. As in the first construction, if $P$ has changed
+and the change was caused by some $\beta $ with $g_{\alpha }$ outcome by
+putting the old use into $P$, then we increase the $W$-use to $l_{s}(\alpha
+) $ and $P$-use to be fresh. If a $W$ change caused some $\Gamma (x)$ to be
+undefined, then we check whether $x$ is a diagonalization witness for some $%
+\beta $ below $\alpha $, if so, we also check whether $D$ has changed by
+putting in some number for the first time at the previous stage when $\beta $
+was accessible (and $\beta $ has not been initialized since). If so, we then
+redefine $\Gamma (x)$ with $W$-use up to $l_{s}(\alpha )$ and fresh $P$-use.
+In all other cases we redefine the axiom without changing the uses.
+
+\subsection{$\Theta$ node}
+
+[At a $\Theta $ node, the obvious difference from the first construction is
+that we use $D$ in our $\Theta $ computation but use $G$ in our $\Delta $
+computation. So the arguments in \ref{t1s4ss3} are no longer valid. In the
+case that $W$ changes, we have no reason to expect a $G$ change. In fact, so
+far we have no requirements or procedures that put numbers into $G$. Here we
+actively put numbers into $G$ to correct $\Delta $ computations. We will
+make full use of the fact that $D$ is $n+1$-r.e., i.e., it has one more
+chance to change than $A$ and the $W_{i}$. We may remove a number from $D$
+while leaving it in $A$ but putting $z+1$ into $A$. This will afford us the
+opportunity to produce a situation in which we may initiate shuffling.]
+
+At a $\Theta $ node $\beta $ accessible for first time after it has been
+last initialized, we pick a fresh witness $x$ for diagonalizing $\Theta
+(D\oplus P)\neq Q$. If we have a witness $x$ already assigned (and not yet
+canceled by initialization) at $\beta $, we check whether the $\Theta $
+computation converges at the witness $x$. If we do not have a believable
+(defined in the same way as in our first theorem) computation $\Theta
+(D\oplus P;x)$, we go to outcome $w$. If we do, we follow Plan D as in \S %
+\ref{t1s3c3ss1} if we can. If not, we have a planned outcome $g_{\alpha
+_{j}} $ as in \S \ref{t1s3c3ss2} and check whether we have not been at this
+outcome since $\beta $ was last initialized or whether the previous stage $t$
+when we went to this outcome was a $P$-stage. If so we announce an $A$-stage
+and continue the construction below $\beta $.
+
+Otherwise, we have two possibilities.
+
+\subsubsection{Plan R: removal\label{Plan R}}
+
+Let $t$ be the last stage at which $\beta $ was accessible. If there is a $%
+y<\gamma (W;x)$ such that $W(y)$ has different values at $t$ and $s$ and the
+only change in $A\upharpoonright t$ is that some element $z$ entered $D$ and 
+$A$ for the first time at stage $t$ because of the action of a node below $%
+\beta $ [necessarily a $\Psi $ node], we remove $z$ from $D$ and add $z+1$
+into $A$ [so we restore the version of $D$ at stage $t$ up to the $\theta $
+use]. We go to the $r_{\alpha _{j}}$ outcome and terminate the current stage
+of the construction. We call the least such $y$ the \emph{key witness} for
+the removal plan.
+
+[The idea here is that, before $\beta $ can become accessible again without
+being initialized, we would see at $\alpha _{j}$ if $y$ has left $W$. If so
+we would initiate a shuffle there on $z+1$ and initialize $\beta $. If not,
+we will argue that we must go to the left of $g_{\alpha _{j}}$ and $%
+r_{\alpha _{j}}$. Roughly, the idea is that the computation $\Theta (D\oplus
+P;x)$ will be the same as that at stage $t$ while $\gamma _{j}(P;x)$ will
+have been increased above $\theta (x)$ by $y$ entering $W$. ]
+
+\subsubsection{Plan G: change G\label{Plan G}}
+
+If we satisfy none of the above criteria, we go to the outcome $g_{\alpha
+_{j}}$ and continue to build $\Delta $ consistently. For each $u$, if $%
+\Delta (u)$ was defined at the last stage $t$ at which $\beta \symbol{94}%
+g_{\alpha _{j}}$ was accessible and $W(u)$ has not changed since then, we
+simply update the $\Delta $ axiom with the current version of $G$ (if
+necessary) without changing the use. If $\Delta (u)$ was defined at $t$ but $%
+W(u)$ is now different, then let $\delta (u)$ be the use of $G$ in the old $%
+\Delta $ computation. We add $\delta (x)-1$ into $G$ and redefine $\Delta $
+with a fresh use in $G$. [We preserve the consistency of $\Delta $ by doing
+this as $G$ is r.e.] Then we also define a new computation $\Delta (u)$ for
+the next $u$ which was undefined with fresh $G$-use. Finally, we follow Plan
+P to add $\gamma $ uses into $P$ as in Section \ref{t1s3c3ss3} and announce
+a $P$-stage.
+
+\section{Verification II\label{ver II}}
+
+We can go through most of Section \ref{t1s5} and show that we have a
+leftmost path visited infinitely often (that it is actually infinite follows
+from Lemma \ref{Plan R lem}), and each node along the true path is passing
+down alternating $A$-stages and $P$-stages along the true path. There are
+obvious alphabetic changes needed In Lemmas \ref{change A}-\ref{alt} -- no $%
+L $ or $\Pi $. Otherwise, note first that Plan R action for $\Psi $ nodes
+are an exception to Lemma \ref{change A}. Next, Lemma \ref{only one} applies
+to $D$ as well as $A$ and we have to remark that if we implement Plan R no
+node is even accessible thereafter, while Plan R action cannot be the second
+type to change $A$ (or $D$) at $s$ by the arguments given in the proof of
+Lemma \ref{only one}. Finally, for the proof of \ref{after init} note that $%
+G $-uses for $\Delta $ are also chosen fresh. It is then not difficult to
+see that functionals are well-defined and complete the job we assigned if
+they are along the true path. For the $\Gamma $'s, use Lemma \ref{Gamma}.
+For the $\Delta $'s, it is directly guaranteed by our construction. [The
+complicated argument for Lemma \ref{Delta} is not needed but see the proof
+of Lemma \ref{Plan R lem} for some remnants of it.]
+
+For the verification that all the requirements are satisfied we continue as
+in \S \ref{t1s4ss5}. The positive order requirements (Lemma \ref{pos order})
+are simply replaced by the requirement that $D\leq _{T}A$. Our construction
+guarantees that $x$ is in $D$ if and only if $x$ is in $A$ and $x+1$ is not.
+Except for the satisfaction of the $\Psi $ requirements (Lemma \ref{Pi or
+Psi}) in the case of $d$ outcome all the other verifications proceed as in 
+\S \ref{t1s4ss5}.
+
+As for the $\Psi $ requirements, the major issue is that here we add
+elements into $G$ (when we construct $\Delta $) and this action might, \emph{%
+a priori}, injure some apparently satisfied $\Psi $ requirement of lower
+priority. To show that the $\Psi $ requirements are all satisfied, we first
+need a few lemmas.
+
+\begin{lemma}
+\label{Plan R lem} No outcome of type $r$ can be on the true path.
+\end{lemma}
+
+\begin{proof}
+The argument is similar to the one in the end of the proof of Lemma \ref%
+{Delta}. Consider any $\Theta $ node $\beta $ on the true path and suppose,
+for the sake of a contradiction, that its true outcome is $r_{\alpha }$.
+
+Let $s=s(\beta \symbol{94}r_{\alpha })$ and, as in the construction, let $t$
+be the previous stage at which $\beta $ had outcome $g_{\alpha }$; $x$, the
+diagonalization witness at $\beta $; $y$, the key witness for Plan R at $s$;
+and $z$, the unique element that entered $D$ for the first time at $t$. We
+remove $z$ from $D$ at $s$ following Plan R. Let $s^{\prime }$ be the next
+stage at which $\beta $ is accessible with a believable $\Theta $
+computation. If $y$ was ever out of $W$ between $s$ and $s^{\prime }$ (when $%
+\alpha $ was accessible) then, we would have initiated a shuffle plan at $%
+\alpha $ and so moved left of $\beta \supseteq \alpha \symbol{94}i$ for a
+contradiction. (As we terminate stage $s$ at $\beta \symbol{94}r_{\alpha }$
+with no action, there is no change in $A$ at $s$. Between $s$ and $s^{\prime
+}$ Lemma \ref{after init} shows that $A\upharpoonright s$ is preserved. So
+if $W(y)$ changes we satisfy the conditions for shuffling at $\alpha $.)
+Thus we also assume that $y$ remains in $W$ at every stage at which $\alpha $
+is accessible through stage $s^{\prime }$.
+
+Now at stage $s$ we restored the computation $\Theta (D\oplus P,x)$ of stage 
+$t$ by removing $z$ from $D$: $z$ is the only change to $D$ up to $\theta
+(x) $ at $t$ by Lemma \ref{only one}, and $P$ is preserved by the $A$-stage
+announcement at $t$. Between $t$ and $s$, $D\upharpoonright t$ is preserved
+by Lemma \ref{after init} and $P\upharpoonright \theta (x)$ is not injured
+by nodes to the right. Finally, our believability condition guarantees that $%
+P\upharpoonright \theta (x)$ is also not injured by nodes above $\beta $.
+Thus at stage $s^{\prime }$ we still have the same computation of $\Theta
+(x) $ as at stage $t$.
+
+Now consider the $\Gamma $ computation we build at $\alpha \symbol{94}i$. At
+stage $s$ the conditions for Plan R guarantee that $y<\gamma (W;x)$ (at $t$)
+has entered $W$ for the first time after $t$ and by $s$. So when this
+happens and we are at $\alpha $ we see a change in the $W$ part of $\Gamma
+(x)$ which makes $\Gamma (x)$ undefined. Therefore, by our construction, we
+add a new axiom with $W$-use the current length of agreement and $P$-use
+fresh, which is larger than $\theta (P,x)$ at $t$. This $\gamma (P,x)$
+remains large since $y$ remains in $W$, therefore at stage $s^{\prime }$ we
+will see that $\gamma (P,x)>\theta (P,x)$.
+
+For other active $\alpha _{l}$'s between $\alpha $ and $\beta $, the
+corresponding $\gamma _{l}(W_{l};x)$are larger than $\theta (P,x)$ at stage $%
+t$ by the rules for going to outcome $g_{\alpha }$. The only way that anyone
+of these uses can decrease is by $W_{l}$ changing at some stage $v\leq
+s^{\prime }$ from its value on $\gamma _{l}(W_{l};x)$ at $t$ back to an
+older version. If this happens, then when $\alpha _{l}$ is accessible at $%
+v\leq s^{\prime }$ we initiate a shuffle at $\alpha _{l}$ by shuffling $z+1$
+which we added into $A$ by Plan R at $t$ with shuffle points $t$ and $v$.
+This would move us to the left of $\beta $ for a contradiction. Therefore
+these uses cannot decrease, and at stage $s^{\prime }$ they are still larger
+than $\theta (P,x)$. Hence at stage $s^{\prime }$ we will go to the left of
+the $r_{\alpha }$ outcome by our construction for the desired contradiction.
+\end{proof}
+
+\begin{lemma}
+\label{change G lem} In the construction at a $\Theta $ node $\beta $, if we
+change $G$ as in \ref{Plan G} at a stage $s>s(\beta )$, then it must be the
+case that at the previous stage $t$ when $\beta \symbol{94}g_{\alpha }$ was
+accessible, we followed either Plan S or Plan R to change D at some node $%
+\sigma $ below $\beta $.
+\end{lemma}
+
+\begin{proof}
+By our construction, if we must change $G$ by putting in some $\delta (u)-1$%
+, then $W(u)$ and therefore $A\upharpoonright \phi (u)$ must be different at
+stage $s$ from stage $t$. By Lemmas \ref{after init} (for nodes to the
+right), \ref{only one} (for nodes below), \ref{change A} (for nodes above
+not of type $r$) and \ref{Plan R lem} (to see that there are no type $r$
+nodes above), such a change in $A$ can only happen at stage $t$. Thus we
+must have changed $A$ and $D$ at stage $t$ below $\beta $ since $\beta $ was
+accessible.
+
+We can change $A$ and $D$ in only three ways: diagonalization at a $\Psi $
+node, Plan S or Plan R. By Lemma \ref{only one} if we have applied
+diagonalization at a node below $\beta $, then it is the only change at
+stage $t$, so at stage $s$ according to our construction we would want to
+apply Plan R to remove the element added into $D$ at stage $t$ [and restore
+the $\Theta $ computation]. Depending on the current stage announcement we
+would then have outcome either $r$ or $w$. Since by assumption the outcome
+at $s$ is $g_{\alpha _{j}}$, we must have followed either Plan S or Plan R
+at $t$.
+\end{proof}
+
+Now we can prove that $\Psi $ requirements are not injured by Plan G.
+
+\begin{lemma}
+If $\sigma $ is a $\Psi $ node ($\Psi (G)\neq D$) on the true path and we go
+to outcome $d$ after stage $s(\sigma )$, then the diagonalization will not
+be injured thereafter, i.e., the $\Psi $-use in $G$ is preserved and the
+diagonalization witness $x$ is not removed from $D$ and so the $\Psi $
+requirement is satisfied.
+\end{lemma}
+
+\begin{proof}
+Suppose at stage $s>s(\sigma )$ we diagonalized at $\sigma $ by putting $x$
+into $D$ and so impose permanent restraint on $D$. First of all, $x$ cannot
+be taken out of $D$ at subsequent stages, since only nodes above $\sigma $
+could do so and then only if we follow either Plan S or Plan R at a node
+above $\sigma $. Plan S action would move us to the left for a contradiction
+and there are no outcomes $r$ above $\sigma $ by Lemma \ref{Plan R lem}.
+
+Next we claim that the $G$-use is also preserved. No node below or to the
+right of $\sigma $ can add elements below this $G$-use into $G$ after stage $%
+s$, since their $\Delta $-uses are defined to be fresh. The only worry is
+that some $\Theta $ node $\beta $ with $\beta \symbol{94}g_{\alpha }$ above $%
+\sigma $ might follow Plan G (at stage $s_{1}>s$) to add $\delta (y)-1$ into 
+$G$ for some changed $u$ in $W$ in order to correct some $\Delta $ axiom.
+The $\Delta (G;u)$ axiom being killed must have been enumerated before stage 
+$s$, since its use was chosen fresh. So $W(u)=\Phi (A;u)$ at stage $s$.
+
+By Lemma \ref{change G lem}, the only circumstances under which we change G
+at stage $s_{1}$ in response to this change in $W$ is that $D$ has already
+changed by some other node $\tau $ below $\beta \symbol{94}g_{\alpha }$
+following Plan S or Plan R at the previous stage $t$ at which $\beta \symbol{%
+94}g_{\alpha }$ was accessible. Such a $\tau $ cannot be above $\sigma $ as
+we would then move to its left, so it must be to the right of, or below, $%
+\sigma \symbol{94}d$.
+
+Then there must be another $\Psi ^{\prime }$ node $\sigma ^{\prime }$ (below 
+$\tau $) which added a number into $D$ after stage $s$ (since at stage $s$
+we initialized all nodes to the right of $\tau $, any change before $s$
+cannot be used in shuffling or removal) and the number is taken out by $\tau 
+$. However, $\sigma ^{\prime }$ cannot be below, or to the right of, $\sigma 
+$, as its witness would then be larger than $s$ and so could not affect the
+value of $W(u)$ which agrees with $\Phi (A;u)$ at stage $s$. So we get a
+contradiction.
+
+In another words, once we apply diagonalization for $\sigma $, we
+(automatically) implement restraints for $A$ and $D$ and hence to $W$'s up
+to the part that we have coded in. So we can guarantee that there can be no
+change in $W$ which makes us change $G$ on the uses we have already seen,
+and in particular, the $\Psi $-use of $G$ is preserved.
+\end{proof}
+
+\section{Bibliography}
+
+%TCIMACRO{\TeXButton{parindent}{\hspace*{\parindent}}}%
+%BeginExpansion
+\hspace*{\parindent}%
+%EndExpansion
+Arslanov, M. M. [1985], Lattice properties of the degrees below $\mathbf{0}%
+^{\prime }$, Doklady Ak. Nauk SSR \textbf{283}, 270-273.
+
+Arslanov, M. M. [2009], Definability and elementary equivalence in the
+Ershov difference hierarchy in\emph{\ Logic Colloquium 2006}, Lecture Notes
+in Logic, Association for Symbolic Logic and Cambridge University Press, New
+York, 1--17.
+
+Arslanov, M. M. [2010], The Ershov hierarchy in \emph{Computability in
+Context: Computation and Logic in the Real World}, Cooper, S. B. and Sorbi,
+A. eds., Imperial College Press, London.
+
+Arslanov, M. M., Kalimullin, I. Sh. and Lempp, S. [2010], On Downey's
+Conjecture, \emph{Journal of Symbolic Logic }\textbf{75}, 401-441.
+
+Cooper, S. B. [1971], \emph{Degrees of Unsolvability}, Ph.D. Thesis,
+Leicester University.
+
+Cooper, S. B. Harrington, L., Lachlan, A. H.. Lempp S. and Soare, R.
+I.[1991], The d-r.e. degrees are not dense, \emph{Annals of Pure and Applied
+Logic} \textbf{55}, 125-151.
+
+Downey, R. G. [1989], D-r.e. degrees and the non-diamond theorem, \emph{%
+Bulletin London Mathematical\ Society }\textbf{21}, 43-50.
+
+Epstein, R. L. [1979], \emph{Degrees of Unsolvability: Structure and Theory}%
+, \textbf{LNM} 759, Springer-Verlag, Berlin.
+
+Ershov, Y. I. [1968], On a hierarchy of sets I, \emph{Algebra and Logic }%
+\textbf{7}, 25-43.
+
+Ershov, Y. I. [1968], On a hierarchy of sets II, \emph{Algebra and Logic }%
+\textbf{7}, 212-232.
+
+Ershov, Yu. I. [1970], On a hierarchy of sets III, \emph{Algebra and Logic }%
+\textbf{9}, 20-31.
+
+Gold, E. M. [1965], Limiting recursion, \emph{Journal of Symbolic Logic }%
+\textbf{30}, 28-48.
+
+Harrington, L. and Shelah, S. [1982], The undecidability of the recursively
+enumerable degrees (research announcement), \emph{Bulletin of the American
+Mathematical. Society}, N.S. \textbf{6}, 79-80.
+
+Hodges, W. [1993], \emph{Model Theory}, Cambridge University Press,
+Cambridge U.K.
+
+Jockusch, C. G. Jr. and Shore, R. A. [1984], Pseudo-jump operators II:
+transfinite iterations, hierarchies and minimal covers,\emph{\ Journal of
+Symbolic Logic} \textbf{49}, 1205-1236.
+
+Lachlan, A. H. [1966], Lower bounds for pairs of recursively enumerable
+degrees, \emph{Proceedings of the London Mathematical. Society} (3) \textbf{%
+16}, 537-569.
+
+Lachlan, A. H. [1968], Distributive initial segments of the degrees of
+unsolvability, \emph{Z. Math. Logik Grund. Math.} \textbf{14}, 457-472.
+
+Lerman, M. [1983], \emph{Degrees of Unsolvability}, Springer-Verlag, Berlin.
+
+Nies, A.,\ Shore, R.\ A.\ and Slaman, T.\ A.\ [1998], Interpretability and
+definability in the recursively enumerable degrees, \emph{Proceedings of the
+London Mathematical. Society\ }(3) \textbf{77}, 241-291.
+
+Putnam, H. [1965], Trial and error predicates and the solution to a problem
+of Mostowski, \emph{Journal of Symbolic Logic }\textbf{30}, 44-50.
+
+Sacks, G. E. [1966], \emph{Degrees of unsolvability}, Annals of Math.
+Studies \textbf{55}, Princeton University Press, $2^{nd}$ ed., Princeton NJ.
+
+Shoenfield, J. R., [1959], On degrees of unsolvability, \emph{Annals of
+Mathematics }\textbf{69, }644-653.
+
+Shoenfield, J. R. [1965], An application of model theory to degrees of
+unsolvability, in \emph{Symposium on the Theory of Models}, J. W. Addison,
+L. Henkin and A. Tarski eds., North-Holland, Amsterdam, 359-363.
+
+Shore, R. A. [1981], The theory of the degrees below $0^{\prime }$, \emph{%
+Journal of the London Mathematical Society} \textbf{24}, 1-14.
+
+Shore, R. A. [1988], Defining jump classes in the degrees below $0^{\prime }$%
+, \emph{Proceedings of the American Mathematical Society} \textbf{104},
+287-292.
+
+Shore, R. A. [2006], Degree structures: Local and global investigations, 
+\emph{Bulletin of Symbolic Logic }\textbf{12}, 369-389.
+
+Shore, R. A. [2007], Direct and local definitions of the Turing jump, \emph{%
+Journal of Mathematical Logic }\textbf{7}, 229-262.
+
+Simpson, S.\ G.\ [1977], First order theory of the degrees of recursive
+unsolvability, \emph{Annals of\ Mathematics\ (2)}, \textbf{105}, 121-139.
+
+Slaman, T. A. [1983] The recursively enumerable degrees as a substructure of
+the $\Delta _{2}^{0}$ degrees, handwritten notes.
+
+Slaman, T. A. [1991], Degree structures, in Proceedings\emph{\ Int. Cong.
+Math., Kyoto 1990}, Springer-Verlag, Tokyo, 303-316.
+
+Slaman, T. A. and Woodin, H. [2001], \emph{Definability in Degree Structures}%
+, preprint.
+
+Stephan, F. Yang, Y. and Yu, L. [2009], Turing degrees and the Ershov
+hierarchy in \emph{Proceedings of the Tenth Asian Logic Conference, Kobe,
+Japan, 1-6 September 2008}, World Scientific, 300-321.
+
+Taitslin, M. A. [1962], Effective inseparability of the sets of identically
+true and finitely refutable formulas of elementary lattice theory, \emph{%
+Algebra i Logika }\textbf{3}, 24-38.
+
+Turing, A. M. [1939], Systems of logic based on ordinals, \emph{Proceedings
+of the London Mathematical. Society }(3) \textbf{45}, 161-228.
+
+Yang, Y. and Yu, L. [2006], \textit{$\mathcal{R}$ is not a }$\Sigma _{1}$%
+\textit{-elementary substructure of $\mathcal{D}_{n}$}, \emph{Journal of
+Symbolic Logic} \textbf{71}, 1223--1236.
+
+Yates, C. E. M. [1966], A minimal pair of recursively enumerable degrees, 
+\emph{Journal of Symbolic Logic} \textbf{31}, 159-168.
+
+\end{document}
